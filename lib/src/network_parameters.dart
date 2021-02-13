@@ -12,8 +12,11 @@ class GasLimit {
 
   const GasLimit(this.value) : assert(value > 0, 'value can\t be negative');
 
-  factory GasLimit.forTransfert(
-      {TransactionPayload data, int minGasLimit = defaultMinGasLimit, int gasPerDataByte = defaultGasPerDataByte}) {
+  factory GasLimit.forTransfert({
+    TransactionPayload data,
+    int minGasLimit = defaultMinGasLimit,
+    int gasPerDataByte = defaultGasPerDataByte,
+  }) {
     var value = minGasLimit;
     if (data != null) {
       value += gasPerDataByte * data.bytes.length;

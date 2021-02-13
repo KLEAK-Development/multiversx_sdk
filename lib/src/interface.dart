@@ -1,6 +1,5 @@
 import 'package:elrond_sdk/src/account.dart';
 import 'package:elrond_sdk/src/address.dart';
-import 'package:elrond_sdk/src/models/response/transaction/transaction.dart';
 import 'package:elrond_sdk/src/network_configuration.dart';
 import 'package:elrond_sdk/src/signature.dart';
 import 'package:elrond_sdk/src/transaction.dart';

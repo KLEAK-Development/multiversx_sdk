@@ -9,7 +9,7 @@ const bip44DerivationPrefix = "m/44'/508'/0'/0'";
 class Mnemonic {
   final String text;
 
-  const Mnemonic._(this.text);
+  const Mnemonic._(this.text) : assert(text != null, 'text can\'t be null');
 
   factory Mnemonic.fromSeed(String seed) {
     //  TODO: check seed is valid

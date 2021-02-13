@@ -12,9 +12,7 @@ class Address {
   factory Address.fromAddress(Address address) => Address._(address.hex);
 
   factory Address.fromBytes(List<int> bytes) {
-    if (bytes.length != pubkeyLength) {
-      return null;
-    }
+    assert(bytes.length != pubkeyLength, 'bytes length must be equal to $pubkeyLength but it\'s ${bytes.length}');
     return Address._(convert.hex.encode(bytes));
   }
 
@@ -25,16 +23,9 @@ class Address {
 
   factory Address.fromBech32(String bech) {
     final decoded = b32.decode(bech);
-    if (decoded == null) {
-      return null;
-    }
-
-    if (decoded.hrp != hrp) {
-      return null;
-    }
-
+    assert(decoded != null, 'decoded can\'t be null');
+    assert(decoded.hrp == hrp, 'hrp must be equal to $hrp but it\'s ${decoded.hrp}');
     final pubKey = b32.fromWords(decoded.data);
-
     return Address._(convert.hex.encode(pubKey));
   }
 

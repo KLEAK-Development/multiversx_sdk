@@ -38,9 +38,17 @@ class Transaction extends ISignable {
     @required this.data,
     @required this.chainId,
     @required this.transactionVersion,
-    this.signature,
+    this.signature = const Signature.empty(),
     this.transactionHash,
-  }) : assert(balance != null, 'balance can\'t be null');
+  })  : assert(nonce != null, 'nonce can\'t be null'),
+        assert(balance != null, 'balance can\'t be null'),
+        assert(sender != null, 'sender can\'t be null'),
+        assert(receiver != null, 'receiver can\'t be null'),
+        assert(gasPrice != null, 'gasPrice can\'t be null'),
+        assert(gasLimit != null, 'gasLimit can\'t be null'),
+        assert(data != null, 'data can\'t be null'),
+        assert(chainId != null, 'chainId can\'t be null'),
+        assert(transactionVersion != null, 'transactionVersion can\'t be null');
 
   Map<String, dynamic> toMap({Address signedBy}) {
     final map = <String, dynamic>{};
@@ -50,12 +58,12 @@ class Transaction extends ISignable {
     map['sender'] = signedBy?.bech32 ?? sender.bech32;
     map['gasPrice'] = gasPrice.value;
     map['gasLimit'] = gasLimit.value;
-    if (data.isNotEmptyOrNull) {
+    if (data.bytes.isNotEmpty) {
       map['data'] = base64.encode(data.bytes);
     }
     map['chainID'] = chainId.value;
     map['version'] = transactionVersion.value;
-    if (signature.isNotEmptyOrNull) {
+    if (signature.hex.isNotEmpty) {
       map['signature'] = signature.hex;
     }
     return map;

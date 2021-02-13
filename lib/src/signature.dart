@@ -3,13 +3,9 @@ import 'package:convert/convert.dart' as convert;
 class Signature {
   final String hex;
 
-  Signature(this.hex);
+  const Signature(this.hex) : assert(hex != null, 'hex cam\'t be null');
 
-  factory Signature.fromBytes(List<int> bytes) {
-    return Signature(convert.hex.encode(bytes));
-  }
+  const Signature.empty() : hex = '';
 
-  factory Signature.empty() => Signature.fromBytes([]);
-
-  bool get isNotEmptyOrNull => hex?.isNotEmpty ?? false;
+  factory Signature.fromBytes(List<int> bytes) => Signature(convert.hex.encode(bytes));
 }
