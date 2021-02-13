@@ -172,9 +172,11 @@ packages:
   ed25519_hd_key:
     dependency: "direct main"
     description:
-      path: "../dart-ed25519-hd-key"
-      relative: true
-    source: path
+      path: "."
+      ref: HEAD
+      resolved-ref: "33d12f315120542d69f9994720e8c3570d9e56a5"
+      url: "https://github.com/acolyte-xyz/dart-ed25519-hd-key.git"
+    source: git
     version: "1.0.1"
   file:
     dependency: transitive
