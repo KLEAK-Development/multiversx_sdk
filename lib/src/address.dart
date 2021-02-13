@@ -17,7 +17,8 @@ class Address {
   }
 
   factory Address.fromHex(String hex) {
-    //  TODO: check hex is valid
+    assert(
+        convert.hex.decode(hex).length == pubkeyLength, 'hex length is not correct should be equal to $pubkeyLength');
     return Address._(hex);
   }
 

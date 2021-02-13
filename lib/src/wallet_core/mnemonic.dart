@@ -12,7 +12,7 @@ class Mnemonic {
   const Mnemonic._(this.text) : assert(text != null, 'text can\'t be null');
 
   factory Mnemonic.fromSeed(String seed) {
-    //  TODO: check seed is valid
+    assert(validateMnemonic(seed), 'mnemonic is not valid');
     return Mnemonic._(seed.trim());
   }
 
