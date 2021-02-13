@@ -9,10 +9,41 @@ import 'package:elrond_sdk/src/signature.dart';
 import 'package:elrond_sdk/src/transaction_payload.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-enum TransactionStatus {
-  pending,
-  executed,
-  success,
+class TransactionStatus {
+  static const success = TransactionStatus._('success');
+  static const executed = TransactionStatus._('executed');
+
+  static const invalid = TransactionStatus._('invalid');
+
+  static const pending = TransactionStatus._('pending');
+  static const received = TransactionStatus._('received');
+  static const partiallyExecuted = TransactionStatus._('partially-executed');
+
+  static const fail = TransactionStatus._('fail');
+  static const notExecuted = TransactionStatus._('notExecuted');
+
+  static const all = [
+    success,
+    executed,
+    invalid,
+    pending,
+    received,
+    partiallyExecuted,
+    fail,
+    notExecuted,
+  ];
+
+  final String value;
+
+  const TransactionStatus._(this.value);
+
+  factory TransactionStatus.fromJson(String value) =>
+      all.firstWhere((element) => element.value == value, orElse: () => null);
+
+  String toJson() => value;
+
+  @override
+  String toString() => value;
 }
 
 class Transaction extends ISignable {

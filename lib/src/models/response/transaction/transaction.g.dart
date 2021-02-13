@@ -39,50 +39,14 @@ Map<String, dynamic> _$_$_SendMultipleTransactionResponseToJson(
 _$_GetTransactionStatusData _$_$_GetTransactionStatusDataFromJson(
     Map<String, dynamic> json) {
   return _$_GetTransactionStatusData(
-    status: _$enumDecodeNullable(_$TransactionStatusEnumMap, json['status']),
+    status: json['status'] == null
+        ? null
+        : TransactionStatus.fromJson(json['status'] as String),
   );
 }
 
 Map<String, dynamic> _$_$_GetTransactionStatusDataToJson(
         _$_GetTransactionStatusData instance) =>
     <String, dynamic>{
-      'status': _$TransactionStatusEnumMap[instance.status],
+      'status': instance.status,
     };
-
-T _$enumDecode<T>(
-  Map<T, dynamic> enumValues,
-  dynamic source, {
-  T unknownValue,
-}) {
-  if (source == null) {
-    throw ArgumentError('A value must be provided. Supported values: '
-        '${enumValues.values.join(', ')}');
-  }
-
-  final value = enumValues.entries
-      .singleWhere((e) => e.value == source, orElse: () => null)
-      ?.key;
-
-  if (value == null && unknownValue == null) {
-    throw ArgumentError('`$source` is not one of the supported values: '
-        '${enumValues.values.join(', ')}');
-  }
-  return value ?? unknownValue;
-}
-
-T _$enumDecodeNullable<T>(
-  Map<T, dynamic> enumValues,
-  dynamic source, {
-  T unknownValue,
-}) {
-  if (source == null) {
-    return null;
-  }
-  return _$enumDecode<T>(enumValues, source, unknownValue: unknownValue);
-}
-
-const _$TransactionStatusEnumMap = {
-  TransactionStatus.pending: 'pending',
-  TransactionStatus.executed: 'executed',
-  TransactionStatus.success: 'success',
-};
