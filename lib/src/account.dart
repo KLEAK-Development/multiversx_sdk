@@ -5,35 +5,31 @@ import 'package:elrond_sdk/src/nonce.dart';
 
 class Account {
   final Address address;
-
-  Nonce nonce;
-  Balance balance;
-  String username;
-
-  Account(this.address)
-      : nonce = Nonce(0),
-        balance = Balance.zero(),
-        username = '';
-
-  void incementNonce() {
-    nonce = nonce.increment();
-  }
-
-  Future<void> sync(IProvider provider) async {
-    final accountFromNetwork = await provider.getAccount(address);
-    nonce = accountFromNetwork.nonce;
-    balance = accountFromNetwork.balance;
-    username = accountFromNetwork.username;
-  }
-
-  @override
-  String toString() => 'Account{${address.bech32}, ${balance.value}, $username}';
-}
-
-class AccountData {
   final Nonce nonce;
   final Balance balance;
   final String username;
 
-  AccountData(this.balance, this.nonce, this.username);
+  Account(this.address, this.nonce, this.balance, this.username);
+
+  Account.withAddress(this.address)
+      : nonce = Nonce(0),
+        balance = Balance.zero(),
+        username = '';
+
+  Account copyWith({Nonce newNonce, Balance newBalance, String newUsername}) =>
+      Account(address, newNonce ?? nonce, newBalance ?? balance, newUsername ?? username);
+
+  Account incementNonce() => copyWith(newNonce: nonce.increment());
+
+  Future<Account> synchronize(IProvider provider) async {
+    final accountFromNetwork = await provider.getAccount(address);
+    return copyWith(
+      newNonce: accountFromNetwork.nonce,
+      newBalance: accountFromNetwork.balance,
+      newUsername: accountFromNetwork.username,
+    );
+  }
+
+  @override
+  String toString() => 'Account{${address.bech32}, ${balance.value}, $username}';
 }

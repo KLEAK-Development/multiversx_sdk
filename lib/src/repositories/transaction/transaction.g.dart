@@ -113,4 +113,26 @@ class _TransactionRepository implements TransactionRepository {
     final value = GetTransactionStatusResponse.fromJson(_result.data);
     return value;
   }
+
+  @override
+  Future<GetTransactionInformationsWithSmartContractResultData>
+      informationWithSmartContractResults(txHash) async {
+    ArgumentError.checkNotNull(txHash, 'txHash');
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    final _result = await _dio.request<Map<String, dynamic>>(
+        '/transactions/$txHash',
+        queryParameters: queryParameters,
+        options: RequestOptions(
+            method: 'GET',
+            headers: <String, dynamic>{},
+            extra: _extra,
+            baseUrl: baseUrl),
+        data: _data);
+    final value =
+        GetTransactionInformationsWithSmartContractResultData.fromJson(
+            _result.data);
+    return value;
+  }
 }

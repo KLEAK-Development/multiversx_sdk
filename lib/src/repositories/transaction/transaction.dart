@@ -25,4 +25,8 @@ abstract class TransactionRepository {
 
   @GET('/transaction/{txHash}/status')
   Future<GetTransactionStatusResponse> transactionStatus(@Path('txHash') String txHash);
+
+  @GET('/transactions/{txHash}')
+  Future<GetTransactionInformationsWithSmartContractResultData> informationWithSmartContractResults(
+      @Path('txHash') String txHash);
 }

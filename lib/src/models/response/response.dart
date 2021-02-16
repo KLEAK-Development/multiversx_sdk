@@ -22,5 +22,11 @@ abstract class ProxyResponse with _$ProxyResponse {
   factory ProxyResponse.getTransactionStatus({GetTransactionStatusData data, String error, String code}) =
       GetTransactionStatusResponse;
 
+  factory ProxyResponse.informationsWithSmartContractResults({
+    GetTransactionInformationsWithSmartContractResultData data,
+    String error,
+    String code,
+  }) = GetTransactionInformationsWithSmartContractResultsResponse;
+
   factory ProxyResponse.fromJson(Map<String, dynamic> json) => _$ProxyResponseFromJson(json);
 }

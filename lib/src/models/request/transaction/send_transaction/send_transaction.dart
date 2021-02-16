@@ -6,15 +6,15 @@ part 'send_transaction.g.dart';
 @freezed
 abstract class SendTransactionRequest with _$SendTransactionRequest {
   factory SendTransactionRequest({
-    int version,
-    @JsonKey(name: 'chainID') String chainId,
-    int nonce,
+    @nullable @JsonKey(includeIfNull: false) int nonce,
     String value,
-    String sender,
     String receiver,
+    String sender,
     int gasPrice,
     int gasLimit,
+    int version,
     @nullable @JsonKey(includeIfNull: false) String data,
+    @JsonKey(name: 'chainID') String chainId,
     String signature,
   }) = _SendTransactionRequest;
 

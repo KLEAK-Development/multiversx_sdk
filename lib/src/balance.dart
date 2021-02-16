@@ -6,7 +6,7 @@ final oneEGLD = BigInt.from(1000000000000000000);
 class Balance {
   final BigInt value;
 
-  Balance(this.value) : assert(value >= BigInt.zero, 'balance can\'t be negative');
+  Balance(this.value) : assert(value >= BigInt.zero, 'balance cannot be negative');
 
   Balance.zero() : value = BigInt.from(0) * oneEGLD;
 
@@ -14,7 +14,7 @@ class Balance {
     return Balance(BigInt.parse(value));
   }
 
-  factory Balance.fromEGLD(num value) {
+  factory Balance.fromEgld(num value) {
     var v = value;
     var count = 0;
     while (v.truncate() != v) {

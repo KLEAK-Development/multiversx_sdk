@@ -50,3 +50,35 @@ Map<String, dynamic> _$_$_GetTransactionStatusDataToJson(
     <String, dynamic>{
       'status': instance.status,
     };
+
+_$_GetTransactionInformationsWithSmartContractResultData
+    _$_$_GetTransactionInformationsWithSmartContractResultDataFromJson(
+        Map<String, dynamic> json) {
+  return _$_GetTransactionInformationsWithSmartContractResultData(
+    scResults: (json['scResults'] as List)
+        ?.map((e) => e == null
+            ? null
+            : SmartContractResultData.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
+  );
+}
+
+Map<String,
+    dynamic> _$_$_GetTransactionInformationsWithSmartContractResultDataToJson(
+        _$_GetTransactionInformationsWithSmartContractResultData instance) =>
+    <String, dynamic>{
+      'scResults': instance.scResults,
+    };
+
+_$_SmartContractResultData _$_$_SmartContractResultDataFromJson(
+    Map<String, dynamic> json) {
+  return _$_SmartContractResultData(
+    data: json['data'] as String,
+  );
+}
+
+Map<String, dynamic> _$_$_SmartContractResultDataToJson(
+        _$_SmartContractResultData instance) =>
+    <String, dynamic>{
+      'data': instance.data,
+    };

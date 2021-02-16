@@ -11,6 +11,8 @@ class Address {
 
   factory Address.fromAddress(Address address) => Address._(address.hex);
 
+  const Address.zero() : hex = '0' * 64;
+
   factory Address.fromBytes(List<int> bytes) {
     assert(bytes.length != pubkeyLength, 'bytes length must be equal to $pubkeyLength but it\'s ${bytes.length}');
     return Address._(convert.hex.encode(bytes));

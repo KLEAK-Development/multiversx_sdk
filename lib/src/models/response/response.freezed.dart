@@ -20,6 +20,9 @@ ProxyResponse _$ProxyResponseFromJson(Map<String, dynamic> json) {
       return SendTransactionResponse.fromJson(json);
     case 'getTransactionStatus':
       return GetTransactionStatusResponse.fromJson(json);
+    case 'informationsWithSmartContractResults':
+      return GetTransactionInformationsWithSmartContractResultsResponse
+          .fromJson(json);
 
     default:
       throw FallThroughError();
@@ -81,6 +84,19 @@ class _$ProxyResponseTearOff {
   }
 
 // ignore: unused_element
+  GetTransactionInformationsWithSmartContractResultsResponse
+      informationsWithSmartContractResults(
+          {GetTransactionInformationsWithSmartContractResultData data,
+          String error,
+          String code}) {
+    return GetTransactionInformationsWithSmartContractResultsResponse(
+      data: data,
+      error: error,
+      code: code,
+    );
+  }
+
+// ignore: unused_element
   ProxyResponse fromJson(Map<String, Object> json) {
     return ProxyResponse.fromJson(json);
   }
@@ -110,6 +126,11 @@ mixin _$ProxyResponse {
     @required
         TResult getTransactionStatus(
             GetTransactionStatusData data, String error, String code),
+    @required
+        TResult informationsWithSmartContractResults(
+            GetTransactionInformationsWithSmartContractResultData data,
+            String error,
+            String code),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>(
@@ -122,6 +143,10 @@ mixin _$ProxyResponse {
         SendTransactionData data, String error, String code),
     TResult getTransactionStatus(
         GetTransactionStatusData data, String error, String code),
+    TResult informationsWithSmartContractResults(
+        GetTransactionInformationsWithSmartContractResultData data,
+        String error,
+        String code),
     @required TResult orElse(),
   });
   @optionalTypeArgs
@@ -132,6 +157,9 @@ mixin _$ProxyResponse {
     @required TResult networkConfiguration(NetworkConfigurationResponse value),
     @required TResult sendTransaction(SendTransactionResponse value),
     @required TResult getTransactionStatus(GetTransactionStatusResponse value),
+    @required
+        TResult informationsWithSmartContractResults(
+            GetTransactionInformationsWithSmartContractResultsResponse value),
   });
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>(
@@ -140,6 +168,8 @@ mixin _$ProxyResponse {
     TResult networkConfiguration(NetworkConfigurationResponse value),
     TResult sendTransaction(SendTransactionResponse value),
     TResult getTransactionStatus(GetTransactionStatusResponse value),
+    TResult informationsWithSmartContractResults(
+        GetTransactionInformationsWithSmartContractResultsResponse value),
     @required TResult orElse(),
   });
   Map<String, dynamic> toJson();
@@ -273,12 +303,18 @@ class _$ProxyResponseGeneric implements ProxyResponseGeneric {
     @required
         TResult getTransactionStatus(
             GetTransactionStatusData data, String error, String code),
+    @required
+        TResult informationsWithSmartContractResults(
+            GetTransactionInformationsWithSmartContractResultData data,
+            String error,
+            String code),
   }) {
     assert($default != null);
     assert(getAccountInformation != null);
     assert(networkConfiguration != null);
     assert(sendTransaction != null);
     assert(getTransactionStatus != null);
+    assert(informationsWithSmartContractResults != null);
     return $default(data, error, code);
   }
 
@@ -294,6 +330,10 @@ class _$ProxyResponseGeneric implements ProxyResponseGeneric {
         SendTransactionData data, String error, String code),
     TResult getTransactionStatus(
         GetTransactionStatusData data, String error, String code),
+    TResult informationsWithSmartContractResults(
+        GetTransactionInformationsWithSmartContractResultData data,
+        String error,
+        String code),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -312,12 +352,16 @@ class _$ProxyResponseGeneric implements ProxyResponseGeneric {
     @required TResult networkConfiguration(NetworkConfigurationResponse value),
     @required TResult sendTransaction(SendTransactionResponse value),
     @required TResult getTransactionStatus(GetTransactionStatusResponse value),
+    @required
+        TResult informationsWithSmartContractResults(
+            GetTransactionInformationsWithSmartContractResultsResponse value),
   }) {
     assert($default != null);
     assert(getAccountInformation != null);
     assert(networkConfiguration != null);
     assert(sendTransaction != null);
     assert(getTransactionStatus != null);
+    assert(informationsWithSmartContractResults != null);
     return $default(this);
   }
 
@@ -329,6 +373,8 @@ class _$ProxyResponseGeneric implements ProxyResponseGeneric {
     TResult networkConfiguration(NetworkConfigurationResponse value),
     TResult sendTransaction(SendTransactionResponse value),
     TResult getTransactionStatus(GetTransactionStatusResponse value),
+    TResult informationsWithSmartContractResults(
+        GetTransactionInformationsWithSmartContractResultsResponse value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -475,12 +521,18 @@ class _$GetAccountInformationResponse implements GetAccountInformationResponse {
     @required
         TResult getTransactionStatus(
             GetTransactionStatusData data, String error, String code),
+    @required
+        TResult informationsWithSmartContractResults(
+            GetTransactionInformationsWithSmartContractResultData data,
+            String error,
+            String code),
   }) {
     assert($default != null);
     assert(getAccountInformation != null);
     assert(networkConfiguration != null);
     assert(sendTransaction != null);
     assert(getTransactionStatus != null);
+    assert(informationsWithSmartContractResults != null);
     return getAccountInformation(data, error, code);
   }
 
@@ -496,6 +548,10 @@ class _$GetAccountInformationResponse implements GetAccountInformationResponse {
         SendTransactionData data, String error, String code),
     TResult getTransactionStatus(
         GetTransactionStatusData data, String error, String code),
+    TResult informationsWithSmartContractResults(
+        GetTransactionInformationsWithSmartContractResultData data,
+        String error,
+        String code),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -514,12 +570,16 @@ class _$GetAccountInformationResponse implements GetAccountInformationResponse {
     @required TResult networkConfiguration(NetworkConfigurationResponse value),
     @required TResult sendTransaction(SendTransactionResponse value),
     @required TResult getTransactionStatus(GetTransactionStatusResponse value),
+    @required
+        TResult informationsWithSmartContractResults(
+            GetTransactionInformationsWithSmartContractResultsResponse value),
   }) {
     assert($default != null);
     assert(getAccountInformation != null);
     assert(networkConfiguration != null);
     assert(sendTransaction != null);
     assert(getTransactionStatus != null);
+    assert(informationsWithSmartContractResults != null);
     return getAccountInformation(this);
   }
 
@@ -531,6 +591,8 @@ class _$GetAccountInformationResponse implements GetAccountInformationResponse {
     TResult networkConfiguration(NetworkConfigurationResponse value),
     TResult sendTransaction(SendTransactionResponse value),
     TResult getTransactionStatus(GetTransactionStatusResponse value),
+    TResult informationsWithSmartContractResults(
+        GetTransactionInformationsWithSmartContractResultsResponse value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -679,12 +741,18 @@ class _$NetworkConfigurationResponse implements NetworkConfigurationResponse {
     @required
         TResult getTransactionStatus(
             GetTransactionStatusData data, String error, String code),
+    @required
+        TResult informationsWithSmartContractResults(
+            GetTransactionInformationsWithSmartContractResultData data,
+            String error,
+            String code),
   }) {
     assert($default != null);
     assert(getAccountInformation != null);
     assert(networkConfiguration != null);
     assert(sendTransaction != null);
     assert(getTransactionStatus != null);
+    assert(informationsWithSmartContractResults != null);
     return networkConfiguration(data, error, code);
   }
 
@@ -700,6 +768,10 @@ class _$NetworkConfigurationResponse implements NetworkConfigurationResponse {
         SendTransactionData data, String error, String code),
     TResult getTransactionStatus(
         GetTransactionStatusData data, String error, String code),
+    TResult informationsWithSmartContractResults(
+        GetTransactionInformationsWithSmartContractResultData data,
+        String error,
+        String code),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -718,12 +790,16 @@ class _$NetworkConfigurationResponse implements NetworkConfigurationResponse {
     @required TResult networkConfiguration(NetworkConfigurationResponse value),
     @required TResult sendTransaction(SendTransactionResponse value),
     @required TResult getTransactionStatus(GetTransactionStatusResponse value),
+    @required
+        TResult informationsWithSmartContractResults(
+            GetTransactionInformationsWithSmartContractResultsResponse value),
   }) {
     assert($default != null);
     assert(getAccountInformation != null);
     assert(networkConfiguration != null);
     assert(sendTransaction != null);
     assert(getTransactionStatus != null);
+    assert(informationsWithSmartContractResults != null);
     return networkConfiguration(this);
   }
 
@@ -735,6 +811,8 @@ class _$NetworkConfigurationResponse implements NetworkConfigurationResponse {
     TResult networkConfiguration(NetworkConfigurationResponse value),
     TResult sendTransaction(SendTransactionResponse value),
     TResult getTransactionStatus(GetTransactionStatusResponse value),
+    TResult informationsWithSmartContractResults(
+        GetTransactionInformationsWithSmartContractResultsResponse value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -880,12 +958,18 @@ class _$SendTransactionResponse implements SendTransactionResponse {
     @required
         TResult getTransactionStatus(
             GetTransactionStatusData data, String error, String code),
+    @required
+        TResult informationsWithSmartContractResults(
+            GetTransactionInformationsWithSmartContractResultData data,
+            String error,
+            String code),
   }) {
     assert($default != null);
     assert(getAccountInformation != null);
     assert(networkConfiguration != null);
     assert(sendTransaction != null);
     assert(getTransactionStatus != null);
+    assert(informationsWithSmartContractResults != null);
     return sendTransaction(data, error, code);
   }
 
@@ -901,6 +985,10 @@ class _$SendTransactionResponse implements SendTransactionResponse {
         SendTransactionData data, String error, String code),
     TResult getTransactionStatus(
         GetTransactionStatusData data, String error, String code),
+    TResult informationsWithSmartContractResults(
+        GetTransactionInformationsWithSmartContractResultData data,
+        String error,
+        String code),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -919,12 +1007,16 @@ class _$SendTransactionResponse implements SendTransactionResponse {
     @required TResult networkConfiguration(NetworkConfigurationResponse value),
     @required TResult sendTransaction(SendTransactionResponse value),
     @required TResult getTransactionStatus(GetTransactionStatusResponse value),
+    @required
+        TResult informationsWithSmartContractResults(
+            GetTransactionInformationsWithSmartContractResultsResponse value),
   }) {
     assert($default != null);
     assert(getAccountInformation != null);
     assert(networkConfiguration != null);
     assert(sendTransaction != null);
     assert(getTransactionStatus != null);
+    assert(informationsWithSmartContractResults != null);
     return sendTransaction(this);
   }
 
@@ -936,6 +1028,8 @@ class _$SendTransactionResponse implements SendTransactionResponse {
     TResult networkConfiguration(NetworkConfigurationResponse value),
     TResult sendTransaction(SendTransactionResponse value),
     TResult getTransactionStatus(GetTransactionStatusResponse value),
+    TResult informationsWithSmartContractResults(
+        GetTransactionInformationsWithSmartContractResultsResponse value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -1083,12 +1177,18 @@ class _$GetTransactionStatusResponse implements GetTransactionStatusResponse {
     @required
         TResult getTransactionStatus(
             GetTransactionStatusData data, String error, String code),
+    @required
+        TResult informationsWithSmartContractResults(
+            GetTransactionInformationsWithSmartContractResultData data,
+            String error,
+            String code),
   }) {
     assert($default != null);
     assert(getAccountInformation != null);
     assert(networkConfiguration != null);
     assert(sendTransaction != null);
     assert(getTransactionStatus != null);
+    assert(informationsWithSmartContractResults != null);
     return getTransactionStatus(data, error, code);
   }
 
@@ -1104,6 +1204,10 @@ class _$GetTransactionStatusResponse implements GetTransactionStatusResponse {
         SendTransactionData data, String error, String code),
     TResult getTransactionStatus(
         GetTransactionStatusData data, String error, String code),
+    TResult informationsWithSmartContractResults(
+        GetTransactionInformationsWithSmartContractResultData data,
+        String error,
+        String code),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -1122,12 +1226,16 @@ class _$GetTransactionStatusResponse implements GetTransactionStatusResponse {
     @required TResult networkConfiguration(NetworkConfigurationResponse value),
     @required TResult sendTransaction(SendTransactionResponse value),
     @required TResult getTransactionStatus(GetTransactionStatusResponse value),
+    @required
+        TResult informationsWithSmartContractResults(
+            GetTransactionInformationsWithSmartContractResultsResponse value),
   }) {
     assert($default != null);
     assert(getAccountInformation != null);
     assert(networkConfiguration != null);
     assert(sendTransaction != null);
     assert(getTransactionStatus != null);
+    assert(informationsWithSmartContractResults != null);
     return getTransactionStatus(this);
   }
 
@@ -1139,6 +1247,8 @@ class _$GetTransactionStatusResponse implements GetTransactionStatusResponse {
     TResult networkConfiguration(NetworkConfigurationResponse value),
     TResult sendTransaction(SendTransactionResponse value),
     TResult getTransactionStatus(GetTransactionStatusResponse value),
+    TResult informationsWithSmartContractResults(
+        GetTransactionInformationsWithSmartContractResultsResponse value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -1173,4 +1283,252 @@ abstract class GetTransactionStatusResponse implements ProxyResponse {
   @JsonKey(ignore: true)
   $GetTransactionStatusResponseCopyWith<GetTransactionStatusResponse>
       get copyWith;
+}
+
+/// @nodoc
+abstract class $GetTransactionInformationsWithSmartContractResultsResponseCopyWith<
+    $Res> implements $ProxyResponseCopyWith<$Res> {
+  factory $GetTransactionInformationsWithSmartContractResultsResponseCopyWith(
+          GetTransactionInformationsWithSmartContractResultsResponse value,
+          $Res Function(
+                  GetTransactionInformationsWithSmartContractResultsResponse)
+              then) =
+      _$GetTransactionInformationsWithSmartContractResultsResponseCopyWithImpl<
+          $Res>;
+  @override
+  $Res call(
+      {GetTransactionInformationsWithSmartContractResultData data,
+      String error,
+      String code});
+
+  $GetTransactionInformationsWithSmartContractResultDataCopyWith<$Res> get data;
+}
+
+/// @nodoc
+class _$GetTransactionInformationsWithSmartContractResultsResponseCopyWithImpl<
+        $Res> extends _$ProxyResponseCopyWithImpl<$Res>
+    implements
+        $GetTransactionInformationsWithSmartContractResultsResponseCopyWith<
+            $Res> {
+  _$GetTransactionInformationsWithSmartContractResultsResponseCopyWithImpl(
+      GetTransactionInformationsWithSmartContractResultsResponse _value,
+      $Res Function(GetTransactionInformationsWithSmartContractResultsResponse)
+          _then)
+      : super(
+            _value,
+            (v) => _then(v
+                as GetTransactionInformationsWithSmartContractResultsResponse));
+
+  @override
+  GetTransactionInformationsWithSmartContractResultsResponse get _value =>
+      super._value
+          as GetTransactionInformationsWithSmartContractResultsResponse;
+
+  @override
+  $Res call({
+    Object data = freezed,
+    Object error = freezed,
+    Object code = freezed,
+  }) {
+    return _then(GetTransactionInformationsWithSmartContractResultsResponse(
+      data: data == freezed
+          ? _value.data
+          : data as GetTransactionInformationsWithSmartContractResultData,
+      error: error == freezed ? _value.error : error as String,
+      code: code == freezed ? _value.code : code as String,
+    ));
+  }
+
+  @override
+  $GetTransactionInformationsWithSmartContractResultDataCopyWith<$Res>
+      get data {
+    if (_value.data == null) {
+      return null;
+    }
+    return $GetTransactionInformationsWithSmartContractResultDataCopyWith<$Res>(
+        _value.data, (value) {
+      return _then(_value.copyWith(data: value));
+    });
+  }
+}
+
+@JsonSerializable()
+
+/// @nodoc
+class _$GetTransactionInformationsWithSmartContractResultsResponse
+    implements GetTransactionInformationsWithSmartContractResultsResponse {
+  _$GetTransactionInformationsWithSmartContractResultsResponse(
+      {this.data, this.error, this.code});
+
+  factory _$GetTransactionInformationsWithSmartContractResultsResponse.fromJson(
+          Map<String, dynamic> json) =>
+      _$_$GetTransactionInformationsWithSmartContractResultsResponseFromJson(
+          json);
+
+  @override
+  final GetTransactionInformationsWithSmartContractResultData data;
+  @override
+  final String error;
+  @override
+  final String code;
+
+  @override
+  String toString() {
+    return 'ProxyResponse.informationsWithSmartContractResults(data: $data, error: $error, code: $code)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is GetTransactionInformationsWithSmartContractResultsResponse &&
+            (identical(other.data, data) ||
+                const DeepCollectionEquality().equals(other.data, data)) &&
+            (identical(other.error, error) ||
+                const DeepCollectionEquality().equals(other.error, error)) &&
+            (identical(other.code, code) ||
+                const DeepCollectionEquality().equals(other.code, code)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(data) ^
+      const DeepCollectionEquality().hash(error) ^
+      const DeepCollectionEquality().hash(code);
+
+  @JsonKey(ignore: true)
+  @override
+  $GetTransactionInformationsWithSmartContractResultsResponseCopyWith<
+          GetTransactionInformationsWithSmartContractResultsResponse>
+      get copyWith =>
+          _$GetTransactionInformationsWithSmartContractResultsResponseCopyWithImpl<
+                  GetTransactionInformationsWithSmartContractResultsResponse>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>(
+    TResult $default(Map<String, dynamic> data, String error, String code), {
+    @required
+        TResult getAccountInformation(
+            AccountResponse data, String error, String code),
+    @required
+        TResult networkConfiguration(
+            NetworkConfigurationData data, String error, String code),
+    @required
+        TResult sendTransaction(
+            SendTransactionData data, String error, String code),
+    @required
+        TResult getTransactionStatus(
+            GetTransactionStatusData data, String error, String code),
+    @required
+        TResult informationsWithSmartContractResults(
+            GetTransactionInformationsWithSmartContractResultData data,
+            String error,
+            String code),
+  }) {
+    assert($default != null);
+    assert(getAccountInformation != null);
+    assert(networkConfiguration != null);
+    assert(sendTransaction != null);
+    assert(getTransactionStatus != null);
+    assert(informationsWithSmartContractResults != null);
+    return informationsWithSmartContractResults(data, error, code);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>(
+    TResult $default(Map<String, dynamic> data, String error, String code), {
+    TResult getAccountInformation(
+        AccountResponse data, String error, String code),
+    TResult networkConfiguration(
+        NetworkConfigurationData data, String error, String code),
+    TResult sendTransaction(
+        SendTransactionData data, String error, String code),
+    TResult getTransactionStatus(
+        GetTransactionStatusData data, String error, String code),
+    TResult informationsWithSmartContractResults(
+        GetTransactionInformationsWithSmartContractResultData data,
+        String error,
+        String code),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (informationsWithSmartContractResults != null) {
+      return informationsWithSmartContractResults(data, error, code);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>(
+    TResult $default(ProxyResponseGeneric value), {
+    @required
+        TResult getAccountInformation(GetAccountInformationResponse value),
+    @required TResult networkConfiguration(NetworkConfigurationResponse value),
+    @required TResult sendTransaction(SendTransactionResponse value),
+    @required TResult getTransactionStatus(GetTransactionStatusResponse value),
+    @required
+        TResult informationsWithSmartContractResults(
+            GetTransactionInformationsWithSmartContractResultsResponse value),
+  }) {
+    assert($default != null);
+    assert(getAccountInformation != null);
+    assert(networkConfiguration != null);
+    assert(sendTransaction != null);
+    assert(getTransactionStatus != null);
+    assert(informationsWithSmartContractResults != null);
+    return informationsWithSmartContractResults(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>(
+    TResult $default(ProxyResponseGeneric value), {
+    TResult getAccountInformation(GetAccountInformationResponse value),
+    TResult networkConfiguration(NetworkConfigurationResponse value),
+    TResult sendTransaction(SendTransactionResponse value),
+    TResult getTransactionStatus(GetTransactionStatusResponse value),
+    TResult informationsWithSmartContractResults(
+        GetTransactionInformationsWithSmartContractResultsResponse value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (informationsWithSmartContractResults != null) {
+      return informationsWithSmartContractResults(this);
+    }
+    return orElse();
+  }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$GetTransactionInformationsWithSmartContractResultsResponseToJson(
+        this)
+      ..['runtimeType'] = 'informationsWithSmartContractResults';
+  }
+}
+
+abstract class GetTransactionInformationsWithSmartContractResultsResponse
+    implements ProxyResponse {
+  factory GetTransactionInformationsWithSmartContractResultsResponse(
+          {GetTransactionInformationsWithSmartContractResultData data,
+          String error,
+          String code}) =
+      _$GetTransactionInformationsWithSmartContractResultsResponse;
+
+  factory GetTransactionInformationsWithSmartContractResultsResponse.fromJson(
+          Map<String, dynamic> json) =
+      _$GetTransactionInformationsWithSmartContractResultsResponse.fromJson;
+
+  GetTransactionInformationsWithSmartContractResultData get data;
+  @override
+  String get error;
+  @override
+  String get code;
+  @override
+  @JsonKey(ignore: true)
+  $GetTransactionInformationsWithSmartContractResultsResponseCopyWith<
+      GetTransactionInformationsWithSmartContractResultsResponse> get copyWith;
 }

@@ -26,3 +26,20 @@ abstract class GetTransactionStatusData with _$GetTransactionStatusData {
 
   factory GetTransactionStatusData.fromJson(Map<String, dynamic> json) => _$GetTransactionStatusDataFromJson(json);
 }
+
+@freezed
+abstract class GetTransactionInformationsWithSmartContractResultData
+    with _$GetTransactionInformationsWithSmartContractResultData {
+  factory GetTransactionInformationsWithSmartContractResultData({List<SmartContractResultData> scResults}) =
+      _GetTransactionInformationsWithSmartContractResultData;
+
+  factory GetTransactionInformationsWithSmartContractResultData.fromJson(Map<String, dynamic> json) =>
+      _$GetTransactionInformationsWithSmartContractResultDataFromJson(json);
+}
+
+@freezed
+abstract class SmartContractResultData with _$SmartContractResultData {
+  factory SmartContractResultData({String data}) = _SmartContractResultData;
+
+  factory SmartContractResultData.fromJson(Map<String, dynamic> json) => _$SmartContractResultDataFromJson(json);
+}

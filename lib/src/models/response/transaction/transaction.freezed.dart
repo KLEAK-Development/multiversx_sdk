@@ -484,3 +484,338 @@ abstract class _GetTransactionStatusData implements GetTransactionStatusData {
   @JsonKey(ignore: true)
   _$GetTransactionStatusDataCopyWith<_GetTransactionStatusData> get copyWith;
 }
+
+GetTransactionInformationsWithSmartContractResultData
+    _$GetTransactionInformationsWithSmartContractResultDataFromJson(
+        Map<String, dynamic> json) {
+  return _GetTransactionInformationsWithSmartContractResultData.fromJson(json);
+}
+
+/// @nodoc
+class _$GetTransactionInformationsWithSmartContractResultDataTearOff {
+  const _$GetTransactionInformationsWithSmartContractResultDataTearOff();
+
+// ignore: unused_element
+  _GetTransactionInformationsWithSmartContractResultData call(
+      {List<SmartContractResultData> scResults}) {
+    return _GetTransactionInformationsWithSmartContractResultData(
+      scResults: scResults,
+    );
+  }
+
+// ignore: unused_element
+  GetTransactionInformationsWithSmartContractResultData fromJson(
+      Map<String, Object> json) {
+    return GetTransactionInformationsWithSmartContractResultData.fromJson(json);
+  }
+}
+
+/// @nodoc
+// ignore: unused_element
+const $GetTransactionInformationsWithSmartContractResultData =
+    _$GetTransactionInformationsWithSmartContractResultDataTearOff();
+
+/// @nodoc
+mixin _$GetTransactionInformationsWithSmartContractResultData {
+  List<SmartContractResultData> get scResults;
+
+  Map<String, dynamic> toJson();
+  @JsonKey(ignore: true)
+  $GetTransactionInformationsWithSmartContractResultDataCopyWith<
+      GetTransactionInformationsWithSmartContractResultData> get copyWith;
+}
+
+/// @nodoc
+abstract class $GetTransactionInformationsWithSmartContractResultDataCopyWith<
+    $Res> {
+  factory $GetTransactionInformationsWithSmartContractResultDataCopyWith(
+          GetTransactionInformationsWithSmartContractResultData value,
+          $Res Function(GetTransactionInformationsWithSmartContractResultData)
+              then) =
+      _$GetTransactionInformationsWithSmartContractResultDataCopyWithImpl<$Res>;
+  $Res call({List<SmartContractResultData> scResults});
+}
+
+/// @nodoc
+class _$GetTransactionInformationsWithSmartContractResultDataCopyWithImpl<$Res>
+    implements
+        $GetTransactionInformationsWithSmartContractResultDataCopyWith<$Res> {
+  _$GetTransactionInformationsWithSmartContractResultDataCopyWithImpl(
+      this._value, this._then);
+
+  final GetTransactionInformationsWithSmartContractResultData _value;
+  // ignore: unused_field
+  final $Res Function(GetTransactionInformationsWithSmartContractResultData)
+      _then;
+
+  @override
+  $Res call({
+    Object scResults = freezed,
+  }) {
+    return _then(_value.copyWith(
+      scResults: scResults == freezed
+          ? _value.scResults
+          : scResults as List<SmartContractResultData>,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$GetTransactionInformationsWithSmartContractResultDataCopyWith<
+        $Res>
+    implements
+        $GetTransactionInformationsWithSmartContractResultDataCopyWith<$Res> {
+  factory _$GetTransactionInformationsWithSmartContractResultDataCopyWith(
+          _GetTransactionInformationsWithSmartContractResultData value,
+          $Res Function(_GetTransactionInformationsWithSmartContractResultData)
+              then) =
+      __$GetTransactionInformationsWithSmartContractResultDataCopyWithImpl<
+          $Res>;
+  @override
+  $Res call({List<SmartContractResultData> scResults});
+}
+
+/// @nodoc
+class __$GetTransactionInformationsWithSmartContractResultDataCopyWithImpl<$Res>
+    extends _$GetTransactionInformationsWithSmartContractResultDataCopyWithImpl<
+        $Res>
+    implements
+        _$GetTransactionInformationsWithSmartContractResultDataCopyWith<$Res> {
+  __$GetTransactionInformationsWithSmartContractResultDataCopyWithImpl(
+      _GetTransactionInformationsWithSmartContractResultData _value,
+      $Res Function(_GetTransactionInformationsWithSmartContractResultData)
+          _then)
+      : super(
+            _value,
+            (v) => _then(
+                v as _GetTransactionInformationsWithSmartContractResultData));
+
+  @override
+  _GetTransactionInformationsWithSmartContractResultData get _value =>
+      super._value as _GetTransactionInformationsWithSmartContractResultData;
+
+  @override
+  $Res call({
+    Object scResults = freezed,
+  }) {
+    return _then(_GetTransactionInformationsWithSmartContractResultData(
+      scResults: scResults == freezed
+          ? _value.scResults
+          : scResults as List<SmartContractResultData>,
+    ));
+  }
+}
+
+@JsonSerializable()
+
+/// @nodoc
+class _$_GetTransactionInformationsWithSmartContractResultData
+    implements _GetTransactionInformationsWithSmartContractResultData {
+  _$_GetTransactionInformationsWithSmartContractResultData({this.scResults});
+
+  factory _$_GetTransactionInformationsWithSmartContractResultData.fromJson(
+          Map<String, dynamic> json) =>
+      _$_$_GetTransactionInformationsWithSmartContractResultDataFromJson(json);
+
+  @override
+  final List<SmartContractResultData> scResults;
+
+  @override
+  String toString() {
+    return 'GetTransactionInformationsWithSmartContractResultData(scResults: $scResults)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _GetTransactionInformationsWithSmartContractResultData &&
+            (identical(other.scResults, scResults) ||
+                const DeepCollectionEquality()
+                    .equals(other.scResults, scResults)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(scResults);
+
+  @JsonKey(ignore: true)
+  @override
+  _$GetTransactionInformationsWithSmartContractResultDataCopyWith<
+          _GetTransactionInformationsWithSmartContractResultData>
+      get copyWith =>
+          __$GetTransactionInformationsWithSmartContractResultDataCopyWithImpl<
+                  _GetTransactionInformationsWithSmartContractResultData>(
+              this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_GetTransactionInformationsWithSmartContractResultDataToJson(
+        this);
+  }
+}
+
+abstract class _GetTransactionInformationsWithSmartContractResultData
+    implements GetTransactionInformationsWithSmartContractResultData {
+  factory _GetTransactionInformationsWithSmartContractResultData(
+          {List<SmartContractResultData> scResults}) =
+      _$_GetTransactionInformationsWithSmartContractResultData;
+
+  factory _GetTransactionInformationsWithSmartContractResultData.fromJson(
+          Map<String, dynamic> json) =
+      _$_GetTransactionInformationsWithSmartContractResultData.fromJson;
+
+  @override
+  List<SmartContractResultData> get scResults;
+  @override
+  @JsonKey(ignore: true)
+  _$GetTransactionInformationsWithSmartContractResultDataCopyWith<
+      _GetTransactionInformationsWithSmartContractResultData> get copyWith;
+}
+
+SmartContractResultData _$SmartContractResultDataFromJson(
+    Map<String, dynamic> json) {
+  return _SmartContractResultData.fromJson(json);
+}
+
+/// @nodoc
+class _$SmartContractResultDataTearOff {
+  const _$SmartContractResultDataTearOff();
+
+// ignore: unused_element
+  _SmartContractResultData call({String data}) {
+    return _SmartContractResultData(
+      data: data,
+    );
+  }
+
+// ignore: unused_element
+  SmartContractResultData fromJson(Map<String, Object> json) {
+    return SmartContractResultData.fromJson(json);
+  }
+}
+
+/// @nodoc
+// ignore: unused_element
+const $SmartContractResultData = _$SmartContractResultDataTearOff();
+
+/// @nodoc
+mixin _$SmartContractResultData {
+  String get data;
+
+  Map<String, dynamic> toJson();
+  @JsonKey(ignore: true)
+  $SmartContractResultDataCopyWith<SmartContractResultData> get copyWith;
+}
+
+/// @nodoc
+abstract class $SmartContractResultDataCopyWith<$Res> {
+  factory $SmartContractResultDataCopyWith(SmartContractResultData value,
+          $Res Function(SmartContractResultData) then) =
+      _$SmartContractResultDataCopyWithImpl<$Res>;
+  $Res call({String data});
+}
+
+/// @nodoc
+class _$SmartContractResultDataCopyWithImpl<$Res>
+    implements $SmartContractResultDataCopyWith<$Res> {
+  _$SmartContractResultDataCopyWithImpl(this._value, this._then);
+
+  final SmartContractResultData _value;
+  // ignore: unused_field
+  final $Res Function(SmartContractResultData) _then;
+
+  @override
+  $Res call({
+    Object data = freezed,
+  }) {
+    return _then(_value.copyWith(
+      data: data == freezed ? _value.data : data as String,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$SmartContractResultDataCopyWith<$Res>
+    implements $SmartContractResultDataCopyWith<$Res> {
+  factory _$SmartContractResultDataCopyWith(_SmartContractResultData value,
+          $Res Function(_SmartContractResultData) then) =
+      __$SmartContractResultDataCopyWithImpl<$Res>;
+  @override
+  $Res call({String data});
+}
+
+/// @nodoc
+class __$SmartContractResultDataCopyWithImpl<$Res>
+    extends _$SmartContractResultDataCopyWithImpl<$Res>
+    implements _$SmartContractResultDataCopyWith<$Res> {
+  __$SmartContractResultDataCopyWithImpl(_SmartContractResultData _value,
+      $Res Function(_SmartContractResultData) _then)
+      : super(_value, (v) => _then(v as _SmartContractResultData));
+
+  @override
+  _SmartContractResultData get _value =>
+      super._value as _SmartContractResultData;
+
+  @override
+  $Res call({
+    Object data = freezed,
+  }) {
+    return _then(_SmartContractResultData(
+      data: data == freezed ? _value.data : data as String,
+    ));
+  }
+}
+
+@JsonSerializable()
+
+/// @nodoc
+class _$_SmartContractResultData implements _SmartContractResultData {
+  _$_SmartContractResultData({this.data});
+
+  factory _$_SmartContractResultData.fromJson(Map<String, dynamic> json) =>
+      _$_$_SmartContractResultDataFromJson(json);
+
+  @override
+  final String data;
+
+  @override
+  String toString() {
+    return 'SmartContractResultData(data: $data)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _SmartContractResultData &&
+            (identical(other.data, data) ||
+                const DeepCollectionEquality().equals(other.data, data)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(data);
+
+  @JsonKey(ignore: true)
+  @override
+  _$SmartContractResultDataCopyWith<_SmartContractResultData> get copyWith =>
+      __$SmartContractResultDataCopyWithImpl<_SmartContractResultData>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_SmartContractResultDataToJson(this);
+  }
+}
+
+abstract class _SmartContractResultData implements SmartContractResultData {
+  factory _SmartContractResultData({String data}) = _$_SmartContractResultData;
+
+  factory _SmartContractResultData.fromJson(Map<String, dynamic> json) =
+      _$_SmartContractResultData.fromJson;
+
+  @override
+  String get data;
+  @override
+  @JsonKey(ignore: true)
+  _$SmartContractResultDataCopyWith<_SmartContractResultData> get copyWith;
+}

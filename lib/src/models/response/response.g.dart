@@ -100,3 +100,26 @@ Map<String, dynamic> _$_$GetTransactionStatusResponseToJson(
       'error': instance.error,
       'code': instance.code,
     };
+
+_$GetTransactionInformationsWithSmartContractResultsResponse
+    _$_$GetTransactionInformationsWithSmartContractResultsResponseFromJson(
+        Map<String, dynamic> json) {
+  return _$GetTransactionInformationsWithSmartContractResultsResponse(
+    data: json['data'] == null
+        ? null
+        : GetTransactionInformationsWithSmartContractResultData.fromJson(
+            json['data'] as Map<String, dynamic>),
+    error: json['error'] as String,
+    code: json['code'] as String,
+  );
+}
+
+Map<String, dynamic>
+    _$_$GetTransactionInformationsWithSmartContractResultsResponseToJson(
+            _$GetTransactionInformationsWithSmartContractResultsResponse
+                instance) =>
+        <String, dynamic>{
+          'data': instance.data,
+          'error': instance.error,
+          'code': instance.code,
+        };

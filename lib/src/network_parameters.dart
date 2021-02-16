@@ -25,6 +25,10 @@ class GasLimit {
   }
 
   factory GasLimit.min({int minGasLimit = defaultMinGasLimit}) => GasLimit(minGasLimit);
+
+  GasLimit operator +(GasLimit gasLimit) => GasLimit(value + gasLimit.value);
+
+  GasLimit operator *(int multiplicator) => GasLimit(value * multiplicator);
 }
 
 class ChainId {

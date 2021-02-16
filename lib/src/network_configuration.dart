@@ -1,4 +1,3 @@
-import 'package:elrond_sdk/src/interface.dart';
 import 'package:elrond_sdk/src/network_parameters.dart';
 
 const defaultChainId = 'T';
@@ -9,12 +8,12 @@ const defaultGasPriceModifier = 1.0;
 const defaultMinTransactionVersion = 1;
 
 class NetworkConfiguration {
-  ChainId chainId;
-  int gasPerDataByte;
-  GasLimit minGasLimit;
-  GasPrice minGasPrice;
-  GasPriceModifier gasPriceModifier;
-  TransactionVersion minTransactionVersion;
+  final ChainId chainId;
+  final int gasPerDataByte;
+  final GasLimit minGasLimit;
+  final GasPrice minGasPrice;
+  final GasPriceModifier gasPriceModifier;
+  final TransactionVersion minTransactionVersion;
 
   NetworkConfiguration({
     this.chainId = const ChainId(defaultChainId),
@@ -24,13 +23,4 @@ class NetworkConfiguration {
     this.gasPriceModifier = const GasPriceModifier(defaultGasPriceModifier),
     this.minTransactionVersion = const TransactionVersion(defaultMinTransactionVersion),
   });
-
-  Future<void> sync(IProvider provider) async {
-    final response = await provider.getNetworkConfiguration();
-    chainId = response.chainId;
-    gasPerDataByte = response.gasPerDataByte;
-    minGasLimit = response.minGasLimit;
-    minGasPrice = response.minGasPrice;
-    minTransactionVersion = response.minTransactionVersion;
-  }
 }
