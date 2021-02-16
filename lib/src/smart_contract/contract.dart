@@ -70,7 +70,7 @@ class SmartContract {
     Balance balance,
   }) async {
     final _nc = networkConfiguration ?? NetworkConfiguration();
-    final payload = TransactionPayload.smartContractDeploy(code, metadata, arguments: arguments);
+    final payload = TransactionPayload.smartContractDeploy(code, metadata, arguments: null);
     final transaction = Transaction.smartContractDeploy(
       chainId: _nc.chainId,
       gasLimit: GasLimit.forTransfert(

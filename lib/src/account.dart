@@ -9,7 +9,7 @@ class Account {
   final Balance balance;
   final String username;
 
-  Account(this.address, this.nonce, this.balance, this.username);
+  const Account(this.address, this.nonce, this.balance, this.username);
 
   Account.withAddress(this.address)
       : nonce = Nonce(0),

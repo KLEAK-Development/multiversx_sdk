@@ -29,6 +29,7 @@ class ProxyProvider extends IProvider {
 
   @override
   Future<Account> getAccount(Address address) async {
+    assert(address != null, 'address cannot be null');
     try {
       final response = await addressRepository.addressInformations(address.bech32);
       return Account(
@@ -60,6 +61,7 @@ class ProxyProvider extends IProvider {
 
   @override
   Future<TransactionHash> sendTransaction(Transaction transaction) async {
+    assert(transaction != null, 'transaction cannot be null');
     try {
       final request = SendTransactionRequest(
         version: transaction.transactionVersion.value,
@@ -82,6 +84,7 @@ class ProxyProvider extends IProvider {
 
   @override
   Future<TransactionStatus> getTransactionStatus(TransactionHash transactionHash) async {
+    assert(transactionHash != null, 'transactionHash cannot be null');
     try {
       final response = await transactionRepository.transactionStatus(transactionHash.hash);
       return response.data.status;
@@ -94,6 +97,7 @@ class ProxyProvider extends IProvider {
   Future<GetTransactionInformationsWithSmartContractResultData> getTransactionInformationsWithResults(
     TransactionHash transactionHash,
   ) async {
+    assert(transactionHash != null, 'transactionHash cannot be null');
     try {
       final response = await transactionRepository.informationWithSmartContractResults(transactionHash.hash);
       return response;

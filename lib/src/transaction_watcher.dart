@@ -13,6 +13,7 @@ class TransactionWatcher {
     Duration poolingInterval = const Duration(milliseconds: 500),
   }) {
     assert(provider != null, 'provider cannot be null');
+    assert(poolingInterval != null, 'poolingInterval cannot be null');
     return Stream.periodic(poolingInterval)
         .asyncMap((_) => provider.getTransactionStatus(hash))
         .distinct((previous, current) => previous == current);
@@ -25,6 +26,9 @@ class TransactionWatcher {
     Duration timeout = const Duration(minutes: 5),
   }) {
     assert(provider != null, 'provider cannot be null');
+    assert(waitingStatus != null, 'waitingStatus cannot be null');
+    assert(poolingInterval != null, 'poolingInterval cannot be null');
+    assert(timeout != null, 'timeout cannot be null');
     final completer = Completer<TransactionStatus>();
     final timer = Timer.periodic(poolingInterval, (timer) async {
       final status = await provider.getTransactionStatus(hash);

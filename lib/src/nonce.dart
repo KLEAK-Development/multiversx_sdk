@@ -1,7 +1,7 @@
 class Nonce {
   final int value;
 
-  const Nonce(this.value) : assert(value >= 0, 'nonce can\'t be negative');
+  const Nonce(this.value) : assert(value >= 0, 'nonce cannot be negative');
 
   const Nonce.zero() : value = 0;
 

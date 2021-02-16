@@ -45,6 +45,13 @@ class TransactionPayload {
     assert(ticker != null, 'ticker cannot be null');
     assert(initialSupply != null, 'initialSupply cannot be null');
     assert(decimal != null, 'decimal cannot be null');
+    assert(canFreeze != null, 'canFreeze cannot be null');
+    assert(canWipe != null, 'canWipe cannot be null');
+    assert(canPause != null, 'canPause cannot be null');
+    assert(canMint != null, 'canMint cannot be null');
+    assert(canBurn != null, 'canBurn cannot be null');
+    assert(canChangeOwner != null, 'canChangeOwner cannot be null');
+    assert(canUpgrade != null, 'canUpgrade cannot be null');
     final _supply = initialSupply.toRadixString(16);
     final _decimal = decimal.toRadixString(16);
     final arguments = [
@@ -95,6 +102,13 @@ class TransactionPayload {
     bool canUpgrade = false,
   }) {
     assert(identifier != null, 'identifier cannot be null');
+    assert(canFreeze != null, 'canFreeze cannot be null');
+    assert(canWipe != null, 'canWipe cannot be null');
+    assert(canPause != null, 'canPause cannot be null');
+    assert(canMint != null, 'canMint cannot be null');
+    assert(canBurn != null, 'canBurn cannot be null');
+    assert(canChangeOwner != null, 'canChangeOwner cannot be null');
+    assert(canUpgrade != null, 'canUpgrade cannot be null');
     final arguments = [
       convert.hex.encode(utf8.encode(identifier)),
       if (canFreeze) ...[
@@ -234,6 +248,7 @@ class TransactionPayload {
   }) {
     assert(code != null, 'code cannot be null');
     assert(metadata != null, 'metadata cannot be null');
+    assert(arguments != null, 'arguments cannot be null');
     return _payloadFromCommandAndArguments(
       '${convert.hex.encode(code.bytes)}@$arwenVirtualMachine@${convert.hex.encode(metadata.toBytes)}',
       arguments: arguments.map((e) => convert.hex.encode(e.bytes)).toList(),
@@ -247,6 +262,7 @@ class TransactionPayload {
   }) {
     assert(code != null, 'code cannot be null');
     assert(metadata != null, 'metadata cannot be null');
+    assert(arguments != null, 'arguments cannot be null');
     return _payloadFromCommandAndArguments(
       'upgradeContract',
       arguments: [

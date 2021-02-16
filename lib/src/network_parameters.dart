@@ -4,13 +4,13 @@ import 'package:elrond_sdk/src/transaction_payload.dart';
 class GasPrice {
   final int value;
 
-  const GasPrice(this.value) : assert(value > 0, 'value can\t be negative');
+  const GasPrice(this.value) : assert(value > 0, 'value cannot be negative');
 }
 
 class GasLimit {
   final int value;
 
-  const GasLimit(this.value) : assert(value > 0, 'value can\t be negative');
+  const GasLimit(this.value) : assert(value > 0, 'value cannot be negative');
 
   factory GasLimit.forTransfert({
     TransactionPayload data,
@@ -34,7 +34,7 @@ class GasLimit {
 class ChainId {
   final String value;
 
-  const ChainId(this.value) : assert(value != null, 'value can\'t be null');
+  const ChainId(this.value) : assert(value != null, 'value cannot be null');
 }
 
 class TransactionVersion {
