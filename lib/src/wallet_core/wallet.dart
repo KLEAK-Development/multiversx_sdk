@@ -55,7 +55,7 @@ class Wallet {
       signature: Signature.empty(),
       nonce: _account.nonce,
       sender: _account.address,
-      receiver: Address.fromBech32('erd1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssycr6th'),
+      receiver: to,
       balance: Balance.fromEgld(1),
     );
     return sendTransaction(provider: provider, transaction: transaction);
