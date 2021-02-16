@@ -5,7 +5,7 @@ import 'package:convert/convert.dart' as convert;
 class UserSecretKey {
   final List<int> bytes;
 
-  const UserSecretKey(this.bytes) : assert(bytes != null, 'bytes can\'t be null');
+  const UserSecretKey(this.bytes) : assert(bytes != null, 'bytes cannot be null');
 
   UserPublicKey generatePublicKey() {
     final keypair = tweetnacl.Signature.keyPair_fromSeed(bytes);
@@ -25,7 +25,7 @@ class UserSecretKey {
 class UserPublicKey {
   final List<int> bytes;
 
-  const UserPublicKey(this.bytes) : assert(bytes != null, 'bytes can\'t be null');
+  const UserPublicKey(this.bytes) : assert(bytes != null, 'bytes cannot be null');
 
   String get hex => convert.hex.encode(bytes);
 

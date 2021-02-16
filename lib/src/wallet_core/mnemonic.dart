@@ -8,7 +8,7 @@ const bip44DerivationPrefix = "m/44'/508'/0'/0'";
 class Mnemonic {
   final String text;
 
-  const Mnemonic._(this.text) : assert(text != null, 'text can\'t be null');
+  const Mnemonic._(this.text) : assert(text != null, 'text cannot be null');
 
   factory Mnemonic.fromSeed(String seed) {
     assert(validateMnemonic(seed), 'mnemonic is not valid');
@@ -21,6 +21,8 @@ class Mnemonic {
   }
 
   UserSecretKey deriveKey({int addressIndex = 0, String password = ''}) {
+    assert(addressIndex != null, 'addressIndex cannot be null');
+    assert(password != null, 'password cannot be null');
     final seed = mnemonicToSeed(text, passphrase: password);
     final data = ED25519_HD_KEY.derivePath("$bip44DerivationPrefix/$addressIndex'", seed);
     return UserSecretKey(data.key);

@@ -1,5 +1,5 @@
 class ContractArgument {
   final List<int> bytes;
 
-  ContractArgument.fromBytes(this.bytes);
+  const ContractArgument.fromBytes(this.bytes);
 }

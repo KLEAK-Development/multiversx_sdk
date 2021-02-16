@@ -1,9 +1,9 @@
 class Code {
   final List<int> bytes;
 
-  Code.empty() : bytes = [];
+  const Code.empty() : bytes = const [];
 
-  Code.fromBytes(this.bytes);
+  const Code.fromBytes(this.bytes);
 
   @override
   String toString() => 'Code{ $bytes }';

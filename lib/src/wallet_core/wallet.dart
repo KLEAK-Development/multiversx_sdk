@@ -36,6 +36,7 @@ class Wallet {
   Account get account => _account;
 
   Future<void> synchronize(IProvider provider) async {
+    assert(provider != null, 'provider cannot be null');
     _account = await _account.synchronize(provider);
   }
 
@@ -44,6 +45,9 @@ class Wallet {
     @required Address to,
     @required Balance amount,
   }) async {
+    assert(provider != null, 'provider cannot be null');
+    assert(to != null, 'to cannot be null');
+    assert(amount != null, 'amount cannot be null');
     final networkConfiguration = await provider.getNetworkConfiguration();
     final transaction = Transaction(
       chainId: networkConfiguration.chainId,
@@ -66,6 +70,10 @@ class Wallet {
     @required Address to,
     @required Balance amount,
   }) async {
+    assert(provider != null, 'provider cannot be null');
+    assert(identifier != null, 'identifier cannot be null');
+    assert(to != null, 'to cannot be null');
+    assert(amount != null, 'amount cannot be null');
     final networkConfiguration = await provider.getNetworkConfiguration();
     final payload = TransactionPayload.esdtTransfert(identifier, amount);
     final transaction = Transaction.esdtTransfert(
@@ -92,6 +100,11 @@ class Wallet {
     @required int initialSupply,
     @required int decimal,
   }) async {
+    assert(provider != null, 'provider cannot be null');
+    assert(name != null, 'name cannot be null');
+    assert(ticker != null, 'ticker cannot be null');
+    assert(initialSupply != null, 'initialSupply cannot be null');
+    assert(decimal != null, 'decimal cannot be null');
     final networkConfiguration = await provider.getNetworkConfiguration();
     final payload = TransactionPayload.esdtIssuance(name, ticker, initialSupply, decimal);
     final transaction = Transaction.esdtIssuance(
@@ -114,6 +127,8 @@ class Wallet {
     @required IProvider provider,
     @required Transaction transaction,
   }) async {
+    assert(provider != null, 'provider cannot be null');
+    assert(transaction != null, 'transaction cannot be null');
     assert(_secretKey != null, 'you cannot send transaction without the secret key');
     final userSigner = UserSigner(_secretKey);
     final signedTransaction = userSigner.sign(transaction);

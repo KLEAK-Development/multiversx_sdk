@@ -65,12 +65,19 @@ class SmartContract {
     CodeMetadata metadata,
     ISigner signer,
     IProvider proxy, {
-    NetworkConfiguration networkConfiguration,
+    NetworkConfiguration networkConfiguration = const NetworkConfiguration(),
     List<ContractArgument> arguments = const [],
     Balance balance,
   }) async {
+    assert(owner != null, 'owner cannot be null');
+    assert(code != null, 'code cannot be null');
+    assert(metadata != null, 'metadata cannot be null');
+    assert(signer != null, 'signer cannot be null');
+    assert(proxy != null, 'proxy cannot be null');
+    assert(networkConfiguration != null, 'networkConfiguration cannot be null');
+    assert(arguments != null, 'arguments cannot be null');
     final _nc = networkConfiguration ?? NetworkConfiguration();
-    final payload = TransactionPayload.smartContractDeploy(code, metadata, arguments: null);
+    final payload = TransactionPayload.smartContractDeploy(code, metadata, arguments: arguments);
     final transaction = Transaction.smartContractDeploy(
       chainId: _nc.chainId,
       gasLimit: GasLimit.forTransfert(
@@ -108,10 +115,16 @@ class SmartContract {
     ContractFunction function,
     ISigner signer,
     IProvider proxy, {
-    NetworkConfiguration networkConfiguration,
+    NetworkConfiguration networkConfiguration = const NetworkConfiguration(),
     List<ContractArgument> arguments = const [],
     Balance balance,
   }) async {
+    assert(senderAccount != null, 'senderAccount cannot be null');
+    assert(function != null, 'function cannot be null');
+    assert(signer != null, 'signer cannot be null');
+    assert(proxy != null, 'proxy cannot be null');
+    assert(networkConfiguration != null, 'networkConfiguration cannot be null');
+    assert(arguments != null, 'arguments cannot be null');
     final _nc = networkConfiguration ?? NetworkConfiguration();
     final payload = TransactionPayload.smartContractCall(function, arguments: arguments);
     final transaction = Transaction.smartContractCall(
@@ -151,10 +164,17 @@ class SmartContract {
     CodeMetadata metadata,
     ISigner signer,
     IProvider proxy, {
-    NetworkConfiguration networkConfiguration,
+    NetworkConfiguration networkConfiguration = const NetworkConfiguration(),
     List<ContractArgument> arguments = const [],
     Balance balance,
   }) async {
+    assert(owner != null, 'owner cannot be null');
+    assert(code != null, 'code cannot be null');
+    assert(metadata != null, 'metadata cannot be null');
+    assert(signer != null, 'signer cannot be null');
+    assert(proxy != null, 'proxy cannot be null');
+    assert(networkConfiguration != null, 'networkConfiguration cannot be null');
+    assert(arguments != null, 'arguments cannot be null');
     final payload = TransactionPayload.smartContractUpgrade(code, CodeMetadata());
     final transaction = Transaction.smartContractUpgrade(
       chainId: networkConfiguration.chainId,

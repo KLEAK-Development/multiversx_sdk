@@ -28,6 +28,8 @@ abstract class ISignable {
 }
 
 abstract class ISigner {
+  const ISigner();
+
   Address getAddress();
 
   Transaction sign(ISignable signable);

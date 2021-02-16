@@ -15,7 +15,7 @@ class NetworkConfiguration {
   final GasPriceModifier gasPriceModifier;
   final TransactionVersion minTransactionVersion;
 
-  NetworkConfiguration({
+  const NetworkConfiguration({
     this.chainId = const ChainId(defaultChainId),
     this.gasPerDataByte = defaultGasPerDataByte,
     this.minGasLimit = const GasLimit(defaultMinGasLimit),
