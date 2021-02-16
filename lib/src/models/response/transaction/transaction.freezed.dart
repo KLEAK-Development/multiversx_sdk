@@ -17,7 +17,7 @@ class _$SendTransactionDataTearOff {
   const _$SendTransactionDataTearOff();
 
 // ignore: unused_element
-  _SendTransactionData call({String txHash}) {
+  _SendTransactionData call({TransactionHash txHash}) {
     return _SendTransactionData(
       txHash: txHash,
     );
@@ -35,7 +35,7 @@ const $SendTransactionData = _$SendTransactionDataTearOff();
 
 /// @nodoc
 mixin _$SendTransactionData {
-  String get txHash;
+  TransactionHash get txHash;
 
   Map<String, dynamic> toJson();
   @JsonKey(ignore: true)
@@ -47,7 +47,7 @@ abstract class $SendTransactionDataCopyWith<$Res> {
   factory $SendTransactionDataCopyWith(
           SendTransactionData value, $Res Function(SendTransactionData) then) =
       _$SendTransactionDataCopyWithImpl<$Res>;
-  $Res call({String txHash});
+  $Res call({TransactionHash txHash});
 }
 
 /// @nodoc
@@ -64,7 +64,7 @@ class _$SendTransactionDataCopyWithImpl<$Res>
     Object txHash = freezed,
   }) {
     return _then(_value.copyWith(
-      txHash: txHash == freezed ? _value.txHash : txHash as String,
+      txHash: txHash == freezed ? _value.txHash : txHash as TransactionHash,
     ));
   }
 }
@@ -76,7 +76,7 @@ abstract class _$SendTransactionDataCopyWith<$Res>
           $Res Function(_SendTransactionData) then) =
       __$SendTransactionDataCopyWithImpl<$Res>;
   @override
-  $Res call({String txHash});
+  $Res call({TransactionHash txHash});
 }
 
 /// @nodoc
@@ -95,12 +95,13 @@ class __$SendTransactionDataCopyWithImpl<$Res>
     Object txHash = freezed,
   }) {
     return _then(_SendTransactionData(
-      txHash: txHash == freezed ? _value.txHash : txHash as String,
+      txHash: txHash == freezed ? _value.txHash : txHash as TransactionHash,
     ));
   }
 }
 
 @JsonSerializable()
+@TransactionHashConverter()
 
 /// @nodoc
 class _$_SendTransactionData implements _SendTransactionData {
@@ -110,7 +111,7 @@ class _$_SendTransactionData implements _SendTransactionData {
       _$_$_SendTransactionDataFromJson(json);
 
   @override
-  final String txHash;
+  final TransactionHash txHash;
 
   @override
   String toString() {
@@ -142,13 +143,14 @@ class _$_SendTransactionData implements _SendTransactionData {
 }
 
 abstract class _SendTransactionData implements SendTransactionData {
-  factory _SendTransactionData({String txHash}) = _$_SendTransactionData;
+  factory _SendTransactionData({TransactionHash txHash}) =
+      _$_SendTransactionData;
 
   factory _SendTransactionData.fromJson(Map<String, dynamic> json) =
       _$_SendTransactionData.fromJson;
 
   @override
-  String get txHash;
+  TransactionHash get txHash;
   @override
   @JsonKey(ignore: true)
   _$SendTransactionDataCopyWith<_SendTransactionData> get copyWith;
@@ -497,9 +499,43 @@ class _$GetTransactionInformationsWithSmartContractResultDataTearOff {
 
 // ignore: unused_element
   _GetTransactionInformationsWithSmartContractResultData call(
-      {List<SmartContractResultData> scResults}) {
+      {String data,
+      String fee,
+      GasLimit gasLimit,
+      GasPrice gasPrice,
+      int gasUsed,
+      String miniBlockHash,
+      Nonce nonce,
+      Address receiver,
+      int receiverShard,
+      int round,
+      List<SmartContractResultData> scResults,
+      Address sender,
+      int senderShard,
+      String signature,
+      String status,
+      int timestamp,
+      TransactionHash txHash,
+      Balance value}) {
     return _GetTransactionInformationsWithSmartContractResultData(
+      data: data,
+      fee: fee,
+      gasLimit: gasLimit,
+      gasPrice: gasPrice,
+      gasUsed: gasUsed,
+      miniBlockHash: miniBlockHash,
+      nonce: nonce,
+      receiver: receiver,
+      receiverShard: receiverShard,
+      round: round,
       scResults: scResults,
+      sender: sender,
+      senderShard: senderShard,
+      signature: signature,
+      status: status,
+      timestamp: timestamp,
+      txHash: txHash,
+      value: value,
     );
   }
 
@@ -517,7 +553,24 @@ const $GetTransactionInformationsWithSmartContractResultData =
 
 /// @nodoc
 mixin _$GetTransactionInformationsWithSmartContractResultData {
+  String get data;
+  String get fee;
+  GasLimit get gasLimit;
+  GasPrice get gasPrice;
+  int get gasUsed;
+  String get miniBlockHash;
+  Nonce get nonce;
+  Address get receiver;
+  int get receiverShard;
+  int get round;
   List<SmartContractResultData> get scResults;
+  Address get sender;
+  int get senderShard;
+  String get signature;
+  String get status;
+  int get timestamp;
+  TransactionHash get txHash;
+  Balance get value;
 
   Map<String, dynamic> toJson();
   @JsonKey(ignore: true)
@@ -533,7 +586,25 @@ abstract class $GetTransactionInformationsWithSmartContractResultDataCopyWith<
           $Res Function(GetTransactionInformationsWithSmartContractResultData)
               then) =
       _$GetTransactionInformationsWithSmartContractResultDataCopyWithImpl<$Res>;
-  $Res call({List<SmartContractResultData> scResults});
+  $Res call(
+      {String data,
+      String fee,
+      GasLimit gasLimit,
+      GasPrice gasPrice,
+      int gasUsed,
+      String miniBlockHash,
+      Nonce nonce,
+      Address receiver,
+      int receiverShard,
+      int round,
+      List<SmartContractResultData> scResults,
+      Address sender,
+      int senderShard,
+      String signature,
+      String status,
+      int timestamp,
+      TransactionHash txHash,
+      Balance value});
 }
 
 /// @nodoc
@@ -550,12 +621,51 @@ class _$GetTransactionInformationsWithSmartContractResultDataCopyWithImpl<$Res>
 
   @override
   $Res call({
+    Object data = freezed,
+    Object fee = freezed,
+    Object gasLimit = freezed,
+    Object gasPrice = freezed,
+    Object gasUsed = freezed,
+    Object miniBlockHash = freezed,
+    Object nonce = freezed,
+    Object receiver = freezed,
+    Object receiverShard = freezed,
+    Object round = freezed,
     Object scResults = freezed,
+    Object sender = freezed,
+    Object senderShard = freezed,
+    Object signature = freezed,
+    Object status = freezed,
+    Object timestamp = freezed,
+    Object txHash = freezed,
+    Object value = freezed,
   }) {
     return _then(_value.copyWith(
+      data: data == freezed ? _value.data : data as String,
+      fee: fee == freezed ? _value.fee : fee as String,
+      gasLimit: gasLimit == freezed ? _value.gasLimit : gasLimit as GasLimit,
+      gasPrice: gasPrice == freezed ? _value.gasPrice : gasPrice as GasPrice,
+      gasUsed: gasUsed == freezed ? _value.gasUsed : gasUsed as int,
+      miniBlockHash: miniBlockHash == freezed
+          ? _value.miniBlockHash
+          : miniBlockHash as String,
+      nonce: nonce == freezed ? _value.nonce : nonce as Nonce,
+      receiver: receiver == freezed ? _value.receiver : receiver as Address,
+      receiverShard: receiverShard == freezed
+          ? _value.receiverShard
+          : receiverShard as int,
+      round: round == freezed ? _value.round : round as int,
       scResults: scResults == freezed
           ? _value.scResults
           : scResults as List<SmartContractResultData>,
+      sender: sender == freezed ? _value.sender : sender as Address,
+      senderShard:
+          senderShard == freezed ? _value.senderShard : senderShard as int,
+      signature: signature == freezed ? _value.signature : signature as String,
+      status: status == freezed ? _value.status : status as String,
+      timestamp: timestamp == freezed ? _value.timestamp : timestamp as int,
+      txHash: txHash == freezed ? _value.txHash : txHash as TransactionHash,
+      value: value == freezed ? _value.value : value as Balance,
     ));
   }
 }
@@ -572,7 +682,25 @@ abstract class _$GetTransactionInformationsWithSmartContractResultDataCopyWith<
       __$GetTransactionInformationsWithSmartContractResultDataCopyWithImpl<
           $Res>;
   @override
-  $Res call({List<SmartContractResultData> scResults});
+  $Res call(
+      {String data,
+      String fee,
+      GasLimit gasLimit,
+      GasPrice gasPrice,
+      int gasUsed,
+      String miniBlockHash,
+      Nonce nonce,
+      Address receiver,
+      int receiverShard,
+      int round,
+      List<SmartContractResultData> scResults,
+      Address sender,
+      int senderShard,
+      String signature,
+      String status,
+      int timestamp,
+      TransactionHash txHash,
+      Balance value});
 }
 
 /// @nodoc
@@ -596,47 +724,205 @@ class __$GetTransactionInformationsWithSmartContractResultDataCopyWithImpl<$Res>
 
   @override
   $Res call({
+    Object data = freezed,
+    Object fee = freezed,
+    Object gasLimit = freezed,
+    Object gasPrice = freezed,
+    Object gasUsed = freezed,
+    Object miniBlockHash = freezed,
+    Object nonce = freezed,
+    Object receiver = freezed,
+    Object receiverShard = freezed,
+    Object round = freezed,
     Object scResults = freezed,
+    Object sender = freezed,
+    Object senderShard = freezed,
+    Object signature = freezed,
+    Object status = freezed,
+    Object timestamp = freezed,
+    Object txHash = freezed,
+    Object value = freezed,
   }) {
     return _then(_GetTransactionInformationsWithSmartContractResultData(
+      data: data == freezed ? _value.data : data as String,
+      fee: fee == freezed ? _value.fee : fee as String,
+      gasLimit: gasLimit == freezed ? _value.gasLimit : gasLimit as GasLimit,
+      gasPrice: gasPrice == freezed ? _value.gasPrice : gasPrice as GasPrice,
+      gasUsed: gasUsed == freezed ? _value.gasUsed : gasUsed as int,
+      miniBlockHash: miniBlockHash == freezed
+          ? _value.miniBlockHash
+          : miniBlockHash as String,
+      nonce: nonce == freezed ? _value.nonce : nonce as Nonce,
+      receiver: receiver == freezed ? _value.receiver : receiver as Address,
+      receiverShard: receiverShard == freezed
+          ? _value.receiverShard
+          : receiverShard as int,
+      round: round == freezed ? _value.round : round as int,
       scResults: scResults == freezed
           ? _value.scResults
           : scResults as List<SmartContractResultData>,
+      sender: sender == freezed ? _value.sender : sender as Address,
+      senderShard:
+          senderShard == freezed ? _value.senderShard : senderShard as int,
+      signature: signature == freezed ? _value.signature : signature as String,
+      status: status == freezed ? _value.status : status as String,
+      timestamp: timestamp == freezed ? _value.timestamp : timestamp as int,
+      txHash: txHash == freezed ? _value.txHash : txHash as TransactionHash,
+      value: value == freezed ? _value.value : value as Balance,
     ));
   }
 }
 
 @JsonSerializable()
+@GasLimitConverter()
+@GasPriceConverter()
+@NonceConverter()
+@AddressConverter()
+@TransactionHashConverter()
+@BalanceConverter()
 
 /// @nodoc
 class _$_GetTransactionInformationsWithSmartContractResultData
     implements _GetTransactionInformationsWithSmartContractResultData {
-  _$_GetTransactionInformationsWithSmartContractResultData({this.scResults});
+  _$_GetTransactionInformationsWithSmartContractResultData(
+      {this.data,
+      this.fee,
+      this.gasLimit,
+      this.gasPrice,
+      this.gasUsed,
+      this.miniBlockHash,
+      this.nonce,
+      this.receiver,
+      this.receiverShard,
+      this.round,
+      this.scResults,
+      this.sender,
+      this.senderShard,
+      this.signature,
+      this.status,
+      this.timestamp,
+      this.txHash,
+      this.value});
 
   factory _$_GetTransactionInformationsWithSmartContractResultData.fromJson(
           Map<String, dynamic> json) =>
       _$_$_GetTransactionInformationsWithSmartContractResultDataFromJson(json);
 
   @override
+  final String data;
+  @override
+  final String fee;
+  @override
+  final GasLimit gasLimit;
+  @override
+  final GasPrice gasPrice;
+  @override
+  final int gasUsed;
+  @override
+  final String miniBlockHash;
+  @override
+  final Nonce nonce;
+  @override
+  final Address receiver;
+  @override
+  final int receiverShard;
+  @override
+  final int round;
+  @override
   final List<SmartContractResultData> scResults;
+  @override
+  final Address sender;
+  @override
+  final int senderShard;
+  @override
+  final String signature;
+  @override
+  final String status;
+  @override
+  final int timestamp;
+  @override
+  final TransactionHash txHash;
+  @override
+  final Balance value;
 
   @override
   String toString() {
-    return 'GetTransactionInformationsWithSmartContractResultData(scResults: $scResults)';
+    return 'GetTransactionInformationsWithSmartContractResultData(data: $data, fee: $fee, gasLimit: $gasLimit, gasPrice: $gasPrice, gasUsed: $gasUsed, miniBlockHash: $miniBlockHash, nonce: $nonce, receiver: $receiver, receiverShard: $receiverShard, round: $round, scResults: $scResults, sender: $sender, senderShard: $senderShard, signature: $signature, status: $status, timestamp: $timestamp, txHash: $txHash, value: $value)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _GetTransactionInformationsWithSmartContractResultData &&
+            (identical(other.data, data) ||
+                const DeepCollectionEquality().equals(other.data, data)) &&
+            (identical(other.fee, fee) ||
+                const DeepCollectionEquality().equals(other.fee, fee)) &&
+            (identical(other.gasLimit, gasLimit) ||
+                const DeepCollectionEquality()
+                    .equals(other.gasLimit, gasLimit)) &&
+            (identical(other.gasPrice, gasPrice) ||
+                const DeepCollectionEquality()
+                    .equals(other.gasPrice, gasPrice)) &&
+            (identical(other.gasUsed, gasUsed) ||
+                const DeepCollectionEquality()
+                    .equals(other.gasUsed, gasUsed)) &&
+            (identical(other.miniBlockHash, miniBlockHash) ||
+                const DeepCollectionEquality()
+                    .equals(other.miniBlockHash, miniBlockHash)) &&
+            (identical(other.nonce, nonce) ||
+                const DeepCollectionEquality().equals(other.nonce, nonce)) &&
+            (identical(other.receiver, receiver) ||
+                const DeepCollectionEquality()
+                    .equals(other.receiver, receiver)) &&
+            (identical(other.receiverShard, receiverShard) ||
+                const DeepCollectionEquality()
+                    .equals(other.receiverShard, receiverShard)) &&
+            (identical(other.round, round) ||
+                const DeepCollectionEquality().equals(other.round, round)) &&
             (identical(other.scResults, scResults) ||
                 const DeepCollectionEquality()
-                    .equals(other.scResults, scResults)));
+                    .equals(other.scResults, scResults)) &&
+            (identical(other.sender, sender) ||
+                const DeepCollectionEquality().equals(other.sender, sender)) &&
+            (identical(other.senderShard, senderShard) ||
+                const DeepCollectionEquality()
+                    .equals(other.senderShard, senderShard)) &&
+            (identical(other.signature, signature) ||
+                const DeepCollectionEquality()
+                    .equals(other.signature, signature)) &&
+            (identical(other.status, status) ||
+                const DeepCollectionEquality().equals(other.status, status)) &&
+            (identical(other.timestamp, timestamp) ||
+                const DeepCollectionEquality()
+                    .equals(other.timestamp, timestamp)) &&
+            (identical(other.txHash, txHash) ||
+                const DeepCollectionEquality().equals(other.txHash, txHash)) &&
+            (identical(other.value, value) ||
+                const DeepCollectionEquality().equals(other.value, value)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(scResults);
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(data) ^
+      const DeepCollectionEquality().hash(fee) ^
+      const DeepCollectionEquality().hash(gasLimit) ^
+      const DeepCollectionEquality().hash(gasPrice) ^
+      const DeepCollectionEquality().hash(gasUsed) ^
+      const DeepCollectionEquality().hash(miniBlockHash) ^
+      const DeepCollectionEquality().hash(nonce) ^
+      const DeepCollectionEquality().hash(receiver) ^
+      const DeepCollectionEquality().hash(receiverShard) ^
+      const DeepCollectionEquality().hash(round) ^
+      const DeepCollectionEquality().hash(scResults) ^
+      const DeepCollectionEquality().hash(sender) ^
+      const DeepCollectionEquality().hash(senderShard) ^
+      const DeepCollectionEquality().hash(signature) ^
+      const DeepCollectionEquality().hash(status) ^
+      const DeepCollectionEquality().hash(timestamp) ^
+      const DeepCollectionEquality().hash(txHash) ^
+      const DeepCollectionEquality().hash(value);
 
   @JsonKey(ignore: true)
   @override
@@ -657,7 +943,24 @@ class _$_GetTransactionInformationsWithSmartContractResultData
 abstract class _GetTransactionInformationsWithSmartContractResultData
     implements GetTransactionInformationsWithSmartContractResultData {
   factory _GetTransactionInformationsWithSmartContractResultData(
-          {List<SmartContractResultData> scResults}) =
+          {String data,
+          String fee,
+          GasLimit gasLimit,
+          GasPrice gasPrice,
+          int gasUsed,
+          String miniBlockHash,
+          Nonce nonce,
+          Address receiver,
+          int receiverShard,
+          int round,
+          List<SmartContractResultData> scResults,
+          Address sender,
+          int senderShard,
+          String signature,
+          String status,
+          int timestamp,
+          TransactionHash txHash,
+          Balance value}) =
       _$_GetTransactionInformationsWithSmartContractResultData;
 
   factory _GetTransactionInformationsWithSmartContractResultData.fromJson(
@@ -665,7 +968,41 @@ abstract class _GetTransactionInformationsWithSmartContractResultData
       _$_GetTransactionInformationsWithSmartContractResultData.fromJson;
 
   @override
+  String get data;
+  @override
+  String get fee;
+  @override
+  GasLimit get gasLimit;
+  @override
+  GasPrice get gasPrice;
+  @override
+  int get gasUsed;
+  @override
+  String get miniBlockHash;
+  @override
+  Nonce get nonce;
+  @override
+  Address get receiver;
+  @override
+  int get receiverShard;
+  @override
+  int get round;
+  @override
   List<SmartContractResultData> get scResults;
+  @override
+  Address get sender;
+  @override
+  int get senderShard;
+  @override
+  String get signature;
+  @override
+  String get status;
+  @override
+  int get timestamp;
+  @override
+  TransactionHash get txHash;
+  @override
+  Balance get value;
   @override
   @JsonKey(ignore: true)
   _$GetTransactionInformationsWithSmartContractResultDataCopyWith<
@@ -682,9 +1019,32 @@ class _$SmartContractResultDataTearOff {
   const _$SmartContractResultDataTearOff();
 
 // ignore: unused_element
-  _SmartContractResultData call({String data}) {
+  _SmartContractResultData call(
+      {String callType,
+      String data,
+      GasLimit gasLimit,
+      GasPrice gasPrice,
+      TransactionHash hash,
+      int nonce,
+      TransactionHash originalTxHash,
+      TransactionHash prevTxHash,
+      Address receiver,
+      String relayedValue,
+      Address sender,
+      Balance value}) {
     return _SmartContractResultData(
+      callType: callType,
       data: data,
+      gasLimit: gasLimit,
+      gasPrice: gasPrice,
+      hash: hash,
+      nonce: nonce,
+      originalTxHash: originalTxHash,
+      prevTxHash: prevTxHash,
+      receiver: receiver,
+      relayedValue: relayedValue,
+      sender: sender,
+      value: value,
     );
   }
 
@@ -700,7 +1060,18 @@ const $SmartContractResultData = _$SmartContractResultDataTearOff();
 
 /// @nodoc
 mixin _$SmartContractResultData {
+  String get callType;
   String get data;
+  GasLimit get gasLimit;
+  GasPrice get gasPrice;
+  TransactionHash get hash;
+  int get nonce;
+  TransactionHash get originalTxHash;
+  TransactionHash get prevTxHash;
+  Address get receiver;
+  String get relayedValue;
+  Address get sender;
+  Balance get value;
 
   Map<String, dynamic> toJson();
   @JsonKey(ignore: true)
@@ -712,7 +1083,19 @@ abstract class $SmartContractResultDataCopyWith<$Res> {
   factory $SmartContractResultDataCopyWith(SmartContractResultData value,
           $Res Function(SmartContractResultData) then) =
       _$SmartContractResultDataCopyWithImpl<$Res>;
-  $Res call({String data});
+  $Res call(
+      {String callType,
+      String data,
+      GasLimit gasLimit,
+      GasPrice gasPrice,
+      TransactionHash hash,
+      int nonce,
+      TransactionHash originalTxHash,
+      TransactionHash prevTxHash,
+      Address receiver,
+      String relayedValue,
+      Address sender,
+      Balance value});
 }
 
 /// @nodoc
@@ -726,10 +1109,38 @@ class _$SmartContractResultDataCopyWithImpl<$Res>
 
   @override
   $Res call({
+    Object callType = freezed,
     Object data = freezed,
+    Object gasLimit = freezed,
+    Object gasPrice = freezed,
+    Object hash = freezed,
+    Object nonce = freezed,
+    Object originalTxHash = freezed,
+    Object prevTxHash = freezed,
+    Object receiver = freezed,
+    Object relayedValue = freezed,
+    Object sender = freezed,
+    Object value = freezed,
   }) {
     return _then(_value.copyWith(
+      callType: callType == freezed ? _value.callType : callType as String,
       data: data == freezed ? _value.data : data as String,
+      gasLimit: gasLimit == freezed ? _value.gasLimit : gasLimit as GasLimit,
+      gasPrice: gasPrice == freezed ? _value.gasPrice : gasPrice as GasPrice,
+      hash: hash == freezed ? _value.hash : hash as TransactionHash,
+      nonce: nonce == freezed ? _value.nonce : nonce as int,
+      originalTxHash: originalTxHash == freezed
+          ? _value.originalTxHash
+          : originalTxHash as TransactionHash,
+      prevTxHash: prevTxHash == freezed
+          ? _value.prevTxHash
+          : prevTxHash as TransactionHash,
+      receiver: receiver == freezed ? _value.receiver : receiver as Address,
+      relayedValue: relayedValue == freezed
+          ? _value.relayedValue
+          : relayedValue as String,
+      sender: sender == freezed ? _value.sender : sender as Address,
+      value: value == freezed ? _value.value : value as Balance,
     ));
   }
 }
@@ -741,7 +1152,19 @@ abstract class _$SmartContractResultDataCopyWith<$Res>
           $Res Function(_SmartContractResultData) then) =
       __$SmartContractResultDataCopyWithImpl<$Res>;
   @override
-  $Res call({String data});
+  $Res call(
+      {String callType,
+      String data,
+      GasLimit gasLimit,
+      GasPrice gasPrice,
+      TransactionHash hash,
+      int nonce,
+      TransactionHash originalTxHash,
+      TransactionHash prevTxHash,
+      Address receiver,
+      String relayedValue,
+      Address sender,
+      Balance value});
 }
 
 /// @nodoc
@@ -758,42 +1181,150 @@ class __$SmartContractResultDataCopyWithImpl<$Res>
 
   @override
   $Res call({
+    Object callType = freezed,
     Object data = freezed,
+    Object gasLimit = freezed,
+    Object gasPrice = freezed,
+    Object hash = freezed,
+    Object nonce = freezed,
+    Object originalTxHash = freezed,
+    Object prevTxHash = freezed,
+    Object receiver = freezed,
+    Object relayedValue = freezed,
+    Object sender = freezed,
+    Object value = freezed,
   }) {
     return _then(_SmartContractResultData(
+      callType: callType == freezed ? _value.callType : callType as String,
       data: data == freezed ? _value.data : data as String,
+      gasLimit: gasLimit == freezed ? _value.gasLimit : gasLimit as GasLimit,
+      gasPrice: gasPrice == freezed ? _value.gasPrice : gasPrice as GasPrice,
+      hash: hash == freezed ? _value.hash : hash as TransactionHash,
+      nonce: nonce == freezed ? _value.nonce : nonce as int,
+      originalTxHash: originalTxHash == freezed
+          ? _value.originalTxHash
+          : originalTxHash as TransactionHash,
+      prevTxHash: prevTxHash == freezed
+          ? _value.prevTxHash
+          : prevTxHash as TransactionHash,
+      receiver: receiver == freezed ? _value.receiver : receiver as Address,
+      relayedValue: relayedValue == freezed
+          ? _value.relayedValue
+          : relayedValue as String,
+      sender: sender == freezed ? _value.sender : sender as Address,
+      value: value == freezed ? _value.value : value as Balance,
     ));
   }
 }
 
 @JsonSerializable()
+@GasLimitConverter()
+@GasPriceConverter()
+@AddressConverter()
+@BalanceConverter()
+@TransactionHashConverter()
 
 /// @nodoc
 class _$_SmartContractResultData implements _SmartContractResultData {
-  _$_SmartContractResultData({this.data});
+  _$_SmartContractResultData(
+      {this.callType,
+      this.data,
+      this.gasLimit,
+      this.gasPrice,
+      this.hash,
+      this.nonce,
+      this.originalTxHash,
+      this.prevTxHash,
+      this.receiver,
+      this.relayedValue,
+      this.sender,
+      this.value});
 
   factory _$_SmartContractResultData.fromJson(Map<String, dynamic> json) =>
       _$_$_SmartContractResultDataFromJson(json);
 
   @override
+  final String callType;
+  @override
   final String data;
+  @override
+  final GasLimit gasLimit;
+  @override
+  final GasPrice gasPrice;
+  @override
+  final TransactionHash hash;
+  @override
+  final int nonce;
+  @override
+  final TransactionHash originalTxHash;
+  @override
+  final TransactionHash prevTxHash;
+  @override
+  final Address receiver;
+  @override
+  final String relayedValue;
+  @override
+  final Address sender;
+  @override
+  final Balance value;
 
   @override
   String toString() {
-    return 'SmartContractResultData(data: $data)';
+    return 'SmartContractResultData(callType: $callType, data: $data, gasLimit: $gasLimit, gasPrice: $gasPrice, hash: $hash, nonce: $nonce, originalTxHash: $originalTxHash, prevTxHash: $prevTxHash, receiver: $receiver, relayedValue: $relayedValue, sender: $sender, value: $value)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _SmartContractResultData &&
+            (identical(other.callType, callType) ||
+                const DeepCollectionEquality()
+                    .equals(other.callType, callType)) &&
             (identical(other.data, data) ||
-                const DeepCollectionEquality().equals(other.data, data)));
+                const DeepCollectionEquality().equals(other.data, data)) &&
+            (identical(other.gasLimit, gasLimit) ||
+                const DeepCollectionEquality()
+                    .equals(other.gasLimit, gasLimit)) &&
+            (identical(other.gasPrice, gasPrice) ||
+                const DeepCollectionEquality()
+                    .equals(other.gasPrice, gasPrice)) &&
+            (identical(other.hash, hash) ||
+                const DeepCollectionEquality().equals(other.hash, hash)) &&
+            (identical(other.nonce, nonce) ||
+                const DeepCollectionEquality().equals(other.nonce, nonce)) &&
+            (identical(other.originalTxHash, originalTxHash) ||
+                const DeepCollectionEquality()
+                    .equals(other.originalTxHash, originalTxHash)) &&
+            (identical(other.prevTxHash, prevTxHash) ||
+                const DeepCollectionEquality()
+                    .equals(other.prevTxHash, prevTxHash)) &&
+            (identical(other.receiver, receiver) ||
+                const DeepCollectionEquality()
+                    .equals(other.receiver, receiver)) &&
+            (identical(other.relayedValue, relayedValue) ||
+                const DeepCollectionEquality()
+                    .equals(other.relayedValue, relayedValue)) &&
+            (identical(other.sender, sender) ||
+                const DeepCollectionEquality().equals(other.sender, sender)) &&
+            (identical(other.value, value) ||
+                const DeepCollectionEquality().equals(other.value, value)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(data);
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(callType) ^
+      const DeepCollectionEquality().hash(data) ^
+      const DeepCollectionEquality().hash(gasLimit) ^
+      const DeepCollectionEquality().hash(gasPrice) ^
+      const DeepCollectionEquality().hash(hash) ^
+      const DeepCollectionEquality().hash(nonce) ^
+      const DeepCollectionEquality().hash(originalTxHash) ^
+      const DeepCollectionEquality().hash(prevTxHash) ^
+      const DeepCollectionEquality().hash(receiver) ^
+      const DeepCollectionEquality().hash(relayedValue) ^
+      const DeepCollectionEquality().hash(sender) ^
+      const DeepCollectionEquality().hash(value);
 
   @JsonKey(ignore: true)
   @override
@@ -808,13 +1339,47 @@ class _$_SmartContractResultData implements _SmartContractResultData {
 }
 
 abstract class _SmartContractResultData implements SmartContractResultData {
-  factory _SmartContractResultData({String data}) = _$_SmartContractResultData;
+  factory _SmartContractResultData(
+      {String callType,
+      String data,
+      GasLimit gasLimit,
+      GasPrice gasPrice,
+      TransactionHash hash,
+      int nonce,
+      TransactionHash originalTxHash,
+      TransactionHash prevTxHash,
+      Address receiver,
+      String relayedValue,
+      Address sender,
+      Balance value}) = _$_SmartContractResultData;
 
   factory _SmartContractResultData.fromJson(Map<String, dynamic> json) =
       _$_SmartContractResultData.fromJson;
 
   @override
+  String get callType;
+  @override
   String get data;
+  @override
+  GasLimit get gasLimit;
+  @override
+  GasPrice get gasPrice;
+  @override
+  TransactionHash get hash;
+  @override
+  int get nonce;
+  @override
+  TransactionHash get originalTxHash;
+  @override
+  TransactionHash get prevTxHash;
+  @override
+  Address get receiver;
+  @override
+  String get relayedValue;
+  @override
+  Address get sender;
+  @override
+  Balance get value;
   @override
   @JsonKey(ignore: true)
   _$SmartContractResultDataCopyWith<_SmartContractResultData> get copyWith;

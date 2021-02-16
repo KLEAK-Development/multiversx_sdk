@@ -6,7 +6,8 @@ part of 'cost.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_TransactionCostRequest _$_$_TransactionCostRequestFromJson(Map<String, dynamic> json) {
+_$_TransactionCostRequest _$_$_TransactionCostRequestFromJson(
+    Map<String, dynamic> json) {
   return _$_TransactionCostRequest(
     version: json['version'] as String,
     chainID: json['chainID'] as String,
@@ -17,7 +18,8 @@ _$_TransactionCostRequest _$_$_TransactionCostRequestFromJson(Map<String, dynami
   );
 }
 
-Map<String, dynamic> _$_$_TransactionCostRequestToJson(_$_TransactionCostRequest instance) {
+Map<String, dynamic> _$_$_TransactionCostRequestToJson(
+    _$_TransactionCostRequest instance) {
   final val = <String, dynamic>{
     'version': instance.version,
     'chainID': instance.chainID,

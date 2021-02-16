@@ -9,15 +9,16 @@ part of 'send_transaction.dart';
 _$_SendTransactionRequest _$_$_SendTransactionRequestFromJson(
     Map<String, dynamic> json) {
   return _$_SendTransactionRequest(
-    nonce: json['nonce'] as int,
-    value: json['value'] as String,
-    receiver: json['receiver'] as String,
-    sender: json['sender'] as String,
-    gasPrice: json['gasPrice'] as int,
-    gasLimit: json['gasLimit'] as int,
-    version: json['version'] as int,
+    nonce: const NonceConverter().fromJson(json['nonce'] as int),
+    value: const BalanceConverter().fromJson(json['value'] as String),
+    receiver: const AddressConverter().fromJson(json['receiver'] as String),
+    sender: const AddressConverter().fromJson(json['sender'] as String),
+    gasPrice: const GasPriceConverter().fromJson(json['gasPrice'] as int),
+    gasLimit: const GasLimitConverter().fromJson(json['gasLimit'] as int),
+    version:
+        const TransactionVersionConverter().fromJson(json['version'] as int),
     data: json['data'] as String,
-    chainId: json['chainID'] as String,
+    chainId: const ChainIdConverter().fromJson(json['chainID'] as String),
     signature: json['signature'] as String,
   );
 }
@@ -32,15 +33,15 @@ Map<String, dynamic> _$_$_SendTransactionRequestToJson(
     }
   }
 
-  writeNotNull('nonce', instance.nonce);
-  val['value'] = instance.value;
-  val['receiver'] = instance.receiver;
-  val['sender'] = instance.sender;
-  val['gasPrice'] = instance.gasPrice;
-  val['gasLimit'] = instance.gasLimit;
-  val['version'] = instance.version;
+  writeNotNull('nonce', const NonceConverter().toJson(instance.nonce));
+  val['value'] = const BalanceConverter().toJson(instance.value);
+  val['receiver'] = const AddressConverter().toJson(instance.receiver);
+  val['sender'] = const AddressConverter().toJson(instance.sender);
+  val['gasPrice'] = const GasPriceConverter().toJson(instance.gasPrice);
+  val['gasLimit'] = const GasLimitConverter().toJson(instance.gasLimit);
+  val['version'] = const TransactionVersionConverter().toJson(instance.version);
   writeNotNull('data', instance.data);
-  val['chainID'] = instance.chainId;
+  val['chainID'] = const ChainIdConverter().toJson(instance.chainId);
   val['signature'] = instance.signature;
   return val;
 }

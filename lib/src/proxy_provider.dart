@@ -3,14 +3,11 @@ import 'dart:convert';
 import 'package:dio/dio.dart';
 import 'package:elrond_sdk/src/account.dart';
 import 'package:elrond_sdk/src/address.dart';
-import 'package:elrond_sdk/src/balance.dart';
 import 'package:elrond_sdk/src/interface.dart';
 import 'package:elrond_sdk/src/models/request/transaction/send_transaction/send_transaction.dart';
 import 'package:elrond_sdk/src/models/response/response.dart';
 import 'package:elrond_sdk/src/models/response/transaction/transaction.dart';
 import 'package:elrond_sdk/src/network_configuration.dart';
-import 'package:elrond_sdk/src/network_parameters.dart';
-import 'package:elrond_sdk/src/nonce.dart';
 import 'package:elrond_sdk/src/repositories/address/address.dart';
 import 'package:elrond_sdk/src/repositories/network/network.dart';
 import 'package:elrond_sdk/src/repositories/repositories.dart';
@@ -33,9 +30,9 @@ class ProxyProvider extends IProvider {
     try {
       final response = await addressRepository.addressInformations(address.bech32);
       return Account(
-        Address.fromBech32(response.data.account.address),
-        Nonce(response.data.account.nonce),
-        Balance.fromString(response.data.account.balance),
+        response.data.account.address,
+        response.data.account.nonce,
+        response.data.account.balance,
         response.data.account.username,
       );
     } on DioError catch (e) {
@@ -48,11 +45,11 @@ class ProxyProvider extends IProvider {
     try {
       final response = await networkRepository.networkConfiguration();
       return NetworkConfiguration(
-        chainId: ChainId(response.data.config.chainId),
+        chainId: response.data.config.chainId,
         gasPerDataByte: response.data.config.gasPerDataByte,
-        minGasLimit: GasLimit(response.data.config.minGasLimit),
-        minGasPrice: GasPrice(response.data.config.minGasPrice),
-        minTransactionVersion: TransactionVersion(response.data.config.minTransactionVersion),
+        minGasLimit: response.data.config.minGasLimit,
+        minGasPrice: response.data.config.minGasPrice,
+        minTransactionVersion: response.data.config.minTransactionVersion,
       );
     } on DioError catch (e) {
       throw ApiException(ProxyResponseGeneric.fromJson(e.response.data as Map));
@@ -64,19 +61,19 @@ class ProxyProvider extends IProvider {
     assert(transaction != null, 'transaction cannot be null');
     try {
       final request = SendTransactionRequest(
-        version: transaction.transactionVersion.value,
-        chainId: transaction.chainId.value,
-        nonce: transaction.nonce.value,
-        value: transaction.balance.value.toString(),
-        sender: transaction.sender.bech32,
-        receiver: transaction.receiver.bech32,
-        gasPrice: transaction.gasPrice.value,
-        gasLimit: transaction.gasLimit.value,
+        version: transaction.transactionVersion,
+        chainId: transaction.chainId,
+        nonce: transaction.nonce,
+        value: transaction.balance,
+        sender: transaction.sender,
+        receiver: transaction.receiver,
+        gasPrice: transaction.gasPrice,
+        gasLimit: transaction.gasLimit,
         data: base64.encode(transaction.data.bytes),
         signature: transaction.signature.hex,
       );
       final response = await transactionRepository.send(request);
-      return TransactionHash(response.data.txHash);
+      return response.data.txHash;
     } on DioError catch (e) {
       throw ApiException(ProxyResponseGeneric.fromJson(e.response.data as Map));
     }

@@ -1,3 +1,8 @@
+import 'package:elrond_sdk/src/address.dart';
+import 'package:elrond_sdk/src/balance.dart';
+import 'package:elrond_sdk/src/models/json_converter.dart';
+import 'package:elrond_sdk/src/network_parameters.dart';
+import 'package:elrond_sdk/src/nonce.dart';
 import 'package:elrond_sdk/src/transaction.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -6,7 +11,8 @@ part 'transaction.g.dart';
 
 @freezed
 abstract class SendTransactionData with _$SendTransactionData {
-  factory SendTransactionData({String txHash}) = _SendTransactionData;
+  @TransactionHashConverter()
+  factory SendTransactionData({TransactionHash txHash}) = _SendTransactionData;
 
   factory SendTransactionData.fromJson(Map<String, dynamic> json) => _$SendTransactionDataFromJson(json);
 }
@@ -30,8 +36,32 @@ abstract class GetTransactionStatusData with _$GetTransactionStatusData {
 @freezed
 abstract class GetTransactionInformationsWithSmartContractResultData
     with _$GetTransactionInformationsWithSmartContractResultData {
-  factory GetTransactionInformationsWithSmartContractResultData({List<SmartContractResultData> scResults}) =
-      _GetTransactionInformationsWithSmartContractResultData;
+  @GasLimitConverter()
+  @GasPriceConverter()
+  @NonceConverter()
+  @AddressConverter()
+  @TransactionHashConverter()
+  @BalanceConverter()
+  factory GetTransactionInformationsWithSmartContractResultData({
+    String data,
+    String fee,
+    GasLimit gasLimit,
+    GasPrice gasPrice,
+    int gasUsed,
+    String miniBlockHash,
+    Nonce nonce,
+    Address receiver,
+    int receiverShard,
+    int round,
+    List<SmartContractResultData> scResults,
+    Address sender,
+    int senderShard,
+    String signature,
+    String status,
+    int timestamp,
+    TransactionHash txHash,
+    Balance value,
+  }) = _GetTransactionInformationsWithSmartContractResultData;
 
   factory GetTransactionInformationsWithSmartContractResultData.fromJson(Map<String, dynamic> json) =>
       _$GetTransactionInformationsWithSmartContractResultDataFromJson(json);
@@ -39,7 +69,25 @@ abstract class GetTransactionInformationsWithSmartContractResultData
 
 @freezed
 abstract class SmartContractResultData with _$SmartContractResultData {
-  factory SmartContractResultData({String data}) = _SmartContractResultData;
+  @GasLimitConverter()
+  @GasPriceConverter()
+  @AddressConverter()
+  @BalanceConverter()
+  @TransactionHashConverter()
+  factory SmartContractResultData({
+    String callType,
+    String data,
+    GasLimit gasLimit,
+    GasPrice gasPrice,
+    TransactionHash hash,
+    int nonce,
+    TransactionHash originalTxHash,
+    TransactionHash prevTxHash,
+    Address receiver,
+    String relayedValue,
+    Address sender,
+    Balance value,
+  }) = _SmartContractResultData;
 
   factory SmartContractResultData.fromJson(Map<String, dynamic> json) => _$SmartContractResultDataFromJson(json);
 }

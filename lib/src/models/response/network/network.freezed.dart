@@ -191,7 +191,7 @@ class _$NetworkConfigurationInformationsDataTearOff {
 // ignore: unused_element
   _NetworkConfigurationInformationsData call(
       {@JsonKey(name: 'erd_chain_id')
-          String chainId,
+          ChainId chainId,
       @JsonKey(name: 'erd_denomination')
           int denomination,
       @JsonKey(name: 'erd_gas_per_data_byte')
@@ -201,11 +201,11 @@ class _$NetworkConfigurationInformationsDataTearOff {
       @JsonKey(name: 'erd_meta_consensus_group_size')
           int metaConsensusGroupSize,
       @JsonKey(name: 'erd_min_gas_limit')
-          int minGasLimit,
+          GasLimit minGasLimit,
       @JsonKey(name: 'erd_min_gas_price')
-          int minGasPrice,
+          GasPrice minGasPrice,
       @JsonKey(name: 'erd_min_transaction_version')
-          int minTransactionVersion,
+          TransactionVersion minTransactionVersion,
       @JsonKey(name: 'erd_num_metachain_nodes')
           int numMetachainNodes,
       @JsonKey(name: 'erd_num_nodes_in_shard')
@@ -250,7 +250,7 @@ const $NetworkConfigurationInformationsData =
 /// @nodoc
 mixin _$NetworkConfigurationInformationsData {
   @JsonKey(name: 'erd_chain_id')
-  String get chainId;
+  ChainId get chainId;
   @JsonKey(name: 'erd_denomination')
   int get denomination;
   @JsonKey(name: 'erd_gas_per_data_byte')
@@ -260,11 +260,11 @@ mixin _$NetworkConfigurationInformationsData {
   @JsonKey(name: 'erd_meta_consensus_group_size')
   int get metaConsensusGroupSize;
   @JsonKey(name: 'erd_min_gas_limit')
-  int get minGasLimit;
+  GasLimit get minGasLimit;
   @JsonKey(name: 'erd_min_gas_price')
-  int get minGasPrice;
+  GasPrice get minGasPrice;
   @JsonKey(name: 'erd_min_transaction_version')
-  int get minTransactionVersion;
+  TransactionVersion get minTransactionVersion;
   @JsonKey(name: 'erd_num_metachain_nodes')
   int get numMetachainNodes;
   @JsonKey(name: 'erd_num_nodes_in_shard')
@@ -292,7 +292,7 @@ abstract class $NetworkConfigurationInformationsDataCopyWith<$Res> {
       _$NetworkConfigurationInformationsDataCopyWithImpl<$Res>;
   $Res call(
       {@JsonKey(name: 'erd_chain_id')
-          String chainId,
+          ChainId chainId,
       @JsonKey(name: 'erd_denomination')
           int denomination,
       @JsonKey(name: 'erd_gas_per_data_byte')
@@ -302,11 +302,11 @@ abstract class $NetworkConfigurationInformationsDataCopyWith<$Res> {
       @JsonKey(name: 'erd_meta_consensus_group_size')
           int metaConsensusGroupSize,
       @JsonKey(name: 'erd_min_gas_limit')
-          int minGasLimit,
+          GasLimit minGasLimit,
       @JsonKey(name: 'erd_min_gas_price')
-          int minGasPrice,
+          GasPrice minGasPrice,
       @JsonKey(name: 'erd_min_transaction_version')
-          int minTransactionVersion,
+          TransactionVersion minTransactionVersion,
       @JsonKey(name: 'erd_num_metachain_nodes')
           int numMetachainNodes,
       @JsonKey(name: 'erd_num_nodes_in_shard')
@@ -348,7 +348,7 @@ class _$NetworkConfigurationInformationsDataCopyWithImpl<$Res>
     Object startTime = freezed,
   }) {
     return _then(_value.copyWith(
-      chainId: chainId == freezed ? _value.chainId : chainId as String,
+      chainId: chainId == freezed ? _value.chainId : chainId as ChainId,
       denomination:
           denomination == freezed ? _value.denomination : denomination as int,
       gasPerDataByte: gasPerDataByte == freezed
@@ -361,12 +361,12 @@ class _$NetworkConfigurationInformationsDataCopyWithImpl<$Res>
           ? _value.metaConsensusGroupSize
           : metaConsensusGroupSize as int,
       minGasLimit:
-          minGasLimit == freezed ? _value.minGasLimit : minGasLimit as int,
+          minGasLimit == freezed ? _value.minGasLimit : minGasLimit as GasLimit,
       minGasPrice:
-          minGasPrice == freezed ? _value.minGasPrice : minGasPrice as int,
+          minGasPrice == freezed ? _value.minGasPrice : minGasPrice as GasPrice,
       minTransactionVersion: minTransactionVersion == freezed
           ? _value.minTransactionVersion
-          : minTransactionVersion as int,
+          : minTransactionVersion as TransactionVersion,
       numMetachainNodes: numMetachainNodes == freezed
           ? _value.numMetachainNodes
           : numMetachainNodes as int,
@@ -397,7 +397,7 @@ abstract class _$NetworkConfigurationInformationsDataCopyWith<$Res>
   @override
   $Res call(
       {@JsonKey(name: 'erd_chain_id')
-          String chainId,
+          ChainId chainId,
       @JsonKey(name: 'erd_denomination')
           int denomination,
       @JsonKey(name: 'erd_gas_per_data_byte')
@@ -407,11 +407,11 @@ abstract class _$NetworkConfigurationInformationsDataCopyWith<$Res>
       @JsonKey(name: 'erd_meta_consensus_group_size')
           int metaConsensusGroupSize,
       @JsonKey(name: 'erd_min_gas_limit')
-          int minGasLimit,
+          GasLimit minGasLimit,
       @JsonKey(name: 'erd_min_gas_price')
-          int minGasPrice,
+          GasPrice minGasPrice,
       @JsonKey(name: 'erd_min_transaction_version')
-          int minTransactionVersion,
+          TransactionVersion minTransactionVersion,
       @JsonKey(name: 'erd_num_metachain_nodes')
           int numMetachainNodes,
       @JsonKey(name: 'erd_num_nodes_in_shard')
@@ -457,7 +457,7 @@ class __$NetworkConfigurationInformationsDataCopyWithImpl<$Res>
     Object startTime = freezed,
   }) {
     return _then(_NetworkConfigurationInformationsData(
-      chainId: chainId == freezed ? _value.chainId : chainId as String,
+      chainId: chainId == freezed ? _value.chainId : chainId as ChainId,
       denomination:
           denomination == freezed ? _value.denomination : denomination as int,
       gasPerDataByte: gasPerDataByte == freezed
@@ -470,12 +470,12 @@ class __$NetworkConfigurationInformationsDataCopyWithImpl<$Res>
           ? _value.metaConsensusGroupSize
           : metaConsensusGroupSize as int,
       minGasLimit:
-          minGasLimit == freezed ? _value.minGasLimit : minGasLimit as int,
+          minGasLimit == freezed ? _value.minGasLimit : minGasLimit as GasLimit,
       minGasPrice:
-          minGasPrice == freezed ? _value.minGasPrice : minGasPrice as int,
+          minGasPrice == freezed ? _value.minGasPrice : minGasPrice as GasPrice,
       minTransactionVersion: minTransactionVersion == freezed
           ? _value.minTransactionVersion
-          : minTransactionVersion as int,
+          : minTransactionVersion as TransactionVersion,
       numMetachainNodes: numMetachainNodes == freezed
           ? _value.numMetachainNodes
           : numMetachainNodes as int,
@@ -497,6 +497,10 @@ class __$NetworkConfigurationInformationsDataCopyWithImpl<$Res>
 }
 
 @JsonSerializable()
+@ChainIdConverter()
+@GasLimitConverter()
+@GasPriceConverter()
+@TransactionVersionConverter()
 
 /// @nodoc
 class _$_NetworkConfigurationInformationsData
@@ -537,7 +541,7 @@ class _$_NetworkConfigurationInformationsData
 
   @override
   @JsonKey(name: 'erd_chain_id')
-  final String chainId;
+  final ChainId chainId;
   @override
   @JsonKey(name: 'erd_denomination')
   final int denomination;
@@ -552,13 +556,13 @@ class _$_NetworkConfigurationInformationsData
   final int metaConsensusGroupSize;
   @override
   @JsonKey(name: 'erd_min_gas_limit')
-  final int minGasLimit;
+  final GasLimit minGasLimit;
   @override
   @JsonKey(name: 'erd_min_gas_price')
-  final int minGasPrice;
+  final GasPrice minGasPrice;
   @override
   @JsonKey(name: 'erd_min_transaction_version')
-  final int minTransactionVersion;
+  final TransactionVersion minTransactionVersion;
   @override
   @JsonKey(name: 'erd_num_metachain_nodes')
   final int numMetachainNodes;
@@ -669,7 +673,7 @@ abstract class _NetworkConfigurationInformationsData
     implements NetworkConfigurationInformationsData {
   factory _NetworkConfigurationInformationsData(
       {@JsonKey(name: 'erd_chain_id')
-          String chainId,
+          ChainId chainId,
       @JsonKey(name: 'erd_denomination')
           int denomination,
       @JsonKey(name: 'erd_gas_per_data_byte')
@@ -679,11 +683,11 @@ abstract class _NetworkConfigurationInformationsData
       @JsonKey(name: 'erd_meta_consensus_group_size')
           int metaConsensusGroupSize,
       @JsonKey(name: 'erd_min_gas_limit')
-          int minGasLimit,
+          GasLimit minGasLimit,
       @JsonKey(name: 'erd_min_gas_price')
-          int minGasPrice,
+          GasPrice minGasPrice,
       @JsonKey(name: 'erd_min_transaction_version')
-          int minTransactionVersion,
+          TransactionVersion minTransactionVersion,
       @JsonKey(name: 'erd_num_metachain_nodes')
           int numMetachainNodes,
       @JsonKey(name: 'erd_num_nodes_in_shard')
@@ -703,7 +707,7 @@ abstract class _NetworkConfigurationInformationsData
 
   @override
   @JsonKey(name: 'erd_chain_id')
-  String get chainId;
+  ChainId get chainId;
   @override
   @JsonKey(name: 'erd_denomination')
   int get denomination;
@@ -718,13 +722,13 @@ abstract class _NetworkConfigurationInformationsData
   int get metaConsensusGroupSize;
   @override
   @JsonKey(name: 'erd_min_gas_limit')
-  int get minGasLimit;
+  GasLimit get minGasLimit;
   @override
   @JsonKey(name: 'erd_min_gas_price')
-  int get minGasPrice;
+  GasPrice get minGasPrice;
   @override
   @JsonKey(name: 'erd_min_transaction_version')
-  int get minTransactionVersion;
+  TransactionVersion get minTransactionVersion;
   @override
   @JsonKey(name: 'erd_num_metachain_nodes')
   int get numMetachainNodes;

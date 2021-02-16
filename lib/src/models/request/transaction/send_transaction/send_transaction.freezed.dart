@@ -19,15 +19,15 @@ class _$SendTransactionRequestTearOff {
 
 // ignore: unused_element
   _SendTransactionRequest call(
-      {@nullable @JsonKey(includeIfNull: false) int nonce,
-      String value,
-      String receiver,
-      String sender,
-      int gasPrice,
-      int gasLimit,
-      int version,
+      {@nullable @JsonKey(includeIfNull: false) Nonce nonce,
+      Balance value,
+      Address receiver,
+      Address sender,
+      GasPrice gasPrice,
+      GasLimit gasLimit,
+      TransactionVersion version,
       @nullable @JsonKey(includeIfNull: false) String data,
-      @JsonKey(name: 'chainID') String chainId,
+      @JsonKey(name: 'chainID') ChainId chainId,
       String signature}) {
     return _SendTransactionRequest(
       nonce: nonce,
@@ -57,18 +57,18 @@ const $SendTransactionRequest = _$SendTransactionRequestTearOff();
 mixin _$SendTransactionRequest {
   @nullable
   @JsonKey(includeIfNull: false)
-  int get nonce;
-  String get value;
-  String get receiver;
-  String get sender;
-  int get gasPrice;
-  int get gasLimit;
-  int get version;
+  Nonce get nonce;
+  Balance get value;
+  Address get receiver;
+  Address get sender;
+  GasPrice get gasPrice;
+  GasLimit get gasLimit;
+  TransactionVersion get version;
   @nullable
   @JsonKey(includeIfNull: false)
   String get data;
   @JsonKey(name: 'chainID')
-  String get chainId;
+  ChainId get chainId;
   String get signature;
 
   Map<String, dynamic> toJson();
@@ -82,15 +82,15 @@ abstract class $SendTransactionRequestCopyWith<$Res> {
           $Res Function(SendTransactionRequest) then) =
       _$SendTransactionRequestCopyWithImpl<$Res>;
   $Res call(
-      {@nullable @JsonKey(includeIfNull: false) int nonce,
-      String value,
-      String receiver,
-      String sender,
-      int gasPrice,
-      int gasLimit,
-      int version,
+      {@nullable @JsonKey(includeIfNull: false) Nonce nonce,
+      Balance value,
+      Address receiver,
+      Address sender,
+      GasPrice gasPrice,
+      GasLimit gasLimit,
+      TransactionVersion version,
       @nullable @JsonKey(includeIfNull: false) String data,
-      @JsonKey(name: 'chainID') String chainId,
+      @JsonKey(name: 'chainID') ChainId chainId,
       String signature});
 }
 
@@ -117,15 +117,16 @@ class _$SendTransactionRequestCopyWithImpl<$Res>
     Object signature = freezed,
   }) {
     return _then(_value.copyWith(
-      nonce: nonce == freezed ? _value.nonce : nonce as int,
-      value: value == freezed ? _value.value : value as String,
-      receiver: receiver == freezed ? _value.receiver : receiver as String,
-      sender: sender == freezed ? _value.sender : sender as String,
-      gasPrice: gasPrice == freezed ? _value.gasPrice : gasPrice as int,
-      gasLimit: gasLimit == freezed ? _value.gasLimit : gasLimit as int,
-      version: version == freezed ? _value.version : version as int,
+      nonce: nonce == freezed ? _value.nonce : nonce as Nonce,
+      value: value == freezed ? _value.value : value as Balance,
+      receiver: receiver == freezed ? _value.receiver : receiver as Address,
+      sender: sender == freezed ? _value.sender : sender as Address,
+      gasPrice: gasPrice == freezed ? _value.gasPrice : gasPrice as GasPrice,
+      gasLimit: gasLimit == freezed ? _value.gasLimit : gasLimit as GasLimit,
+      version:
+          version == freezed ? _value.version : version as TransactionVersion,
       data: data == freezed ? _value.data : data as String,
-      chainId: chainId == freezed ? _value.chainId : chainId as String,
+      chainId: chainId == freezed ? _value.chainId : chainId as ChainId,
       signature: signature == freezed ? _value.signature : signature as String,
     ));
   }
@@ -139,15 +140,15 @@ abstract class _$SendTransactionRequestCopyWith<$Res>
       __$SendTransactionRequestCopyWithImpl<$Res>;
   @override
   $Res call(
-      {@nullable @JsonKey(includeIfNull: false) int nonce,
-      String value,
-      String receiver,
-      String sender,
-      int gasPrice,
-      int gasLimit,
-      int version,
+      {@nullable @JsonKey(includeIfNull: false) Nonce nonce,
+      Balance value,
+      Address receiver,
+      Address sender,
+      GasPrice gasPrice,
+      GasLimit gasLimit,
+      TransactionVersion version,
       @nullable @JsonKey(includeIfNull: false) String data,
-      @JsonKey(name: 'chainID') String chainId,
+      @JsonKey(name: 'chainID') ChainId chainId,
       String signature});
 }
 
@@ -176,21 +177,29 @@ class __$SendTransactionRequestCopyWithImpl<$Res>
     Object signature = freezed,
   }) {
     return _then(_SendTransactionRequest(
-      nonce: nonce == freezed ? _value.nonce : nonce as int,
-      value: value == freezed ? _value.value : value as String,
-      receiver: receiver == freezed ? _value.receiver : receiver as String,
-      sender: sender == freezed ? _value.sender : sender as String,
-      gasPrice: gasPrice == freezed ? _value.gasPrice : gasPrice as int,
-      gasLimit: gasLimit == freezed ? _value.gasLimit : gasLimit as int,
-      version: version == freezed ? _value.version : version as int,
+      nonce: nonce == freezed ? _value.nonce : nonce as Nonce,
+      value: value == freezed ? _value.value : value as Balance,
+      receiver: receiver == freezed ? _value.receiver : receiver as Address,
+      sender: sender == freezed ? _value.sender : sender as Address,
+      gasPrice: gasPrice == freezed ? _value.gasPrice : gasPrice as GasPrice,
+      gasLimit: gasLimit == freezed ? _value.gasLimit : gasLimit as GasLimit,
+      version:
+          version == freezed ? _value.version : version as TransactionVersion,
       data: data == freezed ? _value.data : data as String,
-      chainId: chainId == freezed ? _value.chainId : chainId as String,
+      chainId: chainId == freezed ? _value.chainId : chainId as ChainId,
       signature: signature == freezed ? _value.signature : signature as String,
     ));
   }
 }
 
 @JsonSerializable()
+@NonceConverter()
+@BalanceConverter()
+@AddressConverter()
+@GasPriceConverter()
+@GasLimitConverter()
+@TransactionVersionConverter()
+@ChainIdConverter()
 
 /// @nodoc
 class _$_SendTransactionRequest implements _SendTransactionRequest {
@@ -212,26 +221,26 @@ class _$_SendTransactionRequest implements _SendTransactionRequest {
   @override
   @nullable
   @JsonKey(includeIfNull: false)
-  final int nonce;
+  final Nonce nonce;
   @override
-  final String value;
+  final Balance value;
   @override
-  final String receiver;
+  final Address receiver;
   @override
-  final String sender;
+  final Address sender;
   @override
-  final int gasPrice;
+  final GasPrice gasPrice;
   @override
-  final int gasLimit;
+  final GasLimit gasLimit;
   @override
-  final int version;
+  final TransactionVersion version;
   @override
   @nullable
   @JsonKey(includeIfNull: false)
   final String data;
   @override
   @JsonKey(name: 'chainID')
-  final String chainId;
+  final ChainId chainId;
   @override
   final String signature;
 
@@ -300,15 +309,15 @@ class _$_SendTransactionRequest implements _SendTransactionRequest {
 
 abstract class _SendTransactionRequest implements SendTransactionRequest {
   factory _SendTransactionRequest(
-      {@nullable @JsonKey(includeIfNull: false) int nonce,
-      String value,
-      String receiver,
-      String sender,
-      int gasPrice,
-      int gasLimit,
-      int version,
+      {@nullable @JsonKey(includeIfNull: false) Nonce nonce,
+      Balance value,
+      Address receiver,
+      Address sender,
+      GasPrice gasPrice,
+      GasLimit gasLimit,
+      TransactionVersion version,
       @nullable @JsonKey(includeIfNull: false) String data,
-      @JsonKey(name: 'chainID') String chainId,
+      @JsonKey(name: 'chainID') ChainId chainId,
       String signature}) = _$_SendTransactionRequest;
 
   factory _SendTransactionRequest.fromJson(Map<String, dynamic> json) =
@@ -317,26 +326,26 @@ abstract class _SendTransactionRequest implements SendTransactionRequest {
   @override
   @nullable
   @JsonKey(includeIfNull: false)
-  int get nonce;
+  Nonce get nonce;
   @override
-  String get value;
+  Balance get value;
   @override
-  String get receiver;
+  Address get receiver;
   @override
-  String get sender;
+  Address get sender;
   @override
-  int get gasPrice;
+  GasPrice get gasPrice;
   @override
-  int get gasLimit;
+  GasLimit get gasLimit;
   @override
-  int get version;
+  TransactionVersion get version;
   @override
   @nullable
   @JsonKey(includeIfNull: false)
   String get data;
   @override
   @JsonKey(name: 'chainID')
-  String get chainId;
+  ChainId get chainId;
   @override
   String get signature;
   @override

@@ -8,7 +8,8 @@ part of 'cost.dart';
 // **************************************************************************
 
 T _$identity<T>(T value) => value;
-TransactionCostRequest _$TransactionCostRequestFromJson(Map<String, dynamic> json) {
+TransactionCostRequest _$TransactionCostRequestFromJson(
+    Map<String, dynamic> json) {
   return _TransactionCostRequest.fromJson(json);
 }
 
@@ -62,7 +63,8 @@ mixin _$TransactionCostRequest {
 
 /// @nodoc
 abstract class $TransactionCostRequestCopyWith<$Res> {
-  factory $TransactionCostRequestCopyWith(TransactionCostRequest value, $Res Function(TransactionCostRequest) then) =
+  factory $TransactionCostRequestCopyWith(TransactionCostRequest value,
+          $Res Function(TransactionCostRequest) then) =
       _$TransactionCostRequestCopyWithImpl<$Res>;
   $Res call(
       {String version,
@@ -74,7 +76,8 @@ abstract class $TransactionCostRequestCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$TransactionCostRequestCopyWithImpl<$Res> implements $TransactionCostRequestCopyWith<$Res> {
+class _$TransactionCostRequestCopyWithImpl<$Res>
+    implements $TransactionCostRequestCopyWith<$Res> {
   _$TransactionCostRequestCopyWithImpl(this._value, this._then);
 
   final TransactionCostRequest _value;
@@ -102,8 +105,10 @@ class _$TransactionCostRequestCopyWithImpl<$Res> implements $TransactionCostRequ
 }
 
 /// @nodoc
-abstract class _$TransactionCostRequestCopyWith<$Res> implements $TransactionCostRequestCopyWith<$Res> {
-  factory _$TransactionCostRequestCopyWith(_TransactionCostRequest value, $Res Function(_TransactionCostRequest) then) =
+abstract class _$TransactionCostRequestCopyWith<$Res>
+    implements $TransactionCostRequestCopyWith<$Res> {
+  factory _$TransactionCostRequestCopyWith(_TransactionCostRequest value,
+          $Res Function(_TransactionCostRequest) then) =
       __$TransactionCostRequestCopyWithImpl<$Res>;
   @override
   $Res call(
@@ -116,9 +121,11 @@ abstract class _$TransactionCostRequestCopyWith<$Res> implements $TransactionCos
 }
 
 /// @nodoc
-class __$TransactionCostRequestCopyWithImpl<$Res> extends _$TransactionCostRequestCopyWithImpl<$Res>
+class __$TransactionCostRequestCopyWithImpl<$Res>
+    extends _$TransactionCostRequestCopyWithImpl<$Res>
     implements _$TransactionCostRequestCopyWith<$Res> {
-  __$TransactionCostRequestCopyWithImpl(_TransactionCostRequest _value, $Res Function(_TransactionCostRequest) _then)
+  __$TransactionCostRequestCopyWithImpl(_TransactionCostRequest _value,
+      $Res Function(_TransactionCostRequest) _then)
       : super(_value, (v) => _then(v as _TransactionCostRequest));
 
   @override
@@ -156,7 +163,8 @@ class _$_TransactionCostRequest implements _TransactionCostRequest {
       this.receiver,
       @nullable @JsonKey(includeIfNull: false) this.data});
 
-  factory _$_TransactionCostRequest.fromJson(Map<String, dynamic> json) => _$_$_TransactionCostRequestFromJson(json);
+  factory _$_TransactionCostRequest.fromJson(Map<String, dynamic> json) =>
+      _$_$_TransactionCostRequestFromJson(json);
 
   @override
   final String version;
@@ -182,12 +190,21 @@ class _$_TransactionCostRequest implements _TransactionCostRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _TransactionCostRequest &&
-            (identical(other.version, version) || const DeepCollectionEquality().equals(other.version, version)) &&
-            (identical(other.chainID, chainID) || const DeepCollectionEquality().equals(other.chainID, chainID)) &&
-            (identical(other.value, value) || const DeepCollectionEquality().equals(other.value, value)) &&
-            (identical(other.sender, sender) || const DeepCollectionEquality().equals(other.sender, sender)) &&
-            (identical(other.receiver, receiver) || const DeepCollectionEquality().equals(other.receiver, receiver)) &&
-            (identical(other.data, data) || const DeepCollectionEquality().equals(other.data, data)));
+            (identical(other.version, version) ||
+                const DeepCollectionEquality()
+                    .equals(other.version, version)) &&
+            (identical(other.chainID, chainID) ||
+                const DeepCollectionEquality()
+                    .equals(other.chainID, chainID)) &&
+            (identical(other.value, value) ||
+                const DeepCollectionEquality().equals(other.value, value)) &&
+            (identical(other.sender, sender) ||
+                const DeepCollectionEquality().equals(other.sender, sender)) &&
+            (identical(other.receiver, receiver) ||
+                const DeepCollectionEquality()
+                    .equals(other.receiver, receiver)) &&
+            (identical(other.data, data) ||
+                const DeepCollectionEquality().equals(other.data, data)));
   }
 
   @override
@@ -203,7 +220,8 @@ class _$_TransactionCostRequest implements _TransactionCostRequest {
   @JsonKey(ignore: true)
   @override
   _$TransactionCostRequestCopyWith<_TransactionCostRequest> get copyWith =>
-      __$TransactionCostRequestCopyWithImpl<_TransactionCostRequest>(this, _$identity);
+      __$TransactionCostRequestCopyWithImpl<_TransactionCostRequest>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -213,14 +231,16 @@ class _$_TransactionCostRequest implements _TransactionCostRequest {
 
 abstract class _TransactionCostRequest implements TransactionCostRequest {
   factory _TransactionCostRequest(
-      {String version,
-      String chainID,
-      String value,
-      String sender,
-      String receiver,
-      @nullable @JsonKey(includeIfNull: false) String data}) = _$_TransactionCostRequest;
+          {String version,
+          String chainID,
+          String value,
+          String sender,
+          String receiver,
+          @nullable @JsonKey(includeIfNull: false) String data}) =
+      _$_TransactionCostRequest;
 
-  factory _TransactionCostRequest.fromJson(Map<String, dynamic> json) = _$_TransactionCostRequest.fromJson;
+  factory _TransactionCostRequest.fromJson(Map<String, dynamic> json) =
+      _$_TransactionCostRequest.fromJson;
 
   @override
   String get version;
