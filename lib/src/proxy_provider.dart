@@ -5,7 +5,6 @@ import 'package:elrond_sdk/src/account.dart';
 import 'package:elrond_sdk/src/address.dart';
 import 'package:elrond_sdk/src/balance.dart';
 import 'package:elrond_sdk/src/interface.dart';
-import 'package:elrond_sdk/src/models/account/account.dart';
 import 'package:elrond_sdk/src/models/request/transaction/send_transaction/send_transaction.dart';
 import 'package:elrond_sdk/src/models/response/response.dart';
 import 'package:elrond_sdk/src/models/response/transaction/transaction.dart';

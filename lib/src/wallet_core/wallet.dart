@@ -1,6 +1,5 @@
 import 'dart:async';
 
-import 'package:elrond_sdk/src/network_configuration.dart';
 import 'package:elrond_sdk/src/network_parameters.dart';
 import 'package:meta/meta.dart';
 

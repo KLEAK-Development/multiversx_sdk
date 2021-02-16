@@ -1,6 +1,5 @@
 import 'package:ed25519_hd_key/ed25519_hd_key.dart';
 import 'package:elrond_sdk/src/wallet_core/user_keys.dart';
-import 'package:convert/convert.dart' as convert;
 import 'package:bip39/bip39.dart';
 
 const mnemonicStrength = 256;
@@ -23,7 +22,7 @@ class Mnemonic {
 
   UserSecretKey deriveKey({int addressIndex = 0, String password = ''}) {
     final seed = mnemonicToSeed(text, passphrase: password);
-    final data = ED25519_HD_KEY.derivePath("$bip44DerivationPrefix/$addressIndex'", convert.hex.encode(seed));
+    final data = ED25519_HD_KEY.derivePath("$bip44DerivationPrefix/$addressIndex'", seed);
     return UserSecretKey(data.key);
   }
 }

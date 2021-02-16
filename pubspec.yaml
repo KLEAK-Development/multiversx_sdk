@@ -10,8 +10,7 @@ dependencies:
   bip39: ^1.0.4
   convert: ^2.1.1
   dio: ^3.0.10
-  ed25519_hd_key:
-    git: https://github.com/acolyte-xyz/dart-ed25519-hd-key.git
+  ed25519_hd_key: ^1.1.0
   freezed_annotation: ^0.12.0
   meta: ^1.2.4
   pedantic: ^1.9.0
