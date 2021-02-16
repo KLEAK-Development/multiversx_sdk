@@ -1,6 +1,7 @@
 import 'package:elrond_sdk/src/models/response/address/address.dart';
 import 'package:elrond_sdk/src/models/response/network/network.dart';
 import 'package:elrond_sdk/src/models/response/transaction/transaction.dart';
+import 'package:elrond_sdk/src/models/response/vm_values/vm_values.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'response.freezed.dart';
@@ -27,6 +28,12 @@ abstract class ProxyResponse with _$ProxyResponse {
     String error,
     String code,
   }) = GetTransactionInformationsWithSmartContractResultsResponse;
+
+  factory ProxyResponse.vmValuesQuery({
+    VmValuesResponse data,
+    String error,
+    String code,
+  }) = VmValuesQuery;
 
   factory ProxyResponse.fromJson(Map<String, dynamic> json) => _$ProxyResponseFromJson(json);
 }

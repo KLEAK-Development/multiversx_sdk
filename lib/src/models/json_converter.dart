@@ -1,7 +1,9 @@
+import 'package:convert/convert.dart' as convert;
 import 'package:elrond_sdk/src/address.dart';
 import 'package:elrond_sdk/src/balance.dart';
 import 'package:elrond_sdk/src/network_parameters.dart';
 import 'package:elrond_sdk/src/nonce.dart';
+import 'package:elrond_sdk/src/smart_contract/argument.dart';
 import 'package:elrond_sdk/src/transaction.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -12,7 +14,7 @@ class AddressConverter implements JsonConverter<Address, String> {
   Address fromJson(String json) => Address.fromBech32(json);
 
   @override
-  String toJson(Address object) => object.bech32;
+  String toJson(Address object) => object?.bech32;
 }
 
 class NonceConverter implements JsonConverter<Nonce, int> {
@@ -32,7 +34,7 @@ class BalanceConverter implements JsonConverter<Balance, String> {
   Balance fromJson(String json) => Balance.fromString(json);
 
   @override
-  String toJson(Balance object) => object.value.toString();
+  String toJson(Balance object) => object?.value?.toString();
 }
 
 class ChainIdConverter implements JsonConverter<ChainId, String> {
@@ -83,4 +85,14 @@ class TransactionHashConverter implements JsonConverter<TransactionHash, String>
 
   @override
   String toJson(TransactionHash object) => object.hash;
+}
+
+class ContractArgumentConverter implements JsonConverter<ContractArgument, String> {
+  const ContractArgumentConverter();
+
+  @override
+  ContractArgument fromJson(String json) => ContractArgument.fromBytes(convert.hex.decode(json));
+
+  @override
+  String toJson(ContractArgument object) => convert.hex.encode(object.bytes);
 }

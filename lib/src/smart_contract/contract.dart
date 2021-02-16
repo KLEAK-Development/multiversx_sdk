@@ -7,6 +7,8 @@ import 'package:elrond_sdk/elrond.dart';
 import 'package:elrond_sdk/src/account.dart';
 import 'package:elrond_sdk/src/address.dart';
 import 'package:elrond_sdk/src/interface.dart';
+import 'package:elrond_sdk/src/models/request/vm_values/vm_values.dart';
+import 'package:elrond_sdk/src/models/response/response.dart';
 import 'package:elrond_sdk/src/models/response/transaction/transaction.dart';
 import 'package:elrond_sdk/src/network_configuration.dart';
 import 'package:elrond_sdk/src/nonce.dart';
@@ -207,9 +209,24 @@ class SmartContract {
     return result;
   }
 
-  Future<void> query() async {
-    //  TODO: implement query
-    return null;
+  Future<VmValuesQuery> query(
+    IProvider provider,
+    String functionName, {
+    Address caller,
+    List<ContractArgument> arguments = const [],
+    Balance value,
+  }) async {
+    assert(provider != null, 'provider cannot be null');
+    assert(functionName != null, 'functionName cannot be null');
+    assert(arguments != null, 'arguments cannot be null');
+    final result = await provider.vmValuesQuery(VmValuesRequest(
+      scAddress: _address,
+      funcName: functionName,
+      args: arguments,
+      caller: caller,
+      value: value,
+    ));
+    return result;
   }
 
   Future<void> queryHex() async {

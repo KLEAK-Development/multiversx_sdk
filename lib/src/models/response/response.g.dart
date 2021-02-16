@@ -123,3 +123,20 @@ Map<String, dynamic>
           'error': instance.error,
           'code': instance.code,
         };
+
+_$VmValuesQuery _$_$VmValuesQueryFromJson(Map<String, dynamic> json) {
+  return _$VmValuesQuery(
+    data: json['data'] == null
+        ? null
+        : VmValuesResponse.fromJson(json['data'] as Map<String, dynamic>),
+    error: json['error'] as String,
+    code: json['code'] as String,
+  );
+}
+
+Map<String, dynamic> _$_$VmValuesQueryToJson(_$VmValuesQuery instance) =>
+    <String, dynamic>{
+      'data': instance.data,
+      'error': instance.error,
+      'code': instance.code,
+    };

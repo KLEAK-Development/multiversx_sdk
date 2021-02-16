@@ -8,19 +8,22 @@ part of 'vm_values.dart';
 
 _$_VmValuesRequest _$_$_VmValuesRequestFromJson(Map<String, dynamic> json) {
   return _$_VmValuesRequest(
-    scAddress: json['scAddress'] as String,
+    scAddress: const AddressConverter().fromJson(json['scAddress'] as String),
     funcName: json['funcName'] as String,
-    args: (json['args'] as List)?.map((e) => e as String)?.toList(),
-    caller: json['caller'] as String,
-    value: json['value'] as String,
+    args: (json['args'] as List)
+        ?.map((e) => const ContractArgumentConverter().fromJson(e as String))
+        ?.toList(),
+    caller: const AddressConverter().fromJson(json['caller'] as String),
+    value: const BalanceConverter().fromJson(json['value'] as String),
   );
 }
 
 Map<String, dynamic> _$_$_VmValuesRequestToJson(_$_VmValuesRequest instance) {
   final val = <String, dynamic>{
-    'scAddress': instance.scAddress,
+    'scAddress': const AddressConverter().toJson(instance.scAddress),
     'funcName': instance.funcName,
-    'args': instance.args,
+    'args':
+        instance.args?.map(const ContractArgumentConverter().toJson)?.toList(),
   };
 
   void writeNotNull(String key, dynamic value) {
@@ -29,7 +32,7 @@ Map<String, dynamic> _$_$_VmValuesRequestToJson(_$_VmValuesRequest instance) {
     }
   }
 
-  writeNotNull('caller', instance.caller);
-  writeNotNull('value', instance.value);
+  writeNotNull('caller', const AddressConverter().toJson(instance.caller));
+  writeNotNull('value', const BalanceConverter().toJson(instance.value));
   return val;
 }

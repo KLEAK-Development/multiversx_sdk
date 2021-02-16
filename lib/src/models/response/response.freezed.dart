@@ -23,6 +23,8 @@ ProxyResponse _$ProxyResponseFromJson(Map<String, dynamic> json) {
     case 'informationsWithSmartContractResults':
       return GetTransactionInformationsWithSmartContractResultsResponse
           .fromJson(json);
+    case 'vmValuesQuery':
+      return VmValuesQuery.fromJson(json);
 
     default:
       throw FallThroughError();
@@ -97,6 +99,16 @@ class _$ProxyResponseTearOff {
   }
 
 // ignore: unused_element
+  VmValuesQuery vmValuesQuery(
+      {VmValuesResponse data, String error, String code}) {
+    return VmValuesQuery(
+      data: data,
+      error: error,
+      code: code,
+    );
+  }
+
+// ignore: unused_element
   ProxyResponse fromJson(Map<String, Object> json) {
     return ProxyResponse.fromJson(json);
   }
@@ -131,6 +143,8 @@ mixin _$ProxyResponse {
             GetTransactionInformationsWithSmartContractResultData data,
             String error,
             String code),
+    @required
+        TResult vmValuesQuery(VmValuesResponse data, String error, String code),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>(
@@ -147,6 +161,7 @@ mixin _$ProxyResponse {
         GetTransactionInformationsWithSmartContractResultData data,
         String error,
         String code),
+    TResult vmValuesQuery(VmValuesResponse data, String error, String code),
     @required TResult orElse(),
   });
   @optionalTypeArgs
@@ -160,6 +175,7 @@ mixin _$ProxyResponse {
     @required
         TResult informationsWithSmartContractResults(
             GetTransactionInformationsWithSmartContractResultsResponse value),
+    @required TResult vmValuesQuery(VmValuesQuery value),
   });
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>(
@@ -170,6 +186,7 @@ mixin _$ProxyResponse {
     TResult getTransactionStatus(GetTransactionStatusResponse value),
     TResult informationsWithSmartContractResults(
         GetTransactionInformationsWithSmartContractResultsResponse value),
+    TResult vmValuesQuery(VmValuesQuery value),
     @required TResult orElse(),
   });
   Map<String, dynamic> toJson();
@@ -308,6 +325,8 @@ class _$ProxyResponseGeneric implements ProxyResponseGeneric {
             GetTransactionInformationsWithSmartContractResultData data,
             String error,
             String code),
+    @required
+        TResult vmValuesQuery(VmValuesResponse data, String error, String code),
   }) {
     assert($default != null);
     assert(getAccountInformation != null);
@@ -315,6 +334,7 @@ class _$ProxyResponseGeneric implements ProxyResponseGeneric {
     assert(sendTransaction != null);
     assert(getTransactionStatus != null);
     assert(informationsWithSmartContractResults != null);
+    assert(vmValuesQuery != null);
     return $default(data, error, code);
   }
 
@@ -334,6 +354,7 @@ class _$ProxyResponseGeneric implements ProxyResponseGeneric {
         GetTransactionInformationsWithSmartContractResultData data,
         String error,
         String code),
+    TResult vmValuesQuery(VmValuesResponse data, String error, String code),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -355,6 +376,7 @@ class _$ProxyResponseGeneric implements ProxyResponseGeneric {
     @required
         TResult informationsWithSmartContractResults(
             GetTransactionInformationsWithSmartContractResultsResponse value),
+    @required TResult vmValuesQuery(VmValuesQuery value),
   }) {
     assert($default != null);
     assert(getAccountInformation != null);
@@ -362,6 +384,7 @@ class _$ProxyResponseGeneric implements ProxyResponseGeneric {
     assert(sendTransaction != null);
     assert(getTransactionStatus != null);
     assert(informationsWithSmartContractResults != null);
+    assert(vmValuesQuery != null);
     return $default(this);
   }
 
@@ -375,6 +398,7 @@ class _$ProxyResponseGeneric implements ProxyResponseGeneric {
     TResult getTransactionStatus(GetTransactionStatusResponse value),
     TResult informationsWithSmartContractResults(
         GetTransactionInformationsWithSmartContractResultsResponse value),
+    TResult vmValuesQuery(VmValuesQuery value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -526,6 +550,8 @@ class _$GetAccountInformationResponse implements GetAccountInformationResponse {
             GetTransactionInformationsWithSmartContractResultData data,
             String error,
             String code),
+    @required
+        TResult vmValuesQuery(VmValuesResponse data, String error, String code),
   }) {
     assert($default != null);
     assert(getAccountInformation != null);
@@ -533,6 +559,7 @@ class _$GetAccountInformationResponse implements GetAccountInformationResponse {
     assert(sendTransaction != null);
     assert(getTransactionStatus != null);
     assert(informationsWithSmartContractResults != null);
+    assert(vmValuesQuery != null);
     return getAccountInformation(data, error, code);
   }
 
@@ -552,6 +579,7 @@ class _$GetAccountInformationResponse implements GetAccountInformationResponse {
         GetTransactionInformationsWithSmartContractResultData data,
         String error,
         String code),
+    TResult vmValuesQuery(VmValuesResponse data, String error, String code),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -573,6 +601,7 @@ class _$GetAccountInformationResponse implements GetAccountInformationResponse {
     @required
         TResult informationsWithSmartContractResults(
             GetTransactionInformationsWithSmartContractResultsResponse value),
+    @required TResult vmValuesQuery(VmValuesQuery value),
   }) {
     assert($default != null);
     assert(getAccountInformation != null);
@@ -580,6 +609,7 @@ class _$GetAccountInformationResponse implements GetAccountInformationResponse {
     assert(sendTransaction != null);
     assert(getTransactionStatus != null);
     assert(informationsWithSmartContractResults != null);
+    assert(vmValuesQuery != null);
     return getAccountInformation(this);
   }
 
@@ -593,6 +623,7 @@ class _$GetAccountInformationResponse implements GetAccountInformationResponse {
     TResult getTransactionStatus(GetTransactionStatusResponse value),
     TResult informationsWithSmartContractResults(
         GetTransactionInformationsWithSmartContractResultsResponse value),
+    TResult vmValuesQuery(VmValuesQuery value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -746,6 +777,8 @@ class _$NetworkConfigurationResponse implements NetworkConfigurationResponse {
             GetTransactionInformationsWithSmartContractResultData data,
             String error,
             String code),
+    @required
+        TResult vmValuesQuery(VmValuesResponse data, String error, String code),
   }) {
     assert($default != null);
     assert(getAccountInformation != null);
@@ -753,6 +786,7 @@ class _$NetworkConfigurationResponse implements NetworkConfigurationResponse {
     assert(sendTransaction != null);
     assert(getTransactionStatus != null);
     assert(informationsWithSmartContractResults != null);
+    assert(vmValuesQuery != null);
     return networkConfiguration(data, error, code);
   }
 
@@ -772,6 +806,7 @@ class _$NetworkConfigurationResponse implements NetworkConfigurationResponse {
         GetTransactionInformationsWithSmartContractResultData data,
         String error,
         String code),
+    TResult vmValuesQuery(VmValuesResponse data, String error, String code),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -793,6 +828,7 @@ class _$NetworkConfigurationResponse implements NetworkConfigurationResponse {
     @required
         TResult informationsWithSmartContractResults(
             GetTransactionInformationsWithSmartContractResultsResponse value),
+    @required TResult vmValuesQuery(VmValuesQuery value),
   }) {
     assert($default != null);
     assert(getAccountInformation != null);
@@ -800,6 +836,7 @@ class _$NetworkConfigurationResponse implements NetworkConfigurationResponse {
     assert(sendTransaction != null);
     assert(getTransactionStatus != null);
     assert(informationsWithSmartContractResults != null);
+    assert(vmValuesQuery != null);
     return networkConfiguration(this);
   }
 
@@ -813,6 +850,7 @@ class _$NetworkConfigurationResponse implements NetworkConfigurationResponse {
     TResult getTransactionStatus(GetTransactionStatusResponse value),
     TResult informationsWithSmartContractResults(
         GetTransactionInformationsWithSmartContractResultsResponse value),
+    TResult vmValuesQuery(VmValuesQuery value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -963,6 +1001,8 @@ class _$SendTransactionResponse implements SendTransactionResponse {
             GetTransactionInformationsWithSmartContractResultData data,
             String error,
             String code),
+    @required
+        TResult vmValuesQuery(VmValuesResponse data, String error, String code),
   }) {
     assert($default != null);
     assert(getAccountInformation != null);
@@ -970,6 +1010,7 @@ class _$SendTransactionResponse implements SendTransactionResponse {
     assert(sendTransaction != null);
     assert(getTransactionStatus != null);
     assert(informationsWithSmartContractResults != null);
+    assert(vmValuesQuery != null);
     return sendTransaction(data, error, code);
   }
 
@@ -989,6 +1030,7 @@ class _$SendTransactionResponse implements SendTransactionResponse {
         GetTransactionInformationsWithSmartContractResultData data,
         String error,
         String code),
+    TResult vmValuesQuery(VmValuesResponse data, String error, String code),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -1010,6 +1052,7 @@ class _$SendTransactionResponse implements SendTransactionResponse {
     @required
         TResult informationsWithSmartContractResults(
             GetTransactionInformationsWithSmartContractResultsResponse value),
+    @required TResult vmValuesQuery(VmValuesQuery value),
   }) {
     assert($default != null);
     assert(getAccountInformation != null);
@@ -1017,6 +1060,7 @@ class _$SendTransactionResponse implements SendTransactionResponse {
     assert(sendTransaction != null);
     assert(getTransactionStatus != null);
     assert(informationsWithSmartContractResults != null);
+    assert(vmValuesQuery != null);
     return sendTransaction(this);
   }
 
@@ -1030,6 +1074,7 @@ class _$SendTransactionResponse implements SendTransactionResponse {
     TResult getTransactionStatus(GetTransactionStatusResponse value),
     TResult informationsWithSmartContractResults(
         GetTransactionInformationsWithSmartContractResultsResponse value),
+    TResult vmValuesQuery(VmValuesQuery value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -1182,6 +1227,8 @@ class _$GetTransactionStatusResponse implements GetTransactionStatusResponse {
             GetTransactionInformationsWithSmartContractResultData data,
             String error,
             String code),
+    @required
+        TResult vmValuesQuery(VmValuesResponse data, String error, String code),
   }) {
     assert($default != null);
     assert(getAccountInformation != null);
@@ -1189,6 +1236,7 @@ class _$GetTransactionStatusResponse implements GetTransactionStatusResponse {
     assert(sendTransaction != null);
     assert(getTransactionStatus != null);
     assert(informationsWithSmartContractResults != null);
+    assert(vmValuesQuery != null);
     return getTransactionStatus(data, error, code);
   }
 
@@ -1208,6 +1256,7 @@ class _$GetTransactionStatusResponse implements GetTransactionStatusResponse {
         GetTransactionInformationsWithSmartContractResultData data,
         String error,
         String code),
+    TResult vmValuesQuery(VmValuesResponse data, String error, String code),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -1229,6 +1278,7 @@ class _$GetTransactionStatusResponse implements GetTransactionStatusResponse {
     @required
         TResult informationsWithSmartContractResults(
             GetTransactionInformationsWithSmartContractResultsResponse value),
+    @required TResult vmValuesQuery(VmValuesQuery value),
   }) {
     assert($default != null);
     assert(getAccountInformation != null);
@@ -1236,6 +1286,7 @@ class _$GetTransactionStatusResponse implements GetTransactionStatusResponse {
     assert(sendTransaction != null);
     assert(getTransactionStatus != null);
     assert(informationsWithSmartContractResults != null);
+    assert(vmValuesQuery != null);
     return getTransactionStatus(this);
   }
 
@@ -1249,6 +1300,7 @@ class _$GetTransactionStatusResponse implements GetTransactionStatusResponse {
     TResult getTransactionStatus(GetTransactionStatusResponse value),
     TResult informationsWithSmartContractResults(
         GetTransactionInformationsWithSmartContractResultsResponse value),
+    TResult vmValuesQuery(VmValuesQuery value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -1426,6 +1478,8 @@ class _$GetTransactionInformationsWithSmartContractResultsResponse
             GetTransactionInformationsWithSmartContractResultData data,
             String error,
             String code),
+    @required
+        TResult vmValuesQuery(VmValuesResponse data, String error, String code),
   }) {
     assert($default != null);
     assert(getAccountInformation != null);
@@ -1433,6 +1487,7 @@ class _$GetTransactionInformationsWithSmartContractResultsResponse
     assert(sendTransaction != null);
     assert(getTransactionStatus != null);
     assert(informationsWithSmartContractResults != null);
+    assert(vmValuesQuery != null);
     return informationsWithSmartContractResults(data, error, code);
   }
 
@@ -1452,6 +1507,7 @@ class _$GetTransactionInformationsWithSmartContractResultsResponse
         GetTransactionInformationsWithSmartContractResultData data,
         String error,
         String code),
+    TResult vmValuesQuery(VmValuesResponse data, String error, String code),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -1473,6 +1529,7 @@ class _$GetTransactionInformationsWithSmartContractResultsResponse
     @required
         TResult informationsWithSmartContractResults(
             GetTransactionInformationsWithSmartContractResultsResponse value),
+    @required TResult vmValuesQuery(VmValuesQuery value),
   }) {
     assert($default != null);
     assert(getAccountInformation != null);
@@ -1480,6 +1537,7 @@ class _$GetTransactionInformationsWithSmartContractResultsResponse
     assert(sendTransaction != null);
     assert(getTransactionStatus != null);
     assert(informationsWithSmartContractResults != null);
+    assert(vmValuesQuery != null);
     return informationsWithSmartContractResults(this);
   }
 
@@ -1493,6 +1551,7 @@ class _$GetTransactionInformationsWithSmartContractResultsResponse
     TResult getTransactionStatus(GetTransactionStatusResponse value),
     TResult informationsWithSmartContractResults(
         GetTransactionInformationsWithSmartContractResultsResponse value),
+    TResult vmValuesQuery(VmValuesQuery value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -1531,4 +1590,223 @@ abstract class GetTransactionInformationsWithSmartContractResultsResponse
   @JsonKey(ignore: true)
   $GetTransactionInformationsWithSmartContractResultsResponseCopyWith<
       GetTransactionInformationsWithSmartContractResultsResponse> get copyWith;
+}
+
+/// @nodoc
+abstract class $VmValuesQueryCopyWith<$Res>
+    implements $ProxyResponseCopyWith<$Res> {
+  factory $VmValuesQueryCopyWith(
+          VmValuesQuery value, $Res Function(VmValuesQuery) then) =
+      _$VmValuesQueryCopyWithImpl<$Res>;
+  @override
+  $Res call({VmValuesResponse data, String error, String code});
+
+  $VmValuesResponseCopyWith<$Res> get data;
+}
+
+/// @nodoc
+class _$VmValuesQueryCopyWithImpl<$Res>
+    extends _$ProxyResponseCopyWithImpl<$Res>
+    implements $VmValuesQueryCopyWith<$Res> {
+  _$VmValuesQueryCopyWithImpl(
+      VmValuesQuery _value, $Res Function(VmValuesQuery) _then)
+      : super(_value, (v) => _then(v as VmValuesQuery));
+
+  @override
+  VmValuesQuery get _value => super._value as VmValuesQuery;
+
+  @override
+  $Res call({
+    Object data = freezed,
+    Object error = freezed,
+    Object code = freezed,
+  }) {
+    return _then(VmValuesQuery(
+      data: data == freezed ? _value.data : data as VmValuesResponse,
+      error: error == freezed ? _value.error : error as String,
+      code: code == freezed ? _value.code : code as String,
+    ));
+  }
+
+  @override
+  $VmValuesResponseCopyWith<$Res> get data {
+    if (_value.data == null) {
+      return null;
+    }
+    return $VmValuesResponseCopyWith<$Res>(_value.data, (value) {
+      return _then(_value.copyWith(data: value));
+    });
+  }
+}
+
+@JsonSerializable()
+
+/// @nodoc
+class _$VmValuesQuery implements VmValuesQuery {
+  _$VmValuesQuery({this.data, this.error, this.code});
+
+  factory _$VmValuesQuery.fromJson(Map<String, dynamic> json) =>
+      _$_$VmValuesQueryFromJson(json);
+
+  @override
+  final VmValuesResponse data;
+  @override
+  final String error;
+  @override
+  final String code;
+
+  @override
+  String toString() {
+    return 'ProxyResponse.vmValuesQuery(data: $data, error: $error, code: $code)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is VmValuesQuery &&
+            (identical(other.data, data) ||
+                const DeepCollectionEquality().equals(other.data, data)) &&
+            (identical(other.error, error) ||
+                const DeepCollectionEquality().equals(other.error, error)) &&
+            (identical(other.code, code) ||
+                const DeepCollectionEquality().equals(other.code, code)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(data) ^
+      const DeepCollectionEquality().hash(error) ^
+      const DeepCollectionEquality().hash(code);
+
+  @JsonKey(ignore: true)
+  @override
+  $VmValuesQueryCopyWith<VmValuesQuery> get copyWith =>
+      _$VmValuesQueryCopyWithImpl<VmValuesQuery>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>(
+    TResult $default(Map<String, dynamic> data, String error, String code), {
+    @required
+        TResult getAccountInformation(
+            AccountResponse data, String error, String code),
+    @required
+        TResult networkConfiguration(
+            NetworkConfigurationData data, String error, String code),
+    @required
+        TResult sendTransaction(
+            SendTransactionData data, String error, String code),
+    @required
+        TResult getTransactionStatus(
+            GetTransactionStatusData data, String error, String code),
+    @required
+        TResult informationsWithSmartContractResults(
+            GetTransactionInformationsWithSmartContractResultData data,
+            String error,
+            String code),
+    @required
+        TResult vmValuesQuery(VmValuesResponse data, String error, String code),
+  }) {
+    assert($default != null);
+    assert(getAccountInformation != null);
+    assert(networkConfiguration != null);
+    assert(sendTransaction != null);
+    assert(getTransactionStatus != null);
+    assert(informationsWithSmartContractResults != null);
+    assert(vmValuesQuery != null);
+    return vmValuesQuery(data, error, code);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>(
+    TResult $default(Map<String, dynamic> data, String error, String code), {
+    TResult getAccountInformation(
+        AccountResponse data, String error, String code),
+    TResult networkConfiguration(
+        NetworkConfigurationData data, String error, String code),
+    TResult sendTransaction(
+        SendTransactionData data, String error, String code),
+    TResult getTransactionStatus(
+        GetTransactionStatusData data, String error, String code),
+    TResult informationsWithSmartContractResults(
+        GetTransactionInformationsWithSmartContractResultData data,
+        String error,
+        String code),
+    TResult vmValuesQuery(VmValuesResponse data, String error, String code),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (vmValuesQuery != null) {
+      return vmValuesQuery(data, error, code);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>(
+    TResult $default(ProxyResponseGeneric value), {
+    @required
+        TResult getAccountInformation(GetAccountInformationResponse value),
+    @required TResult networkConfiguration(NetworkConfigurationResponse value),
+    @required TResult sendTransaction(SendTransactionResponse value),
+    @required TResult getTransactionStatus(GetTransactionStatusResponse value),
+    @required
+        TResult informationsWithSmartContractResults(
+            GetTransactionInformationsWithSmartContractResultsResponse value),
+    @required TResult vmValuesQuery(VmValuesQuery value),
+  }) {
+    assert($default != null);
+    assert(getAccountInformation != null);
+    assert(networkConfiguration != null);
+    assert(sendTransaction != null);
+    assert(getTransactionStatus != null);
+    assert(informationsWithSmartContractResults != null);
+    assert(vmValuesQuery != null);
+    return vmValuesQuery(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>(
+    TResult $default(ProxyResponseGeneric value), {
+    TResult getAccountInformation(GetAccountInformationResponse value),
+    TResult networkConfiguration(NetworkConfigurationResponse value),
+    TResult sendTransaction(SendTransactionResponse value),
+    TResult getTransactionStatus(GetTransactionStatusResponse value),
+    TResult informationsWithSmartContractResults(
+        GetTransactionInformationsWithSmartContractResultsResponse value),
+    TResult vmValuesQuery(VmValuesQuery value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (vmValuesQuery != null) {
+      return vmValuesQuery(this);
+    }
+    return orElse();
+  }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$VmValuesQueryToJson(this)..['runtimeType'] = 'vmValuesQuery';
+  }
+}
+
+abstract class VmValuesQuery implements ProxyResponse {
+  factory VmValuesQuery({VmValuesResponse data, String error, String code}) =
+      _$VmValuesQuery;
+
+  factory VmValuesQuery.fromJson(Map<String, dynamic> json) =
+      _$VmValuesQuery.fromJson;
+
+  VmValuesResponse get data;
+  @override
+  String get error;
+  @override
+  String get code;
+  @override
+  @JsonKey(ignore: true)
+  $VmValuesQueryCopyWith<VmValuesQuery> get copyWith;
 }

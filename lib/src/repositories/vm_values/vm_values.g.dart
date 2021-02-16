@@ -17,7 +17,7 @@ class _VmValuesRepository implements VmValuesRepository {
   String baseUrl;
 
   @override
-  Future<ProxyResponseGeneric> query(request) async {
+  Future<VmValuesQuery> query(request) async {
     ArgumentError.checkNotNull(request, 'request');
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
@@ -31,7 +31,7 @@ class _VmValuesRepository implements VmValuesRepository {
             extra: _extra,
             baseUrl: baseUrl),
         data: _data);
-    final value = ProxyResponseGeneric.fromJson(_result.data);
+    final value = VmValuesQuery.fromJson(_result.data);
     return value;
   }
 }

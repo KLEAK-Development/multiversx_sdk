@@ -10,5 +10,5 @@ abstract class VmValuesRepository {
   factory VmValuesRepository(Dio dio, {String baseUrl}) = _VmValuesRepository;
 
   @POST('/vm-values/query')
-  Future<ProxyResponseGeneric> query(@Body() VmValuesRequest request);
+  Future<VmValuesQuery> query(@Body() VmValuesRequest request);
 }

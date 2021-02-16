@@ -1,5 +1,7 @@
 import 'package:elrond_sdk/src/account.dart';
 import 'package:elrond_sdk/src/address.dart';
+import 'package:elrond_sdk/src/models/request/vm_values/vm_values.dart';
+import 'package:elrond_sdk/src/models/response/response.dart';
 import 'package:elrond_sdk/src/models/response/transaction/transaction.dart';
 import 'package:elrond_sdk/src/network_configuration.dart';
 import 'package:elrond_sdk/src/signature.dart';
@@ -19,6 +21,8 @@ abstract class IProvider {
   Future<GetTransactionInformationsWithSmartContractResultData> getTransactionInformationsWithResults(
     TransactionHash transactionHash,
   );
+
+  Future<VmValuesQuery> vmValuesQuery(VmValuesRequest request);
 }
 
 abstract class ISignable {

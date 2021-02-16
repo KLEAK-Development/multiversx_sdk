@@ -5,6 +5,7 @@ import 'package:elrond_sdk/src/account.dart';
 import 'package:elrond_sdk/src/address.dart';
 import 'package:elrond_sdk/src/interface.dart';
 import 'package:elrond_sdk/src/models/request/transaction/send_transaction/send_transaction.dart';
+import 'package:elrond_sdk/src/models/request/vm_values/vm_values.dart';
 import 'package:elrond_sdk/src/models/response/response.dart';
 import 'package:elrond_sdk/src/models/response/transaction/transaction.dart';
 import 'package:elrond_sdk/src/network_configuration.dart';
@@ -101,5 +102,10 @@ class ProxyProvider extends IProvider {
     } on DioError catch (e) {
       throw ApiException(ProxyResponseGeneric.fromJson(e.response.data as Map));
     }
+  }
+
+  @override
+  Future<VmValuesQuery> vmValuesQuery(VmValuesRequest request) async {
+    return vmValuesRepository.query(request);
   }
 }
