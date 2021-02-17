@@ -29,5 +29,5 @@ class UserPublicKey {
 
   String get hex => convert.hex.encode(bytes);
 
-  Address toAddress() => Address.fromBytes(bytes);
+  Address toAddress() => Address(bytes);
 }

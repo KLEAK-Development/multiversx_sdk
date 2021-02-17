@@ -46,6 +46,7 @@ class DecodedBech {
 }
 
 DecodedBech decode(final String bech) {
+  assert(bech != null, 'bech cannot be null');
   var hasLower = false;
   var hasUpper = false;
   for (var index = 0; index < bech.length; index++) {

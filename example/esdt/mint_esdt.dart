@@ -2,8 +2,6 @@ import 'dart:async';
 
 import 'package:dio/dio.dart';
 import 'package:elrond_sdk/elrond.dart';
-import 'package:elrond_sdk/src/network_parameters.dart';
-import 'package:elrond_sdk/src/repositories/repositories.dart';
 
 import '../seed.dart';
 

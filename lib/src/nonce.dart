@@ -8,5 +8,5 @@ class Nonce {
   Nonce increment() => Nonce(value + 1);
 
   @override
-  String toString() => '$value';
+  String toString() => 'Nonce{ $value }';
 }

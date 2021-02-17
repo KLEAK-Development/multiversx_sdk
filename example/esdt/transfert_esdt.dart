@@ -16,7 +16,7 @@ void main(List<String> arguments) async {
   final wallet = Wallet.fromSeed(seed);
   await wallet.synchronize(proxy);
 
-  print('eGLD ${wallet.account.balance.toDenominated()}');
+  print('eGLD ${wallet.account.balance.toDenominated}');
 
   final txHash = await wallet.sendEsdt(
     provider: proxy,

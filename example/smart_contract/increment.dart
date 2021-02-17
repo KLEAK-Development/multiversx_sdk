@@ -1,7 +1,5 @@
 import 'package:dio/dio.dart';
 import 'package:elrond_sdk/elrond.dart';
-import 'package:elrond_sdk/src/smart_contract/contract.dart';
-import 'package:elrond_sdk/src/smart_contract/function.dart';
 
 import '../seed.dart';
 

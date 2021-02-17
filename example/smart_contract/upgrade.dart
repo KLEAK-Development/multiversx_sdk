@@ -2,9 +2,6 @@ import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:elrond_sdk/elrond.dart';
-import 'package:elrond_sdk/src/smart_contract/code.dart';
-import 'package:elrond_sdk/src/smart_contract/code_metadata.dart';
-import 'package:elrond_sdk/src/smart_contract/contract.dart';
 
 import '../seed.dart';
 

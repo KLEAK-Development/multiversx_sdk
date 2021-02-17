@@ -5,37 +5,30 @@ const hrp = 'erd';
 const pubkeyLength = 32;
 
 class Address {
-  final String hex;
+  final List<int> _bytes;
 
-  const Address._(this.hex);
+  const Address(this._bytes)
+      : assert(_bytes.length == pubkeyLength, 'bytes length must be equal to $pubkeyLength but it is ${_bytes.length}');
 
-  factory Address.fromAddress(Address address) => Address._(address.hex);
+  factory Address.fromAddress(Address address) => Address(address._bytes);
 
-  const Address.zero() : hex = '0' * 64;
+  Address.zero() : _bytes = List.generate(32, (_) => 0, growable: false);
 
-  factory Address.fromBytes(List<int> bytes) {
-    assert(bytes.length != pubkeyLength, 'bytes length must be equal to $pubkeyLength but it\'s ${bytes.length}');
-    return Address._(convert.hex.encode(bytes));
-  }
-
-  factory Address.fromHex(String hex) {
-    assert(
-        convert.hex.decode(hex).length == pubkeyLength, 'hex length is not correct should be equal to $pubkeyLength');
-    return Address._(hex);
-  }
+  factory Address.fromHex(String hex) => Address(convert.hex.decode(hex));
 
   factory Address.fromBech32(String bech) {
+    assert(bech != null, 'bech cannot be null');
     final decoded = b32.decode(bech);
-    assert(decoded != null, 'decoded can\'t be null');
-    assert(decoded.hrp == hrp, 'hrp must be equal to $hrp but it\'s ${decoded.hrp}');
+    assert(decoded != null, 'decoded cannot be null');
+    assert(decoded.hrp == hrp, 'hrp must be equal to $hrp but it is ${decoded.hrp}');
     final pubKey = b32.fromWords(decoded.data);
-    return Address._(convert.hex.encode(pubKey));
+    return Address(pubKey);
   }
 
   String get bech32 => b32.encode(hrp, b32.toWords(pubkey));
 
-  List<int> get pubkey => convert.hex.decode(hex);
+  List<int> get pubkey => _bytes;
 
   @override
-  String toString() => bech32;
+  String toString() => 'Address{ $bech32 }';
 }

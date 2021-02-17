@@ -14,5 +14,5 @@ void main(List<String> arguments) async {
       Wallet.fromAdress(Address.fromBech32('erd1qsnaz30h4c6fdn9q752kmjt57zwmgl5qg27r4jswwpj6vt3rsjyqsjck4k'));
   await wallet.synchronize(proxy);
 
-  print('eGLD ${wallet.account.balance.toDenominated()}');
+  print('eGLD ${wallet.account.balance.toDenominated}');
 }

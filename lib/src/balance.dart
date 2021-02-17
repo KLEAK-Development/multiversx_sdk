@@ -27,7 +27,7 @@ class Balance {
     return Balance(BigInt.parse(bigUnitsString));
   }
 
-  String toDenominated() {
+  String get toDenominated {
     final padded = value.toString().padLeft(denomination, '0');
     final decimals = padded.substring(padded.length - denomination);
     final integer = padded.substring(0, padded.length - denomination).padLeft(1, '0');
@@ -35,5 +35,5 @@ class Balance {
   }
 
   @override
-  String toString() => value.toString();
+  String toString() => 'Balance{ ${toDenominated} }';
 }

@@ -32,7 +32,7 @@ Address computeContractAddress(Address address, Nonce nonce) {
     ...digest.sublist(10, 30),
     ...address.pubkey.sublist(30),
   ];
-  return Address.fromBytes(bytes);
+  return Address(bytes);
 }
 
 String _defaultSmartContractResultsConverter(int index, String value) => value;

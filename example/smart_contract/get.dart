@@ -1,11 +1,7 @@
 import 'dart:convert';
 
-import 'package:convert/convert.dart';
 import 'package:dio/dio.dart';
 import 'package:elrond_sdk/elrond.dart';
-import 'package:elrond_sdk/src/models/request/vm_values/vm_values.dart';
-import 'package:elrond_sdk/src/repositories/vm_values/vm_values.dart';
-import 'package:elrond_sdk/src/smart_contract/contract.dart';
 
 import '../seed.dart';
 
