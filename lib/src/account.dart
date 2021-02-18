@@ -31,5 +31,5 @@ class Account {
   }
 
   @override
-  String toString() => 'Account{${address.bech32}, ${balance.value}, $username}';
+  String toString() => 'Account{${address.bech32}, ${balance.value}, ${nonce.value}, $username}';
 }

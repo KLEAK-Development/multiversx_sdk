@@ -4,13 +4,6 @@ import 'package:elrond_sdk/elrond.dart';
 import '../seed.dart';
 
 void main(List<String> arguments) async {
-  // final mnemonic = Mnemonic.generate();
-  final mnemonic = Mnemonic.fromSeed(seed);
-  final privateKey = mnemonic.deriveKey();
-  final publicKey = privateKey.generatePublicKey();
-  final address = publicKey.toAddress();
-  print(address.toString());
-
   final dio = Dio();
   //  remove baseUrl to target mainnet automatically
   final proxy = ProxyProvider(
@@ -18,9 +11,9 @@ void main(List<String> arguments) async {
     networkRepository: NetworkRepository(dio, baseUrl: 'https://testnet-api.elrond.com/'),
     transactionRepository: TransactionRepository(dio, baseUrl: 'https://testnet-api.elrond.com/'),
   );
-  final account = Account.withAddress(address);
-  await account.synchronize(proxy);
-  final userSigner = UserSigner(privateKey);
+
+  final wallet = Wallet.fromSeed(seed);
+  await wallet.synchronize(proxy);
 
   final networkConfiguration = await proxy.getNetworkConfiguration();
 
@@ -28,9 +21,9 @@ void main(List<String> arguments) async {
     address: Address.fromBech32('erd1qqqqqqqqqqqqqpgql0v7n9ux5pdeg8jhzgqzgj8p2x2mdzm8sjyqd9e7j7'),
   );
   final result = await counterSc.invoke(
-    account,
+    wallet.account,
     ContractFunction('increment'),
-    userSigner,
+    wallet.signer,
     proxy,
     networkConfiguration: networkConfiguration,
   );

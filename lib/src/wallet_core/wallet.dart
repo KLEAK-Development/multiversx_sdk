@@ -35,6 +35,11 @@ class Wallet {
 
   Account get account => _account;
 
+  ISigner get signer {
+    assert(_secretKey != null, 'you cannot send transaction without the secret key');
+    return UserSigner(_secretKey);
+  }
+
   Future<void> synchronize(IProvider provider) async {
     assert(provider != null, 'provider cannot be null');
     _account = await _account.synchronize(provider);
@@ -129,9 +134,7 @@ class Wallet {
   }) async {
     assert(provider != null, 'provider cannot be null');
     assert(transaction != null, 'transaction cannot be null');
-    assert(_secretKey != null, 'you cannot send transaction without the secret key');
-    final userSigner = UserSigner(_secretKey);
-    final signedTransaction = userSigner.sign(transaction);
+    final signedTransaction = signer.sign(transaction);
     final txHash = await provider.sendTransaction(signedTransaction);
     return txHash;
   }
