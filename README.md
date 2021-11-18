@@ -10,4 +10,4 @@ It allows interaction with Elrond nodes to send transactions, interact with smar
 
 ## License
 
-[MIT](https://github.com/moneytrackio/tezart/blob/main/LICENSE)
+[MIT](https://github.com/acolyte-xyz/elrond_sdk/blob/main/LICENSE)
