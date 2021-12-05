@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'cost.dart';
 
@@ -8,6 +9,10 @@ part of 'cost.dart';
 // **************************************************************************
 
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 TransactionCostRequest _$TransactionCostRequestFromJson(
     Map<String, dynamic> json) {
   return _TransactionCostRequest.fromJson(json);
@@ -17,14 +22,13 @@ TransactionCostRequest _$TransactionCostRequestFromJson(
 class _$TransactionCostRequestTearOff {
   const _$TransactionCostRequestTearOff();
 
-// ignore: unused_element
   _TransactionCostRequest call(
-      {String version,
-      String chainID,
-      String value,
-      String sender,
-      String receiver,
-      @nullable @JsonKey(includeIfNull: false) String data}) {
+      {required String version,
+      required String chainID,
+      required String value,
+      required String sender,
+      required String receiver,
+      @JsonKey(includeIfNull: false) String? data}) {
     return _TransactionCostRequest(
       version: version,
       chainID: chainID,
@@ -35,30 +39,28 @@ class _$TransactionCostRequestTearOff {
     );
   }
 
-// ignore: unused_element
-  TransactionCostRequest fromJson(Map<String, Object> json) {
+  TransactionCostRequest fromJson(Map<String, Object?> json) {
     return TransactionCostRequest.fromJson(json);
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $TransactionCostRequest = _$TransactionCostRequestTearOff();
 
 /// @nodoc
 mixin _$TransactionCostRequest {
-  String get version;
-  String get chainID;
-  String get value;
-  String get sender;
-  String get receiver;
-  @nullable
+  String get version => throw _privateConstructorUsedError;
+  String get chainID => throw _privateConstructorUsedError;
+  String get value => throw _privateConstructorUsedError;
+  String get sender => throw _privateConstructorUsedError;
+  String get receiver => throw _privateConstructorUsedError;
   @JsonKey(includeIfNull: false)
-  String get data;
+  String? get data => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson();
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $TransactionCostRequestCopyWith<TransactionCostRequest> get copyWith;
+  $TransactionCostRequestCopyWith<TransactionCostRequest> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -72,7 +74,7 @@ abstract class $TransactionCostRequestCopyWith<$Res> {
       String value,
       String sender,
       String receiver,
-      @nullable @JsonKey(includeIfNull: false) String data});
+      @JsonKey(includeIfNull: false) String? data});
 }
 
 /// @nodoc
@@ -86,20 +88,38 @@ class _$TransactionCostRequestCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object version = freezed,
-    Object chainID = freezed,
-    Object value = freezed,
-    Object sender = freezed,
-    Object receiver = freezed,
-    Object data = freezed,
+    Object? version = freezed,
+    Object? chainID = freezed,
+    Object? value = freezed,
+    Object? sender = freezed,
+    Object? receiver = freezed,
+    Object? data = freezed,
   }) {
     return _then(_value.copyWith(
-      version: version == freezed ? _value.version : version as String,
-      chainID: chainID == freezed ? _value.chainID : chainID as String,
-      value: value == freezed ? _value.value : value as String,
-      sender: sender == freezed ? _value.sender : sender as String,
-      receiver: receiver == freezed ? _value.receiver : receiver as String,
-      data: data == freezed ? _value.data : data as String,
+      version: version == freezed
+          ? _value.version
+          : version // ignore: cast_nullable_to_non_nullable
+              as String,
+      chainID: chainID == freezed
+          ? _value.chainID
+          : chainID // ignore: cast_nullable_to_non_nullable
+              as String,
+      value: value == freezed
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as String,
+      sender: sender == freezed
+          ? _value.sender
+          : sender // ignore: cast_nullable_to_non_nullable
+              as String,
+      receiver: receiver == freezed
+          ? _value.receiver
+          : receiver // ignore: cast_nullable_to_non_nullable
+              as String,
+      data: data == freezed
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -117,7 +137,7 @@ abstract class _$TransactionCostRequestCopyWith<$Res>
       String value,
       String sender,
       String receiver,
-      @nullable @JsonKey(includeIfNull: false) String data});
+      @JsonKey(includeIfNull: false) String? data});
 }
 
 /// @nodoc
@@ -133,38 +153,55 @@ class __$TransactionCostRequestCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object version = freezed,
-    Object chainID = freezed,
-    Object value = freezed,
-    Object sender = freezed,
-    Object receiver = freezed,
-    Object data = freezed,
+    Object? version = freezed,
+    Object? chainID = freezed,
+    Object? value = freezed,
+    Object? sender = freezed,
+    Object? receiver = freezed,
+    Object? data = freezed,
   }) {
     return _then(_TransactionCostRequest(
-      version: version == freezed ? _value.version : version as String,
-      chainID: chainID == freezed ? _value.chainID : chainID as String,
-      value: value == freezed ? _value.value : value as String,
-      sender: sender == freezed ? _value.sender : sender as String,
-      receiver: receiver == freezed ? _value.receiver : receiver as String,
-      data: data == freezed ? _value.data : data as String,
+      version: version == freezed
+          ? _value.version
+          : version // ignore: cast_nullable_to_non_nullable
+              as String,
+      chainID: chainID == freezed
+          ? _value.chainID
+          : chainID // ignore: cast_nullable_to_non_nullable
+              as String,
+      value: value == freezed
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as String,
+      sender: sender == freezed
+          ? _value.sender
+          : sender // ignore: cast_nullable_to_non_nullable
+              as String,
+      receiver: receiver == freezed
+          ? _value.receiver
+          : receiver // ignore: cast_nullable_to_non_nullable
+              as String,
+      data: data == freezed
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$_TransactionCostRequest implements _TransactionCostRequest {
   _$_TransactionCostRequest(
-      {this.version,
-      this.chainID,
-      this.value,
-      this.sender,
-      this.receiver,
-      @nullable @JsonKey(includeIfNull: false) this.data});
+      {required this.version,
+      required this.chainID,
+      required this.value,
+      required this.sender,
+      required this.receiver,
+      @JsonKey(includeIfNull: false) this.data});
 
   factory _$_TransactionCostRequest.fromJson(Map<String, dynamic> json) =>
-      _$_$_TransactionCostRequestFromJson(json);
+      _$$_TransactionCostRequestFromJson(json);
 
   @override
   final String version;
@@ -177,9 +214,8 @@ class _$_TransactionCostRequest implements _TransactionCostRequest {
   @override
   final String receiver;
   @override
-  @nullable
   @JsonKey(includeIfNull: false)
-  final String data;
+  final String? data;
 
   @override
   String toString() {
@@ -189,33 +225,20 @@ class _$_TransactionCostRequest implements _TransactionCostRequest {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _TransactionCostRequest &&
-            (identical(other.version, version) ||
-                const DeepCollectionEquality()
-                    .equals(other.version, version)) &&
-            (identical(other.chainID, chainID) ||
-                const DeepCollectionEquality()
-                    .equals(other.chainID, chainID)) &&
-            (identical(other.value, value) ||
-                const DeepCollectionEquality().equals(other.value, value)) &&
-            (identical(other.sender, sender) ||
-                const DeepCollectionEquality().equals(other.sender, sender)) &&
+        (other.runtimeType == runtimeType &&
+            other is _TransactionCostRequest &&
+            (identical(other.version, version) || other.version == version) &&
+            (identical(other.chainID, chainID) || other.chainID == chainID) &&
+            (identical(other.value, value) || other.value == value) &&
+            (identical(other.sender, sender) || other.sender == sender) &&
             (identical(other.receiver, receiver) ||
-                const DeepCollectionEquality()
-                    .equals(other.receiver, receiver)) &&
-            (identical(other.data, data) ||
-                const DeepCollectionEquality().equals(other.data, data)));
+                other.receiver == receiver) &&
+            (identical(other.data, data) || other.data == data));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(version) ^
-      const DeepCollectionEquality().hash(chainID) ^
-      const DeepCollectionEquality().hash(value) ^
-      const DeepCollectionEquality().hash(sender) ^
-      const DeepCollectionEquality().hash(receiver) ^
-      const DeepCollectionEquality().hash(data);
+      Object.hash(runtimeType, version, chainID, value, sender, receiver, data);
 
   @JsonKey(ignore: true)
   @override
@@ -225,19 +248,18 @@ class _$_TransactionCostRequest implements _TransactionCostRequest {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_TransactionCostRequestToJson(this);
+    return _$$_TransactionCostRequestToJson(this);
   }
 }
 
 abstract class _TransactionCostRequest implements TransactionCostRequest {
   factory _TransactionCostRequest(
-          {String version,
-          String chainID,
-          String value,
-          String sender,
-          String receiver,
-          @nullable @JsonKey(includeIfNull: false) String data}) =
-      _$_TransactionCostRequest;
+      {required String version,
+      required String chainID,
+      required String value,
+      required String sender,
+      required String receiver,
+      @JsonKey(includeIfNull: false) String? data}) = _$_TransactionCostRequest;
 
   factory _TransactionCostRequest.fromJson(Map<String, dynamic> json) =
       _$_TransactionCostRequest.fromJson;
@@ -253,10 +275,10 @@ abstract class _TransactionCostRequest implements TransactionCostRequest {
   @override
   String get receiver;
   @override
-  @nullable
   @JsonKey(includeIfNull: false)
-  String get data;
+  String? get data;
   @override
   @JsonKey(ignore: true)
-  _$TransactionCostRequestCopyWith<_TransactionCostRequest> get copyWith;
+  _$TransactionCostRequestCopyWith<_TransactionCostRequest> get copyWith =>
+      throw _privateConstructorUsedError;
 }

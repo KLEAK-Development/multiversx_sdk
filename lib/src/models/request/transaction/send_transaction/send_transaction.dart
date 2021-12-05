@@ -1,3 +1,5 @@
+// ignore_for_file: invalid_annotation_target
+
 import 'package:elrond_sdk/src/address.dart';
 import 'package:elrond_sdk/src/balance.dart';
 import 'package:elrond_sdk/src/models/json_converter.dart';
@@ -9,26 +11,20 @@ part 'send_transaction.freezed.dart';
 part 'send_transaction.g.dart';
 
 @freezed
-abstract class SendTransactionRequest with _$SendTransactionRequest {
-  @NonceConverter()
-  @BalanceConverter()
-  @AddressConverter()
-  @GasPriceConverter()
-  @GasLimitConverter()
-  @TransactionVersionConverter()
-  @ChainIdConverter()
+class SendTransactionRequest with _$SendTransactionRequest {
   factory SendTransactionRequest({
-    @nullable @JsonKey(includeIfNull: false) Nonce nonce,
-    Balance value,
-    Address receiver,
-    Address sender,
-    GasPrice gasPrice,
-    GasLimit gasLimit,
-    TransactionVersion version,
-    @nullable @JsonKey(includeIfNull: false) String data,
-    @JsonKey(name: 'chainID') ChainId chainId,
-    String signature,
+    @JsonKey(includeIfNull: false) @NullableNonceConverter() Nonce? nonce,
+    @BalanceConverter() required Balance value,
+    @AddressConverter() required Address receiver,
+    @AddressConverter() required Address sender,
+    @GasPriceConverter() required GasPrice gasPrice,
+    @GasLimitConverter() required GasLimit gasLimit,
+    @TransactionVersionConverter() required TransactionVersion version,
+    @JsonKey(includeIfNull: false) String? data,
+    @NullableChainIdConverter() @JsonKey(name: 'chainID') ChainId? chainId,
+    required String signature,
   }) = _SendTransactionRequest;
 
-  factory SendTransactionRequest.fromJson(Map<String, dynamic> json) => _$SendTransactionRequestFromJson(json);
+  factory SendTransactionRequest.fromJson(Map<String, dynamic> json) =>
+      _$SendTransactionRequestFromJson(json);
 }

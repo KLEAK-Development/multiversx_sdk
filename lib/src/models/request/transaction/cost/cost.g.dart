@@ -6,19 +6,18 @@ part of 'cost.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_TransactionCostRequest _$_$_TransactionCostRequestFromJson(
-    Map<String, dynamic> json) {
-  return _$_TransactionCostRequest(
-    version: json['version'] as String,
-    chainID: json['chainID'] as String,
-    value: json['value'] as String,
-    sender: json['sender'] as String,
-    receiver: json['receiver'] as String,
-    data: json['data'] as String,
-  );
-}
+_$_TransactionCostRequest _$$_TransactionCostRequestFromJson(
+        Map<String, dynamic> json) =>
+    _$_TransactionCostRequest(
+      version: json['version'] as String,
+      chainID: json['chainID'] as String,
+      value: json['value'] as String,
+      sender: json['sender'] as String,
+      receiver: json['receiver'] as String,
+      data: json['data'] as String?,
+    );
 
-Map<String, dynamic> _$_$_TransactionCostRequestToJson(
+Map<String, dynamic> _$$_TransactionCostRequestToJson(
     _$_TransactionCostRequest instance) {
   final val = <String, dynamic>{
     'version': instance.version,

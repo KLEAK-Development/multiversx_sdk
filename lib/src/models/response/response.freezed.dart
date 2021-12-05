@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'response.dart';
 
@@ -8,8 +9,12 @@ part of 'response.dart';
 // **************************************************************************
 
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 ProxyResponse _$ProxyResponseFromJson(Map<String, dynamic> json) {
-  switch (json['runtimeType'] as String) {
+  switch (json['runtimeType']) {
     case 'default':
       return ProxyResponseGeneric.fromJson(json);
     case 'getAccountInformation':
@@ -27,7 +32,8 @@ ProxyResponse _$ProxyResponseFromJson(Map<String, dynamic> json) {
       return VmValuesQuery.fromJson(json);
 
     default:
-      throw FallThroughError();
+      throw CheckedFromJsonException(json, 'runtimeType', 'ProxyResponse',
+          'Invalid union type "${json['runtimeType']}"!');
   }
 }
 
@@ -35,9 +41,10 @@ ProxyResponse _$ProxyResponseFromJson(Map<String, dynamic> json) {
 class _$ProxyResponseTearOff {
   const _$ProxyResponseTearOff();
 
-// ignore: unused_element
   ProxyResponseGeneric call(
-      {Map<String, dynamic> data, String error, String code}) {
+      {required Map<String, Object> data,
+      String? error,
+      required String code}) {
     return ProxyResponseGeneric(
       data: data,
       error: error,
@@ -45,9 +52,8 @@ class _$ProxyResponseTearOff {
     );
   }
 
-// ignore: unused_element
   GetAccountInformationResponse getAccountInformation(
-      {AccountResponse data, String error, String code}) {
+      {required AccountResponse data, String? error, required String code}) {
     return GetAccountInformationResponse(
       data: data,
       error: error,
@@ -55,9 +61,10 @@ class _$ProxyResponseTearOff {
     );
   }
 
-// ignore: unused_element
   NetworkConfigurationResponse networkConfiguration(
-      {NetworkConfigurationData data, String error, String code}) {
+      {required NetworkConfigurationData data,
+      String? error,
+      required String code}) {
     return NetworkConfigurationResponse(
       data: data,
       error: error,
@@ -65,9 +72,10 @@ class _$ProxyResponseTearOff {
     );
   }
 
-// ignore: unused_element
   SendTransactionResponse sendTransaction(
-      {SendTransactionData data, String error, String code}) {
+      {required SendTransactionData data,
+      String? error,
+      required String code}) {
     return SendTransactionResponse(
       data: data,
       error: error,
@@ -75,9 +83,10 @@ class _$ProxyResponseTearOff {
     );
   }
 
-// ignore: unused_element
   GetTransactionStatusResponse getTransactionStatus(
-      {GetTransactionStatusData data, String error, String code}) {
+      {required GetTransactionStatusData data,
+      String? error,
+      required String code}) {
     return GetTransactionStatusResponse(
       data: data,
       error: error,
@@ -85,12 +94,11 @@ class _$ProxyResponseTearOff {
     );
   }
 
-// ignore: unused_element
   GetTransactionInformationsWithSmartContractResultsResponse
       informationsWithSmartContractResults(
-          {GetTransactionInformationsWithSmartContractResultData data,
-          String error,
-          String code}) {
+          {required GetTransactionInformationsWithSmartContractResultData data,
+          String? error,
+          required String code}) {
     return GetTransactionInformationsWithSmartContractResultsResponse(
       data: data,
       error: error,
@@ -98,9 +106,8 @@ class _$ProxyResponseTearOff {
     );
   }
 
-// ignore: unused_element
   VmValuesQuery vmValuesQuery(
-      {VmValuesResponse data, String error, String code}) {
+      {required VmValuesResponse data, String? error, required String code}) {
     return VmValuesQuery(
       data: data,
       error: error,
@@ -108,90 +115,131 @@ class _$ProxyResponseTearOff {
     );
   }
 
-// ignore: unused_element
-  ProxyResponse fromJson(Map<String, Object> json) {
+  ProxyResponse fromJson(Map<String, Object?> json) {
     return ProxyResponse.fromJson(json);
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $ProxyResponse = _$ProxyResponseTearOff();
 
 /// @nodoc
 mixin _$ProxyResponse {
-  String get error;
-  String get code;
+  String? get error => throw _privateConstructorUsedError;
+  String get code => throw _privateConstructorUsedError;
 
   @optionalTypeArgs
-  TResult when<TResult extends Object>(
-    TResult $default(Map<String, dynamic> data, String error, String code), {
-    @required
-        TResult getAccountInformation(
-            AccountResponse data, String error, String code),
-    @required
-        TResult networkConfiguration(
-            NetworkConfigurationData data, String error, String code),
-    @required
-        TResult sendTransaction(
-            SendTransactionData data, String error, String code),
-    @required
-        TResult getTransactionStatus(
-            GetTransactionStatusData data, String error, String code),
-    @required
-        TResult informationsWithSmartContractResults(
+  TResult when<TResult extends Object?>(
+    TResult Function(Map<String, Object> data, String? error, String code)
+        $default, {
+    required TResult Function(AccountResponse data, String? error, String code)
+        getAccountInformation,
+    required TResult Function(
+            NetworkConfigurationData data, String? error, String code)
+        networkConfiguration,
+    required TResult Function(
+            SendTransactionData data, String? error, String code)
+        sendTransaction,
+    required TResult Function(
+            GetTransactionStatusData data, String? error, String code)
+        getTransactionStatus,
+    required TResult Function(
             GetTransactionInformationsWithSmartContractResultData data,
-            String error,
-            String code),
-    @required
-        TResult vmValuesQuery(VmValuesResponse data, String error, String code),
-  });
+            String? error,
+            String code)
+        informationsWithSmartContractResults,
+    required TResult Function(VmValuesResponse data, String? error, String code)
+        vmValuesQuery,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>(
-    TResult $default(Map<String, dynamic> data, String error, String code), {
-    TResult getAccountInformation(
-        AccountResponse data, String error, String code),
-    TResult networkConfiguration(
-        NetworkConfigurationData data, String error, String code),
-    TResult sendTransaction(
-        SendTransactionData data, String error, String code),
-    TResult getTransactionStatus(
-        GetTransactionStatusData data, String error, String code),
-    TResult informationsWithSmartContractResults(
-        GetTransactionInformationsWithSmartContractResultData data,
-        String error,
-        String code),
-    TResult vmValuesQuery(VmValuesResponse data, String error, String code),
-    @required TResult orElse(),
-  });
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult Function(Map<String, Object> data, String? error, String code)?
+        $default, {
+    TResult Function(AccountResponse data, String? error, String code)?
+        getAccountInformation,
+    TResult Function(NetworkConfigurationData data, String? error, String code)?
+        networkConfiguration,
+    TResult Function(SendTransactionData data, String? error, String code)?
+        sendTransaction,
+    TResult Function(GetTransactionStatusData data, String? error, String code)?
+        getTransactionStatus,
+    TResult Function(GetTransactionInformationsWithSmartContractResultData data,
+            String? error, String code)?
+        informationsWithSmartContractResults,
+    TResult Function(VmValuesResponse data, String? error, String code)?
+        vmValuesQuery,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult map<TResult extends Object>(
-    TResult $default(ProxyResponseGeneric value), {
-    @required
-        TResult getAccountInformation(GetAccountInformationResponse value),
-    @required TResult networkConfiguration(NetworkConfigurationResponse value),
-    @required TResult sendTransaction(SendTransactionResponse value),
-    @required TResult getTransactionStatus(GetTransactionStatusResponse value),
-    @required
-        TResult informationsWithSmartContractResults(
-            GetTransactionInformationsWithSmartContractResultsResponse value),
-    @required TResult vmValuesQuery(VmValuesQuery value),
-  });
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(Map<String, Object> data, String? error, String code)?
+        $default, {
+    TResult Function(AccountResponse data, String? error, String code)?
+        getAccountInformation,
+    TResult Function(NetworkConfigurationData data, String? error, String code)?
+        networkConfiguration,
+    TResult Function(SendTransactionData data, String? error, String code)?
+        sendTransaction,
+    TResult Function(GetTransactionStatusData data, String? error, String code)?
+        getTransactionStatus,
+    TResult Function(GetTransactionInformationsWithSmartContractResultData data,
+            String? error, String code)?
+        informationsWithSmartContractResults,
+    TResult Function(VmValuesResponse data, String? error, String code)?
+        vmValuesQuery,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>(
-    TResult $default(ProxyResponseGeneric value), {
-    TResult getAccountInformation(GetAccountInformationResponse value),
-    TResult networkConfiguration(NetworkConfigurationResponse value),
-    TResult sendTransaction(SendTransactionResponse value),
-    TResult getTransactionStatus(GetTransactionStatusResponse value),
-    TResult informationsWithSmartContractResults(
-        GetTransactionInformationsWithSmartContractResultsResponse value),
-    TResult vmValuesQuery(VmValuesQuery value),
-    @required TResult orElse(),
-  });
-  Map<String, dynamic> toJson();
+  TResult map<TResult extends Object?>(
+    TResult Function(ProxyResponseGeneric value) $default, {
+    required TResult Function(GetAccountInformationResponse value)
+        getAccountInformation,
+    required TResult Function(NetworkConfigurationResponse value)
+        networkConfiguration,
+    required TResult Function(SendTransactionResponse value) sendTransaction,
+    required TResult Function(GetTransactionStatusResponse value)
+        getTransactionStatus,
+    required TResult Function(
+            GetTransactionInformationsWithSmartContractResultsResponse value)
+        informationsWithSmartContractResults,
+    required TResult Function(VmValuesQuery value) vmValuesQuery,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult Function(ProxyResponseGeneric value)? $default, {
+    TResult Function(GetAccountInformationResponse value)?
+        getAccountInformation,
+    TResult Function(NetworkConfigurationResponse value)? networkConfiguration,
+    TResult Function(SendTransactionResponse value)? sendTransaction,
+    TResult Function(GetTransactionStatusResponse value)? getTransactionStatus,
+    TResult Function(
+            GetTransactionInformationsWithSmartContractResultsResponse value)?
+        informationsWithSmartContractResults,
+    TResult Function(VmValuesQuery value)? vmValuesQuery,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(ProxyResponseGeneric value)? $default, {
+    TResult Function(GetAccountInformationResponse value)?
+        getAccountInformation,
+    TResult Function(NetworkConfigurationResponse value)? networkConfiguration,
+    TResult Function(SendTransactionResponse value)? sendTransaction,
+    TResult Function(GetTransactionStatusResponse value)? getTransactionStatus,
+    TResult Function(
+            GetTransactionInformationsWithSmartContractResultsResponse value)?
+        informationsWithSmartContractResults,
+    TResult Function(VmValuesQuery value)? vmValuesQuery,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $ProxyResponseCopyWith<ProxyResponse> get copyWith;
+  $ProxyResponseCopyWith<ProxyResponse> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -199,7 +247,7 @@ abstract class $ProxyResponseCopyWith<$Res> {
   factory $ProxyResponseCopyWith(
           ProxyResponse value, $Res Function(ProxyResponse) then) =
       _$ProxyResponseCopyWithImpl<$Res>;
-  $Res call({String error, String code});
+  $Res call({String? error, String code});
 }
 
 /// @nodoc
@@ -213,12 +261,18 @@ class _$ProxyResponseCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object error = freezed,
-    Object code = freezed,
+    Object? error = freezed,
+    Object? code = freezed,
   }) {
     return _then(_value.copyWith(
-      error: error == freezed ? _value.error : error as String,
-      code: code == freezed ? _value.code : code as String,
+      error: error == freezed
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String?,
+      code: code == freezed
+          ? _value.code
+          : code // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -230,7 +284,7 @@ abstract class $ProxyResponseGenericCopyWith<$Res>
           $Res Function(ProxyResponseGeneric) then) =
       _$ProxyResponseGenericCopyWithImpl<$Res>;
   @override
-  $Res call({Map<String, dynamic> data, String error, String code});
+  $Res call({Map<String, Object> data, String? error, String code});
 }
 
 /// @nodoc
@@ -246,33 +300,46 @@ class _$ProxyResponseGenericCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object data = freezed,
-    Object error = freezed,
-    Object code = freezed,
+    Object? data = freezed,
+    Object? error = freezed,
+    Object? code = freezed,
   }) {
     return _then(ProxyResponseGeneric(
-      data: data == freezed ? _value.data : data as Map<String, dynamic>,
-      error: error == freezed ? _value.error : error as String,
-      code: code == freezed ? _value.code : code as String,
+      data: data == freezed
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as Map<String, Object>,
+      error: error == freezed
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String?,
+      code: code == freezed
+          ? _value.code
+          : code // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$ProxyResponseGeneric implements ProxyResponseGeneric {
-  _$ProxyResponseGeneric({this.data, this.error, this.code});
+  _$ProxyResponseGeneric(
+      {required this.data, this.error, required this.code, String? $type})
+      : $type = $type ?? 'default';
 
   factory _$ProxyResponseGeneric.fromJson(Map<String, dynamic> json) =>
-      _$_$ProxyResponseGenericFromJson(json);
+      _$$ProxyResponseGenericFromJson(json);
 
   @override
-  final Map<String, dynamic> data;
+  final Map<String, Object> data;
   @override
-  final String error;
+  final String? error;
   @override
   final String code;
+
+  @JsonKey(name: 'runtimeType')
+  final String $type;
 
   @override
   String toString() {
@@ -282,21 +349,16 @@ class _$ProxyResponseGeneric implements ProxyResponseGeneric {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is ProxyResponseGeneric &&
-            (identical(other.data, data) ||
-                const DeepCollectionEquality().equals(other.data, data)) &&
-            (identical(other.error, error) ||
-                const DeepCollectionEquality().equals(other.error, error)) &&
-            (identical(other.code, code) ||
-                const DeepCollectionEquality().equals(other.code, code)));
+        (other.runtimeType == runtimeType &&
+            other is ProxyResponseGeneric &&
+            const DeepCollectionEquality().equals(other.data, data) &&
+            (identical(other.error, error) || other.error == error) &&
+            (identical(other.code, code) || other.code == code));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(data) ^
-      const DeepCollectionEquality().hash(error) ^
-      const DeepCollectionEquality().hash(code);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(data), error, code);
 
   @JsonKey(ignore: true)
   @override
@@ -306,58 +368,73 @@ class _$ProxyResponseGeneric implements ProxyResponseGeneric {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>(
-    TResult $default(Map<String, dynamic> data, String error, String code), {
-    @required
-        TResult getAccountInformation(
-            AccountResponse data, String error, String code),
-    @required
-        TResult networkConfiguration(
-            NetworkConfigurationData data, String error, String code),
-    @required
-        TResult sendTransaction(
-            SendTransactionData data, String error, String code),
-    @required
-        TResult getTransactionStatus(
-            GetTransactionStatusData data, String error, String code),
-    @required
-        TResult informationsWithSmartContractResults(
+  TResult when<TResult extends Object?>(
+    TResult Function(Map<String, Object> data, String? error, String code)
+        $default, {
+    required TResult Function(AccountResponse data, String? error, String code)
+        getAccountInformation,
+    required TResult Function(
+            NetworkConfigurationData data, String? error, String code)
+        networkConfiguration,
+    required TResult Function(
+            SendTransactionData data, String? error, String code)
+        sendTransaction,
+    required TResult Function(
+            GetTransactionStatusData data, String? error, String code)
+        getTransactionStatus,
+    required TResult Function(
             GetTransactionInformationsWithSmartContractResultData data,
-            String error,
-            String code),
-    @required
-        TResult vmValuesQuery(VmValuesResponse data, String error, String code),
+            String? error,
+            String code)
+        informationsWithSmartContractResults,
+    required TResult Function(VmValuesResponse data, String? error, String code)
+        vmValuesQuery,
   }) {
-    assert($default != null);
-    assert(getAccountInformation != null);
-    assert(networkConfiguration != null);
-    assert(sendTransaction != null);
-    assert(getTransactionStatus != null);
-    assert(informationsWithSmartContractResults != null);
-    assert(vmValuesQuery != null);
     return $default(data, error, code);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>(
-    TResult $default(Map<String, dynamic> data, String error, String code), {
-    TResult getAccountInformation(
-        AccountResponse data, String error, String code),
-    TResult networkConfiguration(
-        NetworkConfigurationData data, String error, String code),
-    TResult sendTransaction(
-        SendTransactionData data, String error, String code),
-    TResult getTransactionStatus(
-        GetTransactionStatusData data, String error, String code),
-    TResult informationsWithSmartContractResults(
-        GetTransactionInformationsWithSmartContractResultData data,
-        String error,
-        String code),
-    TResult vmValuesQuery(VmValuesResponse data, String error, String code),
-    @required TResult orElse(),
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult Function(Map<String, Object> data, String? error, String code)?
+        $default, {
+    TResult Function(AccountResponse data, String? error, String code)?
+        getAccountInformation,
+    TResult Function(NetworkConfigurationData data, String? error, String code)?
+        networkConfiguration,
+    TResult Function(SendTransactionData data, String? error, String code)?
+        sendTransaction,
+    TResult Function(GetTransactionStatusData data, String? error, String code)?
+        getTransactionStatus,
+    TResult Function(GetTransactionInformationsWithSmartContractResultData data,
+            String? error, String code)?
+        informationsWithSmartContractResults,
+    TResult Function(VmValuesResponse data, String? error, String code)?
+        vmValuesQuery,
   }) {
-    assert(orElse != null);
+    return $default?.call(data, error, code);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(Map<String, Object> data, String? error, String code)?
+        $default, {
+    TResult Function(AccountResponse data, String? error, String code)?
+        getAccountInformation,
+    TResult Function(NetworkConfigurationData data, String? error, String code)?
+        networkConfiguration,
+    TResult Function(SendTransactionData data, String? error, String code)?
+        sendTransaction,
+    TResult Function(GetTransactionStatusData data, String? error, String code)?
+        getTransactionStatus,
+    TResult Function(GetTransactionInformationsWithSmartContractResultData data,
+            String? error, String code)?
+        informationsWithSmartContractResults,
+    TResult Function(VmValuesResponse data, String? error, String code)?
+        vmValuesQuery,
+    required TResult orElse(),
+  }) {
     if ($default != null) {
       return $default(data, error, code);
     }
@@ -366,42 +443,55 @@ class _$ProxyResponseGeneric implements ProxyResponseGeneric {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>(
-    TResult $default(ProxyResponseGeneric value), {
-    @required
-        TResult getAccountInformation(GetAccountInformationResponse value),
-    @required TResult networkConfiguration(NetworkConfigurationResponse value),
-    @required TResult sendTransaction(SendTransactionResponse value),
-    @required TResult getTransactionStatus(GetTransactionStatusResponse value),
-    @required
-        TResult informationsWithSmartContractResults(
-            GetTransactionInformationsWithSmartContractResultsResponse value),
-    @required TResult vmValuesQuery(VmValuesQuery value),
+  TResult map<TResult extends Object?>(
+    TResult Function(ProxyResponseGeneric value) $default, {
+    required TResult Function(GetAccountInformationResponse value)
+        getAccountInformation,
+    required TResult Function(NetworkConfigurationResponse value)
+        networkConfiguration,
+    required TResult Function(SendTransactionResponse value) sendTransaction,
+    required TResult Function(GetTransactionStatusResponse value)
+        getTransactionStatus,
+    required TResult Function(
+            GetTransactionInformationsWithSmartContractResultsResponse value)
+        informationsWithSmartContractResults,
+    required TResult Function(VmValuesQuery value) vmValuesQuery,
   }) {
-    assert($default != null);
-    assert(getAccountInformation != null);
-    assert(networkConfiguration != null);
-    assert(sendTransaction != null);
-    assert(getTransactionStatus != null);
-    assert(informationsWithSmartContractResults != null);
-    assert(vmValuesQuery != null);
     return $default(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>(
-    TResult $default(ProxyResponseGeneric value), {
-    TResult getAccountInformation(GetAccountInformationResponse value),
-    TResult networkConfiguration(NetworkConfigurationResponse value),
-    TResult sendTransaction(SendTransactionResponse value),
-    TResult getTransactionStatus(GetTransactionStatusResponse value),
-    TResult informationsWithSmartContractResults(
-        GetTransactionInformationsWithSmartContractResultsResponse value),
-    TResult vmValuesQuery(VmValuesQuery value),
-    @required TResult orElse(),
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult Function(ProxyResponseGeneric value)? $default, {
+    TResult Function(GetAccountInformationResponse value)?
+        getAccountInformation,
+    TResult Function(NetworkConfigurationResponse value)? networkConfiguration,
+    TResult Function(SendTransactionResponse value)? sendTransaction,
+    TResult Function(GetTransactionStatusResponse value)? getTransactionStatus,
+    TResult Function(
+            GetTransactionInformationsWithSmartContractResultsResponse value)?
+        informationsWithSmartContractResults,
+    TResult Function(VmValuesQuery value)? vmValuesQuery,
   }) {
-    assert(orElse != null);
+    return $default?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(ProxyResponseGeneric value)? $default, {
+    TResult Function(GetAccountInformationResponse value)?
+        getAccountInformation,
+    TResult Function(NetworkConfigurationResponse value)? networkConfiguration,
+    TResult Function(SendTransactionResponse value)? sendTransaction,
+    TResult Function(GetTransactionStatusResponse value)? getTransactionStatus,
+    TResult Function(
+            GetTransactionInformationsWithSmartContractResultsResponse value)?
+        informationsWithSmartContractResults,
+    TResult Function(VmValuesQuery value)? vmValuesQuery,
+    required TResult orElse(),
+  }) {
     if ($default != null) {
       return $default(this);
     }
@@ -410,27 +500,28 @@ class _$ProxyResponseGeneric implements ProxyResponseGeneric {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$ProxyResponseGenericToJson(this)..['runtimeType'] = 'default';
+    return _$$ProxyResponseGenericToJson(this);
   }
 }
 
 abstract class ProxyResponseGeneric implements ProxyResponse {
   factory ProxyResponseGeneric(
-      {Map<String, dynamic> data,
-      String error,
-      String code}) = _$ProxyResponseGeneric;
+      {required Map<String, Object> data,
+      String? error,
+      required String code}) = _$ProxyResponseGeneric;
 
   factory ProxyResponseGeneric.fromJson(Map<String, dynamic> json) =
       _$ProxyResponseGeneric.fromJson;
 
-  Map<String, dynamic> get data;
+  Map<String, Object> get data;
   @override
-  String get error;
+  String? get error;
   @override
   String get code;
   @override
   @JsonKey(ignore: true)
-  $ProxyResponseGenericCopyWith<ProxyResponseGeneric> get copyWith;
+  $ProxyResponseGenericCopyWith<ProxyResponseGeneric> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -441,7 +532,7 @@ abstract class $GetAccountInformationResponseCopyWith<$Res>
           $Res Function(GetAccountInformationResponse) then) =
       _$GetAccountInformationResponseCopyWithImpl<$Res>;
   @override
-  $Res call({AccountResponse data, String error, String code});
+  $Res call({AccountResponse data, String? error, String code});
 
   $AccountResponseCopyWith<$Res> get data;
 }
@@ -461,43 +552,53 @@ class _$GetAccountInformationResponseCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object data = freezed,
-    Object error = freezed,
-    Object code = freezed,
+    Object? data = freezed,
+    Object? error = freezed,
+    Object? code = freezed,
   }) {
     return _then(GetAccountInformationResponse(
-      data: data == freezed ? _value.data : data as AccountResponse,
-      error: error == freezed ? _value.error : error as String,
-      code: code == freezed ? _value.code : code as String,
+      data: data == freezed
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as AccountResponse,
+      error: error == freezed
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String?,
+      code: code == freezed
+          ? _value.code
+          : code // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 
   @override
   $AccountResponseCopyWith<$Res> get data {
-    if (_value.data == null) {
-      return null;
-    }
     return $AccountResponseCopyWith<$Res>(_value.data, (value) {
       return _then(_value.copyWith(data: value));
     });
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$GetAccountInformationResponse implements GetAccountInformationResponse {
-  _$GetAccountInformationResponse({this.data, this.error, this.code});
+  _$GetAccountInformationResponse(
+      {required this.data, this.error, required this.code, String? $type})
+      : $type = $type ?? 'getAccountInformation';
 
   factory _$GetAccountInformationResponse.fromJson(Map<String, dynamic> json) =>
-      _$_$GetAccountInformationResponseFromJson(json);
+      _$$GetAccountInformationResponseFromJson(json);
 
   @override
   final AccountResponse data;
   @override
-  final String error;
+  final String? error;
   @override
   final String code;
+
+  @JsonKey(name: 'runtimeType')
+  final String $type;
 
   @override
   String toString() {
@@ -507,21 +608,15 @@ class _$GetAccountInformationResponse implements GetAccountInformationResponse {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is GetAccountInformationResponse &&
-            (identical(other.data, data) ||
-                const DeepCollectionEquality().equals(other.data, data)) &&
-            (identical(other.error, error) ||
-                const DeepCollectionEquality().equals(other.error, error)) &&
-            (identical(other.code, code) ||
-                const DeepCollectionEquality().equals(other.code, code)));
+        (other.runtimeType == runtimeType &&
+            other is GetAccountInformationResponse &&
+            (identical(other.data, data) || other.data == data) &&
+            (identical(other.error, error) || other.error == error) &&
+            (identical(other.code, code) || other.code == code));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(data) ^
-      const DeepCollectionEquality().hash(error) ^
-      const DeepCollectionEquality().hash(code);
+  int get hashCode => Object.hash(runtimeType, data, error, code);
 
   @JsonKey(ignore: true)
   @override
@@ -531,58 +626,73 @@ class _$GetAccountInformationResponse implements GetAccountInformationResponse {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>(
-    TResult $default(Map<String, dynamic> data, String error, String code), {
-    @required
-        TResult getAccountInformation(
-            AccountResponse data, String error, String code),
-    @required
-        TResult networkConfiguration(
-            NetworkConfigurationData data, String error, String code),
-    @required
-        TResult sendTransaction(
-            SendTransactionData data, String error, String code),
-    @required
-        TResult getTransactionStatus(
-            GetTransactionStatusData data, String error, String code),
-    @required
-        TResult informationsWithSmartContractResults(
+  TResult when<TResult extends Object?>(
+    TResult Function(Map<String, Object> data, String? error, String code)
+        $default, {
+    required TResult Function(AccountResponse data, String? error, String code)
+        getAccountInformation,
+    required TResult Function(
+            NetworkConfigurationData data, String? error, String code)
+        networkConfiguration,
+    required TResult Function(
+            SendTransactionData data, String? error, String code)
+        sendTransaction,
+    required TResult Function(
+            GetTransactionStatusData data, String? error, String code)
+        getTransactionStatus,
+    required TResult Function(
             GetTransactionInformationsWithSmartContractResultData data,
-            String error,
-            String code),
-    @required
-        TResult vmValuesQuery(VmValuesResponse data, String error, String code),
+            String? error,
+            String code)
+        informationsWithSmartContractResults,
+    required TResult Function(VmValuesResponse data, String? error, String code)
+        vmValuesQuery,
   }) {
-    assert($default != null);
-    assert(getAccountInformation != null);
-    assert(networkConfiguration != null);
-    assert(sendTransaction != null);
-    assert(getTransactionStatus != null);
-    assert(informationsWithSmartContractResults != null);
-    assert(vmValuesQuery != null);
     return getAccountInformation(data, error, code);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>(
-    TResult $default(Map<String, dynamic> data, String error, String code), {
-    TResult getAccountInformation(
-        AccountResponse data, String error, String code),
-    TResult networkConfiguration(
-        NetworkConfigurationData data, String error, String code),
-    TResult sendTransaction(
-        SendTransactionData data, String error, String code),
-    TResult getTransactionStatus(
-        GetTransactionStatusData data, String error, String code),
-    TResult informationsWithSmartContractResults(
-        GetTransactionInformationsWithSmartContractResultData data,
-        String error,
-        String code),
-    TResult vmValuesQuery(VmValuesResponse data, String error, String code),
-    @required TResult orElse(),
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult Function(Map<String, Object> data, String? error, String code)?
+        $default, {
+    TResult Function(AccountResponse data, String? error, String code)?
+        getAccountInformation,
+    TResult Function(NetworkConfigurationData data, String? error, String code)?
+        networkConfiguration,
+    TResult Function(SendTransactionData data, String? error, String code)?
+        sendTransaction,
+    TResult Function(GetTransactionStatusData data, String? error, String code)?
+        getTransactionStatus,
+    TResult Function(GetTransactionInformationsWithSmartContractResultData data,
+            String? error, String code)?
+        informationsWithSmartContractResults,
+    TResult Function(VmValuesResponse data, String? error, String code)?
+        vmValuesQuery,
   }) {
-    assert(orElse != null);
+    return getAccountInformation?.call(data, error, code);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(Map<String, Object> data, String? error, String code)?
+        $default, {
+    TResult Function(AccountResponse data, String? error, String code)?
+        getAccountInformation,
+    TResult Function(NetworkConfigurationData data, String? error, String code)?
+        networkConfiguration,
+    TResult Function(SendTransactionData data, String? error, String code)?
+        sendTransaction,
+    TResult Function(GetTransactionStatusData data, String? error, String code)?
+        getTransactionStatus,
+    TResult Function(GetTransactionInformationsWithSmartContractResultData data,
+            String? error, String code)?
+        informationsWithSmartContractResults,
+    TResult Function(VmValuesResponse data, String? error, String code)?
+        vmValuesQuery,
+    required TResult orElse(),
+  }) {
     if (getAccountInformation != null) {
       return getAccountInformation(data, error, code);
     }
@@ -591,42 +701,55 @@ class _$GetAccountInformationResponse implements GetAccountInformationResponse {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>(
-    TResult $default(ProxyResponseGeneric value), {
-    @required
-        TResult getAccountInformation(GetAccountInformationResponse value),
-    @required TResult networkConfiguration(NetworkConfigurationResponse value),
-    @required TResult sendTransaction(SendTransactionResponse value),
-    @required TResult getTransactionStatus(GetTransactionStatusResponse value),
-    @required
-        TResult informationsWithSmartContractResults(
-            GetTransactionInformationsWithSmartContractResultsResponse value),
-    @required TResult vmValuesQuery(VmValuesQuery value),
+  TResult map<TResult extends Object?>(
+    TResult Function(ProxyResponseGeneric value) $default, {
+    required TResult Function(GetAccountInformationResponse value)
+        getAccountInformation,
+    required TResult Function(NetworkConfigurationResponse value)
+        networkConfiguration,
+    required TResult Function(SendTransactionResponse value) sendTransaction,
+    required TResult Function(GetTransactionStatusResponse value)
+        getTransactionStatus,
+    required TResult Function(
+            GetTransactionInformationsWithSmartContractResultsResponse value)
+        informationsWithSmartContractResults,
+    required TResult Function(VmValuesQuery value) vmValuesQuery,
   }) {
-    assert($default != null);
-    assert(getAccountInformation != null);
-    assert(networkConfiguration != null);
-    assert(sendTransaction != null);
-    assert(getTransactionStatus != null);
-    assert(informationsWithSmartContractResults != null);
-    assert(vmValuesQuery != null);
     return getAccountInformation(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>(
-    TResult $default(ProxyResponseGeneric value), {
-    TResult getAccountInformation(GetAccountInformationResponse value),
-    TResult networkConfiguration(NetworkConfigurationResponse value),
-    TResult sendTransaction(SendTransactionResponse value),
-    TResult getTransactionStatus(GetTransactionStatusResponse value),
-    TResult informationsWithSmartContractResults(
-        GetTransactionInformationsWithSmartContractResultsResponse value),
-    TResult vmValuesQuery(VmValuesQuery value),
-    @required TResult orElse(),
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult Function(ProxyResponseGeneric value)? $default, {
+    TResult Function(GetAccountInformationResponse value)?
+        getAccountInformation,
+    TResult Function(NetworkConfigurationResponse value)? networkConfiguration,
+    TResult Function(SendTransactionResponse value)? sendTransaction,
+    TResult Function(GetTransactionStatusResponse value)? getTransactionStatus,
+    TResult Function(
+            GetTransactionInformationsWithSmartContractResultsResponse value)?
+        informationsWithSmartContractResults,
+    TResult Function(VmValuesQuery value)? vmValuesQuery,
   }) {
-    assert(orElse != null);
+    return getAccountInformation?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(ProxyResponseGeneric value)? $default, {
+    TResult Function(GetAccountInformationResponse value)?
+        getAccountInformation,
+    TResult Function(NetworkConfigurationResponse value)? networkConfiguration,
+    TResult Function(SendTransactionResponse value)? sendTransaction,
+    TResult Function(GetTransactionStatusResponse value)? getTransactionStatus,
+    TResult Function(
+            GetTransactionInformationsWithSmartContractResultsResponse value)?
+        informationsWithSmartContractResults,
+    TResult Function(VmValuesQuery value)? vmValuesQuery,
+    required TResult orElse(),
+  }) {
     if (getAccountInformation != null) {
       return getAccountInformation(this);
     }
@@ -635,29 +758,28 @@ class _$GetAccountInformationResponse implements GetAccountInformationResponse {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$GetAccountInformationResponseToJson(this)
-      ..['runtimeType'] = 'getAccountInformation';
+    return _$$GetAccountInformationResponseToJson(this);
   }
 }
 
 abstract class GetAccountInformationResponse implements ProxyResponse {
   factory GetAccountInformationResponse(
-      {AccountResponse data,
-      String error,
-      String code}) = _$GetAccountInformationResponse;
+      {required AccountResponse data,
+      String? error,
+      required String code}) = _$GetAccountInformationResponse;
 
   factory GetAccountInformationResponse.fromJson(Map<String, dynamic> json) =
       _$GetAccountInformationResponse.fromJson;
 
   AccountResponse get data;
   @override
-  String get error;
+  String? get error;
   @override
   String get code;
   @override
   @JsonKey(ignore: true)
   $GetAccountInformationResponseCopyWith<GetAccountInformationResponse>
-      get copyWith;
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -668,7 +790,7 @@ abstract class $NetworkConfigurationResponseCopyWith<$Res>
           $Res Function(NetworkConfigurationResponse) then) =
       _$NetworkConfigurationResponseCopyWithImpl<$Res>;
   @override
-  $Res call({NetworkConfigurationData data, String error, String code});
+  $Res call({NetworkConfigurationData data, String? error, String code});
 
   $NetworkConfigurationDataCopyWith<$Res> get data;
 }
@@ -688,43 +810,53 @@ class _$NetworkConfigurationResponseCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object data = freezed,
-    Object error = freezed,
-    Object code = freezed,
+    Object? data = freezed,
+    Object? error = freezed,
+    Object? code = freezed,
   }) {
     return _then(NetworkConfigurationResponse(
-      data: data == freezed ? _value.data : data as NetworkConfigurationData,
-      error: error == freezed ? _value.error : error as String,
-      code: code == freezed ? _value.code : code as String,
+      data: data == freezed
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as NetworkConfigurationData,
+      error: error == freezed
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String?,
+      code: code == freezed
+          ? _value.code
+          : code // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 
   @override
   $NetworkConfigurationDataCopyWith<$Res> get data {
-    if (_value.data == null) {
-      return null;
-    }
     return $NetworkConfigurationDataCopyWith<$Res>(_value.data, (value) {
       return _then(_value.copyWith(data: value));
     });
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$NetworkConfigurationResponse implements NetworkConfigurationResponse {
-  _$NetworkConfigurationResponse({this.data, this.error, this.code});
+  _$NetworkConfigurationResponse(
+      {required this.data, this.error, required this.code, String? $type})
+      : $type = $type ?? 'networkConfiguration';
 
   factory _$NetworkConfigurationResponse.fromJson(Map<String, dynamic> json) =>
-      _$_$NetworkConfigurationResponseFromJson(json);
+      _$$NetworkConfigurationResponseFromJson(json);
 
   @override
   final NetworkConfigurationData data;
   @override
-  final String error;
+  final String? error;
   @override
   final String code;
+
+  @JsonKey(name: 'runtimeType')
+  final String $type;
 
   @override
   String toString() {
@@ -734,21 +866,15 @@ class _$NetworkConfigurationResponse implements NetworkConfigurationResponse {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is NetworkConfigurationResponse &&
-            (identical(other.data, data) ||
-                const DeepCollectionEquality().equals(other.data, data)) &&
-            (identical(other.error, error) ||
-                const DeepCollectionEquality().equals(other.error, error)) &&
-            (identical(other.code, code) ||
-                const DeepCollectionEquality().equals(other.code, code)));
+        (other.runtimeType == runtimeType &&
+            other is NetworkConfigurationResponse &&
+            (identical(other.data, data) || other.data == data) &&
+            (identical(other.error, error) || other.error == error) &&
+            (identical(other.code, code) || other.code == code));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(data) ^
-      const DeepCollectionEquality().hash(error) ^
-      const DeepCollectionEquality().hash(code);
+  int get hashCode => Object.hash(runtimeType, data, error, code);
 
   @JsonKey(ignore: true)
   @override
@@ -758,58 +884,73 @@ class _$NetworkConfigurationResponse implements NetworkConfigurationResponse {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>(
-    TResult $default(Map<String, dynamic> data, String error, String code), {
-    @required
-        TResult getAccountInformation(
-            AccountResponse data, String error, String code),
-    @required
-        TResult networkConfiguration(
-            NetworkConfigurationData data, String error, String code),
-    @required
-        TResult sendTransaction(
-            SendTransactionData data, String error, String code),
-    @required
-        TResult getTransactionStatus(
-            GetTransactionStatusData data, String error, String code),
-    @required
-        TResult informationsWithSmartContractResults(
+  TResult when<TResult extends Object?>(
+    TResult Function(Map<String, Object> data, String? error, String code)
+        $default, {
+    required TResult Function(AccountResponse data, String? error, String code)
+        getAccountInformation,
+    required TResult Function(
+            NetworkConfigurationData data, String? error, String code)
+        networkConfiguration,
+    required TResult Function(
+            SendTransactionData data, String? error, String code)
+        sendTransaction,
+    required TResult Function(
+            GetTransactionStatusData data, String? error, String code)
+        getTransactionStatus,
+    required TResult Function(
             GetTransactionInformationsWithSmartContractResultData data,
-            String error,
-            String code),
-    @required
-        TResult vmValuesQuery(VmValuesResponse data, String error, String code),
+            String? error,
+            String code)
+        informationsWithSmartContractResults,
+    required TResult Function(VmValuesResponse data, String? error, String code)
+        vmValuesQuery,
   }) {
-    assert($default != null);
-    assert(getAccountInformation != null);
-    assert(networkConfiguration != null);
-    assert(sendTransaction != null);
-    assert(getTransactionStatus != null);
-    assert(informationsWithSmartContractResults != null);
-    assert(vmValuesQuery != null);
     return networkConfiguration(data, error, code);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>(
-    TResult $default(Map<String, dynamic> data, String error, String code), {
-    TResult getAccountInformation(
-        AccountResponse data, String error, String code),
-    TResult networkConfiguration(
-        NetworkConfigurationData data, String error, String code),
-    TResult sendTransaction(
-        SendTransactionData data, String error, String code),
-    TResult getTransactionStatus(
-        GetTransactionStatusData data, String error, String code),
-    TResult informationsWithSmartContractResults(
-        GetTransactionInformationsWithSmartContractResultData data,
-        String error,
-        String code),
-    TResult vmValuesQuery(VmValuesResponse data, String error, String code),
-    @required TResult orElse(),
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult Function(Map<String, Object> data, String? error, String code)?
+        $default, {
+    TResult Function(AccountResponse data, String? error, String code)?
+        getAccountInformation,
+    TResult Function(NetworkConfigurationData data, String? error, String code)?
+        networkConfiguration,
+    TResult Function(SendTransactionData data, String? error, String code)?
+        sendTransaction,
+    TResult Function(GetTransactionStatusData data, String? error, String code)?
+        getTransactionStatus,
+    TResult Function(GetTransactionInformationsWithSmartContractResultData data,
+            String? error, String code)?
+        informationsWithSmartContractResults,
+    TResult Function(VmValuesResponse data, String? error, String code)?
+        vmValuesQuery,
   }) {
-    assert(orElse != null);
+    return networkConfiguration?.call(data, error, code);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(Map<String, Object> data, String? error, String code)?
+        $default, {
+    TResult Function(AccountResponse data, String? error, String code)?
+        getAccountInformation,
+    TResult Function(NetworkConfigurationData data, String? error, String code)?
+        networkConfiguration,
+    TResult Function(SendTransactionData data, String? error, String code)?
+        sendTransaction,
+    TResult Function(GetTransactionStatusData data, String? error, String code)?
+        getTransactionStatus,
+    TResult Function(GetTransactionInformationsWithSmartContractResultData data,
+            String? error, String code)?
+        informationsWithSmartContractResults,
+    TResult Function(VmValuesResponse data, String? error, String code)?
+        vmValuesQuery,
+    required TResult orElse(),
+  }) {
     if (networkConfiguration != null) {
       return networkConfiguration(data, error, code);
     }
@@ -818,42 +959,55 @@ class _$NetworkConfigurationResponse implements NetworkConfigurationResponse {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>(
-    TResult $default(ProxyResponseGeneric value), {
-    @required
-        TResult getAccountInformation(GetAccountInformationResponse value),
-    @required TResult networkConfiguration(NetworkConfigurationResponse value),
-    @required TResult sendTransaction(SendTransactionResponse value),
-    @required TResult getTransactionStatus(GetTransactionStatusResponse value),
-    @required
-        TResult informationsWithSmartContractResults(
-            GetTransactionInformationsWithSmartContractResultsResponse value),
-    @required TResult vmValuesQuery(VmValuesQuery value),
+  TResult map<TResult extends Object?>(
+    TResult Function(ProxyResponseGeneric value) $default, {
+    required TResult Function(GetAccountInformationResponse value)
+        getAccountInformation,
+    required TResult Function(NetworkConfigurationResponse value)
+        networkConfiguration,
+    required TResult Function(SendTransactionResponse value) sendTransaction,
+    required TResult Function(GetTransactionStatusResponse value)
+        getTransactionStatus,
+    required TResult Function(
+            GetTransactionInformationsWithSmartContractResultsResponse value)
+        informationsWithSmartContractResults,
+    required TResult Function(VmValuesQuery value) vmValuesQuery,
   }) {
-    assert($default != null);
-    assert(getAccountInformation != null);
-    assert(networkConfiguration != null);
-    assert(sendTransaction != null);
-    assert(getTransactionStatus != null);
-    assert(informationsWithSmartContractResults != null);
-    assert(vmValuesQuery != null);
     return networkConfiguration(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>(
-    TResult $default(ProxyResponseGeneric value), {
-    TResult getAccountInformation(GetAccountInformationResponse value),
-    TResult networkConfiguration(NetworkConfigurationResponse value),
-    TResult sendTransaction(SendTransactionResponse value),
-    TResult getTransactionStatus(GetTransactionStatusResponse value),
-    TResult informationsWithSmartContractResults(
-        GetTransactionInformationsWithSmartContractResultsResponse value),
-    TResult vmValuesQuery(VmValuesQuery value),
-    @required TResult orElse(),
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult Function(ProxyResponseGeneric value)? $default, {
+    TResult Function(GetAccountInformationResponse value)?
+        getAccountInformation,
+    TResult Function(NetworkConfigurationResponse value)? networkConfiguration,
+    TResult Function(SendTransactionResponse value)? sendTransaction,
+    TResult Function(GetTransactionStatusResponse value)? getTransactionStatus,
+    TResult Function(
+            GetTransactionInformationsWithSmartContractResultsResponse value)?
+        informationsWithSmartContractResults,
+    TResult Function(VmValuesQuery value)? vmValuesQuery,
   }) {
-    assert(orElse != null);
+    return networkConfiguration?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(ProxyResponseGeneric value)? $default, {
+    TResult Function(GetAccountInformationResponse value)?
+        getAccountInformation,
+    TResult Function(NetworkConfigurationResponse value)? networkConfiguration,
+    TResult Function(SendTransactionResponse value)? sendTransaction,
+    TResult Function(GetTransactionStatusResponse value)? getTransactionStatus,
+    TResult Function(
+            GetTransactionInformationsWithSmartContractResultsResponse value)?
+        informationsWithSmartContractResults,
+    TResult Function(VmValuesQuery value)? vmValuesQuery,
+    required TResult orElse(),
+  }) {
     if (networkConfiguration != null) {
       return networkConfiguration(this);
     }
@@ -862,29 +1016,28 @@ class _$NetworkConfigurationResponse implements NetworkConfigurationResponse {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$NetworkConfigurationResponseToJson(this)
-      ..['runtimeType'] = 'networkConfiguration';
+    return _$$NetworkConfigurationResponseToJson(this);
   }
 }
 
 abstract class NetworkConfigurationResponse implements ProxyResponse {
   factory NetworkConfigurationResponse(
-      {NetworkConfigurationData data,
-      String error,
-      String code}) = _$NetworkConfigurationResponse;
+      {required NetworkConfigurationData data,
+      String? error,
+      required String code}) = _$NetworkConfigurationResponse;
 
   factory NetworkConfigurationResponse.fromJson(Map<String, dynamic> json) =
       _$NetworkConfigurationResponse.fromJson;
 
   NetworkConfigurationData get data;
   @override
-  String get error;
+  String? get error;
   @override
   String get code;
   @override
   @JsonKey(ignore: true)
   $NetworkConfigurationResponseCopyWith<NetworkConfigurationResponse>
-      get copyWith;
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -894,7 +1047,7 @@ abstract class $SendTransactionResponseCopyWith<$Res>
           $Res Function(SendTransactionResponse) then) =
       _$SendTransactionResponseCopyWithImpl<$Res>;
   @override
-  $Res call({SendTransactionData data, String error, String code});
+  $Res call({SendTransactionData data, String? error, String code});
 
   $SendTransactionDataCopyWith<$Res> get data;
 }
@@ -912,43 +1065,53 @@ class _$SendTransactionResponseCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object data = freezed,
-    Object error = freezed,
-    Object code = freezed,
+    Object? data = freezed,
+    Object? error = freezed,
+    Object? code = freezed,
   }) {
     return _then(SendTransactionResponse(
-      data: data == freezed ? _value.data : data as SendTransactionData,
-      error: error == freezed ? _value.error : error as String,
-      code: code == freezed ? _value.code : code as String,
+      data: data == freezed
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as SendTransactionData,
+      error: error == freezed
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String?,
+      code: code == freezed
+          ? _value.code
+          : code // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 
   @override
   $SendTransactionDataCopyWith<$Res> get data {
-    if (_value.data == null) {
-      return null;
-    }
     return $SendTransactionDataCopyWith<$Res>(_value.data, (value) {
       return _then(_value.copyWith(data: value));
     });
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$SendTransactionResponse implements SendTransactionResponse {
-  _$SendTransactionResponse({this.data, this.error, this.code});
+  _$SendTransactionResponse(
+      {required this.data, this.error, required this.code, String? $type})
+      : $type = $type ?? 'sendTransaction';
 
   factory _$SendTransactionResponse.fromJson(Map<String, dynamic> json) =>
-      _$_$SendTransactionResponseFromJson(json);
+      _$$SendTransactionResponseFromJson(json);
 
   @override
   final SendTransactionData data;
   @override
-  final String error;
+  final String? error;
   @override
   final String code;
+
+  @JsonKey(name: 'runtimeType')
+  final String $type;
 
   @override
   String toString() {
@@ -958,21 +1121,15 @@ class _$SendTransactionResponse implements SendTransactionResponse {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is SendTransactionResponse &&
-            (identical(other.data, data) ||
-                const DeepCollectionEquality().equals(other.data, data)) &&
-            (identical(other.error, error) ||
-                const DeepCollectionEquality().equals(other.error, error)) &&
-            (identical(other.code, code) ||
-                const DeepCollectionEquality().equals(other.code, code)));
+        (other.runtimeType == runtimeType &&
+            other is SendTransactionResponse &&
+            (identical(other.data, data) || other.data == data) &&
+            (identical(other.error, error) || other.error == error) &&
+            (identical(other.code, code) || other.code == code));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(data) ^
-      const DeepCollectionEquality().hash(error) ^
-      const DeepCollectionEquality().hash(code);
+  int get hashCode => Object.hash(runtimeType, data, error, code);
 
   @JsonKey(ignore: true)
   @override
@@ -982,58 +1139,73 @@ class _$SendTransactionResponse implements SendTransactionResponse {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>(
-    TResult $default(Map<String, dynamic> data, String error, String code), {
-    @required
-        TResult getAccountInformation(
-            AccountResponse data, String error, String code),
-    @required
-        TResult networkConfiguration(
-            NetworkConfigurationData data, String error, String code),
-    @required
-        TResult sendTransaction(
-            SendTransactionData data, String error, String code),
-    @required
-        TResult getTransactionStatus(
-            GetTransactionStatusData data, String error, String code),
-    @required
-        TResult informationsWithSmartContractResults(
+  TResult when<TResult extends Object?>(
+    TResult Function(Map<String, Object> data, String? error, String code)
+        $default, {
+    required TResult Function(AccountResponse data, String? error, String code)
+        getAccountInformation,
+    required TResult Function(
+            NetworkConfigurationData data, String? error, String code)
+        networkConfiguration,
+    required TResult Function(
+            SendTransactionData data, String? error, String code)
+        sendTransaction,
+    required TResult Function(
+            GetTransactionStatusData data, String? error, String code)
+        getTransactionStatus,
+    required TResult Function(
             GetTransactionInformationsWithSmartContractResultData data,
-            String error,
-            String code),
-    @required
-        TResult vmValuesQuery(VmValuesResponse data, String error, String code),
+            String? error,
+            String code)
+        informationsWithSmartContractResults,
+    required TResult Function(VmValuesResponse data, String? error, String code)
+        vmValuesQuery,
   }) {
-    assert($default != null);
-    assert(getAccountInformation != null);
-    assert(networkConfiguration != null);
-    assert(sendTransaction != null);
-    assert(getTransactionStatus != null);
-    assert(informationsWithSmartContractResults != null);
-    assert(vmValuesQuery != null);
     return sendTransaction(data, error, code);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>(
-    TResult $default(Map<String, dynamic> data, String error, String code), {
-    TResult getAccountInformation(
-        AccountResponse data, String error, String code),
-    TResult networkConfiguration(
-        NetworkConfigurationData data, String error, String code),
-    TResult sendTransaction(
-        SendTransactionData data, String error, String code),
-    TResult getTransactionStatus(
-        GetTransactionStatusData data, String error, String code),
-    TResult informationsWithSmartContractResults(
-        GetTransactionInformationsWithSmartContractResultData data,
-        String error,
-        String code),
-    TResult vmValuesQuery(VmValuesResponse data, String error, String code),
-    @required TResult orElse(),
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult Function(Map<String, Object> data, String? error, String code)?
+        $default, {
+    TResult Function(AccountResponse data, String? error, String code)?
+        getAccountInformation,
+    TResult Function(NetworkConfigurationData data, String? error, String code)?
+        networkConfiguration,
+    TResult Function(SendTransactionData data, String? error, String code)?
+        sendTransaction,
+    TResult Function(GetTransactionStatusData data, String? error, String code)?
+        getTransactionStatus,
+    TResult Function(GetTransactionInformationsWithSmartContractResultData data,
+            String? error, String code)?
+        informationsWithSmartContractResults,
+    TResult Function(VmValuesResponse data, String? error, String code)?
+        vmValuesQuery,
   }) {
-    assert(orElse != null);
+    return sendTransaction?.call(data, error, code);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(Map<String, Object> data, String? error, String code)?
+        $default, {
+    TResult Function(AccountResponse data, String? error, String code)?
+        getAccountInformation,
+    TResult Function(NetworkConfigurationData data, String? error, String code)?
+        networkConfiguration,
+    TResult Function(SendTransactionData data, String? error, String code)?
+        sendTransaction,
+    TResult Function(GetTransactionStatusData data, String? error, String code)?
+        getTransactionStatus,
+    TResult Function(GetTransactionInformationsWithSmartContractResultData data,
+            String? error, String code)?
+        informationsWithSmartContractResults,
+    TResult Function(VmValuesResponse data, String? error, String code)?
+        vmValuesQuery,
+    required TResult orElse(),
+  }) {
     if (sendTransaction != null) {
       return sendTransaction(data, error, code);
     }
@@ -1042,42 +1214,55 @@ class _$SendTransactionResponse implements SendTransactionResponse {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>(
-    TResult $default(ProxyResponseGeneric value), {
-    @required
-        TResult getAccountInformation(GetAccountInformationResponse value),
-    @required TResult networkConfiguration(NetworkConfigurationResponse value),
-    @required TResult sendTransaction(SendTransactionResponse value),
-    @required TResult getTransactionStatus(GetTransactionStatusResponse value),
-    @required
-        TResult informationsWithSmartContractResults(
-            GetTransactionInformationsWithSmartContractResultsResponse value),
-    @required TResult vmValuesQuery(VmValuesQuery value),
+  TResult map<TResult extends Object?>(
+    TResult Function(ProxyResponseGeneric value) $default, {
+    required TResult Function(GetAccountInformationResponse value)
+        getAccountInformation,
+    required TResult Function(NetworkConfigurationResponse value)
+        networkConfiguration,
+    required TResult Function(SendTransactionResponse value) sendTransaction,
+    required TResult Function(GetTransactionStatusResponse value)
+        getTransactionStatus,
+    required TResult Function(
+            GetTransactionInformationsWithSmartContractResultsResponse value)
+        informationsWithSmartContractResults,
+    required TResult Function(VmValuesQuery value) vmValuesQuery,
   }) {
-    assert($default != null);
-    assert(getAccountInformation != null);
-    assert(networkConfiguration != null);
-    assert(sendTransaction != null);
-    assert(getTransactionStatus != null);
-    assert(informationsWithSmartContractResults != null);
-    assert(vmValuesQuery != null);
     return sendTransaction(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>(
-    TResult $default(ProxyResponseGeneric value), {
-    TResult getAccountInformation(GetAccountInformationResponse value),
-    TResult networkConfiguration(NetworkConfigurationResponse value),
-    TResult sendTransaction(SendTransactionResponse value),
-    TResult getTransactionStatus(GetTransactionStatusResponse value),
-    TResult informationsWithSmartContractResults(
-        GetTransactionInformationsWithSmartContractResultsResponse value),
-    TResult vmValuesQuery(VmValuesQuery value),
-    @required TResult orElse(),
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult Function(ProxyResponseGeneric value)? $default, {
+    TResult Function(GetAccountInformationResponse value)?
+        getAccountInformation,
+    TResult Function(NetworkConfigurationResponse value)? networkConfiguration,
+    TResult Function(SendTransactionResponse value)? sendTransaction,
+    TResult Function(GetTransactionStatusResponse value)? getTransactionStatus,
+    TResult Function(
+            GetTransactionInformationsWithSmartContractResultsResponse value)?
+        informationsWithSmartContractResults,
+    TResult Function(VmValuesQuery value)? vmValuesQuery,
   }) {
-    assert(orElse != null);
+    return sendTransaction?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(ProxyResponseGeneric value)? $default, {
+    TResult Function(GetAccountInformationResponse value)?
+        getAccountInformation,
+    TResult Function(NetworkConfigurationResponse value)? networkConfiguration,
+    TResult Function(SendTransactionResponse value)? sendTransaction,
+    TResult Function(GetTransactionStatusResponse value)? getTransactionStatus,
+    TResult Function(
+            GetTransactionInformationsWithSmartContractResultsResponse value)?
+        informationsWithSmartContractResults,
+    TResult Function(VmValuesQuery value)? vmValuesQuery,
+    required TResult orElse(),
+  }) {
     if (sendTransaction != null) {
       return sendTransaction(this);
     }
@@ -1086,28 +1271,28 @@ class _$SendTransactionResponse implements SendTransactionResponse {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$SendTransactionResponseToJson(this)
-      ..['runtimeType'] = 'sendTransaction';
+    return _$$SendTransactionResponseToJson(this);
   }
 }
 
 abstract class SendTransactionResponse implements ProxyResponse {
   factory SendTransactionResponse(
-      {SendTransactionData data,
-      String error,
-      String code}) = _$SendTransactionResponse;
+      {required SendTransactionData data,
+      String? error,
+      required String code}) = _$SendTransactionResponse;
 
   factory SendTransactionResponse.fromJson(Map<String, dynamic> json) =
       _$SendTransactionResponse.fromJson;
 
   SendTransactionData get data;
   @override
-  String get error;
+  String? get error;
   @override
   String get code;
   @override
   @JsonKey(ignore: true)
-  $SendTransactionResponseCopyWith<SendTransactionResponse> get copyWith;
+  $SendTransactionResponseCopyWith<SendTransactionResponse> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1118,7 +1303,7 @@ abstract class $GetTransactionStatusResponseCopyWith<$Res>
           $Res Function(GetTransactionStatusResponse) then) =
       _$GetTransactionStatusResponseCopyWithImpl<$Res>;
   @override
-  $Res call({GetTransactionStatusData data, String error, String code});
+  $Res call({GetTransactionStatusData data, String? error, String code});
 
   $GetTransactionStatusDataCopyWith<$Res> get data;
 }
@@ -1138,43 +1323,53 @@ class _$GetTransactionStatusResponseCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object data = freezed,
-    Object error = freezed,
-    Object code = freezed,
+    Object? data = freezed,
+    Object? error = freezed,
+    Object? code = freezed,
   }) {
     return _then(GetTransactionStatusResponse(
-      data: data == freezed ? _value.data : data as GetTransactionStatusData,
-      error: error == freezed ? _value.error : error as String,
-      code: code == freezed ? _value.code : code as String,
+      data: data == freezed
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as GetTransactionStatusData,
+      error: error == freezed
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String?,
+      code: code == freezed
+          ? _value.code
+          : code // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 
   @override
   $GetTransactionStatusDataCopyWith<$Res> get data {
-    if (_value.data == null) {
-      return null;
-    }
     return $GetTransactionStatusDataCopyWith<$Res>(_value.data, (value) {
       return _then(_value.copyWith(data: value));
     });
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$GetTransactionStatusResponse implements GetTransactionStatusResponse {
-  _$GetTransactionStatusResponse({this.data, this.error, this.code});
+  _$GetTransactionStatusResponse(
+      {required this.data, this.error, required this.code, String? $type})
+      : $type = $type ?? 'getTransactionStatus';
 
   factory _$GetTransactionStatusResponse.fromJson(Map<String, dynamic> json) =>
-      _$_$GetTransactionStatusResponseFromJson(json);
+      _$$GetTransactionStatusResponseFromJson(json);
 
   @override
   final GetTransactionStatusData data;
   @override
-  final String error;
+  final String? error;
   @override
   final String code;
+
+  @JsonKey(name: 'runtimeType')
+  final String $type;
 
   @override
   String toString() {
@@ -1184,21 +1379,15 @@ class _$GetTransactionStatusResponse implements GetTransactionStatusResponse {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is GetTransactionStatusResponse &&
-            (identical(other.data, data) ||
-                const DeepCollectionEquality().equals(other.data, data)) &&
-            (identical(other.error, error) ||
-                const DeepCollectionEquality().equals(other.error, error)) &&
-            (identical(other.code, code) ||
-                const DeepCollectionEquality().equals(other.code, code)));
+        (other.runtimeType == runtimeType &&
+            other is GetTransactionStatusResponse &&
+            (identical(other.data, data) || other.data == data) &&
+            (identical(other.error, error) || other.error == error) &&
+            (identical(other.code, code) || other.code == code));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(data) ^
-      const DeepCollectionEquality().hash(error) ^
-      const DeepCollectionEquality().hash(code);
+  int get hashCode => Object.hash(runtimeType, data, error, code);
 
   @JsonKey(ignore: true)
   @override
@@ -1208,58 +1397,73 @@ class _$GetTransactionStatusResponse implements GetTransactionStatusResponse {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>(
-    TResult $default(Map<String, dynamic> data, String error, String code), {
-    @required
-        TResult getAccountInformation(
-            AccountResponse data, String error, String code),
-    @required
-        TResult networkConfiguration(
-            NetworkConfigurationData data, String error, String code),
-    @required
-        TResult sendTransaction(
-            SendTransactionData data, String error, String code),
-    @required
-        TResult getTransactionStatus(
-            GetTransactionStatusData data, String error, String code),
-    @required
-        TResult informationsWithSmartContractResults(
+  TResult when<TResult extends Object?>(
+    TResult Function(Map<String, Object> data, String? error, String code)
+        $default, {
+    required TResult Function(AccountResponse data, String? error, String code)
+        getAccountInformation,
+    required TResult Function(
+            NetworkConfigurationData data, String? error, String code)
+        networkConfiguration,
+    required TResult Function(
+            SendTransactionData data, String? error, String code)
+        sendTransaction,
+    required TResult Function(
+            GetTransactionStatusData data, String? error, String code)
+        getTransactionStatus,
+    required TResult Function(
             GetTransactionInformationsWithSmartContractResultData data,
-            String error,
-            String code),
-    @required
-        TResult vmValuesQuery(VmValuesResponse data, String error, String code),
+            String? error,
+            String code)
+        informationsWithSmartContractResults,
+    required TResult Function(VmValuesResponse data, String? error, String code)
+        vmValuesQuery,
   }) {
-    assert($default != null);
-    assert(getAccountInformation != null);
-    assert(networkConfiguration != null);
-    assert(sendTransaction != null);
-    assert(getTransactionStatus != null);
-    assert(informationsWithSmartContractResults != null);
-    assert(vmValuesQuery != null);
     return getTransactionStatus(data, error, code);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>(
-    TResult $default(Map<String, dynamic> data, String error, String code), {
-    TResult getAccountInformation(
-        AccountResponse data, String error, String code),
-    TResult networkConfiguration(
-        NetworkConfigurationData data, String error, String code),
-    TResult sendTransaction(
-        SendTransactionData data, String error, String code),
-    TResult getTransactionStatus(
-        GetTransactionStatusData data, String error, String code),
-    TResult informationsWithSmartContractResults(
-        GetTransactionInformationsWithSmartContractResultData data,
-        String error,
-        String code),
-    TResult vmValuesQuery(VmValuesResponse data, String error, String code),
-    @required TResult orElse(),
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult Function(Map<String, Object> data, String? error, String code)?
+        $default, {
+    TResult Function(AccountResponse data, String? error, String code)?
+        getAccountInformation,
+    TResult Function(NetworkConfigurationData data, String? error, String code)?
+        networkConfiguration,
+    TResult Function(SendTransactionData data, String? error, String code)?
+        sendTransaction,
+    TResult Function(GetTransactionStatusData data, String? error, String code)?
+        getTransactionStatus,
+    TResult Function(GetTransactionInformationsWithSmartContractResultData data,
+            String? error, String code)?
+        informationsWithSmartContractResults,
+    TResult Function(VmValuesResponse data, String? error, String code)?
+        vmValuesQuery,
   }) {
-    assert(orElse != null);
+    return getTransactionStatus?.call(data, error, code);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(Map<String, Object> data, String? error, String code)?
+        $default, {
+    TResult Function(AccountResponse data, String? error, String code)?
+        getAccountInformation,
+    TResult Function(NetworkConfigurationData data, String? error, String code)?
+        networkConfiguration,
+    TResult Function(SendTransactionData data, String? error, String code)?
+        sendTransaction,
+    TResult Function(GetTransactionStatusData data, String? error, String code)?
+        getTransactionStatus,
+    TResult Function(GetTransactionInformationsWithSmartContractResultData data,
+            String? error, String code)?
+        informationsWithSmartContractResults,
+    TResult Function(VmValuesResponse data, String? error, String code)?
+        vmValuesQuery,
+    required TResult orElse(),
+  }) {
     if (getTransactionStatus != null) {
       return getTransactionStatus(data, error, code);
     }
@@ -1268,42 +1472,55 @@ class _$GetTransactionStatusResponse implements GetTransactionStatusResponse {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>(
-    TResult $default(ProxyResponseGeneric value), {
-    @required
-        TResult getAccountInformation(GetAccountInformationResponse value),
-    @required TResult networkConfiguration(NetworkConfigurationResponse value),
-    @required TResult sendTransaction(SendTransactionResponse value),
-    @required TResult getTransactionStatus(GetTransactionStatusResponse value),
-    @required
-        TResult informationsWithSmartContractResults(
-            GetTransactionInformationsWithSmartContractResultsResponse value),
-    @required TResult vmValuesQuery(VmValuesQuery value),
+  TResult map<TResult extends Object?>(
+    TResult Function(ProxyResponseGeneric value) $default, {
+    required TResult Function(GetAccountInformationResponse value)
+        getAccountInformation,
+    required TResult Function(NetworkConfigurationResponse value)
+        networkConfiguration,
+    required TResult Function(SendTransactionResponse value) sendTransaction,
+    required TResult Function(GetTransactionStatusResponse value)
+        getTransactionStatus,
+    required TResult Function(
+            GetTransactionInformationsWithSmartContractResultsResponse value)
+        informationsWithSmartContractResults,
+    required TResult Function(VmValuesQuery value) vmValuesQuery,
   }) {
-    assert($default != null);
-    assert(getAccountInformation != null);
-    assert(networkConfiguration != null);
-    assert(sendTransaction != null);
-    assert(getTransactionStatus != null);
-    assert(informationsWithSmartContractResults != null);
-    assert(vmValuesQuery != null);
     return getTransactionStatus(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>(
-    TResult $default(ProxyResponseGeneric value), {
-    TResult getAccountInformation(GetAccountInformationResponse value),
-    TResult networkConfiguration(NetworkConfigurationResponse value),
-    TResult sendTransaction(SendTransactionResponse value),
-    TResult getTransactionStatus(GetTransactionStatusResponse value),
-    TResult informationsWithSmartContractResults(
-        GetTransactionInformationsWithSmartContractResultsResponse value),
-    TResult vmValuesQuery(VmValuesQuery value),
-    @required TResult orElse(),
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult Function(ProxyResponseGeneric value)? $default, {
+    TResult Function(GetAccountInformationResponse value)?
+        getAccountInformation,
+    TResult Function(NetworkConfigurationResponse value)? networkConfiguration,
+    TResult Function(SendTransactionResponse value)? sendTransaction,
+    TResult Function(GetTransactionStatusResponse value)? getTransactionStatus,
+    TResult Function(
+            GetTransactionInformationsWithSmartContractResultsResponse value)?
+        informationsWithSmartContractResults,
+    TResult Function(VmValuesQuery value)? vmValuesQuery,
   }) {
-    assert(orElse != null);
+    return getTransactionStatus?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(ProxyResponseGeneric value)? $default, {
+    TResult Function(GetAccountInformationResponse value)?
+        getAccountInformation,
+    TResult Function(NetworkConfigurationResponse value)? networkConfiguration,
+    TResult Function(SendTransactionResponse value)? sendTransaction,
+    TResult Function(GetTransactionStatusResponse value)? getTransactionStatus,
+    TResult Function(
+            GetTransactionInformationsWithSmartContractResultsResponse value)?
+        informationsWithSmartContractResults,
+    TResult Function(VmValuesQuery value)? vmValuesQuery,
+    required TResult orElse(),
+  }) {
     if (getTransactionStatus != null) {
       return getTransactionStatus(this);
     }
@@ -1312,29 +1529,28 @@ class _$GetTransactionStatusResponse implements GetTransactionStatusResponse {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$GetTransactionStatusResponseToJson(this)
-      ..['runtimeType'] = 'getTransactionStatus';
+    return _$$GetTransactionStatusResponseToJson(this);
   }
 }
 
 abstract class GetTransactionStatusResponse implements ProxyResponse {
   factory GetTransactionStatusResponse(
-      {GetTransactionStatusData data,
-      String error,
-      String code}) = _$GetTransactionStatusResponse;
+      {required GetTransactionStatusData data,
+      String? error,
+      required String code}) = _$GetTransactionStatusResponse;
 
   factory GetTransactionStatusResponse.fromJson(Map<String, dynamic> json) =
       _$GetTransactionStatusResponse.fromJson;
 
   GetTransactionStatusData get data;
   @override
-  String get error;
+  String? get error;
   @override
   String get code;
   @override
   @JsonKey(ignore: true)
   $GetTransactionStatusResponseCopyWith<GetTransactionStatusResponse>
-      get copyWith;
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1350,7 +1566,7 @@ abstract class $GetTransactionInformationsWithSmartContractResultsResponseCopyWi
   @override
   $Res call(
       {GetTransactionInformationsWithSmartContractResultData data,
-      String error,
+      String? error,
       String code});
 
   $GetTransactionInformationsWithSmartContractResultDataCopyWith<$Res> get data;
@@ -1378,25 +1594,29 @@ class _$GetTransactionInformationsWithSmartContractResultsResponseCopyWithImpl<
 
   @override
   $Res call({
-    Object data = freezed,
-    Object error = freezed,
-    Object code = freezed,
+    Object? data = freezed,
+    Object? error = freezed,
+    Object? code = freezed,
   }) {
     return _then(GetTransactionInformationsWithSmartContractResultsResponse(
       data: data == freezed
           ? _value.data
-          : data as GetTransactionInformationsWithSmartContractResultData,
-      error: error == freezed ? _value.error : error as String,
-      code: code == freezed ? _value.code : code as String,
+          : data // ignore: cast_nullable_to_non_nullable
+              as GetTransactionInformationsWithSmartContractResultData,
+      error: error == freezed
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String?,
+      code: code == freezed
+          ? _value.code
+          : code // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 
   @override
   $GetTransactionInformationsWithSmartContractResultDataCopyWith<$Res>
       get data {
-    if (_value.data == null) {
-      return null;
-    }
     return $GetTransactionInformationsWithSmartContractResultDataCopyWith<$Res>(
         _value.data, (value) {
       return _then(_value.copyWith(data: value));
@@ -1404,25 +1624,28 @@ class _$GetTransactionInformationsWithSmartContractResultsResponseCopyWithImpl<
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$GetTransactionInformationsWithSmartContractResultsResponse
     implements GetTransactionInformationsWithSmartContractResultsResponse {
   _$GetTransactionInformationsWithSmartContractResultsResponse(
-      {this.data, this.error, this.code});
+      {required this.data, this.error, required this.code, String? $type})
+      : $type = $type ?? 'informationsWithSmartContractResults';
 
   factory _$GetTransactionInformationsWithSmartContractResultsResponse.fromJson(
           Map<String, dynamic> json) =>
-      _$_$GetTransactionInformationsWithSmartContractResultsResponseFromJson(
+      _$$GetTransactionInformationsWithSmartContractResultsResponseFromJson(
           json);
 
   @override
   final GetTransactionInformationsWithSmartContractResultData data;
   @override
-  final String error;
+  final String? error;
   @override
   final String code;
+
+  @JsonKey(name: 'runtimeType')
+  final String $type;
 
   @override
   String toString() {
@@ -1432,21 +1655,16 @@ class _$GetTransactionInformationsWithSmartContractResultsResponse
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is GetTransactionInformationsWithSmartContractResultsResponse &&
-            (identical(other.data, data) ||
-                const DeepCollectionEquality().equals(other.data, data)) &&
-            (identical(other.error, error) ||
-                const DeepCollectionEquality().equals(other.error, error)) &&
-            (identical(other.code, code) ||
-                const DeepCollectionEquality().equals(other.code, code)));
+        (other.runtimeType == runtimeType &&
+            other
+                is GetTransactionInformationsWithSmartContractResultsResponse &&
+            (identical(other.data, data) || other.data == data) &&
+            (identical(other.error, error) || other.error == error) &&
+            (identical(other.code, code) || other.code == code));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(data) ^
-      const DeepCollectionEquality().hash(error) ^
-      const DeepCollectionEquality().hash(code);
+  int get hashCode => Object.hash(runtimeType, data, error, code);
 
   @JsonKey(ignore: true)
   @override
@@ -1459,58 +1677,73 @@ class _$GetTransactionInformationsWithSmartContractResultsResponse
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>(
-    TResult $default(Map<String, dynamic> data, String error, String code), {
-    @required
-        TResult getAccountInformation(
-            AccountResponse data, String error, String code),
-    @required
-        TResult networkConfiguration(
-            NetworkConfigurationData data, String error, String code),
-    @required
-        TResult sendTransaction(
-            SendTransactionData data, String error, String code),
-    @required
-        TResult getTransactionStatus(
-            GetTransactionStatusData data, String error, String code),
-    @required
-        TResult informationsWithSmartContractResults(
+  TResult when<TResult extends Object?>(
+    TResult Function(Map<String, Object> data, String? error, String code)
+        $default, {
+    required TResult Function(AccountResponse data, String? error, String code)
+        getAccountInformation,
+    required TResult Function(
+            NetworkConfigurationData data, String? error, String code)
+        networkConfiguration,
+    required TResult Function(
+            SendTransactionData data, String? error, String code)
+        sendTransaction,
+    required TResult Function(
+            GetTransactionStatusData data, String? error, String code)
+        getTransactionStatus,
+    required TResult Function(
             GetTransactionInformationsWithSmartContractResultData data,
-            String error,
-            String code),
-    @required
-        TResult vmValuesQuery(VmValuesResponse data, String error, String code),
+            String? error,
+            String code)
+        informationsWithSmartContractResults,
+    required TResult Function(VmValuesResponse data, String? error, String code)
+        vmValuesQuery,
   }) {
-    assert($default != null);
-    assert(getAccountInformation != null);
-    assert(networkConfiguration != null);
-    assert(sendTransaction != null);
-    assert(getTransactionStatus != null);
-    assert(informationsWithSmartContractResults != null);
-    assert(vmValuesQuery != null);
     return informationsWithSmartContractResults(data, error, code);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>(
-    TResult $default(Map<String, dynamic> data, String error, String code), {
-    TResult getAccountInformation(
-        AccountResponse data, String error, String code),
-    TResult networkConfiguration(
-        NetworkConfigurationData data, String error, String code),
-    TResult sendTransaction(
-        SendTransactionData data, String error, String code),
-    TResult getTransactionStatus(
-        GetTransactionStatusData data, String error, String code),
-    TResult informationsWithSmartContractResults(
-        GetTransactionInformationsWithSmartContractResultData data,
-        String error,
-        String code),
-    TResult vmValuesQuery(VmValuesResponse data, String error, String code),
-    @required TResult orElse(),
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult Function(Map<String, Object> data, String? error, String code)?
+        $default, {
+    TResult Function(AccountResponse data, String? error, String code)?
+        getAccountInformation,
+    TResult Function(NetworkConfigurationData data, String? error, String code)?
+        networkConfiguration,
+    TResult Function(SendTransactionData data, String? error, String code)?
+        sendTransaction,
+    TResult Function(GetTransactionStatusData data, String? error, String code)?
+        getTransactionStatus,
+    TResult Function(GetTransactionInformationsWithSmartContractResultData data,
+            String? error, String code)?
+        informationsWithSmartContractResults,
+    TResult Function(VmValuesResponse data, String? error, String code)?
+        vmValuesQuery,
   }) {
-    assert(orElse != null);
+    return informationsWithSmartContractResults?.call(data, error, code);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(Map<String, Object> data, String? error, String code)?
+        $default, {
+    TResult Function(AccountResponse data, String? error, String code)?
+        getAccountInformation,
+    TResult Function(NetworkConfigurationData data, String? error, String code)?
+        networkConfiguration,
+    TResult Function(SendTransactionData data, String? error, String code)?
+        sendTransaction,
+    TResult Function(GetTransactionStatusData data, String? error, String code)?
+        getTransactionStatus,
+    TResult Function(GetTransactionInformationsWithSmartContractResultData data,
+            String? error, String code)?
+        informationsWithSmartContractResults,
+    TResult Function(VmValuesResponse data, String? error, String code)?
+        vmValuesQuery,
+    required TResult orElse(),
+  }) {
     if (informationsWithSmartContractResults != null) {
       return informationsWithSmartContractResults(data, error, code);
     }
@@ -1519,42 +1752,55 @@ class _$GetTransactionInformationsWithSmartContractResultsResponse
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>(
-    TResult $default(ProxyResponseGeneric value), {
-    @required
-        TResult getAccountInformation(GetAccountInformationResponse value),
-    @required TResult networkConfiguration(NetworkConfigurationResponse value),
-    @required TResult sendTransaction(SendTransactionResponse value),
-    @required TResult getTransactionStatus(GetTransactionStatusResponse value),
-    @required
-        TResult informationsWithSmartContractResults(
-            GetTransactionInformationsWithSmartContractResultsResponse value),
-    @required TResult vmValuesQuery(VmValuesQuery value),
+  TResult map<TResult extends Object?>(
+    TResult Function(ProxyResponseGeneric value) $default, {
+    required TResult Function(GetAccountInformationResponse value)
+        getAccountInformation,
+    required TResult Function(NetworkConfigurationResponse value)
+        networkConfiguration,
+    required TResult Function(SendTransactionResponse value) sendTransaction,
+    required TResult Function(GetTransactionStatusResponse value)
+        getTransactionStatus,
+    required TResult Function(
+            GetTransactionInformationsWithSmartContractResultsResponse value)
+        informationsWithSmartContractResults,
+    required TResult Function(VmValuesQuery value) vmValuesQuery,
   }) {
-    assert($default != null);
-    assert(getAccountInformation != null);
-    assert(networkConfiguration != null);
-    assert(sendTransaction != null);
-    assert(getTransactionStatus != null);
-    assert(informationsWithSmartContractResults != null);
-    assert(vmValuesQuery != null);
     return informationsWithSmartContractResults(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>(
-    TResult $default(ProxyResponseGeneric value), {
-    TResult getAccountInformation(GetAccountInformationResponse value),
-    TResult networkConfiguration(NetworkConfigurationResponse value),
-    TResult sendTransaction(SendTransactionResponse value),
-    TResult getTransactionStatus(GetTransactionStatusResponse value),
-    TResult informationsWithSmartContractResults(
-        GetTransactionInformationsWithSmartContractResultsResponse value),
-    TResult vmValuesQuery(VmValuesQuery value),
-    @required TResult orElse(),
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult Function(ProxyResponseGeneric value)? $default, {
+    TResult Function(GetAccountInformationResponse value)?
+        getAccountInformation,
+    TResult Function(NetworkConfigurationResponse value)? networkConfiguration,
+    TResult Function(SendTransactionResponse value)? sendTransaction,
+    TResult Function(GetTransactionStatusResponse value)? getTransactionStatus,
+    TResult Function(
+            GetTransactionInformationsWithSmartContractResultsResponse value)?
+        informationsWithSmartContractResults,
+    TResult Function(VmValuesQuery value)? vmValuesQuery,
   }) {
-    assert(orElse != null);
+    return informationsWithSmartContractResults?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(ProxyResponseGeneric value)? $default, {
+    TResult Function(GetAccountInformationResponse value)?
+        getAccountInformation,
+    TResult Function(NetworkConfigurationResponse value)? networkConfiguration,
+    TResult Function(SendTransactionResponse value)? sendTransaction,
+    TResult Function(GetTransactionStatusResponse value)? getTransactionStatus,
+    TResult Function(
+            GetTransactionInformationsWithSmartContractResultsResponse value)?
+        informationsWithSmartContractResults,
+    TResult Function(VmValuesQuery value)? vmValuesQuery,
+    required TResult orElse(),
+  }) {
     if (informationsWithSmartContractResults != null) {
       return informationsWithSmartContractResults(this);
     }
@@ -1563,18 +1809,17 @@ class _$GetTransactionInformationsWithSmartContractResultsResponse
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$GetTransactionInformationsWithSmartContractResultsResponseToJson(
-        this)
-      ..['runtimeType'] = 'informationsWithSmartContractResults';
+    return _$$GetTransactionInformationsWithSmartContractResultsResponseToJson(
+        this);
   }
 }
 
 abstract class GetTransactionInformationsWithSmartContractResultsResponse
     implements ProxyResponse {
   factory GetTransactionInformationsWithSmartContractResultsResponse(
-          {GetTransactionInformationsWithSmartContractResultData data,
-          String error,
-          String code}) =
+          {required GetTransactionInformationsWithSmartContractResultData data,
+          String? error,
+          required String code}) =
       _$GetTransactionInformationsWithSmartContractResultsResponse;
 
   factory GetTransactionInformationsWithSmartContractResultsResponse.fromJson(
@@ -1583,13 +1828,14 @@ abstract class GetTransactionInformationsWithSmartContractResultsResponse
 
   GetTransactionInformationsWithSmartContractResultData get data;
   @override
-  String get error;
+  String? get error;
   @override
   String get code;
   @override
   @JsonKey(ignore: true)
   $GetTransactionInformationsWithSmartContractResultsResponseCopyWith<
-      GetTransactionInformationsWithSmartContractResultsResponse> get copyWith;
+          GetTransactionInformationsWithSmartContractResultsResponse>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1599,7 +1845,7 @@ abstract class $VmValuesQueryCopyWith<$Res>
           VmValuesQuery value, $Res Function(VmValuesQuery) then) =
       _$VmValuesQueryCopyWithImpl<$Res>;
   @override
-  $Res call({VmValuesResponse data, String error, String code});
+  $Res call({VmValuesResponse data, String? error, String code});
 
   $VmValuesResponseCopyWith<$Res> get data;
 }
@@ -1617,43 +1863,53 @@ class _$VmValuesQueryCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object data = freezed,
-    Object error = freezed,
-    Object code = freezed,
+    Object? data = freezed,
+    Object? error = freezed,
+    Object? code = freezed,
   }) {
     return _then(VmValuesQuery(
-      data: data == freezed ? _value.data : data as VmValuesResponse,
-      error: error == freezed ? _value.error : error as String,
-      code: code == freezed ? _value.code : code as String,
+      data: data == freezed
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as VmValuesResponse,
+      error: error == freezed
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String?,
+      code: code == freezed
+          ? _value.code
+          : code // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 
   @override
   $VmValuesResponseCopyWith<$Res> get data {
-    if (_value.data == null) {
-      return null;
-    }
     return $VmValuesResponseCopyWith<$Res>(_value.data, (value) {
       return _then(_value.copyWith(data: value));
     });
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$VmValuesQuery implements VmValuesQuery {
-  _$VmValuesQuery({this.data, this.error, this.code});
+  _$VmValuesQuery(
+      {required this.data, this.error, required this.code, String? $type})
+      : $type = $type ?? 'vmValuesQuery';
 
   factory _$VmValuesQuery.fromJson(Map<String, dynamic> json) =>
-      _$_$VmValuesQueryFromJson(json);
+      _$$VmValuesQueryFromJson(json);
 
   @override
   final VmValuesResponse data;
   @override
-  final String error;
+  final String? error;
   @override
   final String code;
+
+  @JsonKey(name: 'runtimeType')
+  final String $type;
 
   @override
   String toString() {
@@ -1663,21 +1919,15 @@ class _$VmValuesQuery implements VmValuesQuery {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is VmValuesQuery &&
-            (identical(other.data, data) ||
-                const DeepCollectionEquality().equals(other.data, data)) &&
-            (identical(other.error, error) ||
-                const DeepCollectionEquality().equals(other.error, error)) &&
-            (identical(other.code, code) ||
-                const DeepCollectionEquality().equals(other.code, code)));
+        (other.runtimeType == runtimeType &&
+            other is VmValuesQuery &&
+            (identical(other.data, data) || other.data == data) &&
+            (identical(other.error, error) || other.error == error) &&
+            (identical(other.code, code) || other.code == code));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(data) ^
-      const DeepCollectionEquality().hash(error) ^
-      const DeepCollectionEquality().hash(code);
+  int get hashCode => Object.hash(runtimeType, data, error, code);
 
   @JsonKey(ignore: true)
   @override
@@ -1686,58 +1936,73 @@ class _$VmValuesQuery implements VmValuesQuery {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>(
-    TResult $default(Map<String, dynamic> data, String error, String code), {
-    @required
-        TResult getAccountInformation(
-            AccountResponse data, String error, String code),
-    @required
-        TResult networkConfiguration(
-            NetworkConfigurationData data, String error, String code),
-    @required
-        TResult sendTransaction(
-            SendTransactionData data, String error, String code),
-    @required
-        TResult getTransactionStatus(
-            GetTransactionStatusData data, String error, String code),
-    @required
-        TResult informationsWithSmartContractResults(
+  TResult when<TResult extends Object?>(
+    TResult Function(Map<String, Object> data, String? error, String code)
+        $default, {
+    required TResult Function(AccountResponse data, String? error, String code)
+        getAccountInformation,
+    required TResult Function(
+            NetworkConfigurationData data, String? error, String code)
+        networkConfiguration,
+    required TResult Function(
+            SendTransactionData data, String? error, String code)
+        sendTransaction,
+    required TResult Function(
+            GetTransactionStatusData data, String? error, String code)
+        getTransactionStatus,
+    required TResult Function(
             GetTransactionInformationsWithSmartContractResultData data,
-            String error,
-            String code),
-    @required
-        TResult vmValuesQuery(VmValuesResponse data, String error, String code),
+            String? error,
+            String code)
+        informationsWithSmartContractResults,
+    required TResult Function(VmValuesResponse data, String? error, String code)
+        vmValuesQuery,
   }) {
-    assert($default != null);
-    assert(getAccountInformation != null);
-    assert(networkConfiguration != null);
-    assert(sendTransaction != null);
-    assert(getTransactionStatus != null);
-    assert(informationsWithSmartContractResults != null);
-    assert(vmValuesQuery != null);
     return vmValuesQuery(data, error, code);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>(
-    TResult $default(Map<String, dynamic> data, String error, String code), {
-    TResult getAccountInformation(
-        AccountResponse data, String error, String code),
-    TResult networkConfiguration(
-        NetworkConfigurationData data, String error, String code),
-    TResult sendTransaction(
-        SendTransactionData data, String error, String code),
-    TResult getTransactionStatus(
-        GetTransactionStatusData data, String error, String code),
-    TResult informationsWithSmartContractResults(
-        GetTransactionInformationsWithSmartContractResultData data,
-        String error,
-        String code),
-    TResult vmValuesQuery(VmValuesResponse data, String error, String code),
-    @required TResult orElse(),
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult Function(Map<String, Object> data, String? error, String code)?
+        $default, {
+    TResult Function(AccountResponse data, String? error, String code)?
+        getAccountInformation,
+    TResult Function(NetworkConfigurationData data, String? error, String code)?
+        networkConfiguration,
+    TResult Function(SendTransactionData data, String? error, String code)?
+        sendTransaction,
+    TResult Function(GetTransactionStatusData data, String? error, String code)?
+        getTransactionStatus,
+    TResult Function(GetTransactionInformationsWithSmartContractResultData data,
+            String? error, String code)?
+        informationsWithSmartContractResults,
+    TResult Function(VmValuesResponse data, String? error, String code)?
+        vmValuesQuery,
   }) {
-    assert(orElse != null);
+    return vmValuesQuery?.call(data, error, code);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(Map<String, Object> data, String? error, String code)?
+        $default, {
+    TResult Function(AccountResponse data, String? error, String code)?
+        getAccountInformation,
+    TResult Function(NetworkConfigurationData data, String? error, String code)?
+        networkConfiguration,
+    TResult Function(SendTransactionData data, String? error, String code)?
+        sendTransaction,
+    TResult Function(GetTransactionStatusData data, String? error, String code)?
+        getTransactionStatus,
+    TResult Function(GetTransactionInformationsWithSmartContractResultData data,
+            String? error, String code)?
+        informationsWithSmartContractResults,
+    TResult Function(VmValuesResponse data, String? error, String code)?
+        vmValuesQuery,
+    required TResult orElse(),
+  }) {
     if (vmValuesQuery != null) {
       return vmValuesQuery(data, error, code);
     }
@@ -1746,42 +2011,55 @@ class _$VmValuesQuery implements VmValuesQuery {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>(
-    TResult $default(ProxyResponseGeneric value), {
-    @required
-        TResult getAccountInformation(GetAccountInformationResponse value),
-    @required TResult networkConfiguration(NetworkConfigurationResponse value),
-    @required TResult sendTransaction(SendTransactionResponse value),
-    @required TResult getTransactionStatus(GetTransactionStatusResponse value),
-    @required
-        TResult informationsWithSmartContractResults(
-            GetTransactionInformationsWithSmartContractResultsResponse value),
-    @required TResult vmValuesQuery(VmValuesQuery value),
+  TResult map<TResult extends Object?>(
+    TResult Function(ProxyResponseGeneric value) $default, {
+    required TResult Function(GetAccountInformationResponse value)
+        getAccountInformation,
+    required TResult Function(NetworkConfigurationResponse value)
+        networkConfiguration,
+    required TResult Function(SendTransactionResponse value) sendTransaction,
+    required TResult Function(GetTransactionStatusResponse value)
+        getTransactionStatus,
+    required TResult Function(
+            GetTransactionInformationsWithSmartContractResultsResponse value)
+        informationsWithSmartContractResults,
+    required TResult Function(VmValuesQuery value) vmValuesQuery,
   }) {
-    assert($default != null);
-    assert(getAccountInformation != null);
-    assert(networkConfiguration != null);
-    assert(sendTransaction != null);
-    assert(getTransactionStatus != null);
-    assert(informationsWithSmartContractResults != null);
-    assert(vmValuesQuery != null);
     return vmValuesQuery(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>(
-    TResult $default(ProxyResponseGeneric value), {
-    TResult getAccountInformation(GetAccountInformationResponse value),
-    TResult networkConfiguration(NetworkConfigurationResponse value),
-    TResult sendTransaction(SendTransactionResponse value),
-    TResult getTransactionStatus(GetTransactionStatusResponse value),
-    TResult informationsWithSmartContractResults(
-        GetTransactionInformationsWithSmartContractResultsResponse value),
-    TResult vmValuesQuery(VmValuesQuery value),
-    @required TResult orElse(),
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult Function(ProxyResponseGeneric value)? $default, {
+    TResult Function(GetAccountInformationResponse value)?
+        getAccountInformation,
+    TResult Function(NetworkConfigurationResponse value)? networkConfiguration,
+    TResult Function(SendTransactionResponse value)? sendTransaction,
+    TResult Function(GetTransactionStatusResponse value)? getTransactionStatus,
+    TResult Function(
+            GetTransactionInformationsWithSmartContractResultsResponse value)?
+        informationsWithSmartContractResults,
+    TResult Function(VmValuesQuery value)? vmValuesQuery,
   }) {
-    assert(orElse != null);
+    return vmValuesQuery?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(ProxyResponseGeneric value)? $default, {
+    TResult Function(GetAccountInformationResponse value)?
+        getAccountInformation,
+    TResult Function(NetworkConfigurationResponse value)? networkConfiguration,
+    TResult Function(SendTransactionResponse value)? sendTransaction,
+    TResult Function(GetTransactionStatusResponse value)? getTransactionStatus,
+    TResult Function(
+            GetTransactionInformationsWithSmartContractResultsResponse value)?
+        informationsWithSmartContractResults,
+    TResult Function(VmValuesQuery value)? vmValuesQuery,
+    required TResult orElse(),
+  }) {
     if (vmValuesQuery != null) {
       return vmValuesQuery(this);
     }
@@ -1790,23 +2068,26 @@ class _$VmValuesQuery implements VmValuesQuery {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$VmValuesQueryToJson(this)..['runtimeType'] = 'vmValuesQuery';
+    return _$$VmValuesQueryToJson(this);
   }
 }
 
 abstract class VmValuesQuery implements ProxyResponse {
-  factory VmValuesQuery({VmValuesResponse data, String error, String code}) =
-      _$VmValuesQuery;
+  factory VmValuesQuery(
+      {required VmValuesResponse data,
+      String? error,
+      required String code}) = _$VmValuesQuery;
 
   factory VmValuesQuery.fromJson(Map<String, dynamic> json) =
       _$VmValuesQuery.fromJson;
 
   VmValuesResponse get data;
   @override
-  String get error;
+  String? get error;
   @override
   String get code;
   @override
   @JsonKey(ignore: true)
-  $VmValuesQueryCopyWith<VmValuesQuery> get copyWith;
+  $VmValuesQueryCopyWith<VmValuesQuery> get copyWith =>
+      throw _privateConstructorUsedError;
 }

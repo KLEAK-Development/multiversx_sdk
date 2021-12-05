@@ -8,12 +8,15 @@ void main(List<String> arguments) async {
   final dio = Dio();
   //  remove baseUrl to target mainnet automatically
   final proxy = ProxyProvider(
-    addressRepository: AddressRepository(dio, baseUrl: 'https://testnet-api.elrond.com/'),
-    networkRepository: NetworkRepository(dio, baseUrl: 'https://testnet-api.elrond.com/'),
-    transactionRepository: TransactionRepository(dio, baseUrl: 'https://testnet-api.elrond.com/'),
+    addressRepository:
+        AddressRepository(dio, baseUrl: 'https://testnet-api.elrond.com/'),
+    networkRepository:
+        NetworkRepository(dio, baseUrl: 'https://testnet-api.elrond.com/'),
+    transactionRepository:
+        TransactionRepository(dio, baseUrl: 'https://testnet-api.elrond.com/'),
   );
 
-  final wallet = Wallet.fromSeed(seed);
+  final wallet = await Wallet.fromSeed(seed);
   await wallet.synchronize(proxy);
 
   print('eGLD ${wallet.account.balance.toDenominated}');

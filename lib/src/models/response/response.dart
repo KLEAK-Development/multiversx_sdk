@@ -8,32 +8,49 @@ part 'response.freezed.dart';
 part 'response.g.dart';
 
 @freezed
-abstract class ProxyResponse with _$ProxyResponse {
-  factory ProxyResponse({Map<String, dynamic> data, String error, String code}) = ProxyResponseGeneric;
+class ProxyResponse with _$ProxyResponse {
+  factory ProxyResponse({
+    required Map<String, Object> data,
+    String? error,
+    required String code,
+  }) = ProxyResponseGeneric;
 
-  factory ProxyResponse.getAccountInformation({AccountResponse data, String error, String code}) =
-      GetAccountInformationResponse;
+  factory ProxyResponse.getAccountInformation({
+    required AccountResponse data,
+    String? error,
+    required String code,
+  }) = GetAccountInformationResponse;
 
-  factory ProxyResponse.networkConfiguration({NetworkConfigurationData data, String error, String code}) =
-      NetworkConfigurationResponse;
+  factory ProxyResponse.networkConfiguration({
+    required NetworkConfigurationData data,
+    String? error,
+    required String code,
+  }) = NetworkConfigurationResponse;
 
-  factory ProxyResponse.sendTransaction({SendTransactionData data, String error, String code}) =
-      SendTransactionResponse;
+  factory ProxyResponse.sendTransaction({
+    required SendTransactionData data,
+    String? error,
+    required String code,
+  }) = SendTransactionResponse;
 
-  factory ProxyResponse.getTransactionStatus({GetTransactionStatusData data, String error, String code}) =
-      GetTransactionStatusResponse;
+  factory ProxyResponse.getTransactionStatus({
+    required GetTransactionStatusData data,
+    String? error,
+    required String code,
+  }) = GetTransactionStatusResponse;
 
   factory ProxyResponse.informationsWithSmartContractResults({
-    GetTransactionInformationsWithSmartContractResultData data,
-    String error,
-    String code,
+    required GetTransactionInformationsWithSmartContractResultData data,
+    String? error,
+    required String code,
   }) = GetTransactionInformationsWithSmartContractResultsResponse;
 
   factory ProxyResponse.vmValuesQuery({
-    VmValuesResponse data,
-    String error,
-    String code,
+    required VmValuesResponse data,
+    String? error,
+    required String code,
   }) = VmValuesQuery;
 
-  factory ProxyResponse.fromJson(Map<String, dynamic> json) => _$ProxyResponseFromJson(json);
+  factory ProxyResponse.fromJson(Map<String, dynamic> json) =>
+      _$ProxyResponseFromJson(json);
 }

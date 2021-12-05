@@ -6,7 +6,7 @@ class Repositories {
   final AddressRepository address;
   final TransactionRepository transaction;
 
-  const Repositories({this.address, this.transaction});
+  const Repositories({required this.address, required this.transaction});
 }
 
 class ApiException implements Exception {

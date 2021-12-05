@@ -16,8 +16,10 @@ class Account {
         balance = Balance.zero(),
         username = '';
 
-  Account copyWith({Nonce newNonce, Balance newBalance, String newUsername}) =>
-      Account(address, newNonce ?? nonce, newBalance ?? balance, newUsername ?? username);
+  Account copyWith(
+          {Nonce? newNonce, Balance? newBalance, String? newUsername}) =>
+      Account(address, newNonce ?? nonce, newBalance ?? balance,
+          newUsername ?? username);
 
   Account incementNonce() => copyWith(newNonce: nonce.increment());
 
@@ -31,5 +33,6 @@ class Account {
   }
 
   @override
-  String toString() => 'Account{${address.bech32}, ${balance.value}, ${nonce.value}, $username}';
+  String toString() =>
+      'Account{${address.bech32}, ${balance.value}, ${nonce.value}, $username}';
 }

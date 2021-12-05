@@ -6,24 +6,25 @@ part of 'vm_values.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_VmValuesRequest _$_$_VmValuesRequestFromJson(Map<String, dynamic> json) {
-  return _$_VmValuesRequest(
-    scAddress: const AddressConverter().fromJson(json['scAddress'] as String),
-    funcName: json['funcName'] as String,
-    args: (json['args'] as List)
-        ?.map((e) => const ContractArgumentConverter().fromJson(e as String))
-        ?.toList(),
-    caller: const AddressConverter().fromJson(json['caller'] as String),
-    value: const BalanceConverter().fromJson(json['value'] as String),
-  );
-}
+_$_VmValuesRequest _$$_VmValuesRequestFromJson(Map<String, dynamic> json) =>
+    _$_VmValuesRequest(
+      scAddress: const AddressConverter().fromJson(json['scAddress'] as String),
+      funcName: json['funcName'] as String,
+      args: (json['args'] as List<dynamic>)
+          .map((e) => const ContractArgumentConverter().fromJson(e as String))
+          .toList(),
+      caller:
+          const NullableAddressConverter().fromJson(json['caller'] as String?),
+      value:
+          const NullableBalanceConverter().fromJson(json['value'] as String?),
+    );
 
-Map<String, dynamic> _$_$_VmValuesRequestToJson(_$_VmValuesRequest instance) {
+Map<String, dynamic> _$$_VmValuesRequestToJson(_$_VmValuesRequest instance) {
   final val = <String, dynamic>{
     'scAddress': const AddressConverter().toJson(instance.scAddress),
     'funcName': instance.funcName,
     'args':
-        instance.args?.map(const ContractArgumentConverter().toJson)?.toList(),
+        instance.args.map(const ContractArgumentConverter().toJson).toList(),
   };
 
   void writeNotNull(String key, dynamic value) {
@@ -32,7 +33,9 @@ Map<String, dynamic> _$_$_VmValuesRequestToJson(_$_VmValuesRequest instance) {
     }
   }
 
-  writeNotNull('caller', const AddressConverter().toJson(instance.caller));
-  writeNotNull('value', const BalanceConverter().toJson(instance.value));
+  writeNotNull(
+      'caller', const NullableAddressConverter().toJson(instance.caller));
+  writeNotNull(
+      'value', const NullableBalanceConverter().toJson(instance.value));
   return val;
 }

@@ -17,34 +17,48 @@ import 'package:elrond_sdk/src/repositories/vm_values/vm_values.dart';
 import 'package:elrond_sdk/src/transaction.dart';
 
 class ProxyProvider extends IProvider {
-  final AddressRepository addressRepository;
-  final NetworkRepository networkRepository;
-  final TransactionRepository transactionRepository;
-  final VmValuesRepository vmValuesRepository;
+  final AddressRepository? addressRepository;
+  final NetworkRepository? networkRepository;
+  final TransactionRepository? transactionRepository;
+  final VmValuesRepository? vmValuesRepository;
 
-  const ProxyProvider(
-      {this.addressRepository, this.networkRepository, this.transactionRepository, this.vmValuesRepository});
+  const ProxyProvider({
+    this.addressRepository,
+    this.networkRepository,
+    this.transactionRepository,
+    this.vmValuesRepository,
+  });
 
   @override
   Future<Account> getAccount(Address address) async {
-    assert(address != null, 'address cannot be null');
+    final _addressRepository = addressRepository;
+    if (_addressRepository == null) {
+      throw RepositoryNotSet('addressRepository');
+    }
     try {
-      final response = await addressRepository.addressInformations(address.bech32);
+      final response =
+          await _addressRepository.addressInformations(address.bech32);
       return Account(
-        response.data.account.address,
+        response.data.account.address!,
         response.data.account.nonce,
         response.data.account.balance,
         response.data.account.username,
       );
     } on DioError catch (e) {
-      throw ApiException(ProxyResponseGeneric.fromJson(e.response.data as Map));
+      throw ApiException(
+        ProxyResponseGeneric.fromJson(e.response!.data as Map<String, Object>),
+      );
     }
   }
 
   @override
   Future<NetworkConfiguration> getNetworkConfiguration() async {
+    final _networkRepository = networkRepository;
+    if (_networkRepository == null) {
+      throw RepositoryNotSet('networkRepository');
+    }
     try {
-      final response = await networkRepository.networkConfiguration();
+      final response = await _networkRepository.networkConfiguration();
       return NetworkConfiguration(
         chainId: response.data.config.chainId,
         gasPerDataByte: response.data.config.gasPerDataByte,
@@ -53,13 +67,18 @@ class ProxyProvider extends IProvider {
         minTransactionVersion: response.data.config.minTransactionVersion,
       );
     } on DioError catch (e) {
-      throw ApiException(ProxyResponseGeneric.fromJson(e.response.data as Map));
+      throw ApiException(
+        ProxyResponseGeneric.fromJson(e.response!.data as Map<String, Object>),
+      );
     }
   }
 
   @override
   Future<TransactionHash> sendTransaction(Transaction transaction) async {
-    assert(transaction != null, 'transaction cannot be null');
+    final _transactionRepository = transactionRepository;
+    if (_transactionRepository == null) {
+      throw RepositoryNotSet('transactionRepository');
+    }
     try {
       final request = SendTransactionRequest(
         version: transaction.transactionVersion,
@@ -73,39 +92,65 @@ class ProxyProvider extends IProvider {
         data: base64.encode(transaction.data.bytes),
         signature: transaction.signature.hex,
       );
-      final response = await transactionRepository.send(request);
+      final response = await _transactionRepository.send(request);
       return response.data.txHash;
     } on DioError catch (e) {
-      throw ApiException(ProxyResponseGeneric.fromJson(e.response.data as Map));
+      throw ApiException(
+        ProxyResponseGeneric.fromJson(e.response!.data as Map<String, Object>),
+      );
     }
   }
 
   @override
-  Future<TransactionStatus> getTransactionStatus(TransactionHash transactionHash) async {
-    assert(transactionHash != null, 'transactionHash cannot be null');
+  Future<TransactionStatus> getTransactionStatus(
+      TransactionHash transactionHash) async {
+    final _transactionRepository = transactionRepository;
+    if (_transactionRepository == null) {
+      throw RepositoryNotSet('transactionRepository');
+    }
     try {
-      final response = await transactionRepository.transactionStatus(transactionHash.hash);
+      final response =
+          await _transactionRepository.transactionStatus(transactionHash.hash);
       return response.data.status;
     } on DioError catch (e) {
-      throw ApiException(ProxyResponseGeneric.fromJson(e.response.data as Map));
+      throw ApiException(
+        ProxyResponseGeneric.fromJson(e.response!.data as Map<String, Object>),
+      );
     }
   }
 
   @override
-  Future<GetTransactionInformationsWithSmartContractResultData> getTransactionInformationsWithResults(
+  Future<GetTransactionInformationsWithSmartContractResultData>
+      getTransactionInformationsWithResults(
     TransactionHash transactionHash,
   ) async {
-    assert(transactionHash != null, 'transactionHash cannot be null');
+    final _transactionRepository = transactionRepository;
+    if (_transactionRepository == null) {
+      throw RepositoryNotSet('transactionRepository');
+    }
     try {
-      final response = await transactionRepository.informationWithSmartContractResults(transactionHash.hash);
+      final response = await _transactionRepository
+          .informationWithSmartContractResults(transactionHash.hash);
       return response;
     } on DioError catch (e) {
-      throw ApiException(ProxyResponseGeneric.fromJson(e.response.data as Map));
+      throw ApiException(
+        ProxyResponseGeneric.fromJson(e.response!.data as Map<String, Object>),
+      );
     }
   }
 
   @override
   Future<VmValuesQuery> vmValuesQuery(VmValuesRequest request) async {
-    return vmValuesRepository.query(request);
+    final _vmValuesRepository = vmValuesRepository;
+    if (_vmValuesRepository == null) {
+      throw RepositoryNotSet('vmValuesRepository');
+    }
+    return _vmValuesRepository.query(request);
   }
+}
+
+class RepositoryNotSet implements Exception {
+  final String repositoryName;
+
+  const RepositoryNotSet(this.repositoryName);
 }

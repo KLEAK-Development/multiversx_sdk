@@ -7,7 +7,7 @@ import 'package:elrond_sdk/src/wallet_core/user_keys.dart';
 class UserSigner extends ISigner {
   final UserSecretKey secretKey;
 
-  const UserSigner(this.secretKey) : assert(secretKey != null, 'secretKey cannot be null');
+  const UserSigner(this.secretKey);
 
   @override
   Address getAddress() => secretKey.generatePublicKey().toAddress();

@@ -8,7 +8,7 @@ import '../seed.dart';
 void main(List<String> arguments) async {
   // final mnemonic = Mnemonic.generate();
   final mnemonic = Mnemonic.fromSeed(seed);
-  final privateKey = mnemonic.deriveKey();
+  final privateKey = await mnemonic.deriveKey();
   final publicKey = privateKey.generatePublicKey();
   final address = publicKey.toAddress();
   print(address.toString());
@@ -16,15 +16,19 @@ void main(List<String> arguments) async {
   final dio = Dio();
   //  remove baseUrl to target mainnet automatically
   final proxy = ProxyProvider(
-    addressRepository: AddressRepository(dio, baseUrl: 'https://testnet-api.elrond.com/'),
-    networkRepository: NetworkRepository(dio, baseUrl: 'https://testnet-api.elrond.com/'),
-    transactionRepository: TransactionRepository(dio, baseUrl: 'https://testnet-api.elrond.com/'),
+    addressRepository:
+        AddressRepository(dio, baseUrl: 'https://testnet-api.elrond.com/'),
+    networkRepository:
+        NetworkRepository(dio, baseUrl: 'https://testnet-api.elrond.com/'),
+    transactionRepository:
+        TransactionRepository(dio, baseUrl: 'https://testnet-api.elrond.com/'),
   );
   final account = Account.withAddress(address);
   await account.synchronize(proxy);
 
   final networkConfiguration = await proxy.getNetworkConfiguration();
-  final payload = TransactionPayload.esdtMint('ALC-f800ce', Balance(BigInt.from(4096)));
+  final payload =
+      TransactionPayload.esdtMint('ALC-f800ce', Balance(BigInt.from(4096)));
   final userSigner = UserSigner(privateKey);
   final transaction = Transaction.esdtMint(
     chainId: networkConfiguration.chainId,
@@ -43,7 +47,7 @@ void main(List<String> arguments) async {
   try {
     final txHash = await proxy.sendTransaction(signedTransaction);
     final watcher = TransactionWatcher(txHash);
-    StreamSubscription transactionSubscription;
+    late StreamSubscription transactionSubscription;
     transactionSubscription = watcher.stream(proxy).listen((status) {
       print(status);
       if (status != TransactionStatus.pending) {

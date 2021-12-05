@@ -57,45 +57,50 @@ part 'vm_values.g.dart';
 // }, error: null, code: successful)
 
 @freezed
-abstract class VmValuesResponse with _$VmValuesResponse {
+class VmValuesResponse with _$VmValuesResponse {
   factory VmValuesResponse({
-    VmValueData data,
+    required VmValueData data,
   }) = _VmValuesResponse;
 
-  factory VmValuesResponse.fromJson(Map<String, dynamic> json) => _$VmValuesResponseFromJson(json);
+  factory VmValuesResponse.fromJson(Map<String, dynamic> json) =>
+      _$VmValuesResponseFromJson(json);
 }
 
 @freezed
-abstract class VmValueData with _$VmValueData {
+class VmValueData with _$VmValueData {
   factory VmValueData({
-    List<String> returnData,
-    String returnCode,
-    String returnMessage,
-    double gasRemaining,
-    int gasRefund,
-    Map<String, OutputAccountData> outputAccounts,
+    required List<String> returnData,
+    required String returnCode,
+    required String returnMessage,
+    required double gasRemaining,
+    required int gasRefund,
+    required Map<String, OutputAccountData> outputAccounts,
   }) = _VmValueData;
 
-  factory VmValueData.fromJson(Map<String, dynamic> json) => _$VmValueDataFromJson(json);
+  factory VmValueData.fromJson(Map<String, dynamic> json) =>
+      _$VmValueDataFromJson(json);
 }
 
 @freezed
-abstract class OutputAccountData with _$OutputAccountData {
-  @AddressConverter()
-  @NonceConverter()
+class OutputAccountData with _$OutputAccountData {
   factory OutputAccountData({
-    Address address,
-    Nonce nonce,
-    int balanceDelta,
-    Map<String, StorageUpdateData> storageUpdates,
+    @AddressConverter() required Address address,
+    @NonceConverter() required Nonce nonce,
+    required int balanceDelta,
+    required Map<String, StorageUpdateData> storageUpdates,
   }) = _OutputAccountData;
 
-  factory OutputAccountData.fromJson(Map<String, dynamic> json) => _$OutputAccountDataFromJson(json);
+  factory OutputAccountData.fromJson(Map<String, dynamic> json) =>
+      _$OutputAccountDataFromJson(json);
 }
 
 @freezed
-abstract class StorageUpdateData with _$StorageUpdateData {
-  factory StorageUpdateData({String offset, String data}) = _StorageUpdateData;
+class StorageUpdateData with _$StorageUpdateData {
+  factory StorageUpdateData({
+    required String offset,
+    required String data,
+  }) = _StorageUpdateData;
 
-  factory StorageUpdateData.fromJson(Map<String, dynamic> json) => _$StorageUpdateDataFromJson(json);
+  factory StorageUpdateData.fromJson(Map<String, dynamic> json) =>
+      _$StorageUpdateDataFromJson(json);
 }

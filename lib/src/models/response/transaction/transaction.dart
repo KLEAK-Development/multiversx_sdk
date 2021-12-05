@@ -10,84 +10,82 @@ part 'transaction.freezed.dart';
 part 'transaction.g.dart';
 
 @freezed
-abstract class SendTransactionData with _$SendTransactionData {
-  @TransactionHashConverter()
-  factory SendTransactionData({TransactionHash txHash}) = _SendTransactionData;
+class SendTransactionData with _$SendTransactionData {
+  factory SendTransactionData({
+    @TransactionHashConverter() required TransactionHash txHash,
+  }) = _SendTransactionData;
 
-  factory SendTransactionData.fromJson(Map<String, dynamic> json) => _$SendTransactionDataFromJson(json);
+  factory SendTransactionData.fromJson(Map<String, dynamic> json) =>
+      _$SendTransactionDataFromJson(json);
 }
 
 @freezed
-abstract class SendMultipleTransactionResponse with _$SendMultipleTransactionResponse {
-  factory SendMultipleTransactionResponse({int numOfSentTxs, Map<String, String> txsHashes}) =
-      _SendMultipleTransactionResponse;
+class SendMultipleTransactionResponse with _$SendMultipleTransactionResponse {
+  factory SendMultipleTransactionResponse({
+    required int numOfSentTxs,
+    required Map<String, String> txsHashes,
+  }) = _SendMultipleTransactionResponse;
 
   factory SendMultipleTransactionResponse.fromJson(Map<String, dynamic> json) =>
       _$SendMultipleTransactionResponseFromJson(json);
 }
 
 @freezed
-abstract class GetTransactionStatusData with _$GetTransactionStatusData {
-  factory GetTransactionStatusData({TransactionStatus status}) = _GetTransactionStatusData;
+class GetTransactionStatusData with _$GetTransactionStatusData {
+  factory GetTransactionStatusData({
+    required TransactionStatus status,
+  }) = _GetTransactionStatusData;
 
-  factory GetTransactionStatusData.fromJson(Map<String, dynamic> json) => _$GetTransactionStatusDataFromJson(json);
+  factory GetTransactionStatusData.fromJson(Map<String, dynamic> json) =>
+      _$GetTransactionStatusDataFromJson(json);
 }
 
 @freezed
-abstract class GetTransactionInformationsWithSmartContractResultData
+class GetTransactionInformationsWithSmartContractResultData
     with _$GetTransactionInformationsWithSmartContractResultData {
-  @GasLimitConverter()
-  @GasPriceConverter()
-  @NonceConverter()
-  @AddressConverter()
-  @TransactionHashConverter()
-  @BalanceConverter()
   factory GetTransactionInformationsWithSmartContractResultData({
-    String data,
-    String fee,
-    GasLimit gasLimit,
-    GasPrice gasPrice,
-    int gasUsed,
-    String miniBlockHash,
-    Nonce nonce,
-    Address receiver,
-    int receiverShard,
-    int round,
-    List<SmartContractResultData> scResults,
-    Address sender,
-    int senderShard,
-    String signature,
-    String status,
-    int timestamp,
-    TransactionHash txHash,
-    Balance value,
+    required String data,
+    required String fee,
+    @GasLimitConverter() required GasLimit gasLimit,
+    @GasPriceConverter() required GasPrice gasPrice,
+    required int gasUsed,
+    required String miniBlockHash,
+    @NonceConverter() required Nonce nonce,
+    @AddressConverter() required Address receiver,
+    required int receiverShard,
+    required int round,
+    required List<SmartContractResultData> scResults,
+    @AddressConverter() required Address sender,
+    required int senderShard,
+    required String signature,
+    required String status,
+    required int timestamp,
+    @TransactionHashConverter() required TransactionHash txHash,
+    @BalanceConverter() required Balance value,
   }) = _GetTransactionInformationsWithSmartContractResultData;
 
-  factory GetTransactionInformationsWithSmartContractResultData.fromJson(Map<String, dynamic> json) =>
+  factory GetTransactionInformationsWithSmartContractResultData.fromJson(
+          Map<String, dynamic> json) =>
       _$GetTransactionInformationsWithSmartContractResultDataFromJson(json);
 }
 
 @freezed
-abstract class SmartContractResultData with _$SmartContractResultData {
-  @GasLimitConverter()
-  @GasPriceConverter()
-  @AddressConverter()
-  @BalanceConverter()
-  @TransactionHashConverter()
+class SmartContractResultData with _$SmartContractResultData {
   factory SmartContractResultData({
-    String callType,
-    String data,
-    GasLimit gasLimit,
-    GasPrice gasPrice,
-    TransactionHash hash,
-    int nonce,
-    TransactionHash originalTxHash,
-    TransactionHash prevTxHash,
-    Address receiver,
-    String relayedValue,
-    Address sender,
-    Balance value,
+    required String callType,
+    required String data,
+    @GasLimitConverter() required GasLimit gasLimit,
+    @GasPriceConverter() required GasPrice gasPrice,
+    @TransactionHashConverter() required TransactionHash hash,
+    required int nonce,
+    @TransactionHashConverter() required TransactionHash originalTxHash,
+    @TransactionHashConverter() required TransactionHash prevTxHash,
+    @AddressConverter() required Address receiver,
+    required String relayedValue,
+    @AddressConverter() required Address sender,
+    @BalanceConverter() required Balance value,
   }) = _SmartContractResultData;
 
-  factory SmartContractResultData.fromJson(Map<String, dynamic> json) => _$SmartContractResultDataFromJson(json);
+  factory SmartContractResultData.fromJson(Map<String, dynamic> json) =>
+      _$SmartContractResultDataFromJson(json);
 }
