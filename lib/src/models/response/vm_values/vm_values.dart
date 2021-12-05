@@ -69,7 +69,7 @@ class VmValuesResponse with _$VmValuesResponse {
 @freezed
 class VmValueData with _$VmValueData {
   factory VmValueData({
-    required List<String> returnData,
+    @Default([]) List<String> returnData,
     required String returnCode,
     required String returnMessage,
     required double gasRemaining,

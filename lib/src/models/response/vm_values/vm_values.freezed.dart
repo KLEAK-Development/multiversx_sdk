@@ -182,7 +182,7 @@ class _$VmValueDataTearOff {
   const _$VmValueDataTearOff();
 
   _VmValueData call(
-      {required List<String> returnData,
+      {List<String> returnData = const [],
       required String returnCode,
       required String returnMessage,
       required double gasRemaining,
@@ -350,7 +350,7 @@ class __$VmValueDataCopyWithImpl<$Res> extends _$VmValueDataCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_VmValueData implements _VmValueData {
   _$_VmValueData(
-      {required this.returnData,
+      {this.returnData = const [],
       required this.returnCode,
       required this.returnMessage,
       required this.gasRemaining,
@@ -360,6 +360,7 @@ class _$_VmValueData implements _VmValueData {
   factory _$_VmValueData.fromJson(Map<String, dynamic> json) =>
       _$$_VmValueDataFromJson(json);
 
+  @JsonKey(defaultValue: const [])
   @override
   final List<String> returnData;
   @override
@@ -420,7 +421,7 @@ class _$_VmValueData implements _VmValueData {
 
 abstract class _VmValueData implements VmValueData {
   factory _VmValueData(
-      {required List<String> returnData,
+      {List<String> returnData,
       required String returnCode,
       required String returnMessage,
       required double gasRemaining,

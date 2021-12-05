@@ -18,9 +18,10 @@ Map<String, dynamic> _$$_VmValuesResponseToJson(_$_VmValuesResponse instance) =>
 
 _$_VmValueData _$$_VmValueDataFromJson(Map<String, dynamic> json) =>
     _$_VmValueData(
-      returnData: (json['returnData'] as List<dynamic>)
-          .map((e) => e as String)
-          .toList(),
+      returnData: (json['returnData'] as List<dynamic>?)
+              ?.map((e) => e as String)
+              .toList() ??
+          [],
       returnCode: json['returnCode'] as String,
       returnMessage: json['returnMessage'] as String,
       gasRemaining: (json['gasRemaining'] as num).toDouble(),
