@@ -20,7 +20,7 @@ class Address {
   factory Address.fromBech32(final String bech) {
     final decoded = b32.decode(bech);
     if (decoded == b32.DecodedBech.empty()) {
-      throw CantdDecodeBech32();
+      throw CantDecodeBech32();
     }
     assert(decoded.hrp == hrp,
         'hrp must be equal to $hrp but it is ${decoded.hrp}');
@@ -36,4 +36,4 @@ class Address {
   String toString() => 'Address{ $bech32 }';
 }
 
-class CantdDecodeBech32 implements Exception {}
+class CantDecodeBech32 implements Exception {}
