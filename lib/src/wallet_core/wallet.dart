@@ -60,7 +60,7 @@ class Wallet {
       nonce: _account.nonce,
       sender: _account.address,
       receiver: to,
-      balance: Balance.fromEgld(1),
+      balance: amount,
     );
     return sendTransaction(provider: provider, transaction: transaction);
   }

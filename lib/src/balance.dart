@@ -24,8 +24,7 @@ class Balance {
     }
     final bigGold = BigInt.from(v);
     final bigUnits = bigGold * (oneEGLD ~/ BigInt.from(math.pow(10, count)));
-    final bigUnitsString = bigUnits.toString().padRight(denomination, '0');
-    return Balance(BigInt.parse(bigUnitsString));
+    return Balance(bigUnits);
   }
 
   String get toDenominated {

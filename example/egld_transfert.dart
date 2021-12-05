@@ -25,7 +25,7 @@ void main(List<String> arguments) async {
     provider: proxy,
     to: Address.fromBech32(
         'erd1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssycr6th'),
-    amount: Balance.fromEgld(1),
+    amount: Balance.fromEgld(0.01),
   );
   print('tx: ${txHash.hash}');
 }
