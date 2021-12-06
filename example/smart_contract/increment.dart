@@ -8,11 +8,11 @@ void main(List<String> arguments) async {
   //  remove baseUrl to target mainnet automatically
   final proxy = ProxyProvider(
     addressRepository:
-        AddressRepository(dio, baseUrl: 'https://testnet-api.elrond.com/'),
+        AddressRepository(dio, baseUrl: 'https://testnet-gateway.elrond.com/'),
     networkRepository:
-        NetworkRepository(dio, baseUrl: 'https://testnet-api.elrond.com/'),
+        NetworkRepository(dio, baseUrl: 'https://testnet-gateway.elrond.com/'),
     transactionRepository:
-        TransactionRepository(dio, baseUrl: 'https://testnet-api.elrond.com/'),
+        TransactionRepository(dio, baseUrl: 'https://testnet-gateway.elrond.com/'),
   );
 
   final wallet = await Wallet.fromSeed(seed);
