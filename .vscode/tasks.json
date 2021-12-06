@@ -24,7 +24,7 @@
                 "format",
                 "--line-length",
                 "120",
-                ".",
+                "."
             ],
             "group": "build",
             "label": "format"

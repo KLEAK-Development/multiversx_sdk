@@ -9,20 +9,14 @@ class UserSecretKey {
   const UserSecretKey(this.bytes);
 
   UserPublicKey generatePublicKey() {
-    final signinKey = SigningKey.fromSeed(Uint8List.fromList(bytes));
-    return UserPublicKey(signinKey.publicKey);
+    final signingKey = SigningKey.fromSeed(Uint8List.fromList(bytes));
+    return UserPublicKey(signingKey.publicKey);
   }
 
   List<int> sign(List<int> message) {
-    final signinKey = SigningKey.fromSeed(Uint8List.fromList(bytes));
-    final signedMessage = signinKey.sign(Uint8List.fromList(message));
+    final signingKey = SigningKey.fromSeed(Uint8List.fromList(bytes));
+    final signedMessage = signingKey.sign(Uint8List.fromList(message));
     return signedMessage.signature.toList();
-
-    // final pair = tweetnacl.Signature.keyPair_fromSeed(bytes);
-    // final signature = tweetnacl.Signature(pair.publicKey, pair.secretKey);
-    // var sign = signature.sign(message);
-    // sign = sign.sublist(0, sign.length - message.length);
-    // return sign;
   }
 }
 
