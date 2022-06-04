@@ -8,18 +8,22 @@ part 'address.freezed.dart';
 part 'address.g.dart';
 
 @freezed
-abstract class AccountResponse with _$AccountResponse {
-  factory AccountResponse({AccountData account}) = _AccountResponse;
+class AccountResponse with _$AccountResponse {
+  factory AccountResponse({required AccountData account}) = _AccountResponse;
 
-  factory AccountResponse.fromJson(Map<String, dynamic> json) => _$AccountResponseFromJson(json);
+  factory AccountResponse.fromJson(Map<String, dynamic> json) =>
+      _$AccountResponseFromJson(json);
 }
 
 @freezed
-abstract class AccountData with _$AccountData {
-  @AddressConverter()
-  @NonceConverter()
-  @BalanceConverter()
-  factory AccountData({Address address, Nonce nonce, Balance balance, @Default('') String username}) = _AccountData;
+class AccountData with _$AccountData {
+  factory AccountData({
+    @NullableAddressConverter() Address? address,
+    @NonceConverter() required Nonce nonce,
+    @BalanceConverter() required Balance balance,
+    @Default('') String username,
+  }) = _AccountData;
 
-  factory AccountData.fromJson(Map<String, dynamic> json) => _$AccountDataFromJson(json);
+  factory AccountData.fromJson(Map<String, dynamic> json) =>
+      _$AccountDataFromJson(json);
 }

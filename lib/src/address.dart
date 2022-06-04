@@ -8,7 +8,8 @@ class Address {
   final List<int> _bytes;
 
   const Address(this._bytes)
-      : assert(_bytes.length == pubkeyLength, 'bytes length must be equal to $pubkeyLength but it is ${_bytes.length}');
+      : assert(_bytes.length == pubkeyLength,
+            'bytes length must be equal to $pubkeyLength but it is ${_bytes.length}');
 
   factory Address.fromAddress(Address address) => Address(address._bytes);
 
@@ -16,11 +17,13 @@ class Address {
 
   factory Address.fromHex(String hex) => Address(convert.hex.decode(hex));
 
-  factory Address.fromBech32(String bech) {
-    assert(bech != null, 'bech cannot be null');
+  factory Address.fromBech32(final String bech) {
     final decoded = b32.decode(bech);
-    assert(decoded != null, 'decoded cannot be null');
-    assert(decoded.hrp == hrp, 'hrp must be equal to $hrp but it is ${decoded.hrp}');
+    if (decoded == b32.DecodedBech.empty()) {
+      throw CantDecodeBech32();
+    }
+    assert(decoded.hrp == hrp,
+        'hrp must be equal to $hrp but it is ${decoded.hrp}');
     final pubKey = b32.fromWords(decoded.data);
     return Address(pubKey);
   }
@@ -32,3 +35,5 @@ class Address {
   @override
   String toString() => 'Address{ $bech32 }';
 }
+
+class CantDecodeBech32 implements Exception {}

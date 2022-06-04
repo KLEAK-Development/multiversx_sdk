@@ -3,10 +3,11 @@ class CodeMetadata {
   final bool readable;
   final bool payable;
 
-  const CodeMetadata({this.upgradeable = true, this.readable = false, this.payable = false})
-      : assert(upgradeable != null, 'upgradeable cannot be null'),
-        assert(readable != null, 'readable cannot be null'),
-        assert(payable != null, 'payable cannot be null');
+  const CodeMetadata({
+    this.upgradeable = true,
+    this.readable = false,
+    this.payable = false,
+  });
 
   List<int> get toBytes {
     var byteZero = 0;

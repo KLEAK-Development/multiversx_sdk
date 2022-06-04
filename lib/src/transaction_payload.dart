@@ -9,9 +9,8 @@ import 'package:elrond_sdk/src/smart_contract/function.dart';
 
 const arwenVirtualMachine = '0500';
 
-TransactionPayload _payloadFromCommandAndArguments(String command, {List<String> arguments = const []}) {
-  assert(command != null, 'command cannot be null');
-  assert(arguments != null, 'arguments cannot be null');
+TransactionPayload _payloadFromCommandAndArguments(String command,
+    {List<String> arguments = const []}) {
   final sb = StringBuffer(command);
   if (arguments.isNotEmpty) {
     sb.write('@${arguments.join('@')}');
@@ -22,7 +21,7 @@ TransactionPayload _payloadFromCommandAndArguments(String command, {List<String>
 class TransactionPayload {
   final List<int> bytes;
 
-  const TransactionPayload(this.bytes) : assert(bytes != null, 'bytes cannot be null');
+  const TransactionPayload(this.bytes);
 
   factory TransactionPayload.empty() => TransactionPayload([]);
 
@@ -39,19 +38,10 @@ class TransactionPayload {
     bool canChangeOwner = false,
     bool canUpgrade = false,
   }) {
-    assert(name != null, 'name cannot be null');
-    assert(name.length >= 3 && name.length <= 20, 'esdt name length must be between 3 and 20');
-    assert(RegExp(r'^[a-zA-Z0-9]+$').hasMatch(name), 'esdt name must be alphanumeric');
-    assert(ticker != null, 'ticker cannot be null');
-    assert(initialSupply != null, 'initialSupply cannot be null');
-    assert(decimal != null, 'decimal cannot be null');
-    assert(canFreeze != null, 'canFreeze cannot be null');
-    assert(canWipe != null, 'canWipe cannot be null');
-    assert(canPause != null, 'canPause cannot be null');
-    assert(canMint != null, 'canMint cannot be null');
-    assert(canBurn != null, 'canBurn cannot be null');
-    assert(canChangeOwner != null, 'canChangeOwner cannot be null');
-    assert(canUpgrade != null, 'canUpgrade cannot be null');
+    assert(name.length >= 3 && name.length <= 20,
+        'esdt name length must be between 3 and 20');
+    assert(RegExp(r'^[a-zA-Z0-9]+$').hasMatch(name),
+        'esdt name must be alphanumeric');
     final _supply = initialSupply.toRadixString(16);
     final _decimal = decimal.toRadixString(16);
     final arguments = [
@@ -101,14 +91,6 @@ class TransactionPayload {
     bool canChangeOwner = false,
     bool canUpgrade = false,
   }) {
-    assert(identifier != null, 'identifier cannot be null');
-    assert(canFreeze != null, 'canFreeze cannot be null');
-    assert(canWipe != null, 'canWipe cannot be null');
-    assert(canPause != null, 'canPause cannot be null');
-    assert(canMint != null, 'canMint cannot be null');
-    assert(canBurn != null, 'canBurn cannot be null');
-    assert(canChangeOwner != null, 'canChangeOwner cannot be null');
-    assert(canUpgrade != null, 'canUpgrade cannot be null');
     final arguments = [
       convert.hex.encode(utf8.encode(identifier)),
       if (canFreeze) ...[
@@ -140,7 +122,8 @@ class TransactionPayload {
         convert.hex.encode(utf8.encode(canUpgrade.toString())),
       ],
     ];
-    return _payloadFromCommandAndArguments('controlChanges', arguments: arguments);
+    return _payloadFromCommandAndArguments('controlChanges',
+        arguments: arguments);
   }
 
   factory TransactionPayload.esdtTransfert(
@@ -149,23 +132,21 @@ class TransactionPayload {
     String methodName = '',
     List<String> arguments = const [],
   }) {
-    assert(identifier != null, 'identifier cannot be null');
-    assert(balance != null, 'balance cannot be null');
-    assert(methodName != null, 'methodName cannot be null');
-    assert(arguments != null, 'arguments cannot be null');
     final amount = balance.value.toRadixString(16);
     final _arguments = [
       convert.hex.encode(utf8.encode(identifier)),
       amount.length % 2 == 0 ? amount : '0$amount',
       if (methodName.isNotEmpty) convert.hex.encode(utf8.encode(methodName)),
-      if (arguments.isNotEmpty) ...arguments.map((element) => convert.hex.encode(utf8.encode(element))).toList()
+      if (arguments.isNotEmpty)
+        ...arguments
+            .map((element) => convert.hex.encode(utf8.encode(element)))
+            .toList()
     ];
-    return _payloadFromCommandAndArguments('ESDTTransfer', arguments: _arguments);
+    return _payloadFromCommandAndArguments('ESDTTransfer',
+        arguments: _arguments);
   }
 
   factory TransactionPayload.esdtMint(String identifier, Balance supply) {
-    assert(identifier != null, 'identifier cannot be null');
-    assert(supply != null, 'supply cannot be null');
     final _supply = supply.value.toRadixString(16);
     final _arguments = [
       convert.hex.encode(utf8.encode(identifier)),
@@ -175,8 +156,6 @@ class TransactionPayload {
   }
 
   factory TransactionPayload.esdtBurn(String identifier, Balance supply) {
-    assert(identifier != null, 'identifier cannot be null');
-    assert(supply != null, 'supply cannot be null');
     final _supply = supply.value.toRadixString(16);
     final _arguments = [
       convert.hex.encode(utf8.encode(identifier)),
@@ -186,7 +165,6 @@ class TransactionPayload {
   }
 
   factory TransactionPayload.esdtPause(String identifier) {
-    assert(identifier != null, 'identifier cannot be null');
     final _arguments = [
       convert.hex.encode(utf8.encode(identifier)),
     ];
@@ -194,7 +172,6 @@ class TransactionPayload {
   }
 
   factory TransactionPayload.esdtUnPause(String identifier) {
-    assert(identifier != null, 'identifier cannot be null');
     final _arguments = [
       convert.hex.encode(utf8.encode(identifier)),
     ];
@@ -202,8 +179,6 @@ class TransactionPayload {
   }
 
   factory TransactionPayload.esdtFreeze(String identifier, Address address) {
-    assert(identifier != null, 'identifier cannot be null');
-    assert(address != null, 'address cannot be null');
     final _arguments = [
       convert.hex.encode(utf8.encode(identifier)),
       convert.hex.encode(address.pubkey),
@@ -212,8 +187,6 @@ class TransactionPayload {
   }
 
   factory TransactionPayload.esdtUnFreeze(String identifier, Address address) {
-    assert(identifier != null, 'identifier cannot be null');
-    assert(address != null, 'address cannot be null');
     final _arguments = [
       convert.hex.encode(utf8.encode(identifier)),
       convert.hex.encode(address.pubkey),
@@ -222,8 +195,6 @@ class TransactionPayload {
   }
 
   factory TransactionPayload.esdtWipe(String identifier, Address address) {
-    assert(identifier != null, 'identifier cannot be null');
-    assert(address != null, 'address cannot be null');
     final _arguments = [
       convert.hex.encode(utf8.encode(identifier)),
       convert.hex.encode(address.pubkey),
@@ -231,14 +202,14 @@ class TransactionPayload {
     return _payloadFromCommandAndArguments('wipe', arguments: _arguments);
   }
 
-  factory TransactionPayload.esdtTransfertOwnership(String identifier, Address address) {
-    assert(identifier != null, 'identifier cannot be null');
-    assert(address != null, 'address cannot be null');
+  factory TransactionPayload.esdtTransfertOwnership(
+      String identifier, Address address) {
     final _arguments = [
       convert.hex.encode(utf8.encode(identifier)),
       convert.hex.encode(address.pubkey),
     ];
-    return _payloadFromCommandAndArguments('transferOwnership', arguments: _arguments);
+    return _payloadFromCommandAndArguments('transferOwnership',
+        arguments: _arguments);
   }
 
   factory TransactionPayload.smartContractDeploy(
@@ -246,9 +217,6 @@ class TransactionPayload {
     CodeMetadata metadata, {
     List<ContractArgument> arguments = const [],
   }) {
-    assert(code != null, 'code cannot be null');
-    assert(metadata != null, 'metadata cannot be null');
-    assert(arguments != null, 'arguments cannot be null');
     return _payloadFromCommandAndArguments(
       '${convert.hex.encode(code.bytes)}@$arwenVirtualMachine@${convert.hex.encode(metadata.toBytes)}',
       arguments: arguments.map((e) => convert.hex.encode(e.bytes)).toList(),
@@ -260,9 +228,6 @@ class TransactionPayload {
     CodeMetadata metadata, {
     List<ContractArgument> arguments = const [],
   }) {
-    assert(code != null, 'code cannot be null');
-    assert(metadata != null, 'metadata cannot be null');
-    assert(arguments != null, 'arguments cannot be null');
     return _payloadFromCommandAndArguments(
       'upgradeContract',
       arguments: [
@@ -277,7 +242,6 @@ class TransactionPayload {
     ContractFunction function, {
     List<ContractArgument> arguments = const [],
   }) {
-    assert(function != null, 'function cannot be null');
     return _payloadFromCommandAndArguments(
       function.name,
       arguments: arguments.map((e) => convert.hex.encode(e.bytes)).toList(),

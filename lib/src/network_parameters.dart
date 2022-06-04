@@ -13,7 +13,7 @@ class GasLimit {
   const GasLimit(this.value) : assert(value > 0, 'value cannot be negative');
 
   factory GasLimit.forTransfert({
-    TransactionPayload data,
+    TransactionPayload? data,
     int minGasLimit = defaultMinGasLimit,
     int gasPerDataByte = defaultGasPerDataByte,
   }) {
@@ -24,7 +24,8 @@ class GasLimit {
     return GasLimit(value);
   }
 
-  factory GasLimit.min({int minGasLimit = defaultMinGasLimit}) => GasLimit(minGasLimit);
+  factory GasLimit.min({int minGasLimit = defaultMinGasLimit}) =>
+      GasLimit(minGasLimit);
 
   GasLimit operator +(GasLimit gasLimit) => GasLimit(value + gasLimit.value);
 
@@ -34,17 +35,19 @@ class GasLimit {
 class ChainId {
   final String value;
 
-  const ChainId(this.value) : assert(value != null, 'value cannot be null');
+  const ChainId(this.value);
 }
 
 class TransactionVersion {
   final int value;
 
-  const TransactionVersion(this.value) : assert(value > 0, 'value must be superior to 0');
+  const TransactionVersion(this.value)
+      : assert(value > 0, 'value must be superior to 0');
 }
 
 class GasPriceModifier {
   final double value;
 
-  const GasPriceModifier(this.value) : assert(value > 0 || value < 1, 'value must be between 0 and 1');
+  const GasPriceModifier(this.value)
+      : assert(value > 0 || value < 1, 'value must be between 0 and 1');
 }

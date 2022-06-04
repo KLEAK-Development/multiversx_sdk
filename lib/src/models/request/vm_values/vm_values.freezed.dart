@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'vm_values.dart';
 
@@ -8,6 +9,10 @@ part of 'vm_values.dart';
 // **************************************************************************
 
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 VmValuesRequest _$VmValuesRequestFromJson(Map<String, dynamic> json) {
   return _VmValuesRequest.fromJson(json);
 }
@@ -16,13 +21,18 @@ VmValuesRequest _$VmValuesRequestFromJson(Map<String, dynamic> json) {
 class _$VmValuesRequestTearOff {
   const _$VmValuesRequestTearOff();
 
-// ignore: unused_element
   _VmValuesRequest call(
-      {@required Address scAddress,
-      @required String funcName,
-      @required List<ContractArgument> args,
-      @nullable @JsonKey(includeIfNull: false) Address caller,
-      @nullable @JsonKey(includeIfNull: false) Balance value}) {
+      {@AddressConverter()
+          required Address scAddress,
+      required String funcName,
+      @ContractArgumentConverter()
+          required List<ContractArgument> args,
+      @NullableAddressConverter()
+      @JsonKey(includeIfNull: false)
+          Address? caller,
+      @NullableBalanceConverter()
+      @JsonKey(includeIfNull: false)
+          Balance? value}) {
     return _VmValuesRequest(
       scAddress: scAddress,
       funcName: funcName,
@@ -32,31 +42,32 @@ class _$VmValuesRequestTearOff {
     );
   }
 
-// ignore: unused_element
-  VmValuesRequest fromJson(Map<String, Object> json) {
+  VmValuesRequest fromJson(Map<String, Object?> json) {
     return VmValuesRequest.fromJson(json);
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $VmValuesRequest = _$VmValuesRequestTearOff();
 
 /// @nodoc
 mixin _$VmValuesRequest {
-  Address get scAddress;
-  String get funcName;
-  List<ContractArgument> get args;
-  @nullable
+  @AddressConverter()
+  Address get scAddress => throw _privateConstructorUsedError;
+  String get funcName => throw _privateConstructorUsedError;
+  @ContractArgumentConverter()
+  List<ContractArgument> get args => throw _privateConstructorUsedError;
+  @NullableAddressConverter()
   @JsonKey(includeIfNull: false)
-  Address get caller;
-  @nullable
+  Address? get caller => throw _privateConstructorUsedError;
+  @NullableBalanceConverter()
   @JsonKey(includeIfNull: false)
-  Balance get value;
+  Balance? get value => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson();
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $VmValuesRequestCopyWith<VmValuesRequest> get copyWith;
+  $VmValuesRequestCopyWith<VmValuesRequest> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -65,11 +76,17 @@ abstract class $VmValuesRequestCopyWith<$Res> {
           VmValuesRequest value, $Res Function(VmValuesRequest) then) =
       _$VmValuesRequestCopyWithImpl<$Res>;
   $Res call(
-      {Address scAddress,
+      {@AddressConverter()
+          Address scAddress,
       String funcName,
-      List<ContractArgument> args,
-      @nullable @JsonKey(includeIfNull: false) Address caller,
-      @nullable @JsonKey(includeIfNull: false) Balance value});
+      @ContractArgumentConverter()
+          List<ContractArgument> args,
+      @NullableAddressConverter()
+      @JsonKey(includeIfNull: false)
+          Address? caller,
+      @NullableBalanceConverter()
+      @JsonKey(includeIfNull: false)
+          Balance? value});
 }
 
 /// @nodoc
@@ -83,18 +100,33 @@ class _$VmValuesRequestCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object scAddress = freezed,
-    Object funcName = freezed,
-    Object args = freezed,
-    Object caller = freezed,
-    Object value = freezed,
+    Object? scAddress = freezed,
+    Object? funcName = freezed,
+    Object? args = freezed,
+    Object? caller = freezed,
+    Object? value = freezed,
   }) {
     return _then(_value.copyWith(
-      scAddress: scAddress == freezed ? _value.scAddress : scAddress as Address,
-      funcName: funcName == freezed ? _value.funcName : funcName as String,
-      args: args == freezed ? _value.args : args as List<ContractArgument>,
-      caller: caller == freezed ? _value.caller : caller as Address,
-      value: value == freezed ? _value.value : value as Balance,
+      scAddress: scAddress == freezed
+          ? _value.scAddress
+          : scAddress // ignore: cast_nullable_to_non_nullable
+              as Address,
+      funcName: funcName == freezed
+          ? _value.funcName
+          : funcName // ignore: cast_nullable_to_non_nullable
+              as String,
+      args: args == freezed
+          ? _value.args
+          : args // ignore: cast_nullable_to_non_nullable
+              as List<ContractArgument>,
+      caller: caller == freezed
+          ? _value.caller
+          : caller // ignore: cast_nullable_to_non_nullable
+              as Address?,
+      value: value == freezed
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as Balance?,
     ));
   }
 }
@@ -107,11 +139,17 @@ abstract class _$VmValuesRequestCopyWith<$Res>
       __$VmValuesRequestCopyWithImpl<$Res>;
   @override
   $Res call(
-      {Address scAddress,
+      {@AddressConverter()
+          Address scAddress,
       String funcName,
-      List<ContractArgument> args,
-      @nullable @JsonKey(includeIfNull: false) Address caller,
-      @nullable @JsonKey(includeIfNull: false) Balance value});
+      @ContractArgumentConverter()
+          List<ContractArgument> args,
+      @NullableAddressConverter()
+      @JsonKey(includeIfNull: false)
+          Address? caller,
+      @NullableBalanceConverter()
+      @JsonKey(includeIfNull: false)
+          Balance? value});
 }
 
 /// @nodoc
@@ -127,56 +165,66 @@ class __$VmValuesRequestCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object scAddress = freezed,
-    Object funcName = freezed,
-    Object args = freezed,
-    Object caller = freezed,
-    Object value = freezed,
+    Object? scAddress = freezed,
+    Object? funcName = freezed,
+    Object? args = freezed,
+    Object? caller = freezed,
+    Object? value = freezed,
   }) {
     return _then(_VmValuesRequest(
-      scAddress: scAddress == freezed ? _value.scAddress : scAddress as Address,
-      funcName: funcName == freezed ? _value.funcName : funcName as String,
-      args: args == freezed ? _value.args : args as List<ContractArgument>,
-      caller: caller == freezed ? _value.caller : caller as Address,
-      value: value == freezed ? _value.value : value as Balance,
+      scAddress: scAddress == freezed
+          ? _value.scAddress
+          : scAddress // ignore: cast_nullable_to_non_nullable
+              as Address,
+      funcName: funcName == freezed
+          ? _value.funcName
+          : funcName // ignore: cast_nullable_to_non_nullable
+              as String,
+      args: args == freezed
+          ? _value.args
+          : args // ignore: cast_nullable_to_non_nullable
+              as List<ContractArgument>,
+      caller: caller == freezed
+          ? _value.caller
+          : caller // ignore: cast_nullable_to_non_nullable
+              as Address?,
+      value: value == freezed
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as Balance?,
     ));
   }
 }
 
-@JsonSerializable()
-@AddressConverter()
-@BalanceConverter()
-@ContractArgumentConverter()
-
 /// @nodoc
+@JsonSerializable()
 class _$_VmValuesRequest implements _VmValuesRequest {
   _$_VmValuesRequest(
-      {@required this.scAddress,
-      @required this.funcName,
-      @required this.args,
-      @nullable @JsonKey(includeIfNull: false) this.caller,
-      @nullable @JsonKey(includeIfNull: false) this.value})
-      : assert(scAddress != null),
-        assert(funcName != null),
-        assert(args != null);
+      {@AddressConverter() required this.scAddress,
+      required this.funcName,
+      @ContractArgumentConverter() required this.args,
+      @NullableAddressConverter() @JsonKey(includeIfNull: false) this.caller,
+      @NullableBalanceConverter() @JsonKey(includeIfNull: false) this.value});
 
   factory _$_VmValuesRequest.fromJson(Map<String, dynamic> json) =>
-      _$_$_VmValuesRequestFromJson(json);
+      _$$_VmValuesRequestFromJson(json);
 
   @override
+  @AddressConverter()
   final Address scAddress;
   @override
   final String funcName;
   @override
+  @ContractArgumentConverter()
   final List<ContractArgument> args;
   @override
-  @nullable
+  @NullableAddressConverter()
   @JsonKey(includeIfNull: false)
-  final Address caller;
+  final Address? caller;
   @override
-  @nullable
+  @NullableBalanceConverter()
   @JsonKey(includeIfNull: false)
-  final Balance value;
+  final Balance? value;
 
   @override
   String toString() {
@@ -186,29 +234,20 @@ class _$_VmValuesRequest implements _VmValuesRequest {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _VmValuesRequest &&
+        (other.runtimeType == runtimeType &&
+            other is _VmValuesRequest &&
             (identical(other.scAddress, scAddress) ||
-                const DeepCollectionEquality()
-                    .equals(other.scAddress, scAddress)) &&
+                other.scAddress == scAddress) &&
             (identical(other.funcName, funcName) ||
-                const DeepCollectionEquality()
-                    .equals(other.funcName, funcName)) &&
-            (identical(other.args, args) ||
-                const DeepCollectionEquality().equals(other.args, args)) &&
-            (identical(other.caller, caller) ||
-                const DeepCollectionEquality().equals(other.caller, caller)) &&
-            (identical(other.value, value) ||
-                const DeepCollectionEquality().equals(other.value, value)));
+                other.funcName == funcName) &&
+            const DeepCollectionEquality().equals(other.args, args) &&
+            (identical(other.caller, caller) || other.caller == caller) &&
+            (identical(other.value, value) || other.value == value));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(scAddress) ^
-      const DeepCollectionEquality().hash(funcName) ^
-      const DeepCollectionEquality().hash(args) ^
-      const DeepCollectionEquality().hash(caller) ^
-      const DeepCollectionEquality().hash(value);
+  int get hashCode => Object.hash(runtimeType, scAddress, funcName,
+      const DeepCollectionEquality().hash(args), caller, value);
 
   @JsonKey(ignore: true)
   @override
@@ -217,37 +256,45 @@ class _$_VmValuesRequest implements _VmValuesRequest {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_VmValuesRequestToJson(this);
+    return _$$_VmValuesRequestToJson(this);
   }
 }
 
 abstract class _VmValuesRequest implements VmValuesRequest {
   factory _VmValuesRequest(
-          {@required Address scAddress,
-          @required String funcName,
-          @required List<ContractArgument> args,
-          @nullable @JsonKey(includeIfNull: false) Address caller,
-          @nullable @JsonKey(includeIfNull: false) Balance value}) =
-      _$_VmValuesRequest;
+      {@AddressConverter()
+          required Address scAddress,
+      required String funcName,
+      @ContractArgumentConverter()
+          required List<ContractArgument> args,
+      @NullableAddressConverter()
+      @JsonKey(includeIfNull: false)
+          Address? caller,
+      @NullableBalanceConverter()
+      @JsonKey(includeIfNull: false)
+          Balance? value}) = _$_VmValuesRequest;
 
   factory _VmValuesRequest.fromJson(Map<String, dynamic> json) =
       _$_VmValuesRequest.fromJson;
 
   @override
+  @AddressConverter()
   Address get scAddress;
   @override
   String get funcName;
   @override
+  @ContractArgumentConverter()
   List<ContractArgument> get args;
   @override
-  @nullable
+  @NullableAddressConverter()
   @JsonKey(includeIfNull: false)
-  Address get caller;
+  Address? get caller;
   @override
-  @nullable
+  @NullableBalanceConverter()
   @JsonKey(includeIfNull: false)
-  Balance get value;
+  Balance? get value;
   @override
   @JsonKey(ignore: true)
-  _$VmValuesRequestCopyWith<_VmValuesRequest> get copyWith;
+  _$VmValuesRequestCopyWith<_VmValuesRequest> get copyWith =>
+      throw _privateConstructorUsedError;
 }

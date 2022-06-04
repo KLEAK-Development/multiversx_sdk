@@ -4,7 +4,7 @@ import 'package:retrofit/retrofit.dart';
 
 part 'address.g.dart';
 
-@RestApi(baseUrl: 'https://api.elrond.com')
+@RestApi(baseUrl: 'https://gateway.elrond.com')
 abstract class AddressRepository {
   factory AddressRepository(Dio dio, {String baseUrl}) = _AddressRepository;
 

@@ -6,137 +6,134 @@ part of 'response.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ProxyResponseGeneric _$_$ProxyResponseGenericFromJson(
-    Map<String, dynamic> json) {
-  return _$ProxyResponseGeneric(
-    data: json['data'] as Map<String, dynamic>,
-    error: json['error'] as String,
-    code: json['code'] as String,
-  );
-}
+_$ProxyResponseGeneric _$$ProxyResponseGenericFromJson(
+        Map<String, dynamic> json) =>
+    _$ProxyResponseGeneric(
+      data: (json['data'] as Map<String, dynamic>).map(
+        (k, e) => MapEntry(k, e as Object),
+      ),
+      error: json['error'] as String?,
+      code: json['code'] as String,
+      $type: json['runtimeType'] as String?,
+    );
 
-Map<String, dynamic> _$_$ProxyResponseGenericToJson(
+Map<String, dynamic> _$$ProxyResponseGenericToJson(
         _$ProxyResponseGeneric instance) =>
     <String, dynamic>{
       'data': instance.data,
       'error': instance.error,
       'code': instance.code,
+      'runtimeType': instance.$type,
     };
 
-_$GetAccountInformationResponse _$_$GetAccountInformationResponseFromJson(
-    Map<String, dynamic> json) {
-  return _$GetAccountInformationResponse(
-    data: json['data'] == null
-        ? null
-        : AccountResponse.fromJson(json['data'] as Map<String, dynamic>),
-    error: json['error'] as String,
-    code: json['code'] as String,
-  );
-}
+_$GetAccountInformationResponse _$$GetAccountInformationResponseFromJson(
+        Map<String, dynamic> json) =>
+    _$GetAccountInformationResponse(
+      data: AccountResponse.fromJson(json['data'] as Map<String, dynamic>),
+      error: json['error'] as String?,
+      code: json['code'] as String,
+      $type: json['runtimeType'] as String?,
+    );
 
-Map<String, dynamic> _$_$GetAccountInformationResponseToJson(
+Map<String, dynamic> _$$GetAccountInformationResponseToJson(
         _$GetAccountInformationResponse instance) =>
     <String, dynamic>{
       'data': instance.data,
       'error': instance.error,
       'code': instance.code,
+      'runtimeType': instance.$type,
     };
 
-_$NetworkConfigurationResponse _$_$NetworkConfigurationResponseFromJson(
-    Map<String, dynamic> json) {
-  return _$NetworkConfigurationResponse(
-    data: json['data'] == null
-        ? null
-        : NetworkConfigurationData.fromJson(
-            json['data'] as Map<String, dynamic>),
-    error: json['error'] as String,
-    code: json['code'] as String,
-  );
-}
+_$NetworkConfigurationResponse _$$NetworkConfigurationResponseFromJson(
+        Map<String, dynamic> json) =>
+    _$NetworkConfigurationResponse(
+      data: NetworkConfigurationData.fromJson(
+          json['data'] as Map<String, dynamic>),
+      error: json['error'] as String?,
+      code: json['code'] as String,
+      $type: json['runtimeType'] as String?,
+    );
 
-Map<String, dynamic> _$_$NetworkConfigurationResponseToJson(
+Map<String, dynamic> _$$NetworkConfigurationResponseToJson(
         _$NetworkConfigurationResponse instance) =>
     <String, dynamic>{
       'data': instance.data,
       'error': instance.error,
       'code': instance.code,
+      'runtimeType': instance.$type,
     };
 
-_$SendTransactionResponse _$_$SendTransactionResponseFromJson(
-    Map<String, dynamic> json) {
-  return _$SendTransactionResponse(
-    data: json['data'] == null
-        ? null
-        : SendTransactionData.fromJson(json['data'] as Map<String, dynamic>),
-    error: json['error'] as String,
-    code: json['code'] as String,
-  );
-}
+_$SendTransactionResponse _$$SendTransactionResponseFromJson(
+        Map<String, dynamic> json) =>
+    _$SendTransactionResponse(
+      data: SendTransactionData.fromJson(json['data'] as Map<String, dynamic>),
+      error: json['error'] as String?,
+      code: json['code'] as String,
+      $type: json['runtimeType'] as String?,
+    );
 
-Map<String, dynamic> _$_$SendTransactionResponseToJson(
+Map<String, dynamic> _$$SendTransactionResponseToJson(
         _$SendTransactionResponse instance) =>
     <String, dynamic>{
       'data': instance.data,
       'error': instance.error,
       'code': instance.code,
+      'runtimeType': instance.$type,
     };
 
-_$GetTransactionStatusResponse _$_$GetTransactionStatusResponseFromJson(
-    Map<String, dynamic> json) {
-  return _$GetTransactionStatusResponse(
-    data: json['data'] == null
-        ? null
-        : GetTransactionStatusData.fromJson(
-            json['data'] as Map<String, dynamic>),
-    error: json['error'] as String,
-    code: json['code'] as String,
-  );
-}
+_$GetTransactionStatusResponse _$$GetTransactionStatusResponseFromJson(
+        Map<String, dynamic> json) =>
+    _$GetTransactionStatusResponse(
+      data: GetTransactionStatusData.fromJson(
+          json['data'] as Map<String, dynamic>),
+      error: json['error'] as String?,
+      code: json['code'] as String,
+      $type: json['runtimeType'] as String?,
+    );
 
-Map<String, dynamic> _$_$GetTransactionStatusResponseToJson(
+Map<String, dynamic> _$$GetTransactionStatusResponseToJson(
         _$GetTransactionStatusResponse instance) =>
     <String, dynamic>{
       'data': instance.data,
       'error': instance.error,
       'code': instance.code,
+      'runtimeType': instance.$type,
     };
 
 _$GetTransactionInformationsWithSmartContractResultsResponse
-    _$_$GetTransactionInformationsWithSmartContractResultsResponseFromJson(
-        Map<String, dynamic> json) {
-  return _$GetTransactionInformationsWithSmartContractResultsResponse(
-    data: json['data'] == null
-        ? null
-        : GetTransactionInformationsWithSmartContractResultData.fromJson(
-            json['data'] as Map<String, dynamic>),
-    error: json['error'] as String,
-    code: json['code'] as String,
-  );
-}
+    _$$GetTransactionInformationsWithSmartContractResultsResponseFromJson(
+            Map<String, dynamic> json) =>
+        _$GetTransactionInformationsWithSmartContractResultsResponse(
+          data: GetTransactionInformationsWithSmartContractResultData.fromJson(
+              json['data'] as Map<String, dynamic>),
+          error: json['error'] as String?,
+          code: json['code'] as String,
+          $type: json['runtimeType'] as String?,
+        );
 
 Map<String, dynamic>
-    _$_$GetTransactionInformationsWithSmartContractResultsResponseToJson(
+    _$$GetTransactionInformationsWithSmartContractResultsResponseToJson(
             _$GetTransactionInformationsWithSmartContractResultsResponse
                 instance) =>
         <String, dynamic>{
           'data': instance.data,
           'error': instance.error,
           'code': instance.code,
+          'runtimeType': instance.$type,
         };
 
-_$VmValuesQuery _$_$VmValuesQueryFromJson(Map<String, dynamic> json) {
-  return _$VmValuesQuery(
-    data: json['data'] == null
-        ? null
-        : VmValuesResponse.fromJson(json['data'] as Map<String, dynamic>),
-    error: json['error'] as String,
-    code: json['code'] as String,
-  );
-}
+_$VmValuesQuery _$$VmValuesQueryFromJson(Map<String, dynamic> json) =>
+    _$VmValuesQuery(
+      data: VmValuesResponse.fromJson(json['data'] as Map<String, dynamic>),
+      error: json['error'] as String?,
+      code: json['code'] as String,
+      $type: json['runtimeType'] as String?,
+    );
 
-Map<String, dynamic> _$_$VmValuesQueryToJson(_$VmValuesQuery instance) =>
+Map<String, dynamic> _$$VmValuesQueryToJson(_$VmValuesQuery instance) =>
     <String, dynamic>{
       'data': instance.data,
       'error': instance.error,
       'code': instance.code,
+      'runtimeType': instance.$type,
     };

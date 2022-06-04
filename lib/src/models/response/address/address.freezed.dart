@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'address.dart';
 
@@ -8,6 +9,10 @@ part of 'address.dart';
 // **************************************************************************
 
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 AccountResponse _$AccountResponseFromJson(Map<String, dynamic> json) {
   return _AccountResponse.fromJson(json);
 }
@@ -16,30 +21,28 @@ AccountResponse _$AccountResponseFromJson(Map<String, dynamic> json) {
 class _$AccountResponseTearOff {
   const _$AccountResponseTearOff();
 
-// ignore: unused_element
-  _AccountResponse call({AccountData account}) {
+  _AccountResponse call({required AccountData account}) {
     return _AccountResponse(
       account: account,
     );
   }
 
-// ignore: unused_element
-  AccountResponse fromJson(Map<String, Object> json) {
+  AccountResponse fromJson(Map<String, Object?> json) {
     return AccountResponse.fromJson(json);
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $AccountResponse = _$AccountResponseTearOff();
 
 /// @nodoc
 mixin _$AccountResponse {
-  AccountData get account;
+  AccountData get account => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson();
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $AccountResponseCopyWith<AccountResponse> get copyWith;
+  $AccountResponseCopyWith<AccountResponse> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -63,18 +66,18 @@ class _$AccountResponseCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object account = freezed,
+    Object? account = freezed,
   }) {
     return _then(_value.copyWith(
-      account: account == freezed ? _value.account : account as AccountData,
+      account: account == freezed
+          ? _value.account
+          : account // ignore: cast_nullable_to_non_nullable
+              as AccountData,
     ));
   }
 
   @override
   $AccountDataCopyWith<$Res> get account {
-    if (_value.account == null) {
-      return null;
-    }
     return $AccountDataCopyWith<$Res>(_value.account, (value) {
       return _then(_value.copyWith(account: value));
     });
@@ -107,22 +110,24 @@ class __$AccountResponseCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object account = freezed,
+    Object? account = freezed,
   }) {
     return _then(_AccountResponse(
-      account: account == freezed ? _value.account : account as AccountData,
+      account: account == freezed
+          ? _value.account
+          : account // ignore: cast_nullable_to_non_nullable
+              as AccountData,
     ));
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$_AccountResponse implements _AccountResponse {
-  _$_AccountResponse({this.account});
+  _$_AccountResponse({required this.account});
 
   factory _$_AccountResponse.fromJson(Map<String, dynamic> json) =>
-      _$_$_AccountResponseFromJson(json);
+      _$$_AccountResponseFromJson(json);
 
   @override
   final AccountData account;
@@ -135,14 +140,13 @@ class _$_AccountResponse implements _AccountResponse {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _AccountResponse &&
-            (identical(other.account, account) ||
-                const DeepCollectionEquality().equals(other.account, account)));
+        (other.runtimeType == runtimeType &&
+            other is _AccountResponse &&
+            (identical(other.account, account) || other.account == account));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(account);
+  int get hashCode => Object.hash(runtimeType, account);
 
   @JsonKey(ignore: true)
   @override
@@ -151,12 +155,12 @@ class _$_AccountResponse implements _AccountResponse {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_AccountResponseToJson(this);
+    return _$$_AccountResponseToJson(this);
   }
 }
 
 abstract class _AccountResponse implements AccountResponse {
-  factory _AccountResponse({AccountData account}) = _$_AccountResponse;
+  factory _AccountResponse({required AccountData account}) = _$_AccountResponse;
 
   factory _AccountResponse.fromJson(Map<String, dynamic> json) =
       _$_AccountResponse.fromJson;
@@ -165,7 +169,8 @@ abstract class _AccountResponse implements AccountResponse {
   AccountData get account;
   @override
   @JsonKey(ignore: true)
-  _$AccountResponseCopyWith<_AccountResponse> get copyWith;
+  _$AccountResponseCopyWith<_AccountResponse> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 AccountData _$AccountDataFromJson(Map<String, dynamic> json) {
@@ -176,9 +181,11 @@ AccountData _$AccountDataFromJson(Map<String, dynamic> json) {
 class _$AccountDataTearOff {
   const _$AccountDataTearOff();
 
-// ignore: unused_element
   _AccountData call(
-      {Address address, Nonce nonce, Balance balance, String username = ''}) {
+      {@NullableAddressConverter() Address? address,
+      @NonceConverter() required Nonce nonce,
+      @BalanceConverter() required Balance balance,
+      String username = ''}) {
     return _AccountData(
       address: address,
       nonce: nonce,
@@ -187,26 +194,28 @@ class _$AccountDataTearOff {
     );
   }
 
-// ignore: unused_element
-  AccountData fromJson(Map<String, Object> json) {
+  AccountData fromJson(Map<String, Object?> json) {
     return AccountData.fromJson(json);
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $AccountData = _$AccountDataTearOff();
 
 /// @nodoc
 mixin _$AccountData {
-  Address get address;
-  Nonce get nonce;
-  Balance get balance;
-  String get username;
+  @NullableAddressConverter()
+  Address? get address => throw _privateConstructorUsedError;
+  @NonceConverter()
+  Nonce get nonce => throw _privateConstructorUsedError;
+  @BalanceConverter()
+  Balance get balance => throw _privateConstructorUsedError;
+  String get username => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson();
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $AccountDataCopyWith<AccountData> get copyWith;
+  $AccountDataCopyWith<AccountData> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -214,7 +223,11 @@ abstract class $AccountDataCopyWith<$Res> {
   factory $AccountDataCopyWith(
           AccountData value, $Res Function(AccountData) then) =
       _$AccountDataCopyWithImpl<$Res>;
-  $Res call({Address address, Nonce nonce, Balance balance, String username});
+  $Res call(
+      {@NullableAddressConverter() Address? address,
+      @NonceConverter() Nonce nonce,
+      @BalanceConverter() Balance balance,
+      String username});
 }
 
 /// @nodoc
@@ -227,16 +240,28 @@ class _$AccountDataCopyWithImpl<$Res> implements $AccountDataCopyWith<$Res> {
 
   @override
   $Res call({
-    Object address = freezed,
-    Object nonce = freezed,
-    Object balance = freezed,
-    Object username = freezed,
+    Object? address = freezed,
+    Object? nonce = freezed,
+    Object? balance = freezed,
+    Object? username = freezed,
   }) {
     return _then(_value.copyWith(
-      address: address == freezed ? _value.address : address as Address,
-      nonce: nonce == freezed ? _value.nonce : nonce as Nonce,
-      balance: balance == freezed ? _value.balance : balance as Balance,
-      username: username == freezed ? _value.username : username as String,
+      address: address == freezed
+          ? _value.address
+          : address // ignore: cast_nullable_to_non_nullable
+              as Address?,
+      nonce: nonce == freezed
+          ? _value.nonce
+          : nonce // ignore: cast_nullable_to_non_nullable
+              as Nonce,
+      balance: balance == freezed
+          ? _value.balance
+          : balance // ignore: cast_nullable_to_non_nullable
+              as Balance,
+      username: username == freezed
+          ? _value.username
+          : username // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -248,7 +273,11 @@ abstract class _$AccountDataCopyWith<$Res>
           _AccountData value, $Res Function(_AccountData) then) =
       __$AccountDataCopyWithImpl<$Res>;
   @override
-  $Res call({Address address, Nonce nonce, Balance balance, String username});
+  $Res call(
+      {@NullableAddressConverter() Address? address,
+      @NonceConverter() Nonce nonce,
+      @BalanceConverter() Balance balance,
+      String username});
 }
 
 /// @nodoc
@@ -263,38 +292,52 @@ class __$AccountDataCopyWithImpl<$Res> extends _$AccountDataCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object address = freezed,
-    Object nonce = freezed,
-    Object balance = freezed,
-    Object username = freezed,
+    Object? address = freezed,
+    Object? nonce = freezed,
+    Object? balance = freezed,
+    Object? username = freezed,
   }) {
     return _then(_AccountData(
-      address: address == freezed ? _value.address : address as Address,
-      nonce: nonce == freezed ? _value.nonce : nonce as Nonce,
-      balance: balance == freezed ? _value.balance : balance as Balance,
-      username: username == freezed ? _value.username : username as String,
+      address: address == freezed
+          ? _value.address
+          : address // ignore: cast_nullable_to_non_nullable
+              as Address?,
+      nonce: nonce == freezed
+          ? _value.nonce
+          : nonce // ignore: cast_nullable_to_non_nullable
+              as Nonce,
+      balance: balance == freezed
+          ? _value.balance
+          : balance // ignore: cast_nullable_to_non_nullable
+              as Balance,
+      username: username == freezed
+          ? _value.username
+          : username // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
 
-@JsonSerializable()
-@AddressConverter()
-@NonceConverter()
-@BalanceConverter()
-
 /// @nodoc
+@JsonSerializable()
 class _$_AccountData implements _AccountData {
-  _$_AccountData({this.address, this.nonce, this.balance, this.username = ''})
-      : assert(username != null);
+  _$_AccountData(
+      {@NullableAddressConverter() this.address,
+      @NonceConverter() required this.nonce,
+      @BalanceConverter() required this.balance,
+      this.username = ''});
 
   factory _$_AccountData.fromJson(Map<String, dynamic> json) =>
-      _$_$_AccountDataFromJson(json);
+      _$$_AccountDataFromJson(json);
 
   @override
-  final Address address;
+  @NullableAddressConverter()
+  final Address? address;
   @override
+  @NonceConverter()
   final Nonce nonce;
   @override
+  @BalanceConverter()
   final Balance balance;
   @JsonKey(defaultValue: '')
   @override
@@ -308,27 +351,18 @@ class _$_AccountData implements _AccountData {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _AccountData &&
-            (identical(other.address, address) ||
-                const DeepCollectionEquality()
-                    .equals(other.address, address)) &&
-            (identical(other.nonce, nonce) ||
-                const DeepCollectionEquality().equals(other.nonce, nonce)) &&
-            (identical(other.balance, balance) ||
-                const DeepCollectionEquality()
-                    .equals(other.balance, balance)) &&
+        (other.runtimeType == runtimeType &&
+            other is _AccountData &&
+            (identical(other.address, address) || other.address == address) &&
+            (identical(other.nonce, nonce) || other.nonce == nonce) &&
+            (identical(other.balance, balance) || other.balance == balance) &&
             (identical(other.username, username) ||
-                const DeepCollectionEquality()
-                    .equals(other.username, username)));
+                other.username == username));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(address) ^
-      const DeepCollectionEquality().hash(nonce) ^
-      const DeepCollectionEquality().hash(balance) ^
-      const DeepCollectionEquality().hash(username);
+      Object.hash(runtimeType, address, nonce, balance, username);
 
   @JsonKey(ignore: true)
   @override
@@ -337,29 +371,33 @@ class _$_AccountData implements _AccountData {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_AccountDataToJson(this);
+    return _$$_AccountDataToJson(this);
   }
 }
 
 abstract class _AccountData implements AccountData {
   factory _AccountData(
-      {Address address,
-      Nonce nonce,
-      Balance balance,
+      {@NullableAddressConverter() Address? address,
+      @NonceConverter() required Nonce nonce,
+      @BalanceConverter() required Balance balance,
       String username}) = _$_AccountData;
 
   factory _AccountData.fromJson(Map<String, dynamic> json) =
       _$_AccountData.fromJson;
 
   @override
-  Address get address;
+  @NullableAddressConverter()
+  Address? get address;
   @override
+  @NonceConverter()
   Nonce get nonce;
   @override
+  @BalanceConverter()
   Balance get balance;
   @override
   String get username;
   @override
   @JsonKey(ignore: true)
-  _$AccountDataCopyWith<_AccountData> get copyWith;
+  _$AccountDataCopyWith<_AccountData> get copyWith =>
+      throw _privateConstructorUsedError;
 }

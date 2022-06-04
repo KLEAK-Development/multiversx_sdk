@@ -14,7 +14,18 @@ class AddressConverter implements JsonConverter<Address, String> {
   Address fromJson(String json) => Address.fromBech32(json);
 
   @override
-  String toJson(Address object) => object?.bech32;
+  String toJson(Address object) => object.bech32;
+}
+
+class NullableAddressConverter implements JsonConverter<Address?, String?> {
+  const NullableAddressConverter();
+
+  @override
+  Address? fromJson(String? json) =>
+      json == null ? null : Address.fromBech32(json);
+
+  @override
+  String? toJson(Address? object) => object?.bech32;
 }
 
 class NonceConverter implements JsonConverter<Nonce, int> {
@@ -27,6 +38,16 @@ class NonceConverter implements JsonConverter<Nonce, int> {
   int toJson(Nonce object) => object.value;
 }
 
+class NullableNonceConverter implements JsonConverter<Nonce?, int?> {
+  const NullableNonceConverter();
+
+  @override
+  Nonce? fromJson(int? json) => json == null ? null : Nonce(json);
+
+  @override
+  int? toJson(Nonce? object) => object?.value;
+}
+
 class BalanceConverter implements JsonConverter<Balance, String> {
   const BalanceConverter();
 
@@ -34,7 +55,18 @@ class BalanceConverter implements JsonConverter<Balance, String> {
   Balance fromJson(String json) => Balance.fromString(json);
 
   @override
-  String toJson(Balance object) => object?.value?.toString();
+  String toJson(Balance object) => object.value.toString();
+}
+
+class NullableBalanceConverter implements JsonConverter<Balance?, String?> {
+  const NullableBalanceConverter();
+
+  @override
+  Balance? fromJson(String? json) =>
+      json == null ? null : Balance.fromString(json);
+
+  @override
+  String? toJson(Balance? object) => object?.value.toString();
 }
 
 class ChainIdConverter implements JsonConverter<ChainId, String> {
@@ -45,6 +77,16 @@ class ChainIdConverter implements JsonConverter<ChainId, String> {
 
   @override
   String toJson(ChainId object) => object.value;
+}
+
+class NullableChainIdConverter implements JsonConverter<ChainId?, String?> {
+  const NullableChainIdConverter();
+
+  @override
+  ChainId? fromJson(String? json) => json == null ? null : ChainId(json);
+
+  @override
+  String? toJson(ChainId? object) => object?.value;
 }
 
 class GasLimitConverter implements JsonConverter<GasLimit, int> {
@@ -67,7 +109,8 @@ class GasPriceConverter implements JsonConverter<GasPrice, int> {
   int toJson(GasPrice object) => object.value;
 }
 
-class TransactionVersionConverter implements JsonConverter<TransactionVersion, int> {
+class TransactionVersionConverter
+    implements JsonConverter<TransactionVersion, int> {
   const TransactionVersionConverter();
 
   @override
@@ -77,7 +120,8 @@ class TransactionVersionConverter implements JsonConverter<TransactionVersion, i
   int toJson(TransactionVersion object) => object.value;
 }
 
-class TransactionHashConverter implements JsonConverter<TransactionHash, String> {
+class TransactionHashConverter
+    implements JsonConverter<TransactionHash, String> {
   const TransactionHashConverter();
 
   @override
@@ -87,11 +131,13 @@ class TransactionHashConverter implements JsonConverter<TransactionHash, String>
   String toJson(TransactionHash object) => object.hash;
 }
 
-class ContractArgumentConverter implements JsonConverter<ContractArgument, String> {
+class ContractArgumentConverter
+    implements JsonConverter<ContractArgument, String> {
   const ContractArgumentConverter();
 
   @override
-  ContractArgument fromJson(String json) => ContractArgument.fromBytes(convert.hex.decode(json));
+  ContractArgument fromJson(String json) =>
+      ContractArgument.fromBytes(convert.hex.decode(json));
 
   @override
   String toJson(ContractArgument object) => convert.hex.encode(object.bytes);

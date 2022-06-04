@@ -25,7 +25,8 @@ Address computeContractAddress(Address address, Nonce nonce) {
     ...address.pubkey,
     ..._int32Bytes(nonce.value),
   ];
-  final digest = Digest('Keccak/256').process(Uint8List.fromList(bytesToHash)).toList();
+  final digest =
+      Digest('Keccak/256').process(Uint8List.fromList(bytesToHash)).toList();
   final bytes = [
     for (var i = 0; i < 8; i++) 0,
     ...[5, 0],
@@ -41,10 +42,12 @@ typedef SmartContractResultsConverter = String Function(int, String);
 
 List<String> smartContractResults(
   String data, {
-  SmartContractResultsConverter converter = _defaultSmartContractResultsConverter,
+  SmartContractResultsConverter converter =
+      _defaultSmartContractResultsConverter,
 }) {
   final decoded = utf8.decode(base64.decode(data));
-  final results = decoded.split('@').where((result) => result.isNotEmpty).toList();
+  final results =
+      decoded.split('@').where((result) => result.isNotEmpty).toList();
   return [
     utf8.decode(convert.hex.decode(results.first)),
     for (var i = 1; i < results.length; i++) converter(i, results[i]),
@@ -52,14 +55,14 @@ List<String> smartContractResults(
 }
 
 class SmartContract {
-  Address _address;
-  Address _owner;
+  Address? _address;
+  Address? _owner;
 
-  SmartContract({Address address}) : _address = address;
+  SmartContract({Address? address}) : _address = address;
 
-  Address get address => _address;
+  Address? get address => _address;
 
-  Address get owner => _owner;
+  Address? get owner => _owner;
 
   Future<TransactionHash> deploy(
     Account owner,
@@ -69,17 +72,11 @@ class SmartContract {
     IProvider proxy, {
     NetworkConfiguration networkConfiguration = const NetworkConfiguration(),
     List<ContractArgument> arguments = const [],
-    Balance balance,
+    Balance? balance,
   }) async {
-    assert(owner != null, 'owner cannot be null');
-    assert(code != null, 'code cannot be null');
-    assert(metadata != null, 'metadata cannot be null');
-    assert(signer != null, 'signer cannot be null');
-    assert(proxy != null, 'proxy cannot be null');
-    assert(networkConfiguration != null, 'networkConfiguration cannot be null');
-    assert(arguments != null, 'arguments cannot be null');
-    final _nc = networkConfiguration ?? NetworkConfiguration();
-    final payload = TransactionPayload.smartContractDeploy(code, metadata, arguments: arguments);
+    final _nc = networkConfiguration;
+    final payload = TransactionPayload.smartContractDeploy(code, metadata,
+        arguments: arguments);
     final transaction = Transaction.smartContractDeploy(
       chainId: _nc.chainId,
       gasLimit: GasLimit.forTransfert(
@@ -94,11 +91,12 @@ class SmartContract {
       sender: owner.address,
       balance: balance ?? Balance.zero(),
     );
-    final smartContractAddress = computeContractAddress(owner.address, owner.nonce);
+    final smartContractAddress =
+        computeContractAddress(owner.address, owner.nonce);
     final signedTransaction = signer.sign(transaction);
     final txHash = await proxy.sendTransaction(signedTransaction);
     final watcher = TransactionWatcher(txHash);
-    StreamSubscription transactionSubscription;
+    late StreamSubscription transactionSubscription;
     final completer = Completer();
     transactionSubscription = watcher.stream(proxy).listen((status) {
       if (status != TransactionStatus.pending) {
@@ -119,16 +117,12 @@ class SmartContract {
     IProvider proxy, {
     NetworkConfiguration networkConfiguration = const NetworkConfiguration(),
     List<ContractArgument> arguments = const [],
-    Balance balance,
+    Balance? balance,
   }) async {
-    assert(senderAccount != null, 'senderAccount cannot be null');
-    assert(function != null, 'function cannot be null');
-    assert(signer != null, 'signer cannot be null');
-    assert(proxy != null, 'proxy cannot be null');
-    assert(networkConfiguration != null, 'networkConfiguration cannot be null');
-    assert(arguments != null, 'arguments cannot be null');
-    final _nc = networkConfiguration ?? NetworkConfiguration();
-    final payload = TransactionPayload.smartContractCall(function, arguments: arguments);
+    assert(_address != null, 'address must not be null');
+    final _nc = networkConfiguration;
+    final payload =
+        TransactionPayload.smartContractCall(function, arguments: arguments);
     final transaction = Transaction.smartContractCall(
       chainId: _nc.chainId,
       gasLimit: GasLimit.forTransfert(
@@ -141,13 +135,13 @@ class SmartContract {
       data: payload,
       nonce: senderAccount.nonce,
       sender: senderAccount.address,
-      receiver: _address,
+      receiver: _address!,
       balance: balance ?? Balance.zero(),
     );
     final signedTransaction = signer.sign(transaction);
     final txHash = await proxy.sendTransaction(signedTransaction);
     final watcher = TransactionWatcher(txHash);
-    StreamSubscription transactionSubscription;
+    late StreamSubscription transactionSubscription;
     final completer = Completer();
     transactionSubscription = watcher.stream(proxy).listen((status) {
       if (status != TransactionStatus.pending) {
@@ -168,16 +162,11 @@ class SmartContract {
     IProvider proxy, {
     NetworkConfiguration networkConfiguration = const NetworkConfiguration(),
     List<ContractArgument> arguments = const [],
-    Balance balance,
+    Balance? balance,
   }) async {
-    assert(owner != null, 'owner cannot be null');
-    assert(code != null, 'code cannot be null');
-    assert(metadata != null, 'metadata cannot be null');
-    assert(signer != null, 'signer cannot be null');
-    assert(proxy != null, 'proxy cannot be null');
-    assert(networkConfiguration != null, 'networkConfiguration cannot be null');
-    assert(arguments != null, 'arguments cannot be null');
-    final payload = TransactionPayload.smartContractUpgrade(code, CodeMetadata());
+    assert(_address != null, 'address must not be null');
+    final payload =
+        TransactionPayload.smartContractUpgrade(code, CodeMetadata());
     final transaction = Transaction.smartContractUpgrade(
       chainId: networkConfiguration.chainId,
       gasLimit: GasLimit.forTransfert(
@@ -190,13 +179,13 @@ class SmartContract {
       data: payload,
       nonce: owner.nonce,
       sender: owner.address,
-      receiver: _address,
+      receiver: _address!,
       balance: balance ?? Balance.zero(),
     );
     final signedTransaction = signer.sign(transaction);
     final txHash = await proxy.sendTransaction(signedTransaction);
     final watcher = TransactionWatcher(txHash);
-    StreamSubscription transactionSubscription;
+    late StreamSubscription transactionSubscription;
     final completer = Completer();
     transactionSubscription = watcher.stream(proxy).listen((status) {
       if (status != TransactionStatus.pending) {
@@ -212,15 +201,13 @@ class SmartContract {
   Future<VmValuesQuery> query(
     IProvider provider,
     String functionName, {
-    Address caller,
+    Address? caller,
     List<ContractArgument> arguments = const [],
-    Balance value,
+    Balance? value,
   }) async {
-    assert(provider != null, 'provider cannot be null');
-    assert(functionName != null, 'functionName cannot be null');
-    assert(arguments != null, 'arguments cannot be null');
+    assert(_address != null, 'address must not be null');
     final result = await provider.vmValuesQuery(VmValuesRequest(
-      scAddress: _address,
+      scAddress: _address!,
       funcName: functionName,
       args: arguments,
       caller: caller,
@@ -230,17 +217,14 @@ class SmartContract {
   }
 
   Future<void> queryHex() async {
-    //  TODO: implement query
-    return null;
+    throw UnimplementedError();
   }
 
   Future<void> queryString() async {
-    //  TODO: implement query
-    return null;
+    throw UnimplementedError();
   }
 
   Future<void> queryInt() async {
-    //  TODO: implement query
-    return null;
+    throw UnimplementedError();
   }
 }

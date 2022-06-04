@@ -1,3 +1,5 @@
+// ignore_for_file: invalid_annotation_target
+
 import 'package:elrond_sdk/src/address.dart';
 import 'package:elrond_sdk/src/balance.dart';
 import 'package:elrond_sdk/src/models/json_converter.dart';
@@ -8,17 +10,15 @@ part 'vm_values.freezed.dart';
 part 'vm_values.g.dart';
 
 @freezed
-abstract class VmValuesRequest with _$VmValuesRequest {
-  @AddressConverter()
-  @BalanceConverter()
-  @ContractArgumentConverter()
+class VmValuesRequest with _$VmValuesRequest {
   factory VmValuesRequest({
-    @required Address scAddress,
-    @required String funcName,
-    @required List<ContractArgument> args,
-    @nullable @JsonKey(includeIfNull: false) Address caller,
-    @nullable @JsonKey(includeIfNull: false) Balance value,
+    @AddressConverter() required Address scAddress,
+    required String funcName,
+    @ContractArgumentConverter() required List<ContractArgument> args,
+    @NullableAddressConverter() @JsonKey(includeIfNull: false) Address? caller,
+    @NullableBalanceConverter() @JsonKey(includeIfNull: false) Balance? value,
   }) = _VmValuesRequest;
 
-  factory VmValuesRequest.fromJson(Map<String, dynamic> json) => _$VmValuesRequestFromJson(json);
+  factory VmValuesRequest.fromJson(Map<String, dynamic> json) =>
+      _$VmValuesRequestFromJson(json);
 }

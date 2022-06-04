@@ -7,7 +7,7 @@ import 'package:retrofit/retrofit.dart';
 
 part 'transaction.g.dart';
 
-@RestApi(baseUrl: 'https://api.elrond.com')
+@RestApi(baseUrl: 'https://gateway.elrond.com')
 abstract class TransactionRepository {
   factory TransactionRepository(Dio dio, {String baseUrl}) = _TransactionRepository;
 

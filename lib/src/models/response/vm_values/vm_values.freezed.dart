@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'vm_values.dart';
 
@@ -8,6 +9,10 @@ part of 'vm_values.dart';
 // **************************************************************************
 
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 VmValuesResponse _$VmValuesResponseFromJson(Map<String, dynamic> json) {
   return _VmValuesResponse.fromJson(json);
 }
@@ -16,30 +21,28 @@ VmValuesResponse _$VmValuesResponseFromJson(Map<String, dynamic> json) {
 class _$VmValuesResponseTearOff {
   const _$VmValuesResponseTearOff();
 
-// ignore: unused_element
-  _VmValuesResponse call({VmValueData data}) {
+  _VmValuesResponse call({required VmValueData data}) {
     return _VmValuesResponse(
       data: data,
     );
   }
 
-// ignore: unused_element
-  VmValuesResponse fromJson(Map<String, Object> json) {
+  VmValuesResponse fromJson(Map<String, Object?> json) {
     return VmValuesResponse.fromJson(json);
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $VmValuesResponse = _$VmValuesResponseTearOff();
 
 /// @nodoc
 mixin _$VmValuesResponse {
-  VmValueData get data;
+  VmValueData get data => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson();
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $VmValuesResponseCopyWith<VmValuesResponse> get copyWith;
+  $VmValuesResponseCopyWith<VmValuesResponse> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -63,18 +66,18 @@ class _$VmValuesResponseCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object data = freezed,
+    Object? data = freezed,
   }) {
     return _then(_value.copyWith(
-      data: data == freezed ? _value.data : data as VmValueData,
+      data: data == freezed
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as VmValueData,
     ));
   }
 
   @override
   $VmValueDataCopyWith<$Res> get data {
-    if (_value.data == null) {
-      return null;
-    }
     return $VmValueDataCopyWith<$Res>(_value.data, (value) {
       return _then(_value.copyWith(data: value));
     });
@@ -107,22 +110,24 @@ class __$VmValuesResponseCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object data = freezed,
+    Object? data = freezed,
   }) {
     return _then(_VmValuesResponse(
-      data: data == freezed ? _value.data : data as VmValueData,
+      data: data == freezed
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as VmValueData,
     ));
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$_VmValuesResponse implements _VmValuesResponse {
-  _$_VmValuesResponse({this.data});
+  _$_VmValuesResponse({required this.data});
 
   factory _$_VmValuesResponse.fromJson(Map<String, dynamic> json) =>
-      _$_$_VmValuesResponseFromJson(json);
+      _$$_VmValuesResponseFromJson(json);
 
   @override
   final VmValueData data;
@@ -135,14 +140,13 @@ class _$_VmValuesResponse implements _VmValuesResponse {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _VmValuesResponse &&
-            (identical(other.data, data) ||
-                const DeepCollectionEquality().equals(other.data, data)));
+        (other.runtimeType == runtimeType &&
+            other is _VmValuesResponse &&
+            (identical(other.data, data) || other.data == data));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(data);
+  int get hashCode => Object.hash(runtimeType, data);
 
   @JsonKey(ignore: true)
   @override
@@ -151,12 +155,12 @@ class _$_VmValuesResponse implements _VmValuesResponse {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_VmValuesResponseToJson(this);
+    return _$$_VmValuesResponseToJson(this);
   }
 }
 
 abstract class _VmValuesResponse implements VmValuesResponse {
-  factory _VmValuesResponse({VmValueData data}) = _$_VmValuesResponse;
+  factory _VmValuesResponse({required VmValueData data}) = _$_VmValuesResponse;
 
   factory _VmValuesResponse.fromJson(Map<String, dynamic> json) =
       _$_VmValuesResponse.fromJson;
@@ -165,7 +169,8 @@ abstract class _VmValuesResponse implements VmValuesResponse {
   VmValueData get data;
   @override
   @JsonKey(ignore: true)
-  _$VmValuesResponseCopyWith<_VmValuesResponse> get copyWith;
+  _$VmValuesResponseCopyWith<_VmValuesResponse> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 VmValueData _$VmValueDataFromJson(Map<String, dynamic> json) {
@@ -176,14 +181,13 @@ VmValueData _$VmValueDataFromJson(Map<String, dynamic> json) {
 class _$VmValueDataTearOff {
   const _$VmValueDataTearOff();
 
-// ignore: unused_element
   _VmValueData call(
-      {List<String> returnData,
-      String returnCode,
-      String returnMessage,
-      double gasRemaining,
-      int gasRefund,
-      Map<String, OutputAccountData> outputAccounts}) {
+      {List<String> returnData = const [],
+      required String returnCode,
+      required String returnMessage,
+      required double gasRemaining,
+      required int gasRefund,
+      required Map<String, OutputAccountData> outputAccounts}) {
     return _VmValueData(
       returnData: returnData,
       returnCode: returnCode,
@@ -194,28 +198,28 @@ class _$VmValueDataTearOff {
     );
   }
 
-// ignore: unused_element
-  VmValueData fromJson(Map<String, Object> json) {
+  VmValueData fromJson(Map<String, Object?> json) {
     return VmValueData.fromJson(json);
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $VmValueData = _$VmValueDataTearOff();
 
 /// @nodoc
 mixin _$VmValueData {
-  List<String> get returnData;
-  String get returnCode;
-  String get returnMessage;
-  double get gasRemaining;
-  int get gasRefund;
-  Map<String, OutputAccountData> get outputAccounts;
+  List<String> get returnData => throw _privateConstructorUsedError;
+  String get returnCode => throw _privateConstructorUsedError;
+  String get returnMessage => throw _privateConstructorUsedError;
+  double get gasRemaining => throw _privateConstructorUsedError;
+  int get gasRefund => throw _privateConstructorUsedError;
+  Map<String, OutputAccountData> get outputAccounts =>
+      throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson();
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $VmValueDataCopyWith<VmValueData> get copyWith;
+  $VmValueDataCopyWith<VmValueData> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -242,29 +246,38 @@ class _$VmValueDataCopyWithImpl<$Res> implements $VmValueDataCopyWith<$Res> {
 
   @override
   $Res call({
-    Object returnData = freezed,
-    Object returnCode = freezed,
-    Object returnMessage = freezed,
-    Object gasRemaining = freezed,
-    Object gasRefund = freezed,
-    Object outputAccounts = freezed,
+    Object? returnData = freezed,
+    Object? returnCode = freezed,
+    Object? returnMessage = freezed,
+    Object? gasRemaining = freezed,
+    Object? gasRefund = freezed,
+    Object? outputAccounts = freezed,
   }) {
     return _then(_value.copyWith(
       returnData: returnData == freezed
           ? _value.returnData
-          : returnData as List<String>,
-      returnCode:
-          returnCode == freezed ? _value.returnCode : returnCode as String,
+          : returnData // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      returnCode: returnCode == freezed
+          ? _value.returnCode
+          : returnCode // ignore: cast_nullable_to_non_nullable
+              as String,
       returnMessage: returnMessage == freezed
           ? _value.returnMessage
-          : returnMessage as String,
+          : returnMessage // ignore: cast_nullable_to_non_nullable
+              as String,
       gasRemaining: gasRemaining == freezed
           ? _value.gasRemaining
-          : gasRemaining as double,
-      gasRefund: gasRefund == freezed ? _value.gasRefund : gasRefund as int,
+          : gasRemaining // ignore: cast_nullable_to_non_nullable
+              as double,
+      gasRefund: gasRefund == freezed
+          ? _value.gasRefund
+          : gasRefund // ignore: cast_nullable_to_non_nullable
+              as int,
       outputAccounts: outputAccounts == freezed
           ? _value.outputAccounts
-          : outputAccounts as Map<String, OutputAccountData>,
+          : outputAccounts // ignore: cast_nullable_to_non_nullable
+              as Map<String, OutputAccountData>,
     ));
   }
 }
@@ -297,48 +310,57 @@ class __$VmValueDataCopyWithImpl<$Res> extends _$VmValueDataCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object returnData = freezed,
-    Object returnCode = freezed,
-    Object returnMessage = freezed,
-    Object gasRemaining = freezed,
-    Object gasRefund = freezed,
-    Object outputAccounts = freezed,
+    Object? returnData = freezed,
+    Object? returnCode = freezed,
+    Object? returnMessage = freezed,
+    Object? gasRemaining = freezed,
+    Object? gasRefund = freezed,
+    Object? outputAccounts = freezed,
   }) {
     return _then(_VmValueData(
       returnData: returnData == freezed
           ? _value.returnData
-          : returnData as List<String>,
-      returnCode:
-          returnCode == freezed ? _value.returnCode : returnCode as String,
+          : returnData // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      returnCode: returnCode == freezed
+          ? _value.returnCode
+          : returnCode // ignore: cast_nullable_to_non_nullable
+              as String,
       returnMessage: returnMessage == freezed
           ? _value.returnMessage
-          : returnMessage as String,
+          : returnMessage // ignore: cast_nullable_to_non_nullable
+              as String,
       gasRemaining: gasRemaining == freezed
           ? _value.gasRemaining
-          : gasRemaining as double,
-      gasRefund: gasRefund == freezed ? _value.gasRefund : gasRefund as int,
+          : gasRemaining // ignore: cast_nullable_to_non_nullable
+              as double,
+      gasRefund: gasRefund == freezed
+          ? _value.gasRefund
+          : gasRefund // ignore: cast_nullable_to_non_nullable
+              as int,
       outputAccounts: outputAccounts == freezed
           ? _value.outputAccounts
-          : outputAccounts as Map<String, OutputAccountData>,
+          : outputAccounts // ignore: cast_nullable_to_non_nullable
+              as Map<String, OutputAccountData>,
     ));
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$_VmValueData implements _VmValueData {
   _$_VmValueData(
-      {this.returnData,
-      this.returnCode,
-      this.returnMessage,
-      this.gasRemaining,
-      this.gasRefund,
-      this.outputAccounts});
+      {this.returnData = const [],
+      required this.returnCode,
+      required this.returnMessage,
+      required this.gasRemaining,
+      required this.gasRefund,
+      required this.outputAccounts});
 
   factory _$_VmValueData.fromJson(Map<String, dynamic> json) =>
-      _$_$_VmValueDataFromJson(json);
+      _$$_VmValueDataFromJson(json);
 
+  @JsonKey(defaultValue: const [])
   @override
   final List<String> returnData;
   @override
@@ -360,36 +382,31 @@ class _$_VmValueData implements _VmValueData {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _VmValueData &&
-            (identical(other.returnData, returnData) ||
-                const DeepCollectionEquality()
-                    .equals(other.returnData, returnData)) &&
+        (other.runtimeType == runtimeType &&
+            other is _VmValueData &&
+            const DeepCollectionEquality()
+                .equals(other.returnData, returnData) &&
             (identical(other.returnCode, returnCode) ||
-                const DeepCollectionEquality()
-                    .equals(other.returnCode, returnCode)) &&
+                other.returnCode == returnCode) &&
             (identical(other.returnMessage, returnMessage) ||
-                const DeepCollectionEquality()
-                    .equals(other.returnMessage, returnMessage)) &&
+                other.returnMessage == returnMessage) &&
             (identical(other.gasRemaining, gasRemaining) ||
-                const DeepCollectionEquality()
-                    .equals(other.gasRemaining, gasRemaining)) &&
+                other.gasRemaining == gasRemaining) &&
             (identical(other.gasRefund, gasRefund) ||
-                const DeepCollectionEquality()
-                    .equals(other.gasRefund, gasRefund)) &&
-            (identical(other.outputAccounts, outputAccounts) ||
-                const DeepCollectionEquality()
-                    .equals(other.outputAccounts, outputAccounts)));
+                other.gasRefund == gasRefund) &&
+            const DeepCollectionEquality()
+                .equals(other.outputAccounts, outputAccounts));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(returnData) ^
-      const DeepCollectionEquality().hash(returnCode) ^
-      const DeepCollectionEquality().hash(returnMessage) ^
-      const DeepCollectionEquality().hash(gasRemaining) ^
-      const DeepCollectionEquality().hash(gasRefund) ^
-      const DeepCollectionEquality().hash(outputAccounts);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(returnData),
+      returnCode,
+      returnMessage,
+      gasRemaining,
+      gasRefund,
+      const DeepCollectionEquality().hash(outputAccounts));
 
   @JsonKey(ignore: true)
   @override
@@ -398,18 +415,18 @@ class _$_VmValueData implements _VmValueData {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_VmValueDataToJson(this);
+    return _$$_VmValueDataToJson(this);
   }
 }
 
 abstract class _VmValueData implements VmValueData {
   factory _VmValueData(
       {List<String> returnData,
-      String returnCode,
-      String returnMessage,
-      double gasRemaining,
-      int gasRefund,
-      Map<String, OutputAccountData> outputAccounts}) = _$_VmValueData;
+      required String returnCode,
+      required String returnMessage,
+      required double gasRemaining,
+      required int gasRefund,
+      required Map<String, OutputAccountData> outputAccounts}) = _$_VmValueData;
 
   factory _VmValueData.fromJson(Map<String, dynamic> json) =
       _$_VmValueData.fromJson;
@@ -428,7 +445,8 @@ abstract class _VmValueData implements VmValueData {
   Map<String, OutputAccountData> get outputAccounts;
   @override
   @JsonKey(ignore: true)
-  _$VmValueDataCopyWith<_VmValueData> get copyWith;
+  _$VmValueDataCopyWith<_VmValueData> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 OutputAccountData _$OutputAccountDataFromJson(Map<String, dynamic> json) {
@@ -439,12 +457,11 @@ OutputAccountData _$OutputAccountDataFromJson(Map<String, dynamic> json) {
 class _$OutputAccountDataTearOff {
   const _$OutputAccountDataTearOff();
 
-// ignore: unused_element
   _OutputAccountData call(
-      {Address address,
-      Nonce nonce,
-      int balanceDelta,
-      Map<String, StorageUpdateData> storageUpdates}) {
+      {@AddressConverter() required Address address,
+      @NonceConverter() required Nonce nonce,
+      required int balanceDelta,
+      required Map<String, StorageUpdateData> storageUpdates}) {
     return _OutputAccountData(
       address: address,
       nonce: nonce,
@@ -453,26 +470,28 @@ class _$OutputAccountDataTearOff {
     );
   }
 
-// ignore: unused_element
-  OutputAccountData fromJson(Map<String, Object> json) {
+  OutputAccountData fromJson(Map<String, Object?> json) {
     return OutputAccountData.fromJson(json);
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $OutputAccountData = _$OutputAccountDataTearOff();
 
 /// @nodoc
 mixin _$OutputAccountData {
-  Address get address;
-  Nonce get nonce;
-  int get balanceDelta;
-  Map<String, StorageUpdateData> get storageUpdates;
+  @AddressConverter()
+  Address get address => throw _privateConstructorUsedError;
+  @NonceConverter()
+  Nonce get nonce => throw _privateConstructorUsedError;
+  int get balanceDelta => throw _privateConstructorUsedError;
+  Map<String, StorageUpdateData> get storageUpdates =>
+      throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson();
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $OutputAccountDataCopyWith<OutputAccountData> get copyWith;
+  $OutputAccountDataCopyWith<OutputAccountData> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -481,8 +500,8 @@ abstract class $OutputAccountDataCopyWith<$Res> {
           OutputAccountData value, $Res Function(OutputAccountData) then) =
       _$OutputAccountDataCopyWithImpl<$Res>;
   $Res call(
-      {Address address,
-      Nonce nonce,
+      {@AddressConverter() Address address,
+      @NonceConverter() Nonce nonce,
       int balanceDelta,
       Map<String, StorageUpdateData> storageUpdates});
 }
@@ -498,19 +517,28 @@ class _$OutputAccountDataCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object address = freezed,
-    Object nonce = freezed,
-    Object balanceDelta = freezed,
-    Object storageUpdates = freezed,
+    Object? address = freezed,
+    Object? nonce = freezed,
+    Object? balanceDelta = freezed,
+    Object? storageUpdates = freezed,
   }) {
     return _then(_value.copyWith(
-      address: address == freezed ? _value.address : address as Address,
-      nonce: nonce == freezed ? _value.nonce : nonce as Nonce,
-      balanceDelta:
-          balanceDelta == freezed ? _value.balanceDelta : balanceDelta as int,
+      address: address == freezed
+          ? _value.address
+          : address // ignore: cast_nullable_to_non_nullable
+              as Address,
+      nonce: nonce == freezed
+          ? _value.nonce
+          : nonce // ignore: cast_nullable_to_non_nullable
+              as Nonce,
+      balanceDelta: balanceDelta == freezed
+          ? _value.balanceDelta
+          : balanceDelta // ignore: cast_nullable_to_non_nullable
+              as int,
       storageUpdates: storageUpdates == freezed
           ? _value.storageUpdates
-          : storageUpdates as Map<String, StorageUpdateData>,
+          : storageUpdates // ignore: cast_nullable_to_non_nullable
+              as Map<String, StorageUpdateData>,
     ));
   }
 }
@@ -523,8 +551,8 @@ abstract class _$OutputAccountDataCopyWith<$Res>
       __$OutputAccountDataCopyWithImpl<$Res>;
   @override
   $Res call(
-      {Address address,
-      Nonce nonce,
+      {@AddressConverter() Address address,
+      @NonceConverter() Nonce nonce,
       int balanceDelta,
       Map<String, StorageUpdateData> storageUpdates});
 }
@@ -542,38 +570,49 @@ class __$OutputAccountDataCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object address = freezed,
-    Object nonce = freezed,
-    Object balanceDelta = freezed,
-    Object storageUpdates = freezed,
+    Object? address = freezed,
+    Object? nonce = freezed,
+    Object? balanceDelta = freezed,
+    Object? storageUpdates = freezed,
   }) {
     return _then(_OutputAccountData(
-      address: address == freezed ? _value.address : address as Address,
-      nonce: nonce == freezed ? _value.nonce : nonce as Nonce,
-      balanceDelta:
-          balanceDelta == freezed ? _value.balanceDelta : balanceDelta as int,
+      address: address == freezed
+          ? _value.address
+          : address // ignore: cast_nullable_to_non_nullable
+              as Address,
+      nonce: nonce == freezed
+          ? _value.nonce
+          : nonce // ignore: cast_nullable_to_non_nullable
+              as Nonce,
+      balanceDelta: balanceDelta == freezed
+          ? _value.balanceDelta
+          : balanceDelta // ignore: cast_nullable_to_non_nullable
+              as int,
       storageUpdates: storageUpdates == freezed
           ? _value.storageUpdates
-          : storageUpdates as Map<String, StorageUpdateData>,
+          : storageUpdates // ignore: cast_nullable_to_non_nullable
+              as Map<String, StorageUpdateData>,
     ));
   }
 }
 
-@JsonSerializable()
-@AddressConverter()
-@NonceConverter()
-
 /// @nodoc
+@JsonSerializable()
 class _$_OutputAccountData implements _OutputAccountData {
   _$_OutputAccountData(
-      {this.address, this.nonce, this.balanceDelta, this.storageUpdates});
+      {@AddressConverter() required this.address,
+      @NonceConverter() required this.nonce,
+      required this.balanceDelta,
+      required this.storageUpdates});
 
   factory _$_OutputAccountData.fromJson(Map<String, dynamic> json) =>
-      _$_$_OutputAccountDataFromJson(json);
+      _$$_OutputAccountDataFromJson(json);
 
   @override
+  @AddressConverter()
   final Address address;
   @override
+  @NonceConverter()
   final Nonce nonce;
   @override
   final int balanceDelta;
@@ -588,27 +627,19 @@ class _$_OutputAccountData implements _OutputAccountData {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _OutputAccountData &&
-            (identical(other.address, address) ||
-                const DeepCollectionEquality()
-                    .equals(other.address, address)) &&
-            (identical(other.nonce, nonce) ||
-                const DeepCollectionEquality().equals(other.nonce, nonce)) &&
+        (other.runtimeType == runtimeType &&
+            other is _OutputAccountData &&
+            (identical(other.address, address) || other.address == address) &&
+            (identical(other.nonce, nonce) || other.nonce == nonce) &&
             (identical(other.balanceDelta, balanceDelta) ||
-                const DeepCollectionEquality()
-                    .equals(other.balanceDelta, balanceDelta)) &&
-            (identical(other.storageUpdates, storageUpdates) ||
-                const DeepCollectionEquality()
-                    .equals(other.storageUpdates, storageUpdates)));
+                other.balanceDelta == balanceDelta) &&
+            const DeepCollectionEquality()
+                .equals(other.storageUpdates, storageUpdates));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(address) ^
-      const DeepCollectionEquality().hash(nonce) ^
-      const DeepCollectionEquality().hash(balanceDelta) ^
-      const DeepCollectionEquality().hash(storageUpdates);
+  int get hashCode => Object.hash(runtimeType, address, nonce, balanceDelta,
+      const DeepCollectionEquality().hash(storageUpdates));
 
   @JsonKey(ignore: true)
   @override
@@ -617,23 +648,26 @@ class _$_OutputAccountData implements _OutputAccountData {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_OutputAccountDataToJson(this);
+    return _$$_OutputAccountDataToJson(this);
   }
 }
 
 abstract class _OutputAccountData implements OutputAccountData {
   factory _OutputAccountData(
-      {Address address,
-      Nonce nonce,
-      int balanceDelta,
-      Map<String, StorageUpdateData> storageUpdates}) = _$_OutputAccountData;
+          {@AddressConverter() required Address address,
+          @NonceConverter() required Nonce nonce,
+          required int balanceDelta,
+          required Map<String, StorageUpdateData> storageUpdates}) =
+      _$_OutputAccountData;
 
   factory _OutputAccountData.fromJson(Map<String, dynamic> json) =
       _$_OutputAccountData.fromJson;
 
   @override
+  @AddressConverter()
   Address get address;
   @override
+  @NonceConverter()
   Nonce get nonce;
   @override
   int get balanceDelta;
@@ -641,7 +675,8 @@ abstract class _OutputAccountData implements OutputAccountData {
   Map<String, StorageUpdateData> get storageUpdates;
   @override
   @JsonKey(ignore: true)
-  _$OutputAccountDataCopyWith<_OutputAccountData> get copyWith;
+  _$OutputAccountDataCopyWith<_OutputAccountData> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 StorageUpdateData _$StorageUpdateDataFromJson(Map<String, dynamic> json) {
@@ -652,32 +687,30 @@ StorageUpdateData _$StorageUpdateDataFromJson(Map<String, dynamic> json) {
 class _$StorageUpdateDataTearOff {
   const _$StorageUpdateDataTearOff();
 
-// ignore: unused_element
-  _StorageUpdateData call({String offset, String data}) {
+  _StorageUpdateData call({required String offset, required String data}) {
     return _StorageUpdateData(
       offset: offset,
       data: data,
     );
   }
 
-// ignore: unused_element
-  StorageUpdateData fromJson(Map<String, Object> json) {
+  StorageUpdateData fromJson(Map<String, Object?> json) {
     return StorageUpdateData.fromJson(json);
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $StorageUpdateData = _$StorageUpdateDataTearOff();
 
 /// @nodoc
 mixin _$StorageUpdateData {
-  String get offset;
-  String get data;
+  String get offset => throw _privateConstructorUsedError;
+  String get data => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson();
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $StorageUpdateDataCopyWith<StorageUpdateData> get copyWith;
+  $StorageUpdateDataCopyWith<StorageUpdateData> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -699,12 +732,18 @@ class _$StorageUpdateDataCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object offset = freezed,
-    Object data = freezed,
+    Object? offset = freezed,
+    Object? data = freezed,
   }) {
     return _then(_value.copyWith(
-      offset: offset == freezed ? _value.offset : offset as String,
-      data: data == freezed ? _value.data : data as String,
+      offset: offset == freezed
+          ? _value.offset
+          : offset // ignore: cast_nullable_to_non_nullable
+              as String,
+      data: data == freezed
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -732,24 +771,29 @@ class __$StorageUpdateDataCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object offset = freezed,
-    Object data = freezed,
+    Object? offset = freezed,
+    Object? data = freezed,
   }) {
     return _then(_StorageUpdateData(
-      offset: offset == freezed ? _value.offset : offset as String,
-      data: data == freezed ? _value.data : data as String,
+      offset: offset == freezed
+          ? _value.offset
+          : offset // ignore: cast_nullable_to_non_nullable
+              as String,
+      data: data == freezed
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$_StorageUpdateData implements _StorageUpdateData {
-  _$_StorageUpdateData({this.offset, this.data});
+  _$_StorageUpdateData({required this.offset, required this.data});
 
   factory _$_StorageUpdateData.fromJson(Map<String, dynamic> json) =>
-      _$_$_StorageUpdateDataFromJson(json);
+      _$$_StorageUpdateDataFromJson(json);
 
   @override
   final String offset;
@@ -764,18 +808,14 @@ class _$_StorageUpdateData implements _StorageUpdateData {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _StorageUpdateData &&
-            (identical(other.offset, offset) ||
-                const DeepCollectionEquality().equals(other.offset, offset)) &&
-            (identical(other.data, data) ||
-                const DeepCollectionEquality().equals(other.data, data)));
+        (other.runtimeType == runtimeType &&
+            other is _StorageUpdateData &&
+            (identical(other.offset, offset) || other.offset == offset) &&
+            (identical(other.data, data) || other.data == data));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(offset) ^
-      const DeepCollectionEquality().hash(data);
+  int get hashCode => Object.hash(runtimeType, offset, data);
 
   @JsonKey(ignore: true)
   @override
@@ -784,12 +824,12 @@ class _$_StorageUpdateData implements _StorageUpdateData {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_StorageUpdateDataToJson(this);
+    return _$$_StorageUpdateDataToJson(this);
   }
 }
 
 abstract class _StorageUpdateData implements StorageUpdateData {
-  factory _StorageUpdateData({String offset, String data}) =
+  factory _StorageUpdateData({required String offset, required String data}) =
       _$_StorageUpdateData;
 
   factory _StorageUpdateData.fromJson(Map<String, dynamic> json) =
@@ -801,5 +841,6 @@ abstract class _StorageUpdateData implements StorageUpdateData {
   String get data;
   @override
   @JsonKey(ignore: true)
-  _$StorageUpdateDataCopyWith<_StorageUpdateData> get copyWith;
+  _$StorageUpdateDataCopyWith<_StorageUpdateData> get copyWith =>
+      throw _privateConstructorUsedError;
 }

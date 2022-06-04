@@ -15,17 +15,22 @@ int polymod(final List<int> values) {
 }
 
 List<int> hrpExpand(final String data) => [
-      for (var index = 0; index < data.length; index++) data.codeUnitAt(index) >> 5,
+      for (var index = 0; index < data.length; index++)
+        data.codeUnitAt(index) >> 5,
       0,
-      for (var index = 0; index < data.length; index++) data.codeUnitAt(index) & 31
+      for (var index = 0; index < data.length; index++)
+        data.codeUnitAt(index) & 31
     ];
 
-bool verifyChecksum(final String hrp, final List<int> data) => polymod(hrpExpand(hrp) + data) == 1;
+bool verifyChecksum(final String hrp, final List<int> data) =>
+    polymod(hrpExpand(hrp) + data) == 1;
 
 List<int> createChecksum(final String hrp, final List<int> data) {
   final values = hrpExpand(hrp) + data;
   final _polymod = polymod(values + [0, 0, 0, 0, 0, 0]) ^ 1;
-  return [for (var index = 0; index < 6; index++) (_polymod >> 5 * (5 - index)) & 31];
+  return [
+    for (var index = 0; index < 6; index++) (_polymod >> 5 * (5 - index)) & 31
+  ];
 }
 
 String encode(final String hrp, final List<int> data) {
@@ -43,15 +48,18 @@ class DecodedBech {
   final List<int> data;
 
   const DecodedBech(this.hrp, this.data);
+
+  const DecodedBech.empty()
+      : hrp = '',
+        data = const [];
 }
 
 DecodedBech decode(final String bech) {
-  assert(bech != null, 'bech cannot be null');
   var hasLower = false;
   var hasUpper = false;
   for (var index = 0; index < bech.length; index++) {
     if (bech.codeUnitAt(index) < 33 || bech.codeUnitAt(index) > 126) {
-      return null;
+      return DecodedBech.empty();
     }
     if (bech.codeUnitAt(index) >= 97 && bech.codeUnitAt(index) <= 122) {
       hasLower = true;
@@ -61,29 +69,32 @@ DecodedBech decode(final String bech) {
     }
   }
   if (hasLower && hasUpper) {
-    return null;
+    return DecodedBech.empty();
   }
   final bechString = bech.toLowerCase();
   final position = bechString.lastIndexOf('1');
-  if (position < 1 || position + 7 > bechString.length || bechString.length > 90) {
-    return null;
+  if (position < 1 ||
+      position + 7 > bechString.length ||
+      bechString.length > 90) {
+    return DecodedBech.empty();
   }
   final hrp = bechString.substring(0, position);
   final data = <int>[];
   for (var index = position + 1; index < bechString.length; index++) {
     var d = _charset.indexOf(bechString[index]);
     if (d == -1) {
-      return null;
+      return DecodedBech.empty();
     }
     data.add(d);
   }
   if (!verifyChecksum(hrp, data)) {
-    return null;
+    return DecodedBech.empty();
   }
   return DecodedBech(hrp, data.sublist(0, data.length - 6));
 }
 
-List<int> convert(final List<int> data, final int inBits, final int outBits, final bool pad) {
+List<int> convert(
+    final List<int> data, final int inBits, final int outBits, final bool pad) {
   var value = 0;
   var bits = 0;
   var maxV = (1 << outBits) - 1;
@@ -105,7 +116,9 @@ List<int> convert(final List<int> data, final int inBits, final int outBits, fin
     }
   } else {
     if (bits >= inBits) throw ExcessPaddingException();
-    if ((value << (outBits - bits)) & maxV != 0) throw NonZeroPaddingException();
+    if ((value << (outBits - bits)) & maxV != 0) {
+      throw NonZeroPaddingException();
+    }
   }
   return result;
 }

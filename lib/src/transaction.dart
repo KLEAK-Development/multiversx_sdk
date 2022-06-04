@@ -7,7 +7,6 @@ import 'package:elrond_sdk/src/network_parameters.dart';
 import 'package:elrond_sdk/src/nonce.dart';
 import 'package:elrond_sdk/src/signature.dart';
 import 'package:elrond_sdk/src/transaction_payload.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
 
 class TransactionStatus {
   static const success = TransactionStatus._('success');
@@ -22,6 +21,8 @@ class TransactionStatus {
   static const fail = TransactionStatus._('fail');
   static const notExecuted = TransactionStatus._('notExecuted');
 
+  static const unknown = TransactionStatus._('unknown');
+
   static const all = [
     success,
     executed,
@@ -31,14 +32,15 @@ class TransactionStatus {
     partiallyExecuted,
     fail,
     notExecuted,
+    unknown,
   ];
 
   final String value;
 
   const TransactionStatus._(this.value);
 
-  factory TransactionStatus.fromJson(String value) =>
-      all.firstWhere((element) => element.value == value, orElse: () => null);
+  factory TransactionStatus.fromJson(String value) => all
+      .firstWhere((element) => element.value == value, orElse: () => unknown);
 
   String toJson() => value;
 
@@ -57,44 +59,37 @@ class Transaction extends ISignable {
   final ChainId chainId;
   final TransactionVersion transactionVersion;
   final Signature signature;
-  final TransactionHash transactionHash;
+  final TransactionHash? transactionHash;
 
   Transaction({
-    @required this.nonce,
-    @required this.balance,
-    @required this.sender,
-    @required this.receiver,
-    @required this.gasPrice,
-    @required this.gasLimit,
-    @required this.data,
-    @required this.chainId,
-    @required this.transactionVersion,
+    required this.nonce,
+    required this.balance,
+    required this.sender,
+    required this.receiver,
+    required this.gasPrice,
+    required this.gasLimit,
+    required this.data,
+    required this.chainId,
+    required this.transactionVersion,
     this.signature = const Signature.empty(),
     this.transactionHash,
-  })  : assert(nonce != null, 'nonce cannot be null'),
-        assert(balance != null, 'balance cannot be null'),
-        assert(sender != null, 'sender cannot be null'),
-        assert(receiver != null, 'receiver cannot be null'),
-        assert(gasPrice != null, 'gasPrice cannot be null'),
-        assert(gasLimit != null, 'gasLimit cannot be null'),
-        assert(data != null, 'data cannot be null'),
-        assert(chainId != null, 'chainId cannot be null'),
-        assert(transactionVersion != null, 'transactionVersion cannot be null');
+  });
 
   factory Transaction.esdtIssuance({
-    @required Nonce nonce,
-    @required Address sender,
-    @required GasPrice gasPrice,
-    @required GasLimit gasLimit,
-    @required TransactionPayload data,
-    @required ChainId chainId,
-    @required TransactionVersion transactionVersion,
+    required Nonce nonce,
+    required Address sender,
+    required GasPrice gasPrice,
+    required GasLimit gasLimit,
+    required TransactionPayload data,
+    required ChainId chainId,
+    required TransactionVersion transactionVersion,
   }) =>
       Transaction(
         nonce: nonce,
         balance: Balance.fromEgld(5),
         sender: sender,
-        receiver: Address.fromBech32('erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqzllls8a5w6u'),
+        receiver: Address.fromBech32(
+            'erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqzllls8a5w6u'),
         gasPrice: gasPrice,
         gasLimit: GasLimit(50000000) + gasLimit,
         data: data,
@@ -104,14 +99,14 @@ class Transaction extends ISignable {
       );
 
   factory Transaction.esdtTransfert({
-    @required Nonce nonce,
-    @required Address sender,
-    @required Address receiver,
-    @required GasPrice gasPrice,
-    @required GasLimit gasLimit,
-    @required TransactionPayload data,
-    @required ChainId chainId,
-    @required TransactionVersion transactionVersion,
+    required Nonce nonce,
+    required Address sender,
+    required Address receiver,
+    required GasPrice gasPrice,
+    required GasLimit gasLimit,
+    required TransactionPayload data,
+    required ChainId chainId,
+    required TransactionVersion transactionVersion,
   }) =>
       Transaction(
         nonce: nonce,
@@ -127,19 +122,20 @@ class Transaction extends ISignable {
       );
 
   factory Transaction.esdtMint({
-    @required Nonce nonce,
-    @required Address sender,
-    @required GasPrice gasPrice,
-    @required GasLimit gasLimit,
-    @required TransactionPayload data,
-    @required ChainId chainId,
-    @required TransactionVersion transactionVersion,
+    required Nonce nonce,
+    required Address sender,
+    required GasPrice gasPrice,
+    required GasLimit gasLimit,
+    required TransactionPayload data,
+    required ChainId chainId,
+    required TransactionVersion transactionVersion,
   }) =>
       Transaction(
         nonce: nonce,
         balance: Balance.fromEgld(0),
         sender: sender,
-        receiver: Address.fromBech32('erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqzllls8a5w6u'),
+        receiver: Address.fromBech32(
+            'erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqzllls8a5w6u'),
         gasPrice: gasPrice,
         gasLimit: GasLimit(50000000) + gasLimit,
         data: data,
@@ -149,19 +145,20 @@ class Transaction extends ISignable {
       );
 
   factory Transaction.esdtBurn({
-    @required Nonce nonce,
-    @required Address sender,
-    @required GasPrice gasPrice,
-    @required GasLimit gasLimit,
-    @required TransactionPayload data,
-    @required ChainId chainId,
-    @required TransactionVersion transactionVersion,
+    required Nonce nonce,
+    required Address sender,
+    required GasPrice gasPrice,
+    required GasLimit gasLimit,
+    required TransactionPayload data,
+    required ChainId chainId,
+    required TransactionVersion transactionVersion,
   }) =>
       Transaction(
         nonce: nonce,
         balance: Balance.fromEgld(0),
         sender: sender,
-        receiver: Address.fromBech32('erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqzllls8a5w6u'),
+        receiver: Address.fromBech32(
+            'erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqzllls8a5w6u'),
         gasPrice: gasPrice,
         gasLimit: GasLimit(50000000) + gasLimit,
         data: data,
@@ -171,19 +168,20 @@ class Transaction extends ISignable {
       );
 
   factory Transaction.esdtPause({
-    @required Nonce nonce,
-    @required Address sender,
-    @required GasPrice gasPrice,
-    @required GasLimit gasLimit,
-    @required TransactionPayload data,
-    @required ChainId chainId,
-    @required TransactionVersion transactionVersion,
+    required Nonce nonce,
+    required Address sender,
+    required GasPrice gasPrice,
+    required GasLimit gasLimit,
+    required TransactionPayload data,
+    required ChainId chainId,
+    required TransactionVersion transactionVersion,
   }) =>
       Transaction(
         nonce: nonce,
         balance: Balance.fromEgld(0),
         sender: sender,
-        receiver: Address.fromBech32('erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqzllls8a5w6u'),
+        receiver: Address.fromBech32(
+            'erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqzllls8a5w6u'),
         gasPrice: gasPrice,
         gasLimit: GasLimit(50000000) + gasLimit,
         data: data,
@@ -193,19 +191,20 @@ class Transaction extends ISignable {
       );
 
   factory Transaction.esdtUnPause({
-    @required Nonce nonce,
-    @required Address sender,
-    @required GasPrice gasPrice,
-    @required GasLimit gasLimit,
-    @required TransactionPayload data,
-    @required ChainId chainId,
-    @required TransactionVersion transactionVersion,
+    required Nonce nonce,
+    required Address sender,
+    required GasPrice gasPrice,
+    required GasLimit gasLimit,
+    required TransactionPayload data,
+    required ChainId chainId,
+    required TransactionVersion transactionVersion,
   }) =>
       Transaction(
         nonce: nonce,
         balance: Balance.fromEgld(0),
         sender: sender,
-        receiver: Address.fromBech32('erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqzllls8a5w6u'),
+        receiver: Address.fromBech32(
+            'erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqzllls8a5w6u'),
         gasPrice: gasPrice,
         gasLimit: GasLimit(50000000) + gasLimit,
         data: data,
@@ -215,19 +214,20 @@ class Transaction extends ISignable {
       );
 
   factory Transaction.esdtFreeze({
-    @required Nonce nonce,
-    @required Address sender,
-    @required GasPrice gasPrice,
-    @required GasLimit gasLimit,
-    @required TransactionPayload data,
-    @required ChainId chainId,
-    @required TransactionVersion transactionVersion,
+    required Nonce nonce,
+    required Address sender,
+    required GasPrice gasPrice,
+    required GasLimit gasLimit,
+    required TransactionPayload data,
+    required ChainId chainId,
+    required TransactionVersion transactionVersion,
   }) =>
       Transaction(
         nonce: nonce,
         balance: Balance.fromEgld(0),
         sender: sender,
-        receiver: Address.fromBech32('erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqzllls8a5w6u'),
+        receiver: Address.fromBech32(
+            'erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqzllls8a5w6u'),
         gasPrice: gasPrice,
         gasLimit: GasLimit(50000000) + gasLimit,
         data: data,
@@ -237,19 +237,20 @@ class Transaction extends ISignable {
       );
 
   factory Transaction.esdtUnFreeze({
-    @required Nonce nonce,
-    @required Address sender,
-    @required GasPrice gasPrice,
-    @required GasLimit gasLimit,
-    @required TransactionPayload data,
-    @required ChainId chainId,
-    @required TransactionVersion transactionVersion,
+    required Nonce nonce,
+    required Address sender,
+    required GasPrice gasPrice,
+    required GasLimit gasLimit,
+    required TransactionPayload data,
+    required ChainId chainId,
+    required TransactionVersion transactionVersion,
   }) =>
       Transaction(
         nonce: nonce,
         balance: Balance.fromEgld(0),
         sender: sender,
-        receiver: Address.fromBech32('erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqzllls8a5w6u'),
+        receiver: Address.fromBech32(
+            'erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqzllls8a5w6u'),
         gasPrice: gasPrice,
         gasLimit: GasLimit(50000000) + gasLimit,
         data: data,
@@ -259,19 +260,20 @@ class Transaction extends ISignable {
       );
 
   factory Transaction.esdtWipe({
-    @required Nonce nonce,
-    @required Address sender,
-    @required GasPrice gasPrice,
-    @required GasLimit gasLimit,
-    @required TransactionPayload data,
-    @required ChainId chainId,
-    @required TransactionVersion transactionVersion,
+    required Nonce nonce,
+    required Address sender,
+    required GasPrice gasPrice,
+    required GasLimit gasLimit,
+    required TransactionPayload data,
+    required ChainId chainId,
+    required TransactionVersion transactionVersion,
   }) =>
       Transaction(
         nonce: nonce,
         balance: Balance.fromEgld(0),
         sender: sender,
-        receiver: Address.fromBech32('erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqzllls8a5w6u'),
+        receiver: Address.fromBech32(
+            'erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqzllls8a5w6u'),
         gasPrice: gasPrice,
         gasLimit: GasLimit(50000000) + gasLimit,
         data: data,
@@ -281,19 +283,20 @@ class Transaction extends ISignable {
       );
 
   factory Transaction.esdtTransfertOwnership({
-    @required Nonce nonce,
-    @required Address sender,
-    @required GasPrice gasPrice,
-    @required GasLimit gasLimit,
-    @required TransactionPayload data,
-    @required ChainId chainId,
-    @required TransactionVersion transactionVersion,
+    required Nonce nonce,
+    required Address sender,
+    required GasPrice gasPrice,
+    required GasLimit gasLimit,
+    required TransactionPayload data,
+    required ChainId chainId,
+    required TransactionVersion transactionVersion,
   }) =>
       Transaction(
         nonce: nonce,
         balance: Balance.fromEgld(0),
         sender: sender,
-        receiver: Address.fromBech32('erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqzllls8a5w6u'),
+        receiver: Address.fromBech32(
+            'erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqzllls8a5w6u'),
         gasPrice: gasPrice,
         gasLimit: GasLimit(50000000) + gasLimit,
         data: data,
@@ -303,19 +306,20 @@ class Transaction extends ISignable {
       );
 
   factory Transaction.esdtcontrolChange({
-    @required Nonce nonce,
-    @required Address sender,
-    @required GasPrice gasPrice,
-    @required GasLimit gasLimit,
-    @required TransactionPayload data,
-    @required ChainId chainId,
-    @required TransactionVersion transactionVersion,
+    required Nonce nonce,
+    required Address sender,
+    required GasPrice gasPrice,
+    required GasLimit gasLimit,
+    required TransactionPayload data,
+    required ChainId chainId,
+    required TransactionVersion transactionVersion,
   }) =>
       Transaction(
         nonce: nonce,
         balance: Balance.fromEgld(0),
         sender: sender,
-        receiver: Address.fromBech32('erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqzllls8a5w6u'),
+        receiver: Address.fromBech32(
+            'erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqzllls8a5w6u'),
         gasPrice: gasPrice,
         gasLimit: GasLimit(50000000) + gasLimit,
         data: data,
@@ -325,14 +329,14 @@ class Transaction extends ISignable {
       );
 
   factory Transaction.smartContractDeploy({
-    @required Nonce nonce,
-    @required Address sender,
-    @required GasPrice gasPrice,
-    @required GasLimit gasLimit,
-    @required TransactionPayload data,
-    @required ChainId chainId,
-    @required TransactionVersion transactionVersion,
-    Balance balance,
+    required Nonce nonce,
+    required Address sender,
+    required GasPrice gasPrice,
+    required GasLimit gasLimit,
+    required TransactionPayload data,
+    required ChainId chainId,
+    required TransactionVersion transactionVersion,
+    Balance? balance,
   }) =>
       Transaction(
         nonce: nonce,
@@ -348,15 +352,15 @@ class Transaction extends ISignable {
       );
 
   factory Transaction.smartContractUpgrade({
-    @required Nonce nonce,
-    @required Address sender,
-    @required Address receiver,
-    @required GasPrice gasPrice,
-    @required GasLimit gasLimit,
-    @required TransactionPayload data,
-    @required ChainId chainId,
-    @required TransactionVersion transactionVersion,
-    Balance balance,
+    required Nonce nonce,
+    required Address sender,
+    required Address receiver,
+    required GasPrice gasPrice,
+    required GasLimit gasLimit,
+    required TransactionPayload data,
+    required ChainId chainId,
+    required TransactionVersion transactionVersion,
+    Balance? balance,
   }) =>
       Transaction(
         nonce: nonce,
@@ -372,15 +376,15 @@ class Transaction extends ISignable {
       );
 
   factory Transaction.smartContractCall({
-    @required Nonce nonce,
-    @required Address sender,
-    @required Address receiver,
-    @required GasPrice gasPrice,
-    @required GasLimit gasLimit,
-    @required TransactionPayload data,
-    @required ChainId chainId,
-    @required TransactionVersion transactionVersion,
-    Balance balance,
+    required Nonce nonce,
+    required Address sender,
+    required Address receiver,
+    required GasPrice gasPrice,
+    required GasLimit gasLimit,
+    required TransactionPayload data,
+    required ChainId chainId,
+    required TransactionVersion transactionVersion,
+    Balance? balance,
   }) =>
       Transaction(
         nonce: nonce,
@@ -395,7 +399,7 @@ class Transaction extends ISignable {
         signature: Signature.empty(),
       );
 
-  Map<String, dynamic> toMap({Address signedBy}) {
+  Map<String, dynamic> toMap({Address? signedBy}) {
     final map = <String, dynamic>{};
     map['nonce'] = nonce.value;
     map['value'] = balance.value.toString();
@@ -414,7 +418,11 @@ class Transaction extends ISignable {
     return map;
   }
 
-  Transaction copyWith({Signature newSignature, TransactionHash newTransactionHash, Address newSender}) => Transaction(
+  Transaction copyWith(
+          {Signature? newSignature,
+          TransactionHash? newTransactionHash,
+          Address? newSender}) =>
+      Transaction(
         nonce: nonce,
         balance: balance,
         receiver: receiver,
@@ -429,7 +437,8 @@ class Transaction extends ISignable {
       );
 
   @override
-  List<int> serializeForSigning(Address signedBy) => utf8.encode(json.encode(toMap(signedBy: signedBy)));
+  List<int> serializeForSigning(Address signedBy) =>
+      utf8.encode(json.encode(toMap(signedBy: signedBy)));
 
   @override
   Transaction applySignature(Signature signature, Address signedBy) =>
