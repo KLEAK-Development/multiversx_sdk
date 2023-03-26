@@ -1,8 +1,8 @@
-import 'package:elrond_sdk/src/address.dart';
-import 'package:elrond_sdk/src/interface.dart';
-import 'package:elrond_sdk/src/signature.dart';
-import 'package:elrond_sdk/src/transaction.dart';
-import 'package:elrond_sdk/src/wallet_core/user_keys.dart';
+import 'package:multiversx_sdk/src/address.dart';
+import 'package:multiversx_sdk/src/interface.dart';
+import 'package:multiversx_sdk/src/signature.dart';
+import 'package:multiversx_sdk/src/transaction.dart';
+import 'package:multiversx_sdk/src/wallet_core/user_keys.dart';
 
 class UserSigner extends ISigner {
   final UserSecretKey secretKey;

@@ -1,7 +1,7 @@
-import 'package:elrond_sdk/src/address.dart';
-import 'package:elrond_sdk/src/balance.dart';
-import 'package:elrond_sdk/src/interface.dart';
-import 'package:elrond_sdk/src/nonce.dart';
+import 'package:multiversx_sdk/src/address.dart';
+import 'package:multiversx_sdk/src/balance.dart';
+import 'package:multiversx_sdk/src/interface.dart';
+import 'package:multiversx_sdk/src/nonce.dart';
 
 class Account {
   final Address address;

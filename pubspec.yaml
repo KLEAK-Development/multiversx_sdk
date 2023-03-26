@@ -1,6 +1,6 @@
-name: elrond_sdk
-description: Elrond SDK for Dart
-# version: 1.0.0
+name: multiversx_sdk
+description: MultiversX SDK for Dart
+# version: 1.1.0
 # homepage: https://www.example.com
 
 environment:

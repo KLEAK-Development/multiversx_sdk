@@ -1,4 +1,4 @@
-import 'package:elrond_sdk/src/bech32/bech32.dart' as b32;
+import 'package:multiversx_sdk/src/bech32/bech32.dart' as b32;
 import 'package:convert/convert.dart' as convert;
 
 const hrp = 'erd';

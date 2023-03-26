@@ -8,7 +8,7 @@ part of 'network.dart';
 
 class _NetworkRepository implements NetworkRepository {
   _NetworkRepository(this._dio, {this.baseUrl}) {
-    baseUrl ??= 'https://api.elrond.com';
+    baseUrl ??= 'https://api.multiversx.com';
   }
 
   final Dio _dio;

@@ -1,6 +1,6 @@
-import 'package:elrond_sdk/src/address.dart';
-import 'package:elrond_sdk/src/models/json_converter.dart';
-import 'package:elrond_sdk/src/nonce.dart';
+import 'package:multiversx_sdk/src/address.dart';
+import 'package:multiversx_sdk/src/models/json_converter.dart';
+import 'package:multiversx_sdk/src/nonce.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'vm_values.freezed.dart';

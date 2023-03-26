@@ -3,18 +3,11 @@ import 'dart:convert';
 import 'dart:typed_data';
 
 import 'package:convert/convert.dart' as convert;
-import 'package:elrond_sdk/elrond.dart';
-import 'package:elrond_sdk/src/account.dart';
-import 'package:elrond_sdk/src/address.dart';
-import 'package:elrond_sdk/src/interface.dart';
-import 'package:elrond_sdk/src/models/request/vm_values/vm_values.dart';
-import 'package:elrond_sdk/src/models/response/response.dart';
-import 'package:elrond_sdk/src/models/response/transaction/transaction.dart';
-import 'package:elrond_sdk/src/network_configuration.dart';
-import 'package:elrond_sdk/src/nonce.dart';
-import 'package:elrond_sdk/src/smart_contract/argument.dart';
-import 'package:elrond_sdk/src/smart_contract/code.dart';
-import 'package:elrond_sdk/src/smart_contract/code_metadata.dart';
+import 'package:multiversx_sdk/multiversx.dart';
+import 'package:multiversx_sdk/src/models/request/vm_values/vm_values.dart';
+import 'package:multiversx_sdk/src/models/response/response.dart';
+import 'package:multiversx_sdk/src/models/response/transaction/transaction.dart';
+import 'package:multiversx_sdk/src/smart_contract/argument.dart';
 import 'package:pointycastle/pointycastle.dart';
 
 Uint8List _int32Bytes(int value, {Endian endian = Endian.little}) =>
@@ -93,7 +86,7 @@ class SmartContract {
     );
     final smartContractAddress =
         computeContractAddress(owner.address, owner.nonce);
-    final signedTransaction = signer.sign(transaction);
+    final signedTransaction = signer.sign(transaction as ISignable);
     final txHash = await proxy.sendTransaction(signedTransaction);
     final watcher = TransactionWatcher(txHash);
     late StreamSubscription transactionSubscription;
@@ -138,7 +131,7 @@ class SmartContract {
       receiver: _address!,
       balance: balance ?? Balance.zero(),
     );
-    final signedTransaction = signer.sign(transaction);
+    final signedTransaction = signer.sign(transaction as ISignable);
     final txHash = await proxy.sendTransaction(signedTransaction);
     final watcher = TransactionWatcher(txHash);
     late StreamSubscription transactionSubscription;
@@ -182,7 +175,7 @@ class SmartContract {
       receiver: _address!,
       balance: balance ?? Balance.zero(),
     );
-    final signedTransaction = signer.sign(transaction);
+    final signedTransaction = signer.sign(transaction as ISignable);
     final txHash = await proxy.sendTransaction(signedTransaction);
     final watcher = TransactionWatcher(txHash);
     late StreamSubscription transactionSubscription;

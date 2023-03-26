@@ -1,5 +1,4 @@
-import 'package:elrond_sdk/src/address.dart';
-import 'package:pinenacl/api.dart';
+import 'package:multiversx_sdk/src/address.dart';
 import 'package:pinenacl/ed25519.dart';
 import 'package:convert/convert.dart' as convert;
 

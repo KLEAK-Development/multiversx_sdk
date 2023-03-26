@@ -1,4 +1,4 @@
-import 'package:elrond_sdk/src/balance.dart';
+import 'package:multiversx_sdk/src/balance.dart';
 import 'package:test/test.dart';
 
 void main() {

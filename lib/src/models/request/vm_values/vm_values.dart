@@ -1,9 +1,9 @@
 // ignore_for_file: invalid_annotation_target
 
-import 'package:elrond_sdk/src/address.dart';
-import 'package:elrond_sdk/src/balance.dart';
-import 'package:elrond_sdk/src/models/json_converter.dart';
-import 'package:elrond_sdk/src/smart_contract/argument.dart';
+import 'package:multiversx_sdk/src/address.dart';
+import 'package:multiversx_sdk/src/balance.dart';
+import 'package:multiversx_sdk/src/models/json_converter.dart';
+import 'package:multiversx_sdk/src/smart_contract/argument.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'vm_values.freezed.dart';

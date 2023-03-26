@@ -1,9 +1,9 @@
-import 'package:elrond_sdk/src/address.dart';
-import 'package:elrond_sdk/src/balance.dart';
-import 'package:elrond_sdk/src/models/json_converter.dart';
-import 'package:elrond_sdk/src/network_parameters.dart';
-import 'package:elrond_sdk/src/nonce.dart';
-import 'package:elrond_sdk/src/transaction.dart';
+import 'package:multiversx_sdk/src/address.dart';
+import 'package:multiversx_sdk/src/balance.dart';
+import 'package:multiversx_sdk/src/models/json_converter.dart';
+import 'package:multiversx_sdk/src/network_parameters.dart';
+import 'package:multiversx_sdk/src/nonce.dart';
+import 'package:multiversx_sdk/src/transaction.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'transaction.freezed.dart';

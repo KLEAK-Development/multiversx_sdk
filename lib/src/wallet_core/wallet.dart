@@ -1,17 +1,17 @@
 import 'dart:async';
 
-import 'package:elrond_sdk/src/network_parameters.dart';
+import 'package:multiversx_sdk/src/network_parameters.dart';
 
-import 'package:elrond_sdk/src/account.dart';
-import 'package:elrond_sdk/src/address.dart';
-import 'package:elrond_sdk/src/balance.dart';
-import 'package:elrond_sdk/src/interface.dart';
-import 'package:elrond_sdk/src/signature.dart';
-import 'package:elrond_sdk/src/transaction.dart';
-import 'package:elrond_sdk/src/transaction_payload.dart';
-import 'package:elrond_sdk/src/wallet_core/mnemonic.dart';
-import 'package:elrond_sdk/src/wallet_core/user_keys.dart';
-import 'package:elrond_sdk/src/wallet_core/user_signer.dart';
+import 'package:multiversx_sdk/src/account.dart';
+import 'package:multiversx_sdk/src/address.dart';
+import 'package:multiversx_sdk/src/balance.dart';
+import 'package:multiversx_sdk/src/interface.dart';
+import 'package:multiversx_sdk/src/signature.dart';
+import 'package:multiversx_sdk/src/transaction.dart';
+import 'package:multiversx_sdk/src/transaction_payload.dart';
+import 'package:multiversx_sdk/src/wallet_core/mnemonic.dart';
+import 'package:multiversx_sdk/src/wallet_core/user_keys.dart';
+import 'package:multiversx_sdk/src/wallet_core/user_signer.dart';
 
 class Wallet {
   final UserSecretKey? _secretKey;
@@ -120,7 +120,7 @@ class Wallet {
     required IProvider provider,
     required Transaction transaction,
   }) async {
-    final signedTransaction = signer.sign(transaction);
+    final signedTransaction = signer.sign(transaction as ISignable);
     final txHash = await provider.sendTransaction(signedTransaction);
     return txHash;
   }

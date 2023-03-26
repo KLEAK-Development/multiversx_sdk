@@ -1,7 +1,7 @@
 // ignore_for_file: invalid_annotation_target
 
-import 'package:elrond_sdk/src/models/json_converter.dart';
-import 'package:elrond_sdk/src/network_parameters.dart';
+import 'package:multiversx_sdk/src/models/json_converter.dart';
+import 'package:multiversx_sdk/src/network_parameters.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'network.freezed.dart';
