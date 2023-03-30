@@ -8,7 +8,7 @@ part of 'transaction.dart';
 
 class _TransactionRepository implements TransactionRepository {
   _TransactionRepository(this._dio, {this.baseUrl}) {
-    baseUrl ??= 'https://api.elrond.com';
+    baseUrl ??= 'https://api.multiversx.com';
   }
 
   final Dio _dio;

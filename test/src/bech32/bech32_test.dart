@@ -1,4 +1,4 @@
-import 'package:elrond_sdk/src/bech32/bech32.dart';
+import 'package:multiversx_sdk/src/bech32/bech32.dart';
 import 'package:test/test.dart';
 import 'package:convert/convert.dart' as convert;
 
@@ -51,7 +51,9 @@ void main() {
   test('encode', () {
     expect(encode('A', []), 'a12uel5l');
     expect(
-      encode('an83characterlonghumanreadablepartthatcontainsthenumber1andtheexcludedcharactersbio', []),
+      encode(
+          'an83characterlonghumanreadablepartthatcontainsthenumber1andtheexcludedcharactersbio',
+          []),
       'an83characterlonghumanreadablepartthatcontainsthenumber1andtheexcludedcharactersbio1tt5tgs',
     );
 
@@ -201,7 +203,30 @@ void main() {
   group('fromWords', () {
     test('ExcessPaddingException', () {
       expect(
-        () => fromWords([14, 20, 15, 7, 13, 26, 0, 25, 18, 6, 11, 13, 8, 21, 4, 20, 3, 17, 2, 29, 3, 0]),
+        () => fromWords([
+          14,
+          20,
+          15,
+          7,
+          13,
+          26,
+          0,
+          25,
+          18,
+          6,
+          11,
+          13,
+          8,
+          21,
+          4,
+          20,
+          3,
+          17,
+          2,
+          29,
+          3,
+          0
+        ]),
         throwsA(TypeMatcher<ExcessPaddingException>()),
       );
     });

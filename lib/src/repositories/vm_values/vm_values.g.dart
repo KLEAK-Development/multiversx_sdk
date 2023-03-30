@@ -8,7 +8,7 @@ part of 'vm_values.dart';
 
 class _VmValuesRepository implements VmValuesRepository {
   _VmValuesRepository(this._dio, {this.baseUrl}) {
-    baseUrl ??= 'https://api.elrond.com';
+    baseUrl ??= 'https://api.multiversx.com';
   }
 
   final Dio _dio;

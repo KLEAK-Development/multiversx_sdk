@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:dio/dio.dart';
-import 'package:elrond_sdk/elrond.dart';
+import 'package:multiversx_sdk/multiversx.dart';
 
 import '../seed.dart';
 
@@ -16,12 +16,12 @@ void main(List<String> arguments) async {
   final dio = Dio();
   //  remove baseUrl to target mainnet automatically
   final proxy = ProxyProvider(
-    addressRepository:
-        AddressRepository(dio, baseUrl: 'https://testnet-gateway.elrond.com/'),
-    networkRepository:
-        NetworkRepository(dio, baseUrl: 'https://testnet-gateway.elrond.com/'),
-    transactionRepository:
-        TransactionRepository(dio, baseUrl: 'https://testnet-gateway.elrond.com/'),
+    addressRepository: AddressRepository(dio,
+        baseUrl: 'https://testnet-gateway.multiversx.com/'),
+    networkRepository: NetworkRepository(dio,
+        baseUrl: 'https://testnet-gateway.multiversx.com/'),
+    transactionRepository: TransactionRepository(dio,
+        baseUrl: 'https://testnet-gateway.multiversx.com/'),
   );
   final account = Account.withAddress(address);
   await account.synchronize(proxy);

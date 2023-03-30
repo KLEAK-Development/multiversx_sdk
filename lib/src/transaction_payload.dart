@@ -1,11 +1,11 @@
 import 'dart:convert';
 import 'package:convert/convert.dart' as convert;
-import 'package:elrond_sdk/src/address.dart';
-import 'package:elrond_sdk/src/balance.dart';
-import 'package:elrond_sdk/src/smart_contract/argument.dart';
-import 'package:elrond_sdk/src/smart_contract/code.dart';
-import 'package:elrond_sdk/src/smart_contract/code_metadata.dart';
-import 'package:elrond_sdk/src/smart_contract/function.dart';
+import 'package:multiversx_sdk/src/address.dart';
+import 'package:multiversx_sdk/src/balance.dart';
+import 'package:multiversx_sdk/src/smart_contract/argument.dart';
+import 'package:multiversx_sdk/src/smart_contract/code.dart';
+import 'package:multiversx_sdk/src/smart_contract/code_metadata.dart';
+import 'package:multiversx_sdk/src/smart_contract/function.dart';
 
 const arwenVirtualMachine = '0500';
 

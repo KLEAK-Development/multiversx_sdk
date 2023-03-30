@@ -1,5 +1,5 @@
 import 'package:convert/convert.dart';
-import 'package:elrond_sdk/src/address.dart';
+import 'package:multiversx_sdk/src/address.dart';
 import 'package:test/test.dart';
 
 void main() {

@@ -8,7 +8,7 @@ part of 'address.dart';
 
 class _AddressRepository implements AddressRepository {
   _AddressRepository(this._dio, {this.baseUrl}) {
-    baseUrl ??= 'https://api.elrond.com';
+    baseUrl ??= 'https://api.multiversx.com';
   }
 
   final Dio _dio;

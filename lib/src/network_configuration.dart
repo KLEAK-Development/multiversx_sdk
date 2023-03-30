@@ -1,4 +1,4 @@
-import 'package:elrond_sdk/src/network_parameters.dart';
+import 'package:multiversx_sdk/src/network_parameters.dart';
 
 const defaultChainId = 'T';
 const defaultGasPerDataByte = 1500;
@@ -21,6 +21,7 @@ class NetworkConfiguration {
     this.minGasLimit = const GasLimit(defaultMinGasLimit),
     this.minGasPrice = const GasPrice(defaultMinGasPrice),
     this.gasPriceModifier = const GasPriceModifier(defaultGasPriceModifier),
-    this.minTransactionVersion = const TransactionVersion(defaultMinTransactionVersion),
+    this.minTransactionVersion =
+        const TransactionVersion(defaultMinTransactionVersion),
   });
 }

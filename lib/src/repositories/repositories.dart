@@ -1,6 +1,6 @@
-import 'package:elrond_sdk/src/models/response/response.dart';
-import 'package:elrond_sdk/src/repositories/address/address.dart';
-import 'package:elrond_sdk/src/repositories/transaction/transaction.dart';
+import 'package:multiversx_sdk/src/models/response/response.dart';
+import 'package:multiversx_sdk/src/repositories/address/address.dart';
+import 'package:multiversx_sdk/src/repositories/transaction/transaction.dart';
 
 class Repositories {
   final AddressRepository address;
