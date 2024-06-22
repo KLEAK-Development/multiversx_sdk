@@ -1,6 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'vm_values.dart';
 
@@ -11,29 +12,11 @@ part of 'vm_values.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 VmValuesResponse _$VmValuesResponseFromJson(Map<String, dynamic> json) {
   return _VmValuesResponse.fromJson(json);
 }
-
-/// @nodoc
-class _$VmValuesResponseTearOff {
-  const _$VmValuesResponseTearOff();
-
-  _VmValuesResponse call({required VmValueData data}) {
-    return _VmValuesResponse(
-      data: data,
-    );
-  }
-
-  VmValuesResponse fromJson(Map<String, Object?> json) {
-    return VmValuesResponse.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $VmValuesResponse = _$VmValuesResponseTearOff();
 
 /// @nodoc
 mixin _$VmValuesResponse {
@@ -49,48 +32,53 @@ mixin _$VmValuesResponse {
 abstract class $VmValuesResponseCopyWith<$Res> {
   factory $VmValuesResponseCopyWith(
           VmValuesResponse value, $Res Function(VmValuesResponse) then) =
-      _$VmValuesResponseCopyWithImpl<$Res>;
+      _$VmValuesResponseCopyWithImpl<$Res, VmValuesResponse>;
+  @useResult
   $Res call({VmValueData data});
 
   $VmValueDataCopyWith<$Res> get data;
 }
 
 /// @nodoc
-class _$VmValuesResponseCopyWithImpl<$Res>
+class _$VmValuesResponseCopyWithImpl<$Res, $Val extends VmValuesResponse>
     implements $VmValuesResponseCopyWith<$Res> {
   _$VmValuesResponseCopyWithImpl(this._value, this._then);
 
-  final VmValuesResponse _value;
   // ignore: unused_field
-  final $Res Function(VmValuesResponse) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? data = freezed,
+    Object? data = null,
   }) {
     return _then(_value.copyWith(
-      data: data == freezed
+      data: null == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
               as VmValueData,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $VmValueDataCopyWith<$Res> get data {
     return $VmValueDataCopyWith<$Res>(_value.data, (value) {
-      return _then(_value.copyWith(data: value));
+      return _then(_value.copyWith(data: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$VmValuesResponseCopyWith<$Res>
+abstract class _$$VmValuesResponseImplCopyWith<$Res>
     implements $VmValuesResponseCopyWith<$Res> {
-  factory _$VmValuesResponseCopyWith(
-          _VmValuesResponse value, $Res Function(_VmValuesResponse) then) =
-      __$VmValuesResponseCopyWithImpl<$Res>;
+  factory _$$VmValuesResponseImplCopyWith(_$VmValuesResponseImpl value,
+          $Res Function(_$VmValuesResponseImpl) then) =
+      __$$VmValuesResponseImplCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({VmValueData data});
 
   @override
@@ -98,22 +86,20 @@ abstract class _$VmValuesResponseCopyWith<$Res>
 }
 
 /// @nodoc
-class __$VmValuesResponseCopyWithImpl<$Res>
-    extends _$VmValuesResponseCopyWithImpl<$Res>
-    implements _$VmValuesResponseCopyWith<$Res> {
-  __$VmValuesResponseCopyWithImpl(
-      _VmValuesResponse _value, $Res Function(_VmValuesResponse) _then)
-      : super(_value, (v) => _then(v as _VmValuesResponse));
+class __$$VmValuesResponseImplCopyWithImpl<$Res>
+    extends _$VmValuesResponseCopyWithImpl<$Res, _$VmValuesResponseImpl>
+    implements _$$VmValuesResponseImplCopyWith<$Res> {
+  __$$VmValuesResponseImplCopyWithImpl(_$VmValuesResponseImpl _value,
+      $Res Function(_$VmValuesResponseImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _VmValuesResponse get _value => super._value as _VmValuesResponse;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? data = freezed,
+    Object? data = null,
   }) {
-    return _then(_VmValuesResponse(
-      data: data == freezed
+    return _then(_$VmValuesResponseImpl(
+      data: null == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
               as VmValueData,
@@ -123,11 +109,11 @@ class __$VmValuesResponseCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_VmValuesResponse implements _VmValuesResponse {
-  _$_VmValuesResponse({required this.data});
+class _$VmValuesResponseImpl implements _VmValuesResponse {
+  _$VmValuesResponseImpl({required this.data});
 
-  factory _$_VmValuesResponse.fromJson(Map<String, dynamic> json) =>
-      _$$_VmValuesResponseFromJson(json);
+  factory _$VmValuesResponseImpl.fromJson(Map<String, dynamic> json) =>
+      _$$VmValuesResponseImplFromJson(json);
 
   @override
   final VmValueData data;
@@ -138,73 +124,50 @@ class _$_VmValuesResponse implements _VmValuesResponse {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _VmValuesResponse &&
+            other is _$VmValuesResponseImpl &&
             (identical(other.data, data) || other.data == data));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, data);
 
   @JsonKey(ignore: true)
   @override
-  _$VmValuesResponseCopyWith<_VmValuesResponse> get copyWith =>
-      __$VmValuesResponseCopyWithImpl<_VmValuesResponse>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$VmValuesResponseImplCopyWith<_$VmValuesResponseImpl> get copyWith =>
+      __$$VmValuesResponseImplCopyWithImpl<_$VmValuesResponseImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_VmValuesResponseToJson(this);
+    return _$$VmValuesResponseImplToJson(
+      this,
+    );
   }
 }
 
 abstract class _VmValuesResponse implements VmValuesResponse {
-  factory _VmValuesResponse({required VmValueData data}) = _$_VmValuesResponse;
+  factory _VmValuesResponse({required final VmValueData data}) =
+      _$VmValuesResponseImpl;
 
   factory _VmValuesResponse.fromJson(Map<String, dynamic> json) =
-      _$_VmValuesResponse.fromJson;
+      _$VmValuesResponseImpl.fromJson;
 
   @override
   VmValueData get data;
   @override
   @JsonKey(ignore: true)
-  _$VmValuesResponseCopyWith<_VmValuesResponse> get copyWith =>
+  _$$VmValuesResponseImplCopyWith<_$VmValuesResponseImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 VmValueData _$VmValueDataFromJson(Map<String, dynamic> json) {
   return _VmValueData.fromJson(json);
 }
-
-/// @nodoc
-class _$VmValueDataTearOff {
-  const _$VmValueDataTearOff();
-
-  _VmValueData call(
-      {List<String> returnData = const [],
-      required String returnCode,
-      required String returnMessage,
-      required double gasRemaining,
-      required int gasRefund,
-      required Map<String, OutputAccountData> outputAccounts}) {
-    return _VmValueData(
-      returnData: returnData,
-      returnCode: returnCode,
-      returnMessage: returnMessage,
-      gasRemaining: gasRemaining,
-      gasRefund: gasRefund,
-      outputAccounts: outputAccounts,
-    );
-  }
-
-  VmValueData fromJson(Map<String, Object?> json) {
-    return VmValueData.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $VmValueData = _$VmValueDataTearOff();
 
 /// @nodoc
 mixin _$VmValueData {
@@ -226,7 +189,8 @@ mixin _$VmValueData {
 abstract class $VmValueDataCopyWith<$Res> {
   factory $VmValueDataCopyWith(
           VmValueData value, $Res Function(VmValueData) then) =
-      _$VmValueDataCopyWithImpl<$Res>;
+      _$VmValueDataCopyWithImpl<$Res, VmValueData>;
+  @useResult
   $Res call(
       {List<String> returnData,
       String returnCode,
@@ -237,58 +201,62 @@ abstract class $VmValueDataCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$VmValueDataCopyWithImpl<$Res> implements $VmValueDataCopyWith<$Res> {
+class _$VmValueDataCopyWithImpl<$Res, $Val extends VmValueData>
+    implements $VmValueDataCopyWith<$Res> {
   _$VmValueDataCopyWithImpl(this._value, this._then);
 
-  final VmValueData _value;
   // ignore: unused_field
-  final $Res Function(VmValueData) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? returnData = freezed,
-    Object? returnCode = freezed,
-    Object? returnMessage = freezed,
-    Object? gasRemaining = freezed,
-    Object? gasRefund = freezed,
-    Object? outputAccounts = freezed,
+    Object? returnData = null,
+    Object? returnCode = null,
+    Object? returnMessage = null,
+    Object? gasRemaining = null,
+    Object? gasRefund = null,
+    Object? outputAccounts = null,
   }) {
     return _then(_value.copyWith(
-      returnData: returnData == freezed
+      returnData: null == returnData
           ? _value.returnData
           : returnData // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      returnCode: returnCode == freezed
+      returnCode: null == returnCode
           ? _value.returnCode
           : returnCode // ignore: cast_nullable_to_non_nullable
               as String,
-      returnMessage: returnMessage == freezed
+      returnMessage: null == returnMessage
           ? _value.returnMessage
           : returnMessage // ignore: cast_nullable_to_non_nullable
               as String,
-      gasRemaining: gasRemaining == freezed
+      gasRemaining: null == gasRemaining
           ? _value.gasRemaining
           : gasRemaining // ignore: cast_nullable_to_non_nullable
               as double,
-      gasRefund: gasRefund == freezed
+      gasRefund: null == gasRefund
           ? _value.gasRefund
           : gasRefund // ignore: cast_nullable_to_non_nullable
               as int,
-      outputAccounts: outputAccounts == freezed
+      outputAccounts: null == outputAccounts
           ? _value.outputAccounts
           : outputAccounts // ignore: cast_nullable_to_non_nullable
               as Map<String, OutputAccountData>,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$VmValueDataCopyWith<$Res>
+abstract class _$$VmValueDataImplCopyWith<$Res>
     implements $VmValueDataCopyWith<$Res> {
-  factory _$VmValueDataCopyWith(
-          _VmValueData value, $Res Function(_VmValueData) then) =
-      __$VmValueDataCopyWithImpl<$Res>;
+  factory _$$VmValueDataImplCopyWith(
+          _$VmValueDataImpl value, $Res Function(_$VmValueDataImpl) then) =
+      __$$VmValueDataImplCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {List<String> returnData,
       String returnCode,
@@ -299,47 +267,46 @@ abstract class _$VmValueDataCopyWith<$Res>
 }
 
 /// @nodoc
-class __$VmValueDataCopyWithImpl<$Res> extends _$VmValueDataCopyWithImpl<$Res>
-    implements _$VmValueDataCopyWith<$Res> {
-  __$VmValueDataCopyWithImpl(
-      _VmValueData _value, $Res Function(_VmValueData) _then)
-      : super(_value, (v) => _then(v as _VmValueData));
+class __$$VmValueDataImplCopyWithImpl<$Res>
+    extends _$VmValueDataCopyWithImpl<$Res, _$VmValueDataImpl>
+    implements _$$VmValueDataImplCopyWith<$Res> {
+  __$$VmValueDataImplCopyWithImpl(
+      _$VmValueDataImpl _value, $Res Function(_$VmValueDataImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _VmValueData get _value => super._value as _VmValueData;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? returnData = freezed,
-    Object? returnCode = freezed,
-    Object? returnMessage = freezed,
-    Object? gasRemaining = freezed,
-    Object? gasRefund = freezed,
-    Object? outputAccounts = freezed,
+    Object? returnData = null,
+    Object? returnCode = null,
+    Object? returnMessage = null,
+    Object? gasRemaining = null,
+    Object? gasRefund = null,
+    Object? outputAccounts = null,
   }) {
-    return _then(_VmValueData(
-      returnData: returnData == freezed
-          ? _value.returnData
+    return _then(_$VmValueDataImpl(
+      returnData: null == returnData
+          ? _value._returnData
           : returnData // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      returnCode: returnCode == freezed
+      returnCode: null == returnCode
           ? _value.returnCode
           : returnCode // ignore: cast_nullable_to_non_nullable
               as String,
-      returnMessage: returnMessage == freezed
+      returnMessage: null == returnMessage
           ? _value.returnMessage
           : returnMessage // ignore: cast_nullable_to_non_nullable
               as String,
-      gasRemaining: gasRemaining == freezed
+      gasRemaining: null == gasRemaining
           ? _value.gasRemaining
           : gasRemaining // ignore: cast_nullable_to_non_nullable
               as double,
-      gasRefund: gasRefund == freezed
+      gasRefund: null == gasRefund
           ? _value.gasRefund
           : gasRefund // ignore: cast_nullable_to_non_nullable
               as int,
-      outputAccounts: outputAccounts == freezed
-          ? _value.outputAccounts
+      outputAccounts: null == outputAccounts
+          ? _value._outputAccounts
           : outputAccounts // ignore: cast_nullable_to_non_nullable
               as Map<String, OutputAccountData>,
     ));
@@ -348,21 +315,29 @@ class __$VmValueDataCopyWithImpl<$Res> extends _$VmValueDataCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_VmValueData implements _VmValueData {
-  _$_VmValueData(
-      {this.returnData = const [],
+class _$VmValueDataImpl implements _VmValueData {
+  _$VmValueDataImpl(
+      {final List<String> returnData = const [],
       required this.returnCode,
       required this.returnMessage,
       required this.gasRemaining,
       required this.gasRefund,
-      required this.outputAccounts});
+      required final Map<String, OutputAccountData> outputAccounts})
+      : _returnData = returnData,
+        _outputAccounts = outputAccounts;
 
-  factory _$_VmValueData.fromJson(Map<String, dynamic> json) =>
-      _$$_VmValueDataFromJson(json);
+  factory _$VmValueDataImpl.fromJson(Map<String, dynamic> json) =>
+      _$$VmValueDataImplFromJson(json);
 
-  @JsonKey(defaultValue: const [])
+  final List<String> _returnData;
   @override
-  final List<String> returnData;
+  @JsonKey()
+  List<String> get returnData {
+    if (_returnData is EqualUnmodifiableListView) return _returnData;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_returnData);
+  }
+
   @override
   final String returnCode;
   @override
@@ -371,8 +346,13 @@ class _$_VmValueData implements _VmValueData {
   final double gasRemaining;
   @override
   final int gasRefund;
+  final Map<String, OutputAccountData> _outputAccounts;
   @override
-  final Map<String, OutputAccountData> outputAccounts;
+  Map<String, OutputAccountData> get outputAccounts {
+    if (_outputAccounts is EqualUnmodifiableMapView) return _outputAccounts;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(_outputAccounts);
+  }
 
   @override
   String toString() {
@@ -380,12 +360,12 @@ class _$_VmValueData implements _VmValueData {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _VmValueData &&
+            other is _$VmValueDataImpl &&
             const DeepCollectionEquality()
-                .equals(other.returnData, returnData) &&
+                .equals(other._returnData, _returnData) &&
             (identical(other.returnCode, returnCode) ||
                 other.returnCode == returnCode) &&
             (identical(other.returnMessage, returnMessage) ||
@@ -395,41 +375,46 @@ class _$_VmValueData implements _VmValueData {
             (identical(other.gasRefund, gasRefund) ||
                 other.gasRefund == gasRefund) &&
             const DeepCollectionEquality()
-                .equals(other.outputAccounts, outputAccounts));
+                .equals(other._outputAccounts, _outputAccounts));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(returnData),
+      const DeepCollectionEquality().hash(_returnData),
       returnCode,
       returnMessage,
       gasRemaining,
       gasRefund,
-      const DeepCollectionEquality().hash(outputAccounts));
+      const DeepCollectionEquality().hash(_outputAccounts));
 
   @JsonKey(ignore: true)
   @override
-  _$VmValueDataCopyWith<_VmValueData> get copyWith =>
-      __$VmValueDataCopyWithImpl<_VmValueData>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$VmValueDataImplCopyWith<_$VmValueDataImpl> get copyWith =>
+      __$$VmValueDataImplCopyWithImpl<_$VmValueDataImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_VmValueDataToJson(this);
+    return _$$VmValueDataImplToJson(
+      this,
+    );
   }
 }
 
 abstract class _VmValueData implements VmValueData {
   factory _VmValueData(
-      {List<String> returnData,
-      required String returnCode,
-      required String returnMessage,
-      required double gasRemaining,
-      required int gasRefund,
-      required Map<String, OutputAccountData> outputAccounts}) = _$_VmValueData;
+          {final List<String> returnData,
+          required final String returnCode,
+          required final String returnMessage,
+          required final double gasRemaining,
+          required final int gasRefund,
+          required final Map<String, OutputAccountData> outputAccounts}) =
+      _$VmValueDataImpl;
 
   factory _VmValueData.fromJson(Map<String, dynamic> json) =
-      _$_VmValueData.fromJson;
+      _$VmValueDataImpl.fromJson;
 
   @override
   List<String> get returnData;
@@ -445,38 +430,13 @@ abstract class _VmValueData implements VmValueData {
   Map<String, OutputAccountData> get outputAccounts;
   @override
   @JsonKey(ignore: true)
-  _$VmValueDataCopyWith<_VmValueData> get copyWith =>
+  _$$VmValueDataImplCopyWith<_$VmValueDataImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 OutputAccountData _$OutputAccountDataFromJson(Map<String, dynamic> json) {
   return _OutputAccountData.fromJson(json);
 }
-
-/// @nodoc
-class _$OutputAccountDataTearOff {
-  const _$OutputAccountDataTearOff();
-
-  _OutputAccountData call(
-      {@AddressConverter() required Address address,
-      @NonceConverter() required Nonce nonce,
-      required int balanceDelta,
-      required Map<String, StorageUpdateData> storageUpdates}) {
-    return _OutputAccountData(
-      address: address,
-      nonce: nonce,
-      balanceDelta: balanceDelta,
-      storageUpdates: storageUpdates,
-    );
-  }
-
-  OutputAccountData fromJson(Map<String, Object?> json) {
-    return OutputAccountData.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $OutputAccountData = _$OutputAccountDataTearOff();
 
 /// @nodoc
 mixin _$OutputAccountData {
@@ -498,7 +458,8 @@ mixin _$OutputAccountData {
 abstract class $OutputAccountDataCopyWith<$Res> {
   factory $OutputAccountDataCopyWith(
           OutputAccountData value, $Res Function(OutputAccountData) then) =
-      _$OutputAccountDataCopyWithImpl<$Res>;
+      _$OutputAccountDataCopyWithImpl<$Res, OutputAccountData>;
+  @useResult
   $Res call(
       {@AddressConverter() Address address,
       @NonceConverter() Nonce nonce,
@@ -507,49 +468,52 @@ abstract class $OutputAccountDataCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$OutputAccountDataCopyWithImpl<$Res>
+class _$OutputAccountDataCopyWithImpl<$Res, $Val extends OutputAccountData>
     implements $OutputAccountDataCopyWith<$Res> {
   _$OutputAccountDataCopyWithImpl(this._value, this._then);
 
-  final OutputAccountData _value;
   // ignore: unused_field
-  final $Res Function(OutputAccountData) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? address = freezed,
-    Object? nonce = freezed,
-    Object? balanceDelta = freezed,
-    Object? storageUpdates = freezed,
+    Object? address = null,
+    Object? nonce = null,
+    Object? balanceDelta = null,
+    Object? storageUpdates = null,
   }) {
     return _then(_value.copyWith(
-      address: address == freezed
+      address: null == address
           ? _value.address
           : address // ignore: cast_nullable_to_non_nullable
               as Address,
-      nonce: nonce == freezed
+      nonce: null == nonce
           ? _value.nonce
           : nonce // ignore: cast_nullable_to_non_nullable
               as Nonce,
-      balanceDelta: balanceDelta == freezed
+      balanceDelta: null == balanceDelta
           ? _value.balanceDelta
           : balanceDelta // ignore: cast_nullable_to_non_nullable
               as int,
-      storageUpdates: storageUpdates == freezed
+      storageUpdates: null == storageUpdates
           ? _value.storageUpdates
           : storageUpdates // ignore: cast_nullable_to_non_nullable
               as Map<String, StorageUpdateData>,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$OutputAccountDataCopyWith<$Res>
+abstract class _$$OutputAccountDataImplCopyWith<$Res>
     implements $OutputAccountDataCopyWith<$Res> {
-  factory _$OutputAccountDataCopyWith(
-          _OutputAccountData value, $Res Function(_OutputAccountData) then) =
-      __$OutputAccountDataCopyWithImpl<$Res>;
+  factory _$$OutputAccountDataImplCopyWith(_$OutputAccountDataImpl value,
+          $Res Function(_$OutputAccountDataImpl) then) =
+      __$$OutputAccountDataImplCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {@AddressConverter() Address address,
       @NonceConverter() Nonce nonce,
@@ -558,38 +522,36 @@ abstract class _$OutputAccountDataCopyWith<$Res>
 }
 
 /// @nodoc
-class __$OutputAccountDataCopyWithImpl<$Res>
-    extends _$OutputAccountDataCopyWithImpl<$Res>
-    implements _$OutputAccountDataCopyWith<$Res> {
-  __$OutputAccountDataCopyWithImpl(
-      _OutputAccountData _value, $Res Function(_OutputAccountData) _then)
-      : super(_value, (v) => _then(v as _OutputAccountData));
+class __$$OutputAccountDataImplCopyWithImpl<$Res>
+    extends _$OutputAccountDataCopyWithImpl<$Res, _$OutputAccountDataImpl>
+    implements _$$OutputAccountDataImplCopyWith<$Res> {
+  __$$OutputAccountDataImplCopyWithImpl(_$OutputAccountDataImpl _value,
+      $Res Function(_$OutputAccountDataImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _OutputAccountData get _value => super._value as _OutputAccountData;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? address = freezed,
-    Object? nonce = freezed,
-    Object? balanceDelta = freezed,
-    Object? storageUpdates = freezed,
+    Object? address = null,
+    Object? nonce = null,
+    Object? balanceDelta = null,
+    Object? storageUpdates = null,
   }) {
-    return _then(_OutputAccountData(
-      address: address == freezed
+    return _then(_$OutputAccountDataImpl(
+      address: null == address
           ? _value.address
           : address // ignore: cast_nullable_to_non_nullable
               as Address,
-      nonce: nonce == freezed
+      nonce: null == nonce
           ? _value.nonce
           : nonce // ignore: cast_nullable_to_non_nullable
               as Nonce,
-      balanceDelta: balanceDelta == freezed
+      balanceDelta: null == balanceDelta
           ? _value.balanceDelta
           : balanceDelta // ignore: cast_nullable_to_non_nullable
               as int,
-      storageUpdates: storageUpdates == freezed
-          ? _value.storageUpdates
+      storageUpdates: null == storageUpdates
+          ? _value._storageUpdates
           : storageUpdates // ignore: cast_nullable_to_non_nullable
               as Map<String, StorageUpdateData>,
     ));
@@ -598,15 +560,16 @@ class __$OutputAccountDataCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_OutputAccountData implements _OutputAccountData {
-  _$_OutputAccountData(
+class _$OutputAccountDataImpl implements _OutputAccountData {
+  _$OutputAccountDataImpl(
       {@AddressConverter() required this.address,
       @NonceConverter() required this.nonce,
       required this.balanceDelta,
-      required this.storageUpdates});
+      required final Map<String, StorageUpdateData> storageUpdates})
+      : _storageUpdates = storageUpdates;
 
-  factory _$_OutputAccountData.fromJson(Map<String, dynamic> json) =>
-      _$$_OutputAccountDataFromJson(json);
+  factory _$OutputAccountDataImpl.fromJson(Map<String, dynamic> json) =>
+      _$$OutputAccountDataImplFromJson(json);
 
   @override
   @AddressConverter()
@@ -616,8 +579,13 @@ class _$_OutputAccountData implements _OutputAccountData {
   final Nonce nonce;
   @override
   final int balanceDelta;
+  final Map<String, StorageUpdateData> _storageUpdates;
   @override
-  final Map<String, StorageUpdateData> storageUpdates;
+  Map<String, StorageUpdateData> get storageUpdates {
+    if (_storageUpdates is EqualUnmodifiableMapView) return _storageUpdates;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(_storageUpdates);
+  }
 
   @override
   String toString() {
@@ -625,43 +593,48 @@ class _$_OutputAccountData implements _OutputAccountData {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _OutputAccountData &&
+            other is _$OutputAccountDataImpl &&
             (identical(other.address, address) || other.address == address) &&
             (identical(other.nonce, nonce) || other.nonce == nonce) &&
             (identical(other.balanceDelta, balanceDelta) ||
                 other.balanceDelta == balanceDelta) &&
             const DeepCollectionEquality()
-                .equals(other.storageUpdates, storageUpdates));
+                .equals(other._storageUpdates, _storageUpdates));
   }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, address, nonce, balanceDelta,
-      const DeepCollectionEquality().hash(storageUpdates));
 
   @JsonKey(ignore: true)
   @override
-  _$OutputAccountDataCopyWith<_OutputAccountData> get copyWith =>
-      __$OutputAccountDataCopyWithImpl<_OutputAccountData>(this, _$identity);
+  int get hashCode => Object.hash(runtimeType, address, nonce, balanceDelta,
+      const DeepCollectionEquality().hash(_storageUpdates));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$OutputAccountDataImplCopyWith<_$OutputAccountDataImpl> get copyWith =>
+      __$$OutputAccountDataImplCopyWithImpl<_$OutputAccountDataImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_OutputAccountDataToJson(this);
+    return _$$OutputAccountDataImplToJson(
+      this,
+    );
   }
 }
 
 abstract class _OutputAccountData implements OutputAccountData {
   factory _OutputAccountData(
-          {@AddressConverter() required Address address,
-          @NonceConverter() required Nonce nonce,
-          required int balanceDelta,
-          required Map<String, StorageUpdateData> storageUpdates}) =
-      _$_OutputAccountData;
+          {@AddressConverter() required final Address address,
+          @NonceConverter() required final Nonce nonce,
+          required final int balanceDelta,
+          required final Map<String, StorageUpdateData> storageUpdates}) =
+      _$OutputAccountDataImpl;
 
   factory _OutputAccountData.fromJson(Map<String, dynamic> json) =
-      _$_OutputAccountData.fromJson;
+      _$OutputAccountDataImpl.fromJson;
 
   @override
   @AddressConverter()
@@ -675,32 +648,13 @@ abstract class _OutputAccountData implements OutputAccountData {
   Map<String, StorageUpdateData> get storageUpdates;
   @override
   @JsonKey(ignore: true)
-  _$OutputAccountDataCopyWith<_OutputAccountData> get copyWith =>
+  _$$OutputAccountDataImplCopyWith<_$OutputAccountDataImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 StorageUpdateData _$StorageUpdateDataFromJson(Map<String, dynamic> json) {
   return _StorageUpdateData.fromJson(json);
 }
-
-/// @nodoc
-class _$StorageUpdateDataTearOff {
-  const _$StorageUpdateDataTearOff();
-
-  _StorageUpdateData call({required String offset, required String data}) {
-    return _StorageUpdateData(
-      offset: offset,
-      data: data,
-    );
-  }
-
-  StorageUpdateData fromJson(Map<String, Object?> json) {
-    return StorageUpdateData.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $StorageUpdateData = _$StorageUpdateDataTearOff();
 
 /// @nodoc
 mixin _$StorageUpdateData {
@@ -717,69 +671,71 @@ mixin _$StorageUpdateData {
 abstract class $StorageUpdateDataCopyWith<$Res> {
   factory $StorageUpdateDataCopyWith(
           StorageUpdateData value, $Res Function(StorageUpdateData) then) =
-      _$StorageUpdateDataCopyWithImpl<$Res>;
+      _$StorageUpdateDataCopyWithImpl<$Res, StorageUpdateData>;
+  @useResult
   $Res call({String offset, String data});
 }
 
 /// @nodoc
-class _$StorageUpdateDataCopyWithImpl<$Res>
+class _$StorageUpdateDataCopyWithImpl<$Res, $Val extends StorageUpdateData>
     implements $StorageUpdateDataCopyWith<$Res> {
   _$StorageUpdateDataCopyWithImpl(this._value, this._then);
 
-  final StorageUpdateData _value;
   // ignore: unused_field
-  final $Res Function(StorageUpdateData) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? offset = freezed,
-    Object? data = freezed,
+    Object? offset = null,
+    Object? data = null,
   }) {
     return _then(_value.copyWith(
-      offset: offset == freezed
+      offset: null == offset
           ? _value.offset
           : offset // ignore: cast_nullable_to_non_nullable
               as String,
-      data: data == freezed
+      data: null == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
               as String,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$StorageUpdateDataCopyWith<$Res>
+abstract class _$$StorageUpdateDataImplCopyWith<$Res>
     implements $StorageUpdateDataCopyWith<$Res> {
-  factory _$StorageUpdateDataCopyWith(
-          _StorageUpdateData value, $Res Function(_StorageUpdateData) then) =
-      __$StorageUpdateDataCopyWithImpl<$Res>;
+  factory _$$StorageUpdateDataImplCopyWith(_$StorageUpdateDataImpl value,
+          $Res Function(_$StorageUpdateDataImpl) then) =
+      __$$StorageUpdateDataImplCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({String offset, String data});
 }
 
 /// @nodoc
-class __$StorageUpdateDataCopyWithImpl<$Res>
-    extends _$StorageUpdateDataCopyWithImpl<$Res>
-    implements _$StorageUpdateDataCopyWith<$Res> {
-  __$StorageUpdateDataCopyWithImpl(
-      _StorageUpdateData _value, $Res Function(_StorageUpdateData) _then)
-      : super(_value, (v) => _then(v as _StorageUpdateData));
+class __$$StorageUpdateDataImplCopyWithImpl<$Res>
+    extends _$StorageUpdateDataCopyWithImpl<$Res, _$StorageUpdateDataImpl>
+    implements _$$StorageUpdateDataImplCopyWith<$Res> {
+  __$$StorageUpdateDataImplCopyWithImpl(_$StorageUpdateDataImpl _value,
+      $Res Function(_$StorageUpdateDataImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _StorageUpdateData get _value => super._value as _StorageUpdateData;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? offset = freezed,
-    Object? data = freezed,
+    Object? offset = null,
+    Object? data = null,
   }) {
-    return _then(_StorageUpdateData(
-      offset: offset == freezed
+    return _then(_$StorageUpdateDataImpl(
+      offset: null == offset
           ? _value.offset
           : offset // ignore: cast_nullable_to_non_nullable
               as String,
-      data: data == freezed
+      data: null == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
               as String,
@@ -789,11 +745,11 @@ class __$StorageUpdateDataCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_StorageUpdateData implements _StorageUpdateData {
-  _$_StorageUpdateData({required this.offset, required this.data});
+class _$StorageUpdateDataImpl implements _StorageUpdateData {
+  _$StorageUpdateDataImpl({required this.offset, required this.data});
 
-  factory _$_StorageUpdateData.fromJson(Map<String, dynamic> json) =>
-      _$$_StorageUpdateDataFromJson(json);
+  factory _$StorageUpdateDataImpl.fromJson(Map<String, dynamic> json) =>
+      _$$StorageUpdateDataImplFromJson(json);
 
   @override
   final String offset;
@@ -806,34 +762,40 @@ class _$_StorageUpdateData implements _StorageUpdateData {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _StorageUpdateData &&
+            other is _$StorageUpdateDataImpl &&
             (identical(other.offset, offset) || other.offset == offset) &&
             (identical(other.data, data) || other.data == data));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, offset, data);
 
   @JsonKey(ignore: true)
   @override
-  _$StorageUpdateDataCopyWith<_StorageUpdateData> get copyWith =>
-      __$StorageUpdateDataCopyWithImpl<_StorageUpdateData>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$StorageUpdateDataImplCopyWith<_$StorageUpdateDataImpl> get copyWith =>
+      __$$StorageUpdateDataImplCopyWithImpl<_$StorageUpdateDataImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_StorageUpdateDataToJson(this);
+    return _$$StorageUpdateDataImplToJson(
+      this,
+    );
   }
 }
 
 abstract class _StorageUpdateData implements StorageUpdateData {
-  factory _StorageUpdateData({required String offset, required String data}) =
-      _$_StorageUpdateData;
+  factory _StorageUpdateData(
+      {required final String offset,
+      required final String data}) = _$StorageUpdateDataImpl;
 
   factory _StorageUpdateData.fromJson(Map<String, dynamic> json) =
-      _$_StorageUpdateData.fromJson;
+      _$StorageUpdateDataImpl.fromJson;
 
   @override
   String get offset;
@@ -841,6 +803,6 @@ abstract class _StorageUpdateData implements StorageUpdateData {
   String get data;
   @override
   @JsonKey(ignore: true)
-  _$StorageUpdateDataCopyWith<_StorageUpdateData> get copyWith =>
+  _$$StorageUpdateDataImplCopyWith<_$StorageUpdateDataImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

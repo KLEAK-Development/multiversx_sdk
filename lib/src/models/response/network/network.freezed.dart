@@ -1,6 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'network.dart';
 
@@ -11,31 +12,12 @@ part of 'network.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 NetworkConfigurationData _$NetworkConfigurationDataFromJson(
     Map<String, dynamic> json) {
   return _NetworkConfigurationData.fromJson(json);
 }
-
-/// @nodoc
-class _$NetworkConfigurationDataTearOff {
-  const _$NetworkConfigurationDataTearOff();
-
-  _NetworkConfigurationData call(
-      {required NetworkConfigurationInformationsData config}) {
-    return _NetworkConfigurationData(
-      config: config,
-    );
-  }
-
-  NetworkConfigurationData fromJson(Map<String, Object?> json) {
-    return NetworkConfigurationData.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $NetworkConfigurationData = _$NetworkConfigurationDataTearOff();
 
 /// @nodoc
 mixin _$NetworkConfigurationData {
@@ -52,49 +34,56 @@ mixin _$NetworkConfigurationData {
 abstract class $NetworkConfigurationDataCopyWith<$Res> {
   factory $NetworkConfigurationDataCopyWith(NetworkConfigurationData value,
           $Res Function(NetworkConfigurationData) then) =
-      _$NetworkConfigurationDataCopyWithImpl<$Res>;
+      _$NetworkConfigurationDataCopyWithImpl<$Res, NetworkConfigurationData>;
+  @useResult
   $Res call({NetworkConfigurationInformationsData config});
 
   $NetworkConfigurationInformationsDataCopyWith<$Res> get config;
 }
 
 /// @nodoc
-class _$NetworkConfigurationDataCopyWithImpl<$Res>
+class _$NetworkConfigurationDataCopyWithImpl<$Res,
+        $Val extends NetworkConfigurationData>
     implements $NetworkConfigurationDataCopyWith<$Res> {
   _$NetworkConfigurationDataCopyWithImpl(this._value, this._then);
 
-  final NetworkConfigurationData _value;
   // ignore: unused_field
-  final $Res Function(NetworkConfigurationData) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? config = freezed,
+    Object? config = null,
   }) {
     return _then(_value.copyWith(
-      config: config == freezed
+      config: null == config
           ? _value.config
           : config // ignore: cast_nullable_to_non_nullable
               as NetworkConfigurationInformationsData,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $NetworkConfigurationInformationsDataCopyWith<$Res> get config {
     return $NetworkConfigurationInformationsDataCopyWith<$Res>(_value.config,
         (value) {
-      return _then(_value.copyWith(config: value));
+      return _then(_value.copyWith(config: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$NetworkConfigurationDataCopyWith<$Res>
+abstract class _$$NetworkConfigurationDataImplCopyWith<$Res>
     implements $NetworkConfigurationDataCopyWith<$Res> {
-  factory _$NetworkConfigurationDataCopyWith(_NetworkConfigurationData value,
-          $Res Function(_NetworkConfigurationData) then) =
-      __$NetworkConfigurationDataCopyWithImpl<$Res>;
+  factory _$$NetworkConfigurationDataImplCopyWith(
+          _$NetworkConfigurationDataImpl value,
+          $Res Function(_$NetworkConfigurationDataImpl) then) =
+      __$$NetworkConfigurationDataImplCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({NetworkConfigurationInformationsData config});
 
   @override
@@ -102,23 +91,22 @@ abstract class _$NetworkConfigurationDataCopyWith<$Res>
 }
 
 /// @nodoc
-class __$NetworkConfigurationDataCopyWithImpl<$Res>
-    extends _$NetworkConfigurationDataCopyWithImpl<$Res>
-    implements _$NetworkConfigurationDataCopyWith<$Res> {
-  __$NetworkConfigurationDataCopyWithImpl(_NetworkConfigurationData _value,
-      $Res Function(_NetworkConfigurationData) _then)
-      : super(_value, (v) => _then(v as _NetworkConfigurationData));
+class __$$NetworkConfigurationDataImplCopyWithImpl<$Res>
+    extends _$NetworkConfigurationDataCopyWithImpl<$Res,
+        _$NetworkConfigurationDataImpl>
+    implements _$$NetworkConfigurationDataImplCopyWith<$Res> {
+  __$$NetworkConfigurationDataImplCopyWithImpl(
+      _$NetworkConfigurationDataImpl _value,
+      $Res Function(_$NetworkConfigurationDataImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _NetworkConfigurationData get _value =>
-      super._value as _NetworkConfigurationData;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? config = freezed,
+    Object? config = null,
   }) {
-    return _then(_NetworkConfigurationData(
-      config: config == freezed
+    return _then(_$NetworkConfigurationDataImpl(
+      config: null == config
           ? _value.config
           : config // ignore: cast_nullable_to_non_nullable
               as NetworkConfigurationInformationsData,
@@ -128,11 +116,11 @@ class __$NetworkConfigurationDataCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_NetworkConfigurationData implements _NetworkConfigurationData {
-  _$_NetworkConfigurationData({required this.config});
+class _$NetworkConfigurationDataImpl implements _NetworkConfigurationData {
+  _$NetworkConfigurationDataImpl({required this.config});
 
-  factory _$_NetworkConfigurationData.fromJson(Map<String, dynamic> json) =>
-      _$$_NetworkConfigurationDataFromJson(json);
+  factory _$NetworkConfigurationDataImpl.fromJson(Map<String, dynamic> json) =>
+      _$$NetworkConfigurationDataImplFromJson(json);
 
   @override
   final NetworkConfigurationInformationsData config;
@@ -143,112 +131,52 @@ class _$_NetworkConfigurationData implements _NetworkConfigurationData {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _NetworkConfigurationData &&
+            other is _$NetworkConfigurationDataImpl &&
             (identical(other.config, config) || other.config == config));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, config);
 
   @JsonKey(ignore: true)
   @override
-  _$NetworkConfigurationDataCopyWith<_NetworkConfigurationData> get copyWith =>
-      __$NetworkConfigurationDataCopyWithImpl<_NetworkConfigurationData>(
-          this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$NetworkConfigurationDataImplCopyWith<_$NetworkConfigurationDataImpl>
+      get copyWith => __$$NetworkConfigurationDataImplCopyWithImpl<
+          _$NetworkConfigurationDataImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_NetworkConfigurationDataToJson(this);
+    return _$$NetworkConfigurationDataImplToJson(
+      this,
+    );
   }
 }
 
 abstract class _NetworkConfigurationData implements NetworkConfigurationData {
   factory _NetworkConfigurationData(
-          {required NetworkConfigurationInformationsData config}) =
-      _$_NetworkConfigurationData;
+          {required final NetworkConfigurationInformationsData config}) =
+      _$NetworkConfigurationDataImpl;
 
   factory _NetworkConfigurationData.fromJson(Map<String, dynamic> json) =
-      _$_NetworkConfigurationData.fromJson;
+      _$NetworkConfigurationDataImpl.fromJson;
 
   @override
   NetworkConfigurationInformationsData get config;
   @override
   @JsonKey(ignore: true)
-  _$NetworkConfigurationDataCopyWith<_NetworkConfigurationData> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$NetworkConfigurationDataImplCopyWith<_$NetworkConfigurationDataImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 NetworkConfigurationInformationsData
     _$NetworkConfigurationInformationsDataFromJson(Map<String, dynamic> json) {
   return _NetworkConfigurationInformationsData.fromJson(json);
 }
-
-/// @nodoc
-class _$NetworkConfigurationInformationsDataTearOff {
-  const _$NetworkConfigurationInformationsDataTearOff();
-
-  _NetworkConfigurationInformationsData call(
-      {@ChainIdConverter()
-      @JsonKey(name: 'erd_chain_id')
-          required ChainId chainId,
-      @JsonKey(name: 'erd_denomination')
-          required int denomination,
-      @JsonKey(name: 'erd_gas_per_data_byte')
-          required int gasPerDataByte,
-      @JsonKey(name: 'erd_latest_tag_software_version')
-          required String latestTagSoftwareVersion,
-      @JsonKey(name: 'erd_meta_consensus_group_size')
-          required int metaConsensusGroupSize,
-      @GasLimitConverter()
-      @JsonKey(name: 'erd_min_gas_limit')
-          required GasLimit minGasLimit,
-      @GasPriceConverter()
-      @JsonKey(name: 'erd_min_gas_price')
-          required GasPrice minGasPrice,
-      @TransactionVersionConverter()
-      @JsonKey(name: 'erd_min_transaction_version')
-          required TransactionVersion minTransactionVersion,
-      @JsonKey(name: 'erd_num_metachain_nodes')
-          required int numMetachainNodes,
-      @JsonKey(name: 'erd_num_nodes_in_shard')
-          required int numNodesInShard,
-      @JsonKey(name: 'erd_num_shards_without_meta')
-          required int numShardsWithoutMeta,
-      @JsonKey(name: 'erd_round_duration')
-          required int roundDuration,
-      @JsonKey(name: 'erd_shard_consensus_group_size')
-          required int shardConsensusGroupSize,
-      @JsonKey(name: 'erd_start_time')
-          required int startTime}) {
-    return _NetworkConfigurationInformationsData(
-      chainId: chainId,
-      denomination: denomination,
-      gasPerDataByte: gasPerDataByte,
-      latestTagSoftwareVersion: latestTagSoftwareVersion,
-      metaConsensusGroupSize: metaConsensusGroupSize,
-      minGasLimit: minGasLimit,
-      minGasPrice: minGasPrice,
-      minTransactionVersion: minTransactionVersion,
-      numMetachainNodes: numMetachainNodes,
-      numNodesInShard: numNodesInShard,
-      numShardsWithoutMeta: numShardsWithoutMeta,
-      roundDuration: roundDuration,
-      shardConsensusGroupSize: shardConsensusGroupSize,
-      startTime: startTime,
-    );
-  }
-
-  NetworkConfigurationInformationsData fromJson(Map<String, Object?> json) {
-    return NetworkConfigurationInformationsData.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $NetworkConfigurationInformationsData =
-    _$NetworkConfigurationInformationsDataTearOff();
 
 /// @nodoc
 mixin _$NetworkConfigurationInformationsData {
@@ -298,256 +226,242 @@ abstract class $NetworkConfigurationInformationsDataCopyWith<$Res> {
   factory $NetworkConfigurationInformationsDataCopyWith(
           NetworkConfigurationInformationsData value,
           $Res Function(NetworkConfigurationInformationsData) then) =
-      _$NetworkConfigurationInformationsDataCopyWithImpl<$Res>;
+      _$NetworkConfigurationInformationsDataCopyWithImpl<$Res,
+          NetworkConfigurationInformationsData>;
+  @useResult
   $Res call(
-      {@ChainIdConverter()
-      @JsonKey(name: 'erd_chain_id')
-          ChainId chainId,
-      @JsonKey(name: 'erd_denomination')
-          int denomination,
-      @JsonKey(name: 'erd_gas_per_data_byte')
-          int gasPerDataByte,
+      {@ChainIdConverter() @JsonKey(name: 'erd_chain_id') ChainId chainId,
+      @JsonKey(name: 'erd_denomination') int denomination,
+      @JsonKey(name: 'erd_gas_per_data_byte') int gasPerDataByte,
       @JsonKey(name: 'erd_latest_tag_software_version')
-          String latestTagSoftwareVersion,
+      String latestTagSoftwareVersion,
       @JsonKey(name: 'erd_meta_consensus_group_size')
-          int metaConsensusGroupSize,
+      int metaConsensusGroupSize,
       @GasLimitConverter()
       @JsonKey(name: 'erd_min_gas_limit')
-          GasLimit minGasLimit,
+      GasLimit minGasLimit,
       @GasPriceConverter()
       @JsonKey(name: 'erd_min_gas_price')
-          GasPrice minGasPrice,
+      GasPrice minGasPrice,
       @TransactionVersionConverter()
       @JsonKey(name: 'erd_min_transaction_version')
-          TransactionVersion minTransactionVersion,
-      @JsonKey(name: 'erd_num_metachain_nodes')
-          int numMetachainNodes,
-      @JsonKey(name: 'erd_num_nodes_in_shard')
-          int numNodesInShard,
-      @JsonKey(name: 'erd_num_shards_without_meta')
-          int numShardsWithoutMeta,
-      @JsonKey(name: 'erd_round_duration')
-          int roundDuration,
+      TransactionVersion minTransactionVersion,
+      @JsonKey(name: 'erd_num_metachain_nodes') int numMetachainNodes,
+      @JsonKey(name: 'erd_num_nodes_in_shard') int numNodesInShard,
+      @JsonKey(name: 'erd_num_shards_without_meta') int numShardsWithoutMeta,
+      @JsonKey(name: 'erd_round_duration') int roundDuration,
       @JsonKey(name: 'erd_shard_consensus_group_size')
-          int shardConsensusGroupSize,
-      @JsonKey(name: 'erd_start_time')
-          int startTime});
+      int shardConsensusGroupSize,
+      @JsonKey(name: 'erd_start_time') int startTime});
 }
 
 /// @nodoc
-class _$NetworkConfigurationInformationsDataCopyWithImpl<$Res>
+class _$NetworkConfigurationInformationsDataCopyWithImpl<$Res,
+        $Val extends NetworkConfigurationInformationsData>
     implements $NetworkConfigurationInformationsDataCopyWith<$Res> {
   _$NetworkConfigurationInformationsDataCopyWithImpl(this._value, this._then);
 
-  final NetworkConfigurationInformationsData _value;
   // ignore: unused_field
-  final $Res Function(NetworkConfigurationInformationsData) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? chainId = freezed,
-    Object? denomination = freezed,
-    Object? gasPerDataByte = freezed,
-    Object? latestTagSoftwareVersion = freezed,
-    Object? metaConsensusGroupSize = freezed,
-    Object? minGasLimit = freezed,
-    Object? minGasPrice = freezed,
-    Object? minTransactionVersion = freezed,
-    Object? numMetachainNodes = freezed,
-    Object? numNodesInShard = freezed,
-    Object? numShardsWithoutMeta = freezed,
-    Object? roundDuration = freezed,
-    Object? shardConsensusGroupSize = freezed,
-    Object? startTime = freezed,
+    Object? chainId = null,
+    Object? denomination = null,
+    Object? gasPerDataByte = null,
+    Object? latestTagSoftwareVersion = null,
+    Object? metaConsensusGroupSize = null,
+    Object? minGasLimit = null,
+    Object? minGasPrice = null,
+    Object? minTransactionVersion = null,
+    Object? numMetachainNodes = null,
+    Object? numNodesInShard = null,
+    Object? numShardsWithoutMeta = null,
+    Object? roundDuration = null,
+    Object? shardConsensusGroupSize = null,
+    Object? startTime = null,
   }) {
     return _then(_value.copyWith(
-      chainId: chainId == freezed
+      chainId: null == chainId
           ? _value.chainId
           : chainId // ignore: cast_nullable_to_non_nullable
               as ChainId,
-      denomination: denomination == freezed
+      denomination: null == denomination
           ? _value.denomination
           : denomination // ignore: cast_nullable_to_non_nullable
               as int,
-      gasPerDataByte: gasPerDataByte == freezed
+      gasPerDataByte: null == gasPerDataByte
           ? _value.gasPerDataByte
           : gasPerDataByte // ignore: cast_nullable_to_non_nullable
               as int,
-      latestTagSoftwareVersion: latestTagSoftwareVersion == freezed
+      latestTagSoftwareVersion: null == latestTagSoftwareVersion
           ? _value.latestTagSoftwareVersion
           : latestTagSoftwareVersion // ignore: cast_nullable_to_non_nullable
               as String,
-      metaConsensusGroupSize: metaConsensusGroupSize == freezed
+      metaConsensusGroupSize: null == metaConsensusGroupSize
           ? _value.metaConsensusGroupSize
           : metaConsensusGroupSize // ignore: cast_nullable_to_non_nullable
               as int,
-      minGasLimit: minGasLimit == freezed
+      minGasLimit: null == minGasLimit
           ? _value.minGasLimit
           : minGasLimit // ignore: cast_nullable_to_non_nullable
               as GasLimit,
-      minGasPrice: minGasPrice == freezed
+      minGasPrice: null == minGasPrice
           ? _value.minGasPrice
           : minGasPrice // ignore: cast_nullable_to_non_nullable
               as GasPrice,
-      minTransactionVersion: minTransactionVersion == freezed
+      minTransactionVersion: null == minTransactionVersion
           ? _value.minTransactionVersion
           : minTransactionVersion // ignore: cast_nullable_to_non_nullable
               as TransactionVersion,
-      numMetachainNodes: numMetachainNodes == freezed
+      numMetachainNodes: null == numMetachainNodes
           ? _value.numMetachainNodes
           : numMetachainNodes // ignore: cast_nullable_to_non_nullable
               as int,
-      numNodesInShard: numNodesInShard == freezed
+      numNodesInShard: null == numNodesInShard
           ? _value.numNodesInShard
           : numNodesInShard // ignore: cast_nullable_to_non_nullable
               as int,
-      numShardsWithoutMeta: numShardsWithoutMeta == freezed
+      numShardsWithoutMeta: null == numShardsWithoutMeta
           ? _value.numShardsWithoutMeta
           : numShardsWithoutMeta // ignore: cast_nullable_to_non_nullable
               as int,
-      roundDuration: roundDuration == freezed
+      roundDuration: null == roundDuration
           ? _value.roundDuration
           : roundDuration // ignore: cast_nullable_to_non_nullable
               as int,
-      shardConsensusGroupSize: shardConsensusGroupSize == freezed
+      shardConsensusGroupSize: null == shardConsensusGroupSize
           ? _value.shardConsensusGroupSize
           : shardConsensusGroupSize // ignore: cast_nullable_to_non_nullable
               as int,
-      startTime: startTime == freezed
+      startTime: null == startTime
           ? _value.startTime
           : startTime // ignore: cast_nullable_to_non_nullable
               as int,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$NetworkConfigurationInformationsDataCopyWith<$Res>
+abstract class _$$NetworkConfigurationInformationsDataImplCopyWith<$Res>
     implements $NetworkConfigurationInformationsDataCopyWith<$Res> {
-  factory _$NetworkConfigurationInformationsDataCopyWith(
-          _NetworkConfigurationInformationsData value,
-          $Res Function(_NetworkConfigurationInformationsData) then) =
-      __$NetworkConfigurationInformationsDataCopyWithImpl<$Res>;
+  factory _$$NetworkConfigurationInformationsDataImplCopyWith(
+          _$NetworkConfigurationInformationsDataImpl value,
+          $Res Function(_$NetworkConfigurationInformationsDataImpl) then) =
+      __$$NetworkConfigurationInformationsDataImplCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
-      {@ChainIdConverter()
-      @JsonKey(name: 'erd_chain_id')
-          ChainId chainId,
-      @JsonKey(name: 'erd_denomination')
-          int denomination,
-      @JsonKey(name: 'erd_gas_per_data_byte')
-          int gasPerDataByte,
+      {@ChainIdConverter() @JsonKey(name: 'erd_chain_id') ChainId chainId,
+      @JsonKey(name: 'erd_denomination') int denomination,
+      @JsonKey(name: 'erd_gas_per_data_byte') int gasPerDataByte,
       @JsonKey(name: 'erd_latest_tag_software_version')
-          String latestTagSoftwareVersion,
+      String latestTagSoftwareVersion,
       @JsonKey(name: 'erd_meta_consensus_group_size')
-          int metaConsensusGroupSize,
+      int metaConsensusGroupSize,
       @GasLimitConverter()
       @JsonKey(name: 'erd_min_gas_limit')
-          GasLimit minGasLimit,
+      GasLimit minGasLimit,
       @GasPriceConverter()
       @JsonKey(name: 'erd_min_gas_price')
-          GasPrice minGasPrice,
+      GasPrice minGasPrice,
       @TransactionVersionConverter()
       @JsonKey(name: 'erd_min_transaction_version')
-          TransactionVersion minTransactionVersion,
-      @JsonKey(name: 'erd_num_metachain_nodes')
-          int numMetachainNodes,
-      @JsonKey(name: 'erd_num_nodes_in_shard')
-          int numNodesInShard,
-      @JsonKey(name: 'erd_num_shards_without_meta')
-          int numShardsWithoutMeta,
-      @JsonKey(name: 'erd_round_duration')
-          int roundDuration,
+      TransactionVersion minTransactionVersion,
+      @JsonKey(name: 'erd_num_metachain_nodes') int numMetachainNodes,
+      @JsonKey(name: 'erd_num_nodes_in_shard') int numNodesInShard,
+      @JsonKey(name: 'erd_num_shards_without_meta') int numShardsWithoutMeta,
+      @JsonKey(name: 'erd_round_duration') int roundDuration,
       @JsonKey(name: 'erd_shard_consensus_group_size')
-          int shardConsensusGroupSize,
-      @JsonKey(name: 'erd_start_time')
-          int startTime});
+      int shardConsensusGroupSize,
+      @JsonKey(name: 'erd_start_time') int startTime});
 }
 
 /// @nodoc
-class __$NetworkConfigurationInformationsDataCopyWithImpl<$Res>
-    extends _$NetworkConfigurationInformationsDataCopyWithImpl<$Res>
-    implements _$NetworkConfigurationInformationsDataCopyWith<$Res> {
-  __$NetworkConfigurationInformationsDataCopyWithImpl(
-      _NetworkConfigurationInformationsData _value,
-      $Res Function(_NetworkConfigurationInformationsData) _then)
-      : super(_value, (v) => _then(v as _NetworkConfigurationInformationsData));
+class __$$NetworkConfigurationInformationsDataImplCopyWithImpl<$Res>
+    extends _$NetworkConfigurationInformationsDataCopyWithImpl<$Res,
+        _$NetworkConfigurationInformationsDataImpl>
+    implements _$$NetworkConfigurationInformationsDataImplCopyWith<$Res> {
+  __$$NetworkConfigurationInformationsDataImplCopyWithImpl(
+      _$NetworkConfigurationInformationsDataImpl _value,
+      $Res Function(_$NetworkConfigurationInformationsDataImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _NetworkConfigurationInformationsData get _value =>
-      super._value as _NetworkConfigurationInformationsData;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? chainId = freezed,
-    Object? denomination = freezed,
-    Object? gasPerDataByte = freezed,
-    Object? latestTagSoftwareVersion = freezed,
-    Object? metaConsensusGroupSize = freezed,
-    Object? minGasLimit = freezed,
-    Object? minGasPrice = freezed,
-    Object? minTransactionVersion = freezed,
-    Object? numMetachainNodes = freezed,
-    Object? numNodesInShard = freezed,
-    Object? numShardsWithoutMeta = freezed,
-    Object? roundDuration = freezed,
-    Object? shardConsensusGroupSize = freezed,
-    Object? startTime = freezed,
+    Object? chainId = null,
+    Object? denomination = null,
+    Object? gasPerDataByte = null,
+    Object? latestTagSoftwareVersion = null,
+    Object? metaConsensusGroupSize = null,
+    Object? minGasLimit = null,
+    Object? minGasPrice = null,
+    Object? minTransactionVersion = null,
+    Object? numMetachainNodes = null,
+    Object? numNodesInShard = null,
+    Object? numShardsWithoutMeta = null,
+    Object? roundDuration = null,
+    Object? shardConsensusGroupSize = null,
+    Object? startTime = null,
   }) {
-    return _then(_NetworkConfigurationInformationsData(
-      chainId: chainId == freezed
+    return _then(_$NetworkConfigurationInformationsDataImpl(
+      chainId: null == chainId
           ? _value.chainId
           : chainId // ignore: cast_nullable_to_non_nullable
               as ChainId,
-      denomination: denomination == freezed
+      denomination: null == denomination
           ? _value.denomination
           : denomination // ignore: cast_nullable_to_non_nullable
               as int,
-      gasPerDataByte: gasPerDataByte == freezed
+      gasPerDataByte: null == gasPerDataByte
           ? _value.gasPerDataByte
           : gasPerDataByte // ignore: cast_nullable_to_non_nullable
               as int,
-      latestTagSoftwareVersion: latestTagSoftwareVersion == freezed
+      latestTagSoftwareVersion: null == latestTagSoftwareVersion
           ? _value.latestTagSoftwareVersion
           : latestTagSoftwareVersion // ignore: cast_nullable_to_non_nullable
               as String,
-      metaConsensusGroupSize: metaConsensusGroupSize == freezed
+      metaConsensusGroupSize: null == metaConsensusGroupSize
           ? _value.metaConsensusGroupSize
           : metaConsensusGroupSize // ignore: cast_nullable_to_non_nullable
               as int,
-      minGasLimit: minGasLimit == freezed
+      minGasLimit: null == minGasLimit
           ? _value.minGasLimit
           : minGasLimit // ignore: cast_nullable_to_non_nullable
               as GasLimit,
-      minGasPrice: minGasPrice == freezed
+      minGasPrice: null == minGasPrice
           ? _value.minGasPrice
           : minGasPrice // ignore: cast_nullable_to_non_nullable
               as GasPrice,
-      minTransactionVersion: minTransactionVersion == freezed
+      minTransactionVersion: null == minTransactionVersion
           ? _value.minTransactionVersion
           : minTransactionVersion // ignore: cast_nullable_to_non_nullable
               as TransactionVersion,
-      numMetachainNodes: numMetachainNodes == freezed
+      numMetachainNodes: null == numMetachainNodes
           ? _value.numMetachainNodes
           : numMetachainNodes // ignore: cast_nullable_to_non_nullable
               as int,
-      numNodesInShard: numNodesInShard == freezed
+      numNodesInShard: null == numNodesInShard
           ? _value.numNodesInShard
           : numNodesInShard // ignore: cast_nullable_to_non_nullable
               as int,
-      numShardsWithoutMeta: numShardsWithoutMeta == freezed
+      numShardsWithoutMeta: null == numShardsWithoutMeta
           ? _value.numShardsWithoutMeta
           : numShardsWithoutMeta // ignore: cast_nullable_to_non_nullable
               as int,
-      roundDuration: roundDuration == freezed
+      roundDuration: null == roundDuration
           ? _value.roundDuration
           : roundDuration // ignore: cast_nullable_to_non_nullable
               as int,
-      shardConsensusGroupSize: shardConsensusGroupSize == freezed
+      shardConsensusGroupSize: null == shardConsensusGroupSize
           ? _value.shardConsensusGroupSize
           : shardConsensusGroupSize // ignore: cast_nullable_to_non_nullable
               as int,
-      startTime: startTime == freezed
+      startTime: null == startTime
           ? _value.startTime
           : startTime // ignore: cast_nullable_to_non_nullable
               as int,
@@ -557,45 +471,37 @@ class __$NetworkConfigurationInformationsDataCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_NetworkConfigurationInformationsData
+class _$NetworkConfigurationInformationsDataImpl
     implements _NetworkConfigurationInformationsData {
-  _$_NetworkConfigurationInformationsData(
-      {@ChainIdConverter()
-      @JsonKey(name: 'erd_chain_id')
-          required this.chainId,
-      @JsonKey(name: 'erd_denomination')
-          required this.denomination,
-      @JsonKey(name: 'erd_gas_per_data_byte')
-          required this.gasPerDataByte,
+  _$NetworkConfigurationInformationsDataImpl(
+      {@ChainIdConverter() @JsonKey(name: 'erd_chain_id') required this.chainId,
+      @JsonKey(name: 'erd_denomination') required this.denomination,
+      @JsonKey(name: 'erd_gas_per_data_byte') required this.gasPerDataByte,
       @JsonKey(name: 'erd_latest_tag_software_version')
-          required this.latestTagSoftwareVersion,
+      required this.latestTagSoftwareVersion,
       @JsonKey(name: 'erd_meta_consensus_group_size')
-          required this.metaConsensusGroupSize,
+      required this.metaConsensusGroupSize,
       @GasLimitConverter()
       @JsonKey(name: 'erd_min_gas_limit')
-          required this.minGasLimit,
+      required this.minGasLimit,
       @GasPriceConverter()
       @JsonKey(name: 'erd_min_gas_price')
-          required this.minGasPrice,
+      required this.minGasPrice,
       @TransactionVersionConverter()
       @JsonKey(name: 'erd_min_transaction_version')
-          required this.minTransactionVersion,
-      @JsonKey(name: 'erd_num_metachain_nodes')
-          required this.numMetachainNodes,
-      @JsonKey(name: 'erd_num_nodes_in_shard')
-          required this.numNodesInShard,
+      required this.minTransactionVersion,
+      @JsonKey(name: 'erd_num_metachain_nodes') required this.numMetachainNodes,
+      @JsonKey(name: 'erd_num_nodes_in_shard') required this.numNodesInShard,
       @JsonKey(name: 'erd_num_shards_without_meta')
-          required this.numShardsWithoutMeta,
-      @JsonKey(name: 'erd_round_duration')
-          required this.roundDuration,
+      required this.numShardsWithoutMeta,
+      @JsonKey(name: 'erd_round_duration') required this.roundDuration,
       @JsonKey(name: 'erd_shard_consensus_group_size')
-          required this.shardConsensusGroupSize,
-      @JsonKey(name: 'erd_start_time')
-          required this.startTime});
+      required this.shardConsensusGroupSize,
+      @JsonKey(name: 'erd_start_time') required this.startTime});
 
-  factory _$_NetworkConfigurationInformationsData.fromJson(
+  factory _$NetworkConfigurationInformationsDataImpl.fromJson(
           Map<String, dynamic> json) =>
-      _$$_NetworkConfigurationInformationsDataFromJson(json);
+      _$$NetworkConfigurationInformationsDataImplFromJson(json);
 
   @override
   @ChainIdConverter()
@@ -650,10 +556,10 @@ class _$_NetworkConfigurationInformationsData
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _NetworkConfigurationInformationsData &&
+            other is _$NetworkConfigurationInformationsDataImpl &&
             (identical(other.chainId, chainId) || other.chainId == chainId) &&
             (identical(other.denomination, denomination) ||
                 other.denomination == denomination) &&
@@ -685,6 +591,7 @@ class _$_NetworkConfigurationInformationsData
                 other.startTime == startTime));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -705,14 +612,17 @@ class _$_NetworkConfigurationInformationsData
 
   @JsonKey(ignore: true)
   @override
-  _$NetworkConfigurationInformationsDataCopyWith<
-          _NetworkConfigurationInformationsData>
-      get copyWith => __$NetworkConfigurationInformationsDataCopyWithImpl<
-          _NetworkConfigurationInformationsData>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$NetworkConfigurationInformationsDataImplCopyWith<
+          _$NetworkConfigurationInformationsDataImpl>
+      get copyWith => __$$NetworkConfigurationInformationsDataImplCopyWithImpl<
+          _$NetworkConfigurationInformationsDataImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_NetworkConfigurationInformationsDataToJson(this);
+    return _$$NetworkConfigurationInformationsDataImplToJson(
+      this,
+    );
   }
 }
 
@@ -721,40 +631,38 @@ abstract class _NetworkConfigurationInformationsData
   factory _NetworkConfigurationInformationsData(
       {@ChainIdConverter()
       @JsonKey(name: 'erd_chain_id')
-          required ChainId chainId,
-      @JsonKey(name: 'erd_denomination')
-          required int denomination,
-      @JsonKey(name: 'erd_gas_per_data_byte')
-          required int gasPerDataByte,
+      required final ChainId chainId,
+      @JsonKey(name: 'erd_denomination') required final int denomination,
+      @JsonKey(name: 'erd_gas_per_data_byte') required final int gasPerDataByte,
       @JsonKey(name: 'erd_latest_tag_software_version')
-          required String latestTagSoftwareVersion,
+      required final String latestTagSoftwareVersion,
       @JsonKey(name: 'erd_meta_consensus_group_size')
-          required int metaConsensusGroupSize,
+      required final int metaConsensusGroupSize,
       @GasLimitConverter()
       @JsonKey(name: 'erd_min_gas_limit')
-          required GasLimit minGasLimit,
+      required final GasLimit minGasLimit,
       @GasPriceConverter()
       @JsonKey(name: 'erd_min_gas_price')
-          required GasPrice minGasPrice,
+      required final GasPrice minGasPrice,
       @TransactionVersionConverter()
       @JsonKey(name: 'erd_min_transaction_version')
-          required TransactionVersion minTransactionVersion,
+      required final TransactionVersion minTransactionVersion,
       @JsonKey(name: 'erd_num_metachain_nodes')
-          required int numMetachainNodes,
+      required final int numMetachainNodes,
       @JsonKey(name: 'erd_num_nodes_in_shard')
-          required int numNodesInShard,
+      required final int numNodesInShard,
       @JsonKey(name: 'erd_num_shards_without_meta')
-          required int numShardsWithoutMeta,
-      @JsonKey(name: 'erd_round_duration')
-          required int roundDuration,
+      required final int numShardsWithoutMeta,
+      @JsonKey(name: 'erd_round_duration') required final int roundDuration,
       @JsonKey(name: 'erd_shard_consensus_group_size')
-          required int shardConsensusGroupSize,
+      required final int shardConsensusGroupSize,
       @JsonKey(name: 'erd_start_time')
-          required int startTime}) = _$_NetworkConfigurationInformationsData;
+      required final int
+          startTime}) = _$NetworkConfigurationInformationsDataImpl;
 
   factory _NetworkConfigurationInformationsData.fromJson(
           Map<String, dynamic> json) =
-      _$_NetworkConfigurationInformationsData.fromJson;
+      _$NetworkConfigurationInformationsDataImpl.fromJson;
 
   @override
   @ChainIdConverter()
@@ -804,7 +712,7 @@ abstract class _NetworkConfigurationInformationsData
   int get startTime;
   @override
   @JsonKey(ignore: true)
-  _$NetworkConfigurationInformationsDataCopyWith<
-          _NetworkConfigurationInformationsData>
+  _$$NetworkConfigurationInformationsDataImplCopyWith<
+          _$NetworkConfigurationInformationsDataImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

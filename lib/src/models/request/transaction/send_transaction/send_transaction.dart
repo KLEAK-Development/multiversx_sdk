@@ -27,4 +27,7 @@ class SendTransactionRequest with _$SendTransactionRequest {
 
   factory SendTransactionRequest.fromJson(Map<String, dynamic> json) =>
       _$SendTransactionRequestFromJson(json);
+
+  @override
+  Map<String, dynamic> toJson() => toJson();
 }

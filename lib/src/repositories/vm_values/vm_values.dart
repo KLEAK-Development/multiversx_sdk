@@ -7,7 +7,8 @@ part 'vm_values.g.dart';
 
 @RestApi(baseUrl: 'https://gateway.multiversx.com')
 abstract class VmValuesRepository {
-  factory VmValuesRepository(Dio dio, {String baseUrl}) = _VmValuesRepository;
+  factory VmValuesRepository(Dio dio, {required String baseUrl}) =
+      _VmValuesRepository;
 
   @POST('/vm-values/query')
   Future<VmValuesQuery> query(@Body() VmValuesRequest request);

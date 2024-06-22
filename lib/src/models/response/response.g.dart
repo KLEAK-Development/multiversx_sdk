@@ -6,10 +6,10 @@ part of 'response.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ProxyResponseGeneric _$$ProxyResponseGenericFromJson(
+_$ProxyResponseGenericImpl _$$ProxyResponseGenericImplFromJson(
         Map<String, dynamic> json) =>
-    _$ProxyResponseGeneric(
-      data: (json['data'] as Map<String, dynamic>).map(
+    _$ProxyResponseGenericImpl(
+      data: (json['data'] as Map<String, dynamic>?)?.map(
         (k, e) => MapEntry(k, e as Object),
       ),
       error: json['error'] as String?,
@@ -17,8 +17,8 @@ _$ProxyResponseGeneric _$$ProxyResponseGenericFromJson(
       $type: json['runtimeType'] as String?,
     );
 
-Map<String, dynamic> _$$ProxyResponseGenericToJson(
-        _$ProxyResponseGeneric instance) =>
+Map<String, dynamic> _$$ProxyResponseGenericImplToJson(
+        _$ProxyResponseGenericImpl instance) =>
     <String, dynamic>{
       'data': instance.data,
       'error': instance.error,
@@ -26,17 +26,17 @@ Map<String, dynamic> _$$ProxyResponseGenericToJson(
       'runtimeType': instance.$type,
     };
 
-_$GetAccountInformationResponse _$$GetAccountInformationResponseFromJson(
-        Map<String, dynamic> json) =>
-    _$GetAccountInformationResponse(
-      data: AccountResponse.fromJson(json['data'] as Map<String, dynamic>),
-      error: json['error'] as String?,
-      code: json['code'] as String,
-      $type: json['runtimeType'] as String?,
-    );
+_$GetAccountInformationResponseImpl
+    _$$GetAccountInformationResponseImplFromJson(Map<String, dynamic> json) =>
+        _$GetAccountInformationResponseImpl(
+          data: AccountResponse.fromJson(json['data'] as Map<String, dynamic>),
+          error: json['error'] as String?,
+          code: json['code'] as String,
+          $type: json['runtimeType'] as String?,
+        );
 
-Map<String, dynamic> _$$GetAccountInformationResponseToJson(
-        _$GetAccountInformationResponse instance) =>
+Map<String, dynamic> _$$GetAccountInformationResponseImplToJson(
+        _$GetAccountInformationResponseImpl instance) =>
     <String, dynamic>{
       'data': instance.data,
       'error': instance.error,
@@ -44,9 +44,9 @@ Map<String, dynamic> _$$GetAccountInformationResponseToJson(
       'runtimeType': instance.$type,
     };
 
-_$NetworkConfigurationResponse _$$NetworkConfigurationResponseFromJson(
+_$NetworkConfigurationResponseImpl _$$NetworkConfigurationResponseImplFromJson(
         Map<String, dynamic> json) =>
-    _$NetworkConfigurationResponse(
+    _$NetworkConfigurationResponseImpl(
       data: NetworkConfigurationData.fromJson(
           json['data'] as Map<String, dynamic>),
       error: json['error'] as String?,
@@ -54,8 +54,8 @@ _$NetworkConfigurationResponse _$$NetworkConfigurationResponseFromJson(
       $type: json['runtimeType'] as String?,
     );
 
-Map<String, dynamic> _$$NetworkConfigurationResponseToJson(
-        _$NetworkConfigurationResponse instance) =>
+Map<String, dynamic> _$$NetworkConfigurationResponseImplToJson(
+        _$NetworkConfigurationResponseImpl instance) =>
     <String, dynamic>{
       'data': instance.data,
       'error': instance.error,
@@ -63,17 +63,17 @@ Map<String, dynamic> _$$NetworkConfigurationResponseToJson(
       'runtimeType': instance.$type,
     };
 
-_$SendTransactionResponse _$$SendTransactionResponseFromJson(
+_$SendTransactionResponseImpl _$$SendTransactionResponseImplFromJson(
         Map<String, dynamic> json) =>
-    _$SendTransactionResponse(
+    _$SendTransactionResponseImpl(
       data: SendTransactionData.fromJson(json['data'] as Map<String, dynamic>),
       error: json['error'] as String?,
       code: json['code'] as String,
       $type: json['runtimeType'] as String?,
     );
 
-Map<String, dynamic> _$$SendTransactionResponseToJson(
-        _$SendTransactionResponse instance) =>
+Map<String, dynamic> _$$SendTransactionResponseImplToJson(
+        _$SendTransactionResponseImpl instance) =>
     <String, dynamic>{
       'data': instance.data,
       'error': instance.error,
@@ -81,9 +81,9 @@ Map<String, dynamic> _$$SendTransactionResponseToJson(
       'runtimeType': instance.$type,
     };
 
-_$GetTransactionStatusResponse _$$GetTransactionStatusResponseFromJson(
+_$GetTransactionStatusResponseImpl _$$GetTransactionStatusResponseImplFromJson(
         Map<String, dynamic> json) =>
-    _$GetTransactionStatusResponse(
+    _$GetTransactionStatusResponseImpl(
       data: GetTransactionStatusData.fromJson(
           json['data'] as Map<String, dynamic>),
       error: json['error'] as String?,
@@ -91,8 +91,8 @@ _$GetTransactionStatusResponse _$$GetTransactionStatusResponseFromJson(
       $type: json['runtimeType'] as String?,
     );
 
-Map<String, dynamic> _$$GetTransactionStatusResponseToJson(
-        _$GetTransactionStatusResponse instance) =>
+Map<String, dynamic> _$$GetTransactionStatusResponseImplToJson(
+        _$GetTransactionStatusResponseImpl instance) =>
     <String, dynamic>{
       'data': instance.data,
       'error': instance.error,
@@ -100,10 +100,10 @@ Map<String, dynamic> _$$GetTransactionStatusResponseToJson(
       'runtimeType': instance.$type,
     };
 
-_$GetTransactionInformationsWithSmartContractResultsResponse
-    _$$GetTransactionInformationsWithSmartContractResultsResponseFromJson(
+_$GetTransactionInformationsWithSmartContractResultsResponseImpl
+    _$$GetTransactionInformationsWithSmartContractResultsResponseImplFromJson(
             Map<String, dynamic> json) =>
-        _$GetTransactionInformationsWithSmartContractResultsResponse(
+        _$GetTransactionInformationsWithSmartContractResultsResponseImpl(
           data: GetTransactionInformationsWithSmartContractResultData.fromJson(
               json['data'] as Map<String, dynamic>),
           error: json['error'] as String?,
@@ -112,8 +112,8 @@ _$GetTransactionInformationsWithSmartContractResultsResponse
         );
 
 Map<String, dynamic>
-    _$$GetTransactionInformationsWithSmartContractResultsResponseToJson(
-            _$GetTransactionInformationsWithSmartContractResultsResponse
+    _$$GetTransactionInformationsWithSmartContractResultsResponseImplToJson(
+            _$GetTransactionInformationsWithSmartContractResultsResponseImpl
                 instance) =>
         <String, dynamic>{
           'data': instance.data,
@@ -122,15 +122,15 @@ Map<String, dynamic>
           'runtimeType': instance.$type,
         };
 
-_$VmValuesQuery _$$VmValuesQueryFromJson(Map<String, dynamic> json) =>
-    _$VmValuesQuery(
+_$VmValuesQueryImpl _$$VmValuesQueryImplFromJson(Map<String, dynamic> json) =>
+    _$VmValuesQueryImpl(
       data: VmValuesResponse.fromJson(json['data'] as Map<String, dynamic>),
       error: json['error'] as String?,
       code: json['code'] as String,
       $type: json['runtimeType'] as String?,
     );
 
-Map<String, dynamic> _$$VmValuesQueryToJson(_$VmValuesQuery instance) =>
+Map<String, dynamic> _$$VmValuesQueryImplToJson(_$VmValuesQueryImpl instance) =>
     <String, dynamic>{
       'data': instance.data,
       'error': instance.error,

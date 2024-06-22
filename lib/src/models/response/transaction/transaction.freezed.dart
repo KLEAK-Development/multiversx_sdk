@@ -1,6 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'transaction.dart';
 
@@ -11,30 +12,11 @@ part of 'transaction.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 SendTransactionData _$SendTransactionDataFromJson(Map<String, dynamic> json) {
   return _SendTransactionData.fromJson(json);
 }
-
-/// @nodoc
-class _$SendTransactionDataTearOff {
-  const _$SendTransactionDataTearOff();
-
-  _SendTransactionData call(
-      {@TransactionHashConverter() required TransactionHash txHash}) {
-    return _SendTransactionData(
-      txHash: txHash,
-    );
-  }
-
-  SendTransactionData fromJson(Map<String, Object?> json) {
-    return SendTransactionData.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $SendTransactionData = _$SendTransactionDataTearOff();
 
 /// @nodoc
 mixin _$SendTransactionData {
@@ -51,59 +33,61 @@ mixin _$SendTransactionData {
 abstract class $SendTransactionDataCopyWith<$Res> {
   factory $SendTransactionDataCopyWith(
           SendTransactionData value, $Res Function(SendTransactionData) then) =
-      _$SendTransactionDataCopyWithImpl<$Res>;
+      _$SendTransactionDataCopyWithImpl<$Res, SendTransactionData>;
+  @useResult
   $Res call({@TransactionHashConverter() TransactionHash txHash});
 }
 
 /// @nodoc
-class _$SendTransactionDataCopyWithImpl<$Res>
+class _$SendTransactionDataCopyWithImpl<$Res, $Val extends SendTransactionData>
     implements $SendTransactionDataCopyWith<$Res> {
   _$SendTransactionDataCopyWithImpl(this._value, this._then);
 
-  final SendTransactionData _value;
   // ignore: unused_field
-  final $Res Function(SendTransactionData) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? txHash = freezed,
+    Object? txHash = null,
   }) {
     return _then(_value.copyWith(
-      txHash: txHash == freezed
+      txHash: null == txHash
           ? _value.txHash
           : txHash // ignore: cast_nullable_to_non_nullable
               as TransactionHash,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$SendTransactionDataCopyWith<$Res>
+abstract class _$$SendTransactionDataImplCopyWith<$Res>
     implements $SendTransactionDataCopyWith<$Res> {
-  factory _$SendTransactionDataCopyWith(_SendTransactionData value,
-          $Res Function(_SendTransactionData) then) =
-      __$SendTransactionDataCopyWithImpl<$Res>;
+  factory _$$SendTransactionDataImplCopyWith(_$SendTransactionDataImpl value,
+          $Res Function(_$SendTransactionDataImpl) then) =
+      __$$SendTransactionDataImplCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({@TransactionHashConverter() TransactionHash txHash});
 }
 
 /// @nodoc
-class __$SendTransactionDataCopyWithImpl<$Res>
-    extends _$SendTransactionDataCopyWithImpl<$Res>
-    implements _$SendTransactionDataCopyWith<$Res> {
-  __$SendTransactionDataCopyWithImpl(
-      _SendTransactionData _value, $Res Function(_SendTransactionData) _then)
-      : super(_value, (v) => _then(v as _SendTransactionData));
+class __$$SendTransactionDataImplCopyWithImpl<$Res>
+    extends _$SendTransactionDataCopyWithImpl<$Res, _$SendTransactionDataImpl>
+    implements _$$SendTransactionDataImplCopyWith<$Res> {
+  __$$SendTransactionDataImplCopyWithImpl(_$SendTransactionDataImpl _value,
+      $Res Function(_$SendTransactionDataImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _SendTransactionData get _value => super._value as _SendTransactionData;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? txHash = freezed,
+    Object? txHash = null,
   }) {
-    return _then(_SendTransactionData(
-      txHash: txHash == freezed
+    return _then(_$SendTransactionDataImpl(
+      txHash: null == txHash
           ? _value.txHash
           : txHash // ignore: cast_nullable_to_non_nullable
               as TransactionHash,
@@ -113,11 +97,11 @@ class __$SendTransactionDataCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_SendTransactionData implements _SendTransactionData {
-  _$_SendTransactionData({@TransactionHashConverter() required this.txHash});
+class _$SendTransactionDataImpl implements _SendTransactionData {
+  _$SendTransactionDataImpl({@TransactionHashConverter() required this.txHash});
 
-  factory _$_SendTransactionData.fromJson(Map<String, dynamic> json) =>
-      _$$_SendTransactionDataFromJson(json);
+  factory _$SendTransactionDataImpl.fromJson(Map<String, dynamic> json) =>
+      _$$SendTransactionDataImplFromJson(json);
 
   @override
   @TransactionHashConverter()
@@ -129,42 +113,46 @@ class _$_SendTransactionData implements _SendTransactionData {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _SendTransactionData &&
+            other is _$SendTransactionDataImpl &&
             (identical(other.txHash, txHash) || other.txHash == txHash));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, txHash);
 
   @JsonKey(ignore: true)
   @override
-  _$SendTransactionDataCopyWith<_SendTransactionData> get copyWith =>
-      __$SendTransactionDataCopyWithImpl<_SendTransactionData>(
+  @pragma('vm:prefer-inline')
+  _$$SendTransactionDataImplCopyWith<_$SendTransactionDataImpl> get copyWith =>
+      __$$SendTransactionDataImplCopyWithImpl<_$SendTransactionDataImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_SendTransactionDataToJson(this);
+    return _$$SendTransactionDataImplToJson(
+      this,
+    );
   }
 }
 
 abstract class _SendTransactionData implements SendTransactionData {
   factory _SendTransactionData(
-          {@TransactionHashConverter() required TransactionHash txHash}) =
-      _$_SendTransactionData;
+          {@TransactionHashConverter() required final TransactionHash txHash}) =
+      _$SendTransactionDataImpl;
 
   factory _SendTransactionData.fromJson(Map<String, dynamic> json) =
-      _$_SendTransactionData.fromJson;
+      _$SendTransactionDataImpl.fromJson;
 
   @override
   @TransactionHashConverter()
   TransactionHash get txHash;
   @override
   @JsonKey(ignore: true)
-  _$SendTransactionDataCopyWith<_SendTransactionData> get copyWith =>
+  _$$SendTransactionDataImplCopyWith<_$SendTransactionDataImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -172,27 +160,6 @@ SendMultipleTransactionResponse _$SendMultipleTransactionResponseFromJson(
     Map<String, dynamic> json) {
   return _SendMultipleTransactionResponse.fromJson(json);
 }
-
-/// @nodoc
-class _$SendMultipleTransactionResponseTearOff {
-  const _$SendMultipleTransactionResponseTearOff();
-
-  _SendMultipleTransactionResponse call(
-      {required int numOfSentTxs, required Map<String, String> txsHashes}) {
-    return _SendMultipleTransactionResponse(
-      numOfSentTxs: numOfSentTxs,
-      txsHashes: txsHashes,
-    );
-  }
-
-  SendMultipleTransactionResponse fromJson(Map<String, Object?> json) {
-    return SendMultipleTransactionResponse.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $SendMultipleTransactionResponse =
-    _$SendMultipleTransactionResponseTearOff();
 
 /// @nodoc
 mixin _$SendMultipleTransactionResponse {
@@ -210,73 +177,77 @@ abstract class $SendMultipleTransactionResponseCopyWith<$Res> {
   factory $SendMultipleTransactionResponseCopyWith(
           SendMultipleTransactionResponse value,
           $Res Function(SendMultipleTransactionResponse) then) =
-      _$SendMultipleTransactionResponseCopyWithImpl<$Res>;
+      _$SendMultipleTransactionResponseCopyWithImpl<$Res,
+          SendMultipleTransactionResponse>;
+  @useResult
   $Res call({int numOfSentTxs, Map<String, String> txsHashes});
 }
 
 /// @nodoc
-class _$SendMultipleTransactionResponseCopyWithImpl<$Res>
+class _$SendMultipleTransactionResponseCopyWithImpl<$Res,
+        $Val extends SendMultipleTransactionResponse>
     implements $SendMultipleTransactionResponseCopyWith<$Res> {
   _$SendMultipleTransactionResponseCopyWithImpl(this._value, this._then);
 
-  final SendMultipleTransactionResponse _value;
   // ignore: unused_field
-  final $Res Function(SendMultipleTransactionResponse) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? numOfSentTxs = freezed,
-    Object? txsHashes = freezed,
+    Object? numOfSentTxs = null,
+    Object? txsHashes = null,
   }) {
     return _then(_value.copyWith(
-      numOfSentTxs: numOfSentTxs == freezed
+      numOfSentTxs: null == numOfSentTxs
           ? _value.numOfSentTxs
           : numOfSentTxs // ignore: cast_nullable_to_non_nullable
               as int,
-      txsHashes: txsHashes == freezed
+      txsHashes: null == txsHashes
           ? _value.txsHashes
           : txsHashes // ignore: cast_nullable_to_non_nullable
               as Map<String, String>,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$SendMultipleTransactionResponseCopyWith<$Res>
+abstract class _$$SendMultipleTransactionResponseImplCopyWith<$Res>
     implements $SendMultipleTransactionResponseCopyWith<$Res> {
-  factory _$SendMultipleTransactionResponseCopyWith(
-          _SendMultipleTransactionResponse value,
-          $Res Function(_SendMultipleTransactionResponse) then) =
-      __$SendMultipleTransactionResponseCopyWithImpl<$Res>;
+  factory _$$SendMultipleTransactionResponseImplCopyWith(
+          _$SendMultipleTransactionResponseImpl value,
+          $Res Function(_$SendMultipleTransactionResponseImpl) then) =
+      __$$SendMultipleTransactionResponseImplCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({int numOfSentTxs, Map<String, String> txsHashes});
 }
 
 /// @nodoc
-class __$SendMultipleTransactionResponseCopyWithImpl<$Res>
-    extends _$SendMultipleTransactionResponseCopyWithImpl<$Res>
-    implements _$SendMultipleTransactionResponseCopyWith<$Res> {
-  __$SendMultipleTransactionResponseCopyWithImpl(
-      _SendMultipleTransactionResponse _value,
-      $Res Function(_SendMultipleTransactionResponse) _then)
-      : super(_value, (v) => _then(v as _SendMultipleTransactionResponse));
+class __$$SendMultipleTransactionResponseImplCopyWithImpl<$Res>
+    extends _$SendMultipleTransactionResponseCopyWithImpl<$Res,
+        _$SendMultipleTransactionResponseImpl>
+    implements _$$SendMultipleTransactionResponseImplCopyWith<$Res> {
+  __$$SendMultipleTransactionResponseImplCopyWithImpl(
+      _$SendMultipleTransactionResponseImpl _value,
+      $Res Function(_$SendMultipleTransactionResponseImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _SendMultipleTransactionResponse get _value =>
-      super._value as _SendMultipleTransactionResponse;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? numOfSentTxs = freezed,
-    Object? txsHashes = freezed,
+    Object? numOfSentTxs = null,
+    Object? txsHashes = null,
   }) {
-    return _then(_SendMultipleTransactionResponse(
-      numOfSentTxs: numOfSentTxs == freezed
+    return _then(_$SendMultipleTransactionResponseImpl(
+      numOfSentTxs: null == numOfSentTxs
           ? _value.numOfSentTxs
           : numOfSentTxs // ignore: cast_nullable_to_non_nullable
               as int,
-      txsHashes: txsHashes == freezed
-          ? _value.txsHashes
+      txsHashes: null == txsHashes
+          ? _value._txsHashes
           : txsHashes // ignore: cast_nullable_to_non_nullable
               as Map<String, String>,
     ));
@@ -285,19 +256,26 @@ class __$SendMultipleTransactionResponseCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_SendMultipleTransactionResponse
+class _$SendMultipleTransactionResponseImpl
     implements _SendMultipleTransactionResponse {
-  _$_SendMultipleTransactionResponse(
-      {required this.numOfSentTxs, required this.txsHashes});
+  _$SendMultipleTransactionResponseImpl(
+      {required this.numOfSentTxs,
+      required final Map<String, String> txsHashes})
+      : _txsHashes = txsHashes;
 
-  factory _$_SendMultipleTransactionResponse.fromJson(
+  factory _$SendMultipleTransactionResponseImpl.fromJson(
           Map<String, dynamic> json) =>
-      _$$_SendMultipleTransactionResponseFromJson(json);
+      _$$SendMultipleTransactionResponseImplFromJson(json);
 
   @override
   final int numOfSentTxs;
+  final Map<String, String> _txsHashes;
   @override
-  final Map<String, String> txsHashes;
+  Map<String, String> get txsHashes {
+    if (_txsHashes is EqualUnmodifiableMapView) return _txsHashes;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(_txsHashes);
+  }
 
   @override
   String toString() {
@@ -305,39 +283,46 @@ class _$_SendMultipleTransactionResponse
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _SendMultipleTransactionResponse &&
+            other is _$SendMultipleTransactionResponseImpl &&
             (identical(other.numOfSentTxs, numOfSentTxs) ||
                 other.numOfSentTxs == numOfSentTxs) &&
-            const DeepCollectionEquality().equals(other.txsHashes, txsHashes));
+            const DeepCollectionEquality()
+                .equals(other._txsHashes, _txsHashes));
   }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, numOfSentTxs,
-      const DeepCollectionEquality().hash(txsHashes));
 
   @JsonKey(ignore: true)
   @override
-  _$SendMultipleTransactionResponseCopyWith<_SendMultipleTransactionResponse>
-      get copyWith => __$SendMultipleTransactionResponseCopyWithImpl<
-          _SendMultipleTransactionResponse>(this, _$identity);
+  int get hashCode => Object.hash(runtimeType, numOfSentTxs,
+      const DeepCollectionEquality().hash(_txsHashes));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SendMultipleTransactionResponseImplCopyWith<
+          _$SendMultipleTransactionResponseImpl>
+      get copyWith => __$$SendMultipleTransactionResponseImplCopyWithImpl<
+          _$SendMultipleTransactionResponseImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_SendMultipleTransactionResponseToJson(this);
+    return _$$SendMultipleTransactionResponseImplToJson(
+      this,
+    );
   }
 }
 
 abstract class _SendMultipleTransactionResponse
     implements SendMultipleTransactionResponse {
   factory _SendMultipleTransactionResponse(
-          {required int numOfSentTxs, required Map<String, String> txsHashes}) =
-      _$_SendMultipleTransactionResponse;
+          {required final int numOfSentTxs,
+          required final Map<String, String> txsHashes}) =
+      _$SendMultipleTransactionResponseImpl;
 
   factory _SendMultipleTransactionResponse.fromJson(Map<String, dynamic> json) =
-      _$_SendMultipleTransactionResponse.fromJson;
+      _$SendMultipleTransactionResponseImpl.fromJson;
 
   @override
   int get numOfSentTxs;
@@ -345,7 +330,8 @@ abstract class _SendMultipleTransactionResponse
   Map<String, String> get txsHashes;
   @override
   @JsonKey(ignore: true)
-  _$SendMultipleTransactionResponseCopyWith<_SendMultipleTransactionResponse>
+  _$$SendMultipleTransactionResponseImplCopyWith<
+          _$SendMultipleTransactionResponseImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -353,24 +339,6 @@ GetTransactionStatusData _$GetTransactionStatusDataFromJson(
     Map<String, dynamic> json) {
   return _GetTransactionStatusData.fromJson(json);
 }
-
-/// @nodoc
-class _$GetTransactionStatusDataTearOff {
-  const _$GetTransactionStatusDataTearOff();
-
-  _GetTransactionStatusData call({required TransactionStatus status}) {
-    return _GetTransactionStatusData(
-      status: status,
-    );
-  }
-
-  GetTransactionStatusData fromJson(Map<String, Object?> json) {
-    return GetTransactionStatusData.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $GetTransactionStatusData = _$GetTransactionStatusDataTearOff();
 
 /// @nodoc
 mixin _$GetTransactionStatusData {
@@ -386,60 +354,65 @@ mixin _$GetTransactionStatusData {
 abstract class $GetTransactionStatusDataCopyWith<$Res> {
   factory $GetTransactionStatusDataCopyWith(GetTransactionStatusData value,
           $Res Function(GetTransactionStatusData) then) =
-      _$GetTransactionStatusDataCopyWithImpl<$Res>;
+      _$GetTransactionStatusDataCopyWithImpl<$Res, GetTransactionStatusData>;
+  @useResult
   $Res call({TransactionStatus status});
 }
 
 /// @nodoc
-class _$GetTransactionStatusDataCopyWithImpl<$Res>
+class _$GetTransactionStatusDataCopyWithImpl<$Res,
+        $Val extends GetTransactionStatusData>
     implements $GetTransactionStatusDataCopyWith<$Res> {
   _$GetTransactionStatusDataCopyWithImpl(this._value, this._then);
 
-  final GetTransactionStatusData _value;
   // ignore: unused_field
-  final $Res Function(GetTransactionStatusData) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? status = freezed,
+    Object? status = null,
   }) {
     return _then(_value.copyWith(
-      status: status == freezed
+      status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as TransactionStatus,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$GetTransactionStatusDataCopyWith<$Res>
+abstract class _$$GetTransactionStatusDataImplCopyWith<$Res>
     implements $GetTransactionStatusDataCopyWith<$Res> {
-  factory _$GetTransactionStatusDataCopyWith(_GetTransactionStatusData value,
-          $Res Function(_GetTransactionStatusData) then) =
-      __$GetTransactionStatusDataCopyWithImpl<$Res>;
+  factory _$$GetTransactionStatusDataImplCopyWith(
+          _$GetTransactionStatusDataImpl value,
+          $Res Function(_$GetTransactionStatusDataImpl) then) =
+      __$$GetTransactionStatusDataImplCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({TransactionStatus status});
 }
 
 /// @nodoc
-class __$GetTransactionStatusDataCopyWithImpl<$Res>
-    extends _$GetTransactionStatusDataCopyWithImpl<$Res>
-    implements _$GetTransactionStatusDataCopyWith<$Res> {
-  __$GetTransactionStatusDataCopyWithImpl(_GetTransactionStatusData _value,
-      $Res Function(_GetTransactionStatusData) _then)
-      : super(_value, (v) => _then(v as _GetTransactionStatusData));
+class __$$GetTransactionStatusDataImplCopyWithImpl<$Res>
+    extends _$GetTransactionStatusDataCopyWithImpl<$Res,
+        _$GetTransactionStatusDataImpl>
+    implements _$$GetTransactionStatusDataImplCopyWith<$Res> {
+  __$$GetTransactionStatusDataImplCopyWithImpl(
+      _$GetTransactionStatusDataImpl _value,
+      $Res Function(_$GetTransactionStatusDataImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _GetTransactionStatusData get _value =>
-      super._value as _GetTransactionStatusData;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? status = freezed,
+    Object? status = null,
   }) {
-    return _then(_GetTransactionStatusData(
-      status: status == freezed
+    return _then(_$GetTransactionStatusDataImpl(
+      status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as TransactionStatus,
@@ -449,11 +422,11 @@ class __$GetTransactionStatusDataCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_GetTransactionStatusData implements _GetTransactionStatusData {
-  _$_GetTransactionStatusData({required this.status});
+class _$GetTransactionStatusDataImpl implements _GetTransactionStatusData {
+  _$GetTransactionStatusDataImpl({required this.status});
 
-  factory _$_GetTransactionStatusData.fromJson(Map<String, dynamic> json) =>
-      _$$_GetTransactionStatusDataFromJson(json);
+  factory _$GetTransactionStatusDataImpl.fromJson(Map<String, dynamic> json) =>
+      _$$GetTransactionStatusDataImplFromJson(json);
 
   @override
   final TransactionStatus status;
@@ -464,41 +437,45 @@ class _$_GetTransactionStatusData implements _GetTransactionStatusData {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _GetTransactionStatusData &&
+            other is _$GetTransactionStatusDataImpl &&
             (identical(other.status, status) || other.status == status));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, status);
 
   @JsonKey(ignore: true)
   @override
-  _$GetTransactionStatusDataCopyWith<_GetTransactionStatusData> get copyWith =>
-      __$GetTransactionStatusDataCopyWithImpl<_GetTransactionStatusData>(
-          this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$GetTransactionStatusDataImplCopyWith<_$GetTransactionStatusDataImpl>
+      get copyWith => __$$GetTransactionStatusDataImplCopyWithImpl<
+          _$GetTransactionStatusDataImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_GetTransactionStatusDataToJson(this);
+    return _$$GetTransactionStatusDataImplToJson(
+      this,
+    );
   }
 }
 
 abstract class _GetTransactionStatusData implements GetTransactionStatusData {
-  factory _GetTransactionStatusData({required TransactionStatus status}) =
-      _$_GetTransactionStatusData;
+  factory _GetTransactionStatusData({required final TransactionStatus status}) =
+      _$GetTransactionStatusDataImpl;
 
   factory _GetTransactionStatusData.fromJson(Map<String, dynamic> json) =
-      _$_GetTransactionStatusData.fromJson;
+      _$GetTransactionStatusDataImpl.fromJson;
 
   @override
   TransactionStatus get status;
   @override
   @JsonKey(ignore: true)
-  _$GetTransactionStatusDataCopyWith<_GetTransactionStatusData> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$GetTransactionStatusDataImplCopyWith<_$GetTransactionStatusDataImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 GetTransactionInformationsWithSmartContractResultData
@@ -506,61 +483,6 @@ GetTransactionInformationsWithSmartContractResultData
         Map<String, dynamic> json) {
   return _GetTransactionInformationsWithSmartContractResultData.fromJson(json);
 }
-
-/// @nodoc
-class _$GetTransactionInformationsWithSmartContractResultDataTearOff {
-  const _$GetTransactionInformationsWithSmartContractResultDataTearOff();
-
-  _GetTransactionInformationsWithSmartContractResultData call(
-      {required String data,
-      required String fee,
-      @GasLimitConverter() required GasLimit gasLimit,
-      @GasPriceConverter() required GasPrice gasPrice,
-      required int gasUsed,
-      required String miniBlockHash,
-      @NonceConverter() required Nonce nonce,
-      @AddressConverter() required Address receiver,
-      required int receiverShard,
-      required int round,
-      required List<SmartContractResultData> scResults,
-      @AddressConverter() required Address sender,
-      required int senderShard,
-      required String signature,
-      required String status,
-      required int timestamp,
-      @TransactionHashConverter() required TransactionHash txHash,
-      @BalanceConverter() required Balance value}) {
-    return _GetTransactionInformationsWithSmartContractResultData(
-      data: data,
-      fee: fee,
-      gasLimit: gasLimit,
-      gasPrice: gasPrice,
-      gasUsed: gasUsed,
-      miniBlockHash: miniBlockHash,
-      nonce: nonce,
-      receiver: receiver,
-      receiverShard: receiverShard,
-      round: round,
-      scResults: scResults,
-      sender: sender,
-      senderShard: senderShard,
-      signature: signature,
-      status: status,
-      timestamp: timestamp,
-      txHash: txHash,
-      value: value,
-    );
-  }
-
-  GetTransactionInformationsWithSmartContractResultData fromJson(
-      Map<String, Object?> json) {
-    return GetTransactionInformationsWithSmartContractResultData.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $GetTransactionInformationsWithSmartContractResultData =
-    _$GetTransactionInformationsWithSmartContractResultDataTearOff();
 
 /// @nodoc
 mixin _$GetTransactionInformationsWithSmartContractResultData {
@@ -605,7 +527,9 @@ abstract class $GetTransactionInformationsWithSmartContractResultDataCopyWith<
           GetTransactionInformationsWithSmartContractResultData value,
           $Res Function(GetTransactionInformationsWithSmartContractResultData)
               then) =
-      _$GetTransactionInformationsWithSmartContractResultDataCopyWithImpl<$Res>;
+      _$GetTransactionInformationsWithSmartContractResultDataCopyWithImpl<$Res,
+          GetTransactionInformationsWithSmartContractResultData>;
+  @useResult
   $Res call(
       {String data,
       String fee,
@@ -628,127 +552,131 @@ abstract class $GetTransactionInformationsWithSmartContractResultDataCopyWith<
 }
 
 /// @nodoc
-class _$GetTransactionInformationsWithSmartContractResultDataCopyWithImpl<$Res>
+class _$GetTransactionInformationsWithSmartContractResultDataCopyWithImpl<$Res,
+        $Val extends GetTransactionInformationsWithSmartContractResultData>
     implements
         $GetTransactionInformationsWithSmartContractResultDataCopyWith<$Res> {
   _$GetTransactionInformationsWithSmartContractResultDataCopyWithImpl(
       this._value, this._then);
 
-  final GetTransactionInformationsWithSmartContractResultData _value;
   // ignore: unused_field
-  final $Res Function(GetTransactionInformationsWithSmartContractResultData)
-      _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? data = freezed,
-    Object? fee = freezed,
-    Object? gasLimit = freezed,
-    Object? gasPrice = freezed,
-    Object? gasUsed = freezed,
-    Object? miniBlockHash = freezed,
-    Object? nonce = freezed,
-    Object? receiver = freezed,
-    Object? receiverShard = freezed,
-    Object? round = freezed,
-    Object? scResults = freezed,
-    Object? sender = freezed,
-    Object? senderShard = freezed,
-    Object? signature = freezed,
-    Object? status = freezed,
-    Object? timestamp = freezed,
-    Object? txHash = freezed,
-    Object? value = freezed,
+    Object? data = null,
+    Object? fee = null,
+    Object? gasLimit = null,
+    Object? gasPrice = null,
+    Object? gasUsed = null,
+    Object? miniBlockHash = null,
+    Object? nonce = null,
+    Object? receiver = null,
+    Object? receiverShard = null,
+    Object? round = null,
+    Object? scResults = null,
+    Object? sender = null,
+    Object? senderShard = null,
+    Object? signature = null,
+    Object? status = null,
+    Object? timestamp = null,
+    Object? txHash = null,
+    Object? value = null,
   }) {
     return _then(_value.copyWith(
-      data: data == freezed
+      data: null == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
               as String,
-      fee: fee == freezed
+      fee: null == fee
           ? _value.fee
           : fee // ignore: cast_nullable_to_non_nullable
               as String,
-      gasLimit: gasLimit == freezed
+      gasLimit: null == gasLimit
           ? _value.gasLimit
           : gasLimit // ignore: cast_nullable_to_non_nullable
               as GasLimit,
-      gasPrice: gasPrice == freezed
+      gasPrice: null == gasPrice
           ? _value.gasPrice
           : gasPrice // ignore: cast_nullable_to_non_nullable
               as GasPrice,
-      gasUsed: gasUsed == freezed
+      gasUsed: null == gasUsed
           ? _value.gasUsed
           : gasUsed // ignore: cast_nullable_to_non_nullable
               as int,
-      miniBlockHash: miniBlockHash == freezed
+      miniBlockHash: null == miniBlockHash
           ? _value.miniBlockHash
           : miniBlockHash // ignore: cast_nullable_to_non_nullable
               as String,
-      nonce: nonce == freezed
+      nonce: null == nonce
           ? _value.nonce
           : nonce // ignore: cast_nullable_to_non_nullable
               as Nonce,
-      receiver: receiver == freezed
+      receiver: null == receiver
           ? _value.receiver
           : receiver // ignore: cast_nullable_to_non_nullable
               as Address,
-      receiverShard: receiverShard == freezed
+      receiverShard: null == receiverShard
           ? _value.receiverShard
           : receiverShard // ignore: cast_nullable_to_non_nullable
               as int,
-      round: round == freezed
+      round: null == round
           ? _value.round
           : round // ignore: cast_nullable_to_non_nullable
               as int,
-      scResults: scResults == freezed
+      scResults: null == scResults
           ? _value.scResults
           : scResults // ignore: cast_nullable_to_non_nullable
               as List<SmartContractResultData>,
-      sender: sender == freezed
+      sender: null == sender
           ? _value.sender
           : sender // ignore: cast_nullable_to_non_nullable
               as Address,
-      senderShard: senderShard == freezed
+      senderShard: null == senderShard
           ? _value.senderShard
           : senderShard // ignore: cast_nullable_to_non_nullable
               as int,
-      signature: signature == freezed
+      signature: null == signature
           ? _value.signature
           : signature // ignore: cast_nullable_to_non_nullable
               as String,
-      status: status == freezed
+      status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as String,
-      timestamp: timestamp == freezed
+      timestamp: null == timestamp
           ? _value.timestamp
           : timestamp // ignore: cast_nullable_to_non_nullable
               as int,
-      txHash: txHash == freezed
+      txHash: null == txHash
           ? _value.txHash
           : txHash // ignore: cast_nullable_to_non_nullable
               as TransactionHash,
-      value: value == freezed
+      value: null == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
               as Balance,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$GetTransactionInformationsWithSmartContractResultDataCopyWith<
+abstract class _$$GetTransactionInformationsWithSmartContractResultDataImplCopyWith<
         $Res>
     implements
         $GetTransactionInformationsWithSmartContractResultDataCopyWith<$Res> {
-  factory _$GetTransactionInformationsWithSmartContractResultDataCopyWith(
-          _GetTransactionInformationsWithSmartContractResultData value,
-          $Res Function(_GetTransactionInformationsWithSmartContractResultData)
+  factory _$$GetTransactionInformationsWithSmartContractResultDataImplCopyWith(
+          _$GetTransactionInformationsWithSmartContractResultDataImpl value,
+          $Res Function(
+                  _$GetTransactionInformationsWithSmartContractResultDataImpl)
               then) =
-      __$GetTransactionInformationsWithSmartContractResultDataCopyWithImpl<
+      __$$GetTransactionInformationsWithSmartContractResultDataImplCopyWithImpl<
           $Res>;
   @override
+  @useResult
   $Res call(
       {String data,
       String fee,
@@ -771,115 +699,111 @@ abstract class _$GetTransactionInformationsWithSmartContractResultDataCopyWith<
 }
 
 /// @nodoc
-class __$GetTransactionInformationsWithSmartContractResultDataCopyWithImpl<$Res>
-    extends _$GetTransactionInformationsWithSmartContractResultDataCopyWithImpl<
+class __$$GetTransactionInformationsWithSmartContractResultDataImplCopyWithImpl<
         $Res>
+    extends _$GetTransactionInformationsWithSmartContractResultDataCopyWithImpl<
+        $Res, _$GetTransactionInformationsWithSmartContractResultDataImpl>
     implements
-        _$GetTransactionInformationsWithSmartContractResultDataCopyWith<$Res> {
-  __$GetTransactionInformationsWithSmartContractResultDataCopyWithImpl(
-      _GetTransactionInformationsWithSmartContractResultData _value,
-      $Res Function(_GetTransactionInformationsWithSmartContractResultData)
+        _$$GetTransactionInformationsWithSmartContractResultDataImplCopyWith<
+            $Res> {
+  __$$GetTransactionInformationsWithSmartContractResultDataImplCopyWithImpl(
+      _$GetTransactionInformationsWithSmartContractResultDataImpl _value,
+      $Res Function(_$GetTransactionInformationsWithSmartContractResultDataImpl)
           _then)
-      : super(
-            _value,
-            (v) => _then(
-                v as _GetTransactionInformationsWithSmartContractResultData));
+      : super(_value, _then);
 
-  @override
-  _GetTransactionInformationsWithSmartContractResultData get _value =>
-      super._value as _GetTransactionInformationsWithSmartContractResultData;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? data = freezed,
-    Object? fee = freezed,
-    Object? gasLimit = freezed,
-    Object? gasPrice = freezed,
-    Object? gasUsed = freezed,
-    Object? miniBlockHash = freezed,
-    Object? nonce = freezed,
-    Object? receiver = freezed,
-    Object? receiverShard = freezed,
-    Object? round = freezed,
-    Object? scResults = freezed,
-    Object? sender = freezed,
-    Object? senderShard = freezed,
-    Object? signature = freezed,
-    Object? status = freezed,
-    Object? timestamp = freezed,
-    Object? txHash = freezed,
-    Object? value = freezed,
+    Object? data = null,
+    Object? fee = null,
+    Object? gasLimit = null,
+    Object? gasPrice = null,
+    Object? gasUsed = null,
+    Object? miniBlockHash = null,
+    Object? nonce = null,
+    Object? receiver = null,
+    Object? receiverShard = null,
+    Object? round = null,
+    Object? scResults = null,
+    Object? sender = null,
+    Object? senderShard = null,
+    Object? signature = null,
+    Object? status = null,
+    Object? timestamp = null,
+    Object? txHash = null,
+    Object? value = null,
   }) {
-    return _then(_GetTransactionInformationsWithSmartContractResultData(
-      data: data == freezed
+    return _then(_$GetTransactionInformationsWithSmartContractResultDataImpl(
+      data: null == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
               as String,
-      fee: fee == freezed
+      fee: null == fee
           ? _value.fee
           : fee // ignore: cast_nullable_to_non_nullable
               as String,
-      gasLimit: gasLimit == freezed
+      gasLimit: null == gasLimit
           ? _value.gasLimit
           : gasLimit // ignore: cast_nullable_to_non_nullable
               as GasLimit,
-      gasPrice: gasPrice == freezed
+      gasPrice: null == gasPrice
           ? _value.gasPrice
           : gasPrice // ignore: cast_nullable_to_non_nullable
               as GasPrice,
-      gasUsed: gasUsed == freezed
+      gasUsed: null == gasUsed
           ? _value.gasUsed
           : gasUsed // ignore: cast_nullable_to_non_nullable
               as int,
-      miniBlockHash: miniBlockHash == freezed
+      miniBlockHash: null == miniBlockHash
           ? _value.miniBlockHash
           : miniBlockHash // ignore: cast_nullable_to_non_nullable
               as String,
-      nonce: nonce == freezed
+      nonce: null == nonce
           ? _value.nonce
           : nonce // ignore: cast_nullable_to_non_nullable
               as Nonce,
-      receiver: receiver == freezed
+      receiver: null == receiver
           ? _value.receiver
           : receiver // ignore: cast_nullable_to_non_nullable
               as Address,
-      receiverShard: receiverShard == freezed
+      receiverShard: null == receiverShard
           ? _value.receiverShard
           : receiverShard // ignore: cast_nullable_to_non_nullable
               as int,
-      round: round == freezed
+      round: null == round
           ? _value.round
           : round // ignore: cast_nullable_to_non_nullable
               as int,
-      scResults: scResults == freezed
-          ? _value.scResults
+      scResults: null == scResults
+          ? _value._scResults
           : scResults // ignore: cast_nullable_to_non_nullable
               as List<SmartContractResultData>,
-      sender: sender == freezed
+      sender: null == sender
           ? _value.sender
           : sender // ignore: cast_nullable_to_non_nullable
               as Address,
-      senderShard: senderShard == freezed
+      senderShard: null == senderShard
           ? _value.senderShard
           : senderShard // ignore: cast_nullable_to_non_nullable
               as int,
-      signature: signature == freezed
+      signature: null == signature
           ? _value.signature
           : signature // ignore: cast_nullable_to_non_nullable
               as String,
-      status: status == freezed
+      status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as String,
-      timestamp: timestamp == freezed
+      timestamp: null == timestamp
           ? _value.timestamp
           : timestamp // ignore: cast_nullable_to_non_nullable
               as int,
-      txHash: txHash == freezed
+      txHash: null == txHash
           ? _value.txHash
           : txHash // ignore: cast_nullable_to_non_nullable
               as TransactionHash,
-      value: value == freezed
+      value: null == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
               as Balance,
@@ -889,9 +813,9 @@ class __$GetTransactionInformationsWithSmartContractResultDataCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_GetTransactionInformationsWithSmartContractResultData
+class _$GetTransactionInformationsWithSmartContractResultDataImpl
     implements _GetTransactionInformationsWithSmartContractResultData {
-  _$_GetTransactionInformationsWithSmartContractResultData(
+  _$GetTransactionInformationsWithSmartContractResultDataImpl(
       {required this.data,
       required this.fee,
       @GasLimitConverter() required this.gasLimit,
@@ -902,18 +826,20 @@ class _$_GetTransactionInformationsWithSmartContractResultData
       @AddressConverter() required this.receiver,
       required this.receiverShard,
       required this.round,
-      required this.scResults,
+      required final List<SmartContractResultData> scResults,
       @AddressConverter() required this.sender,
       required this.senderShard,
       required this.signature,
       required this.status,
       required this.timestamp,
       @TransactionHashConverter() required this.txHash,
-      @BalanceConverter() required this.value});
+      @BalanceConverter() required this.value})
+      : _scResults = scResults;
 
-  factory _$_GetTransactionInformationsWithSmartContractResultData.fromJson(
+  factory _$GetTransactionInformationsWithSmartContractResultDataImpl.fromJson(
           Map<String, dynamic> json) =>
-      _$$_GetTransactionInformationsWithSmartContractResultDataFromJson(json);
+      _$$GetTransactionInformationsWithSmartContractResultDataImplFromJson(
+          json);
 
   @override
   final String data;
@@ -939,8 +865,14 @@ class _$_GetTransactionInformationsWithSmartContractResultData
   final int receiverShard;
   @override
   final int round;
+  final List<SmartContractResultData> _scResults;
   @override
-  final List<SmartContractResultData> scResults;
+  List<SmartContractResultData> get scResults {
+    if (_scResults is EqualUnmodifiableListView) return _scResults;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_scResults);
+  }
+
   @override
   @AddressConverter()
   final Address sender;
@@ -965,10 +897,11 @@ class _$_GetTransactionInformationsWithSmartContractResultData
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _GetTransactionInformationsWithSmartContractResultData &&
+            other
+                is _$GetTransactionInformationsWithSmartContractResultDataImpl &&
             (identical(other.data, data) || other.data == data) &&
             (identical(other.fee, fee) || other.fee == fee) &&
             (identical(other.gasLimit, gasLimit) ||
@@ -984,7 +917,8 @@ class _$_GetTransactionInformationsWithSmartContractResultData
             (identical(other.receiverShard, receiverShard) ||
                 other.receiverShard == receiverShard) &&
             (identical(other.round, round) || other.round == round) &&
-            const DeepCollectionEquality().equals(other.scResults, scResults) &&
+            const DeepCollectionEquality()
+                .equals(other._scResults, _scResults) &&
             (identical(other.sender, sender) || other.sender == sender) &&
             (identical(other.senderShard, senderShard) ||
                 other.senderShard == senderShard) &&
@@ -997,6 +931,7 @@ class _$_GetTransactionInformationsWithSmartContractResultData
             (identical(other.value, value) || other.value == value));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -1010,7 +945,7 @@ class _$_GetTransactionInformationsWithSmartContractResultData
       receiver,
       receiverShard,
       round,
-      const DeepCollectionEquality().hash(scResults),
+      const DeepCollectionEquality().hash(_scResults),
       sender,
       senderShard,
       signature,
@@ -1021,46 +956,48 @@ class _$_GetTransactionInformationsWithSmartContractResultData
 
   @JsonKey(ignore: true)
   @override
-  _$GetTransactionInformationsWithSmartContractResultDataCopyWith<
-          _GetTransactionInformationsWithSmartContractResultData>
+  @pragma('vm:prefer-inline')
+  _$$GetTransactionInformationsWithSmartContractResultDataImplCopyWith<
+          _$GetTransactionInformationsWithSmartContractResultDataImpl>
       get copyWith =>
-          __$GetTransactionInformationsWithSmartContractResultDataCopyWithImpl<
-                  _GetTransactionInformationsWithSmartContractResultData>(
+          __$$GetTransactionInformationsWithSmartContractResultDataImplCopyWithImpl<
+                  _$GetTransactionInformationsWithSmartContractResultDataImpl>(
               this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_GetTransactionInformationsWithSmartContractResultDataToJson(
-        this);
+    return _$$GetTransactionInformationsWithSmartContractResultDataImplToJson(
+      this,
+    );
   }
 }
 
 abstract class _GetTransactionInformationsWithSmartContractResultData
     implements GetTransactionInformationsWithSmartContractResultData {
   factory _GetTransactionInformationsWithSmartContractResultData(
-          {required String data,
-          required String fee,
-          @GasLimitConverter() required GasLimit gasLimit,
-          @GasPriceConverter() required GasPrice gasPrice,
-          required int gasUsed,
-          required String miniBlockHash,
-          @NonceConverter() required Nonce nonce,
-          @AddressConverter() required Address receiver,
-          required int receiverShard,
-          required int round,
-          required List<SmartContractResultData> scResults,
-          @AddressConverter() required Address sender,
-          required int senderShard,
-          required String signature,
-          required String status,
-          required int timestamp,
-          @TransactionHashConverter() required TransactionHash txHash,
-          @BalanceConverter() required Balance value}) =
-      _$_GetTransactionInformationsWithSmartContractResultData;
+          {required final String data,
+          required final String fee,
+          @GasLimitConverter() required final GasLimit gasLimit,
+          @GasPriceConverter() required final GasPrice gasPrice,
+          required final int gasUsed,
+          required final String miniBlockHash,
+          @NonceConverter() required final Nonce nonce,
+          @AddressConverter() required final Address receiver,
+          required final int receiverShard,
+          required final int round,
+          required final List<SmartContractResultData> scResults,
+          @AddressConverter() required final Address sender,
+          required final int senderShard,
+          required final String signature,
+          required final String status,
+          required final int timestamp,
+          @TransactionHashConverter() required final TransactionHash txHash,
+          @BalanceConverter() required final Balance value}) =
+      _$GetTransactionInformationsWithSmartContractResultDataImpl;
 
   factory _GetTransactionInformationsWithSmartContractResultData.fromJson(
           Map<String, dynamic> json) =
-      _$_GetTransactionInformationsWithSmartContractResultData.fromJson;
+      _$GetTransactionInformationsWithSmartContractResultDataImpl.fromJson;
 
   @override
   String get data;
@@ -1107,8 +1044,8 @@ abstract class _GetTransactionInformationsWithSmartContractResultData
   Balance get value;
   @override
   @JsonKey(ignore: true)
-  _$GetTransactionInformationsWithSmartContractResultDataCopyWith<
-          _GetTransactionInformationsWithSmartContractResultData>
+  _$$GetTransactionInformationsWithSmartContractResultDataImplCopyWith<
+          _$GetTransactionInformationsWithSmartContractResultDataImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -1116,47 +1053,6 @@ SmartContractResultData _$SmartContractResultDataFromJson(
     Map<String, dynamic> json) {
   return _SmartContractResultData.fromJson(json);
 }
-
-/// @nodoc
-class _$SmartContractResultDataTearOff {
-  const _$SmartContractResultDataTearOff();
-
-  _SmartContractResultData call(
-      {required String callType,
-      required String data,
-      @GasLimitConverter() required GasLimit gasLimit,
-      @GasPriceConverter() required GasPrice gasPrice,
-      @TransactionHashConverter() required TransactionHash hash,
-      required int nonce,
-      @TransactionHashConverter() required TransactionHash originalTxHash,
-      @TransactionHashConverter() required TransactionHash prevTxHash,
-      @AddressConverter() required Address receiver,
-      required String relayedValue,
-      @AddressConverter() required Address sender,
-      @BalanceConverter() required Balance value}) {
-    return _SmartContractResultData(
-      callType: callType,
-      data: data,
-      gasLimit: gasLimit,
-      gasPrice: gasPrice,
-      hash: hash,
-      nonce: nonce,
-      originalTxHash: originalTxHash,
-      prevTxHash: prevTxHash,
-      receiver: receiver,
-      relayedValue: relayedValue,
-      sender: sender,
-      value: value,
-    );
-  }
-
-  SmartContractResultData fromJson(Map<String, Object?> json) {
-    return SmartContractResultData.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $SmartContractResultData = _$SmartContractResultDataTearOff();
 
 /// @nodoc
 mixin _$SmartContractResultData {
@@ -1191,7 +1087,8 @@ mixin _$SmartContractResultData {
 abstract class $SmartContractResultDataCopyWith<$Res> {
   factory $SmartContractResultDataCopyWith(SmartContractResultData value,
           $Res Function(SmartContractResultData) then) =
-      _$SmartContractResultDataCopyWithImpl<$Res>;
+      _$SmartContractResultDataCopyWithImpl<$Res, SmartContractResultData>;
+  @useResult
   $Res call(
       {String callType,
       String data,
@@ -1208,89 +1105,94 @@ abstract class $SmartContractResultDataCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$SmartContractResultDataCopyWithImpl<$Res>
+class _$SmartContractResultDataCopyWithImpl<$Res,
+        $Val extends SmartContractResultData>
     implements $SmartContractResultDataCopyWith<$Res> {
   _$SmartContractResultDataCopyWithImpl(this._value, this._then);
 
-  final SmartContractResultData _value;
   // ignore: unused_field
-  final $Res Function(SmartContractResultData) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? callType = freezed,
-    Object? data = freezed,
-    Object? gasLimit = freezed,
-    Object? gasPrice = freezed,
-    Object? hash = freezed,
-    Object? nonce = freezed,
-    Object? originalTxHash = freezed,
-    Object? prevTxHash = freezed,
-    Object? receiver = freezed,
-    Object? relayedValue = freezed,
-    Object? sender = freezed,
-    Object? value = freezed,
+    Object? callType = null,
+    Object? data = null,
+    Object? gasLimit = null,
+    Object? gasPrice = null,
+    Object? hash = null,
+    Object? nonce = null,
+    Object? originalTxHash = null,
+    Object? prevTxHash = null,
+    Object? receiver = null,
+    Object? relayedValue = null,
+    Object? sender = null,
+    Object? value = null,
   }) {
     return _then(_value.copyWith(
-      callType: callType == freezed
+      callType: null == callType
           ? _value.callType
           : callType // ignore: cast_nullable_to_non_nullable
               as String,
-      data: data == freezed
+      data: null == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
               as String,
-      gasLimit: gasLimit == freezed
+      gasLimit: null == gasLimit
           ? _value.gasLimit
           : gasLimit // ignore: cast_nullable_to_non_nullable
               as GasLimit,
-      gasPrice: gasPrice == freezed
+      gasPrice: null == gasPrice
           ? _value.gasPrice
           : gasPrice // ignore: cast_nullable_to_non_nullable
               as GasPrice,
-      hash: hash == freezed
+      hash: null == hash
           ? _value.hash
           : hash // ignore: cast_nullable_to_non_nullable
               as TransactionHash,
-      nonce: nonce == freezed
+      nonce: null == nonce
           ? _value.nonce
           : nonce // ignore: cast_nullable_to_non_nullable
               as int,
-      originalTxHash: originalTxHash == freezed
+      originalTxHash: null == originalTxHash
           ? _value.originalTxHash
           : originalTxHash // ignore: cast_nullable_to_non_nullable
               as TransactionHash,
-      prevTxHash: prevTxHash == freezed
+      prevTxHash: null == prevTxHash
           ? _value.prevTxHash
           : prevTxHash // ignore: cast_nullable_to_non_nullable
               as TransactionHash,
-      receiver: receiver == freezed
+      receiver: null == receiver
           ? _value.receiver
           : receiver // ignore: cast_nullable_to_non_nullable
               as Address,
-      relayedValue: relayedValue == freezed
+      relayedValue: null == relayedValue
           ? _value.relayedValue
           : relayedValue // ignore: cast_nullable_to_non_nullable
               as String,
-      sender: sender == freezed
+      sender: null == sender
           ? _value.sender
           : sender // ignore: cast_nullable_to_non_nullable
               as Address,
-      value: value == freezed
+      value: null == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
               as Balance,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$SmartContractResultDataCopyWith<$Res>
+abstract class _$$SmartContractResultDataImplCopyWith<$Res>
     implements $SmartContractResultDataCopyWith<$Res> {
-  factory _$SmartContractResultDataCopyWith(_SmartContractResultData value,
-          $Res Function(_SmartContractResultData) then) =
-      __$SmartContractResultDataCopyWithImpl<$Res>;
+  factory _$$SmartContractResultDataImplCopyWith(
+          _$SmartContractResultDataImpl value,
+          $Res Function(_$SmartContractResultDataImpl) then) =
+      __$$SmartContractResultDataImplCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String callType,
       String data,
@@ -1307,78 +1209,77 @@ abstract class _$SmartContractResultDataCopyWith<$Res>
 }
 
 /// @nodoc
-class __$SmartContractResultDataCopyWithImpl<$Res>
-    extends _$SmartContractResultDataCopyWithImpl<$Res>
-    implements _$SmartContractResultDataCopyWith<$Res> {
-  __$SmartContractResultDataCopyWithImpl(_SmartContractResultData _value,
-      $Res Function(_SmartContractResultData) _then)
-      : super(_value, (v) => _then(v as _SmartContractResultData));
+class __$$SmartContractResultDataImplCopyWithImpl<$Res>
+    extends _$SmartContractResultDataCopyWithImpl<$Res,
+        _$SmartContractResultDataImpl>
+    implements _$$SmartContractResultDataImplCopyWith<$Res> {
+  __$$SmartContractResultDataImplCopyWithImpl(
+      _$SmartContractResultDataImpl _value,
+      $Res Function(_$SmartContractResultDataImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _SmartContractResultData get _value =>
-      super._value as _SmartContractResultData;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? callType = freezed,
-    Object? data = freezed,
-    Object? gasLimit = freezed,
-    Object? gasPrice = freezed,
-    Object? hash = freezed,
-    Object? nonce = freezed,
-    Object? originalTxHash = freezed,
-    Object? prevTxHash = freezed,
-    Object? receiver = freezed,
-    Object? relayedValue = freezed,
-    Object? sender = freezed,
-    Object? value = freezed,
+    Object? callType = null,
+    Object? data = null,
+    Object? gasLimit = null,
+    Object? gasPrice = null,
+    Object? hash = null,
+    Object? nonce = null,
+    Object? originalTxHash = null,
+    Object? prevTxHash = null,
+    Object? receiver = null,
+    Object? relayedValue = null,
+    Object? sender = null,
+    Object? value = null,
   }) {
-    return _then(_SmartContractResultData(
-      callType: callType == freezed
+    return _then(_$SmartContractResultDataImpl(
+      callType: null == callType
           ? _value.callType
           : callType // ignore: cast_nullable_to_non_nullable
               as String,
-      data: data == freezed
+      data: null == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
               as String,
-      gasLimit: gasLimit == freezed
+      gasLimit: null == gasLimit
           ? _value.gasLimit
           : gasLimit // ignore: cast_nullable_to_non_nullable
               as GasLimit,
-      gasPrice: gasPrice == freezed
+      gasPrice: null == gasPrice
           ? _value.gasPrice
           : gasPrice // ignore: cast_nullable_to_non_nullable
               as GasPrice,
-      hash: hash == freezed
+      hash: null == hash
           ? _value.hash
           : hash // ignore: cast_nullable_to_non_nullable
               as TransactionHash,
-      nonce: nonce == freezed
+      nonce: null == nonce
           ? _value.nonce
           : nonce // ignore: cast_nullable_to_non_nullable
               as int,
-      originalTxHash: originalTxHash == freezed
+      originalTxHash: null == originalTxHash
           ? _value.originalTxHash
           : originalTxHash // ignore: cast_nullable_to_non_nullable
               as TransactionHash,
-      prevTxHash: prevTxHash == freezed
+      prevTxHash: null == prevTxHash
           ? _value.prevTxHash
           : prevTxHash // ignore: cast_nullable_to_non_nullable
               as TransactionHash,
-      receiver: receiver == freezed
+      receiver: null == receiver
           ? _value.receiver
           : receiver // ignore: cast_nullable_to_non_nullable
               as Address,
-      relayedValue: relayedValue == freezed
+      relayedValue: null == relayedValue
           ? _value.relayedValue
           : relayedValue // ignore: cast_nullable_to_non_nullable
               as String,
-      sender: sender == freezed
+      sender: null == sender
           ? _value.sender
           : sender // ignore: cast_nullable_to_non_nullable
               as Address,
-      value: value == freezed
+      value: null == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
               as Balance,
@@ -1388,8 +1289,8 @@ class __$SmartContractResultDataCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_SmartContractResultData implements _SmartContractResultData {
-  _$_SmartContractResultData(
+class _$SmartContractResultDataImpl implements _SmartContractResultData {
+  _$SmartContractResultDataImpl(
       {required this.callType,
       required this.data,
       @GasLimitConverter() required this.gasLimit,
@@ -1403,8 +1304,8 @@ class _$_SmartContractResultData implements _SmartContractResultData {
       @AddressConverter() required this.sender,
       @BalanceConverter() required this.value});
 
-  factory _$_SmartContractResultData.fromJson(Map<String, dynamic> json) =>
-      _$$_SmartContractResultDataFromJson(json);
+  factory _$SmartContractResultDataImpl.fromJson(Map<String, dynamic> json) =>
+      _$$SmartContractResultDataImplFromJson(json);
 
   @override
   final String callType;
@@ -1445,10 +1346,10 @@ class _$_SmartContractResultData implements _SmartContractResultData {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _SmartContractResultData &&
+            other is _$SmartContractResultDataImpl &&
             (identical(other.callType, callType) ||
                 other.callType == callType) &&
             (identical(other.data, data) || other.data == data) &&
@@ -1470,6 +1371,7 @@ class _$_SmartContractResultData implements _SmartContractResultData {
             (identical(other.value, value) || other.value == value));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -1488,33 +1390,37 @@ class _$_SmartContractResultData implements _SmartContractResultData {
 
   @JsonKey(ignore: true)
   @override
-  _$SmartContractResultDataCopyWith<_SmartContractResultData> get copyWith =>
-      __$SmartContractResultDataCopyWithImpl<_SmartContractResultData>(
-          this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$SmartContractResultDataImplCopyWith<_$SmartContractResultDataImpl>
+      get copyWith => __$$SmartContractResultDataImplCopyWithImpl<
+          _$SmartContractResultDataImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_SmartContractResultDataToJson(this);
+    return _$$SmartContractResultDataImplToJson(
+      this,
+    );
   }
 }
 
 abstract class _SmartContractResultData implements SmartContractResultData {
   factory _SmartContractResultData(
-      {required String callType,
-      required String data,
-      @GasLimitConverter() required GasLimit gasLimit,
-      @GasPriceConverter() required GasPrice gasPrice,
-      @TransactionHashConverter() required TransactionHash hash,
-      required int nonce,
-      @TransactionHashConverter() required TransactionHash originalTxHash,
-      @TransactionHashConverter() required TransactionHash prevTxHash,
-      @AddressConverter() required Address receiver,
-      required String relayedValue,
-      @AddressConverter() required Address sender,
-      @BalanceConverter() required Balance value}) = _$_SmartContractResultData;
+      {required final String callType,
+      required final String data,
+      @GasLimitConverter() required final GasLimit gasLimit,
+      @GasPriceConverter() required final GasPrice gasPrice,
+      @TransactionHashConverter() required final TransactionHash hash,
+      required final int nonce,
+      @TransactionHashConverter() required final TransactionHash originalTxHash,
+      @TransactionHashConverter() required final TransactionHash prevTxHash,
+      @AddressConverter() required final Address receiver,
+      required final String relayedValue,
+      @AddressConverter() required final Address sender,
+      @BalanceConverter()
+      required final Balance value}) = _$SmartContractResultDataImpl;
 
   factory _SmartContractResultData.fromJson(Map<String, dynamic> json) =
-      _$_SmartContractResultData.fromJson;
+      _$SmartContractResultDataImpl.fromJson;
 
   @override
   String get callType;
@@ -1550,6 +1456,6 @@ abstract class _SmartContractResultData implements SmartContractResultData {
   Balance get value;
   @override
   @JsonKey(ignore: true)
-  _$SmartContractResultDataCopyWith<_SmartContractResultData> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$SmartContractResultDataImplCopyWith<_$SmartContractResultDataImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

@@ -6,8 +6,9 @@ part of 'vm_values.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_VmValuesRequest _$$_VmValuesRequestFromJson(Map<String, dynamic> json) =>
-    _$_VmValuesRequest(
+_$VmValuesRequestImpl _$$VmValuesRequestImplFromJson(
+        Map<String, dynamic> json) =>
+    _$VmValuesRequestImpl(
       scAddress: const AddressConverter().fromJson(json['scAddress'] as String),
       funcName: json['funcName'] as String,
       args: (json['args'] as List<dynamic>)
@@ -19,7 +20,8 @@ _$_VmValuesRequest _$$_VmValuesRequestFromJson(Map<String, dynamic> json) =>
           const NullableBalanceConverter().fromJson(json['value'] as String?),
     );
 
-Map<String, dynamic> _$$_VmValuesRequestToJson(_$_VmValuesRequest instance) {
+Map<String, dynamic> _$$VmValuesRequestImplToJson(
+    _$VmValuesRequestImpl instance) {
   final val = <String, dynamic>{
     'scAddress': const AddressConverter().toJson(instance.scAddress),
     'funcName': instance.funcName,

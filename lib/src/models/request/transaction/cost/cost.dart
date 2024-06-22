@@ -18,4 +18,7 @@ class TransactionCostRequest with _$TransactionCostRequest {
 
   factory TransactionCostRequest.fromJson(Map<String, dynamic> json) =>
       _$TransactionCostRequestFromJson(json);
+
+  @override
+  Map<String, dynamic> toJson() => toJson();
 }

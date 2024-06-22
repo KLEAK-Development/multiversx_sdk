@@ -6,25 +6,28 @@ part of 'send_transaction.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_SendTransactionRequest _$$_SendTransactionRequestFromJson(
+_$SendTransactionRequestImpl _$$SendTransactionRequestImplFromJson(
         Map<String, dynamic> json) =>
-    _$_SendTransactionRequest(
-      nonce: const NullableNonceConverter().fromJson(json['nonce'] as int?),
+    _$SendTransactionRequestImpl(
+      nonce: const NullableNonceConverter()
+          .fromJson((json['nonce'] as num?)?.toInt()),
       value: const BalanceConverter().fromJson(json['value'] as String),
       receiver: const AddressConverter().fromJson(json['receiver'] as String),
       sender: const AddressConverter().fromJson(json['sender'] as String),
-      gasPrice: const GasPriceConverter().fromJson(json['gasPrice'] as int),
-      gasLimit: const GasLimitConverter().fromJson(json['gasLimit'] as int),
-      version:
-          const TransactionVersionConverter().fromJson(json['version'] as int),
+      gasPrice:
+          const GasPriceConverter().fromJson((json['gasPrice'] as num).toInt()),
+      gasLimit:
+          const GasLimitConverter().fromJson((json['gasLimit'] as num).toInt()),
+      version: const TransactionVersionConverter()
+          .fromJson((json['version'] as num).toInt()),
       data: json['data'] as String?,
       chainId:
           const NullableChainIdConverter().fromJson(json['chainID'] as String?),
       signature: json['signature'] as String,
     );
 
-Map<String, dynamic> _$$_SendTransactionRequestToJson(
-    _$_SendTransactionRequest instance) {
+Map<String, dynamic> _$$SendTransactionRequestImplToJson(
+    _$SendTransactionRequestImpl instance) {
   final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {

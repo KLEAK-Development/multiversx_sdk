@@ -1,6 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'cost.dart';
 
@@ -11,41 +12,12 @@ part of 'cost.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 TransactionCostRequest _$TransactionCostRequestFromJson(
     Map<String, dynamic> json) {
   return _TransactionCostRequest.fromJson(json);
 }
-
-/// @nodoc
-class _$TransactionCostRequestTearOff {
-  const _$TransactionCostRequestTearOff();
-
-  _TransactionCostRequest call(
-      {required String version,
-      required String chainID,
-      required String value,
-      required String sender,
-      required String receiver,
-      @JsonKey(includeIfNull: false) String? data}) {
-    return _TransactionCostRequest(
-      version: version,
-      chainID: chainID,
-      value: value,
-      sender: sender,
-      receiver: receiver,
-      data: data,
-    );
-  }
-
-  TransactionCostRequest fromJson(Map<String, Object?> json) {
-    return TransactionCostRequest.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $TransactionCostRequest = _$TransactionCostRequestTearOff();
 
 /// @nodoc
 mixin _$TransactionCostRequest {
@@ -67,7 +39,8 @@ mixin _$TransactionCostRequest {
 abstract class $TransactionCostRequestCopyWith<$Res> {
   factory $TransactionCostRequestCopyWith(TransactionCostRequest value,
           $Res Function(TransactionCostRequest) then) =
-      _$TransactionCostRequestCopyWithImpl<$Res>;
+      _$TransactionCostRequestCopyWithImpl<$Res, TransactionCostRequest>;
+  @useResult
   $Res call(
       {String version,
       String chainID,
@@ -78,59 +51,64 @@ abstract class $TransactionCostRequestCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$TransactionCostRequestCopyWithImpl<$Res>
+class _$TransactionCostRequestCopyWithImpl<$Res,
+        $Val extends TransactionCostRequest>
     implements $TransactionCostRequestCopyWith<$Res> {
   _$TransactionCostRequestCopyWithImpl(this._value, this._then);
 
-  final TransactionCostRequest _value;
   // ignore: unused_field
-  final $Res Function(TransactionCostRequest) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? version = freezed,
-    Object? chainID = freezed,
-    Object? value = freezed,
-    Object? sender = freezed,
-    Object? receiver = freezed,
+    Object? version = null,
+    Object? chainID = null,
+    Object? value = null,
+    Object? sender = null,
+    Object? receiver = null,
     Object? data = freezed,
   }) {
     return _then(_value.copyWith(
-      version: version == freezed
+      version: null == version
           ? _value.version
           : version // ignore: cast_nullable_to_non_nullable
               as String,
-      chainID: chainID == freezed
+      chainID: null == chainID
           ? _value.chainID
           : chainID // ignore: cast_nullable_to_non_nullable
               as String,
-      value: value == freezed
+      value: null == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
               as String,
-      sender: sender == freezed
+      sender: null == sender
           ? _value.sender
           : sender // ignore: cast_nullable_to_non_nullable
               as String,
-      receiver: receiver == freezed
+      receiver: null == receiver
           ? _value.receiver
           : receiver // ignore: cast_nullable_to_non_nullable
               as String,
-      data: data == freezed
+      data: freezed == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
               as String?,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$TransactionCostRequestCopyWith<$Res>
+abstract class _$$TransactionCostRequestImplCopyWith<$Res>
     implements $TransactionCostRequestCopyWith<$Res> {
-  factory _$TransactionCostRequestCopyWith(_TransactionCostRequest value,
-          $Res Function(_TransactionCostRequest) then) =
-      __$TransactionCostRequestCopyWithImpl<$Res>;
+  factory _$$TransactionCostRequestImplCopyWith(
+          _$TransactionCostRequestImpl value,
+          $Res Function(_$TransactionCostRequestImpl) then) =
+      __$$TransactionCostRequestImplCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String version,
       String chainID,
@@ -141,47 +119,47 @@ abstract class _$TransactionCostRequestCopyWith<$Res>
 }
 
 /// @nodoc
-class __$TransactionCostRequestCopyWithImpl<$Res>
-    extends _$TransactionCostRequestCopyWithImpl<$Res>
-    implements _$TransactionCostRequestCopyWith<$Res> {
-  __$TransactionCostRequestCopyWithImpl(_TransactionCostRequest _value,
-      $Res Function(_TransactionCostRequest) _then)
-      : super(_value, (v) => _then(v as _TransactionCostRequest));
+class __$$TransactionCostRequestImplCopyWithImpl<$Res>
+    extends _$TransactionCostRequestCopyWithImpl<$Res,
+        _$TransactionCostRequestImpl>
+    implements _$$TransactionCostRequestImplCopyWith<$Res> {
+  __$$TransactionCostRequestImplCopyWithImpl(
+      _$TransactionCostRequestImpl _value,
+      $Res Function(_$TransactionCostRequestImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _TransactionCostRequest get _value => super._value as _TransactionCostRequest;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? version = freezed,
-    Object? chainID = freezed,
-    Object? value = freezed,
-    Object? sender = freezed,
-    Object? receiver = freezed,
+    Object? version = null,
+    Object? chainID = null,
+    Object? value = null,
+    Object? sender = null,
+    Object? receiver = null,
     Object? data = freezed,
   }) {
-    return _then(_TransactionCostRequest(
-      version: version == freezed
+    return _then(_$TransactionCostRequestImpl(
+      version: null == version
           ? _value.version
           : version // ignore: cast_nullable_to_non_nullable
               as String,
-      chainID: chainID == freezed
+      chainID: null == chainID
           ? _value.chainID
           : chainID // ignore: cast_nullable_to_non_nullable
               as String,
-      value: value == freezed
+      value: null == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
               as String,
-      sender: sender == freezed
+      sender: null == sender
           ? _value.sender
           : sender // ignore: cast_nullable_to_non_nullable
               as String,
-      receiver: receiver == freezed
+      receiver: null == receiver
           ? _value.receiver
           : receiver // ignore: cast_nullable_to_non_nullable
               as String,
-      data: data == freezed
+      data: freezed == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
               as String?,
@@ -191,8 +169,8 @@ class __$TransactionCostRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_TransactionCostRequest implements _TransactionCostRequest {
-  _$_TransactionCostRequest(
+class _$TransactionCostRequestImpl implements _TransactionCostRequest {
+  _$TransactionCostRequestImpl(
       {required this.version,
       required this.chainID,
       required this.value,
@@ -200,8 +178,8 @@ class _$_TransactionCostRequest implements _TransactionCostRequest {
       required this.receiver,
       @JsonKey(includeIfNull: false) this.data});
 
-  factory _$_TransactionCostRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_TransactionCostRequestFromJson(json);
+  factory _$TransactionCostRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$TransactionCostRequestImplFromJson(json);
 
   @override
   final String version;
@@ -223,10 +201,10 @@ class _$_TransactionCostRequest implements _TransactionCostRequest {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _TransactionCostRequest &&
+            other is _$TransactionCostRequestImpl &&
             (identical(other.version, version) || other.version == version) &&
             (identical(other.chainID, chainID) || other.chainID == chainID) &&
             (identical(other.value, value) || other.value == value) &&
@@ -236,33 +214,38 @@ class _$_TransactionCostRequest implements _TransactionCostRequest {
             (identical(other.data, data) || other.data == data));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode =>
       Object.hash(runtimeType, version, chainID, value, sender, receiver, data);
 
   @JsonKey(ignore: true)
   @override
-  _$TransactionCostRequestCopyWith<_TransactionCostRequest> get copyWith =>
-      __$TransactionCostRequestCopyWithImpl<_TransactionCostRequest>(
-          this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$TransactionCostRequestImplCopyWith<_$TransactionCostRequestImpl>
+      get copyWith => __$$TransactionCostRequestImplCopyWithImpl<
+          _$TransactionCostRequestImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_TransactionCostRequestToJson(this);
+    return _$$TransactionCostRequestImplToJson(
+      this,
+    );
   }
 }
 
 abstract class _TransactionCostRequest implements TransactionCostRequest {
   factory _TransactionCostRequest(
-      {required String version,
-      required String chainID,
-      required String value,
-      required String sender,
-      required String receiver,
-      @JsonKey(includeIfNull: false) String? data}) = _$_TransactionCostRequest;
+          {required final String version,
+          required final String chainID,
+          required final String value,
+          required final String sender,
+          required final String receiver,
+          @JsonKey(includeIfNull: false) final String? data}) =
+      _$TransactionCostRequestImpl;
 
   factory _TransactionCostRequest.fromJson(Map<String, dynamic> json) =
-      _$_TransactionCostRequest.fromJson;
+      _$TransactionCostRequestImpl.fromJson;
 
   @override
   String get version;
@@ -279,6 +262,6 @@ abstract class _TransactionCostRequest implements TransactionCostRequest {
   String? get data;
   @override
   @JsonKey(ignore: true)
-  _$TransactionCostRequestCopyWith<_TransactionCostRequest> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$TransactionCostRequestImplCopyWith<_$TransactionCostRequestImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

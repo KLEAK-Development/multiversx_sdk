@@ -6,47 +6,49 @@ part of 'network.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_NetworkConfigurationData _$$_NetworkConfigurationDataFromJson(
+_$NetworkConfigurationDataImpl _$$NetworkConfigurationDataImplFromJson(
         Map<String, dynamic> json) =>
-    _$_NetworkConfigurationData(
+    _$NetworkConfigurationDataImpl(
       config: NetworkConfigurationInformationsData.fromJson(
           json['config'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$_NetworkConfigurationDataToJson(
-        _$_NetworkConfigurationData instance) =>
+Map<String, dynamic> _$$NetworkConfigurationDataImplToJson(
+        _$NetworkConfigurationDataImpl instance) =>
     <String, dynamic>{
       'config': instance.config,
     };
 
-_$_NetworkConfigurationInformationsData
-    _$$_NetworkConfigurationInformationsDataFromJson(
+_$NetworkConfigurationInformationsDataImpl
+    _$$NetworkConfigurationInformationsDataImplFromJson(
             Map<String, dynamic> json) =>
-        _$_NetworkConfigurationInformationsData(
+        _$NetworkConfigurationInformationsDataImpl(
           chainId:
               const ChainIdConverter().fromJson(json['erd_chain_id'] as String),
-          denomination: json['erd_denomination'] as int,
-          gasPerDataByte: json['erd_gas_per_data_byte'] as int,
+          denomination: (json['erd_denomination'] as num).toInt(),
+          gasPerDataByte: (json['erd_gas_per_data_byte'] as num).toInt(),
           latestTagSoftwareVersion:
               json['erd_latest_tag_software_version'] as String,
-          metaConsensusGroupSize: json['erd_meta_consensus_group_size'] as int,
+          metaConsensusGroupSize:
+              (json['erd_meta_consensus_group_size'] as num).toInt(),
           minGasLimit: const GasLimitConverter()
-              .fromJson(json['erd_min_gas_limit'] as int),
+              .fromJson((json['erd_min_gas_limit'] as num).toInt()),
           minGasPrice: const GasPriceConverter()
-              .fromJson(json['erd_min_gas_price'] as int),
+              .fromJson((json['erd_min_gas_price'] as num).toInt()),
           minTransactionVersion: const TransactionVersionConverter()
-              .fromJson(json['erd_min_transaction_version'] as int),
-          numMetachainNodes: json['erd_num_metachain_nodes'] as int,
-          numNodesInShard: json['erd_num_nodes_in_shard'] as int,
-          numShardsWithoutMeta: json['erd_num_shards_without_meta'] as int,
-          roundDuration: json['erd_round_duration'] as int,
+              .fromJson((json['erd_min_transaction_version'] as num).toInt()),
+          numMetachainNodes: (json['erd_num_metachain_nodes'] as num).toInt(),
+          numNodesInShard: (json['erd_num_nodes_in_shard'] as num).toInt(),
+          numShardsWithoutMeta:
+              (json['erd_num_shards_without_meta'] as num).toInt(),
+          roundDuration: (json['erd_round_duration'] as num).toInt(),
           shardConsensusGroupSize:
-              json['erd_shard_consensus_group_size'] as int,
-          startTime: json['erd_start_time'] as int,
+              (json['erd_shard_consensus_group_size'] as num).toInt(),
+          startTime: (json['erd_start_time'] as num).toInt(),
         );
 
-Map<String, dynamic> _$$_NetworkConfigurationInformationsDataToJson(
-        _$_NetworkConfigurationInformationsData instance) =>
+Map<String, dynamic> _$$NetworkConfigurationInformationsDataImplToJson(
+        _$NetworkConfigurationInformationsDataImpl instance) =>
     <String, dynamic>{
       'erd_chain_id': const ChainIdConverter().toJson(instance.chainId),
       'erd_denomination': instance.denomination,

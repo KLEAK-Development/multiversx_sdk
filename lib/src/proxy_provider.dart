@@ -44,7 +44,7 @@ class ProxyProvider extends IProvider {
         response.data.account.balance,
         response.data.account.username,
       );
-    } on DioError catch (e) {
+    } on DioException catch (e) {
       throw ApiException(
         ProxyResponseGeneric.fromJson(e.response!.data as Map<String, Object>),
       );
@@ -66,7 +66,7 @@ class ProxyProvider extends IProvider {
         minGasPrice: response.data.config.minGasPrice,
         minTransactionVersion: response.data.config.minTransactionVersion,
       );
-    } on DioError catch (e) {
+    } on DioException catch (e) {
       throw ApiException(
         ProxyResponseGeneric.fromJson(e.response!.data as Map<String, Object>),
       );
@@ -94,9 +94,9 @@ class ProxyProvider extends IProvider {
       );
       final response = await _transactionRepository.send(request);
       return response.data.txHash;
-    } on DioError catch (e) {
+    } on DioException catch (e) {
       throw ApiException(
-        ProxyResponseGeneric.fromJson(e.response!.data as Map<String, Object>),
+        ProxyResponseGeneric.fromJson(e.response!.data as Map<String, dynamic>),
       );
     }
   }
@@ -112,7 +112,7 @@ class ProxyProvider extends IProvider {
       final response =
           await _transactionRepository.transactionStatus(transactionHash.hash);
       return response.data.status;
-    } on DioError catch (e) {
+    } on DioException catch (e) {
       throw ApiException(
         ProxyResponseGeneric.fromJson(e.response!.data as Map<String, Object>),
       );
@@ -132,7 +132,7 @@ class ProxyProvider extends IProvider {
       final response = await _transactionRepository
           .informationWithSmartContractResults(transactionHash.hash);
       return response;
-    } on DioError catch (e) {
+    } on DioException catch (e) {
       throw ApiException(
         ProxyResponseGeneric.fromJson(e.response!.data as Map<String, Object>),
       );

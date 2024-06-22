@@ -6,7 +6,8 @@ part 'address.g.dart';
 
 @RestApi(baseUrl: 'https://gateway.multiversx.com')
 abstract class AddressRepository {
-  factory AddressRepository(Dio dio, {String baseUrl}) = _AddressRepository;
+  factory AddressRepository(Dio dio, {required String baseUrl}) =
+      _AddressRepository;
 
   @GET('/address/{bech32Address}')
   Future<GetAccountInformationResponse> addressInformations(

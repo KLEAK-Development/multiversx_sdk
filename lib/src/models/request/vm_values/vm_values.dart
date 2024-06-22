@@ -21,4 +21,7 @@ class VmValuesRequest with _$VmValuesRequest {
 
   factory VmValuesRequest.fromJson(Map<String, dynamic> json) =>
       _$VmValuesRequestFromJson(json);
+
+  @override
+  Map<String, dynamic> toJson() => toJson();
 }

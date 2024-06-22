@@ -1,6 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'response.dart';
 
@@ -11,7 +12,7 @@ part of 'response.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 ProxyResponse _$ProxyResponseFromJson(Map<String, dynamic> json) {
   switch (json['runtimeType']) {
@@ -38,99 +39,13 @@ ProxyResponse _$ProxyResponseFromJson(Map<String, dynamic> json) {
 }
 
 /// @nodoc
-class _$ProxyResponseTearOff {
-  const _$ProxyResponseTearOff();
-
-  ProxyResponseGeneric call(
-      {required Map<String, Object> data,
-      String? error,
-      required String code}) {
-    return ProxyResponseGeneric(
-      data: data,
-      error: error,
-      code: code,
-    );
-  }
-
-  GetAccountInformationResponse getAccountInformation(
-      {required AccountResponse data, String? error, required String code}) {
-    return GetAccountInformationResponse(
-      data: data,
-      error: error,
-      code: code,
-    );
-  }
-
-  NetworkConfigurationResponse networkConfiguration(
-      {required NetworkConfigurationData data,
-      String? error,
-      required String code}) {
-    return NetworkConfigurationResponse(
-      data: data,
-      error: error,
-      code: code,
-    );
-  }
-
-  SendTransactionResponse sendTransaction(
-      {required SendTransactionData data,
-      String? error,
-      required String code}) {
-    return SendTransactionResponse(
-      data: data,
-      error: error,
-      code: code,
-    );
-  }
-
-  GetTransactionStatusResponse getTransactionStatus(
-      {required GetTransactionStatusData data,
-      String? error,
-      required String code}) {
-    return GetTransactionStatusResponse(
-      data: data,
-      error: error,
-      code: code,
-    );
-  }
-
-  GetTransactionInformationsWithSmartContractResultsResponse
-      informationsWithSmartContractResults(
-          {required GetTransactionInformationsWithSmartContractResultData data,
-          String? error,
-          required String code}) {
-    return GetTransactionInformationsWithSmartContractResultsResponse(
-      data: data,
-      error: error,
-      code: code,
-    );
-  }
-
-  VmValuesQuery vmValuesQuery(
-      {required VmValuesResponse data, String? error, required String code}) {
-    return VmValuesQuery(
-      data: data,
-      error: error,
-      code: code,
-    );
-  }
-
-  ProxyResponse fromJson(Map<String, Object?> json) {
-    return ProxyResponse.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $ProxyResponse = _$ProxyResponseTearOff();
-
-/// @nodoc
 mixin _$ProxyResponse {
+  Object? get data => throw _privateConstructorUsedError;
   String? get error => throw _privateConstructorUsedError;
   String get code => throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(Map<String, Object> data, String? error, String code)
+    TResult Function(Map<String, Object>? data, String? error, String code)
         $default, {
     required TResult Function(AccountResponse data, String? error, String code)
         getAccountInformation,
@@ -154,26 +69,30 @@ mixin _$ProxyResponse {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult Function(Map<String, Object> data, String? error, String code)?
+    TResult? Function(Map<String, Object>? data, String? error, String code)?
         $default, {
-    TResult Function(AccountResponse data, String? error, String code)?
+    TResult? Function(AccountResponse data, String? error, String code)?
         getAccountInformation,
-    TResult Function(NetworkConfigurationData data, String? error, String code)?
+    TResult? Function(
+            NetworkConfigurationData data, String? error, String code)?
         networkConfiguration,
-    TResult Function(SendTransactionData data, String? error, String code)?
+    TResult? Function(SendTransactionData data, String? error, String code)?
         sendTransaction,
-    TResult Function(GetTransactionStatusData data, String? error, String code)?
+    TResult? Function(
+            GetTransactionStatusData data, String? error, String code)?
         getTransactionStatus,
-    TResult Function(GetTransactionInformationsWithSmartContractResultData data,
-            String? error, String code)?
+    TResult? Function(
+            GetTransactionInformationsWithSmartContractResultData data,
+            String? error,
+            String code)?
         informationsWithSmartContractResults,
-    TResult Function(VmValuesResponse data, String? error, String code)?
+    TResult? Function(VmValuesResponse data, String? error, String code)?
         vmValuesQuery,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(Map<String, Object> data, String? error, String code)?
+    TResult Function(Map<String, Object>? data, String? error, String code)?
         $default, {
     TResult Function(AccountResponse data, String? error, String code)?
         getAccountInformation,
@@ -209,16 +128,16 @@ mixin _$ProxyResponse {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>(
-    TResult Function(ProxyResponseGeneric value)? $default, {
-    TResult Function(GetAccountInformationResponse value)?
+    TResult? Function(ProxyResponseGeneric value)? $default, {
+    TResult? Function(GetAccountInformationResponse value)?
         getAccountInformation,
-    TResult Function(NetworkConfigurationResponse value)? networkConfiguration,
-    TResult Function(SendTransactionResponse value)? sendTransaction,
-    TResult Function(GetTransactionStatusResponse value)? getTransactionStatus,
-    TResult Function(
+    TResult? Function(NetworkConfigurationResponse value)? networkConfiguration,
+    TResult? Function(SendTransactionResponse value)? sendTransaction,
+    TResult? Function(GetTransactionStatusResponse value)? getTransactionStatus,
+    TResult? Function(
             GetTransactionInformationsWithSmartContractResultsResponse value)?
         informationsWithSmartContractResults,
-    TResult Function(VmValuesQuery value)? vmValuesQuery,
+    TResult? Function(VmValuesQuery value)? vmValuesQuery,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -246,74 +165,76 @@ mixin _$ProxyResponse {
 abstract class $ProxyResponseCopyWith<$Res> {
   factory $ProxyResponseCopyWith(
           ProxyResponse value, $Res Function(ProxyResponse) then) =
-      _$ProxyResponseCopyWithImpl<$Res>;
+      _$ProxyResponseCopyWithImpl<$Res, ProxyResponse>;
+  @useResult
   $Res call({String? error, String code});
 }
 
 /// @nodoc
-class _$ProxyResponseCopyWithImpl<$Res>
+class _$ProxyResponseCopyWithImpl<$Res, $Val extends ProxyResponse>
     implements $ProxyResponseCopyWith<$Res> {
   _$ProxyResponseCopyWithImpl(this._value, this._then);
 
-  final ProxyResponse _value;
   // ignore: unused_field
-  final $Res Function(ProxyResponse) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? error = freezed,
-    Object? code = freezed,
+    Object? code = null,
   }) {
     return _then(_value.copyWith(
-      error: error == freezed
+      error: freezed == error
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
               as String?,
-      code: code == freezed
+      code: null == code
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
               as String,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class $ProxyResponseGenericCopyWith<$Res>
+abstract class _$$ProxyResponseGenericImplCopyWith<$Res>
     implements $ProxyResponseCopyWith<$Res> {
-  factory $ProxyResponseGenericCopyWith(ProxyResponseGeneric value,
-          $Res Function(ProxyResponseGeneric) then) =
-      _$ProxyResponseGenericCopyWithImpl<$Res>;
+  factory _$$ProxyResponseGenericImplCopyWith(_$ProxyResponseGenericImpl value,
+          $Res Function(_$ProxyResponseGenericImpl) then) =
+      __$$ProxyResponseGenericImplCopyWithImpl<$Res>;
   @override
-  $Res call({Map<String, Object> data, String? error, String code});
+  @useResult
+  $Res call({Map<String, Object>? data, String? error, String code});
 }
 
 /// @nodoc
-class _$ProxyResponseGenericCopyWithImpl<$Res>
-    extends _$ProxyResponseCopyWithImpl<$Res>
-    implements $ProxyResponseGenericCopyWith<$Res> {
-  _$ProxyResponseGenericCopyWithImpl(
-      ProxyResponseGeneric _value, $Res Function(ProxyResponseGeneric) _then)
-      : super(_value, (v) => _then(v as ProxyResponseGeneric));
+class __$$ProxyResponseGenericImplCopyWithImpl<$Res>
+    extends _$ProxyResponseCopyWithImpl<$Res, _$ProxyResponseGenericImpl>
+    implements _$$ProxyResponseGenericImplCopyWith<$Res> {
+  __$$ProxyResponseGenericImplCopyWithImpl(_$ProxyResponseGenericImpl _value,
+      $Res Function(_$ProxyResponseGenericImpl) _then)
+      : super(_value, _then);
 
-  @override
-  ProxyResponseGeneric get _value => super._value as ProxyResponseGeneric;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? data = freezed,
     Object? error = freezed,
-    Object? code = freezed,
+    Object? code = null,
   }) {
-    return _then(ProxyResponseGeneric(
-      data: data == freezed
-          ? _value.data
+    return _then(_$ProxyResponseGenericImpl(
+      data: freezed == data
+          ? _value._data
           : data // ignore: cast_nullable_to_non_nullable
-              as Map<String, Object>,
-      error: error == freezed
+              as Map<String, Object>?,
+      error: freezed == error
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
               as String?,
-      code: code == freezed
+      code: null == code
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
               as String,
@@ -323,16 +244,28 @@ class _$ProxyResponseGenericCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$ProxyResponseGeneric implements ProxyResponseGeneric {
-  _$ProxyResponseGeneric(
-      {required this.data, this.error, required this.code, String? $type})
-      : $type = $type ?? 'default';
+class _$ProxyResponseGenericImpl implements ProxyResponseGeneric {
+  _$ProxyResponseGenericImpl(
+      {required final Map<String, Object>? data,
+      this.error,
+      required this.code,
+      final String? $type})
+      : _data = data,
+        $type = $type ?? 'default';
 
-  factory _$ProxyResponseGeneric.fromJson(Map<String, dynamic> json) =>
-      _$$ProxyResponseGenericFromJson(json);
+  factory _$ProxyResponseGenericImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ProxyResponseGenericImplFromJson(json);
 
+  final Map<String, Object>? _data;
   @override
-  final Map<String, Object> data;
+  Map<String, Object>? get data {
+    final value = _data;
+    if (value == null) return null;
+    if (_data is EqualUnmodifiableMapView) return _data;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
+
   @override
   final String? error;
   @override
@@ -347,29 +280,32 @@ class _$ProxyResponseGeneric implements ProxyResponseGeneric {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is ProxyResponseGeneric &&
-            const DeepCollectionEquality().equals(other.data, data) &&
+            other is _$ProxyResponseGenericImpl &&
+            const DeepCollectionEquality().equals(other._data, _data) &&
             (identical(other.error, error) || other.error == error) &&
             (identical(other.code, code) || other.code == code));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(data), error, code);
+      runtimeType, const DeepCollectionEquality().hash(_data), error, code);
 
   @JsonKey(ignore: true)
   @override
-  $ProxyResponseGenericCopyWith<ProxyResponseGeneric> get copyWith =>
-      _$ProxyResponseGenericCopyWithImpl<ProxyResponseGeneric>(
-          this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$ProxyResponseGenericImplCopyWith<_$ProxyResponseGenericImpl>
+      get copyWith =>
+          __$$ProxyResponseGenericImplCopyWithImpl<_$ProxyResponseGenericImpl>(
+              this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(Map<String, Object> data, String? error, String code)
+    TResult Function(Map<String, Object>? data, String? error, String code)
         $default, {
     required TResult Function(AccountResponse data, String? error, String code)
         getAccountInformation,
@@ -396,20 +332,24 @@ class _$ProxyResponseGeneric implements ProxyResponseGeneric {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult Function(Map<String, Object> data, String? error, String code)?
+    TResult? Function(Map<String, Object>? data, String? error, String code)?
         $default, {
-    TResult Function(AccountResponse data, String? error, String code)?
+    TResult? Function(AccountResponse data, String? error, String code)?
         getAccountInformation,
-    TResult Function(NetworkConfigurationData data, String? error, String code)?
+    TResult? Function(
+            NetworkConfigurationData data, String? error, String code)?
         networkConfiguration,
-    TResult Function(SendTransactionData data, String? error, String code)?
+    TResult? Function(SendTransactionData data, String? error, String code)?
         sendTransaction,
-    TResult Function(GetTransactionStatusData data, String? error, String code)?
+    TResult? Function(
+            GetTransactionStatusData data, String? error, String code)?
         getTransactionStatus,
-    TResult Function(GetTransactionInformationsWithSmartContractResultData data,
-            String? error, String code)?
+    TResult? Function(
+            GetTransactionInformationsWithSmartContractResultData data,
+            String? error,
+            String code)?
         informationsWithSmartContractResults,
-    TResult Function(VmValuesResponse data, String? error, String code)?
+    TResult? Function(VmValuesResponse data, String? error, String code)?
         vmValuesQuery,
   }) {
     return $default?.call(data, error, code);
@@ -418,7 +358,7 @@ class _$ProxyResponseGeneric implements ProxyResponseGeneric {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(Map<String, Object> data, String? error, String code)?
+    TResult Function(Map<String, Object>? data, String? error, String code)?
         $default, {
     TResult Function(AccountResponse data, String? error, String code)?
         getAccountInformation,
@@ -463,16 +403,16 @@ class _$ProxyResponseGeneric implements ProxyResponseGeneric {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>(
-    TResult Function(ProxyResponseGeneric value)? $default, {
-    TResult Function(GetAccountInformationResponse value)?
+    TResult? Function(ProxyResponseGeneric value)? $default, {
+    TResult? Function(GetAccountInformationResponse value)?
         getAccountInformation,
-    TResult Function(NetworkConfigurationResponse value)? networkConfiguration,
-    TResult Function(SendTransactionResponse value)? sendTransaction,
-    TResult Function(GetTransactionStatusResponse value)? getTransactionStatus,
-    TResult Function(
+    TResult? Function(NetworkConfigurationResponse value)? networkConfiguration,
+    TResult? Function(SendTransactionResponse value)? sendTransaction,
+    TResult? Function(GetTransactionStatusResponse value)? getTransactionStatus,
+    TResult? Function(
             GetTransactionInformationsWithSmartContractResultsResponse value)?
         informationsWithSmartContractResults,
-    TResult Function(VmValuesQuery value)? vmValuesQuery,
+    TResult? Function(VmValuesQuery value)? vmValuesQuery,
   }) {
     return $default?.call(this);
   }
@@ -500,72 +440,74 @@ class _$ProxyResponseGeneric implements ProxyResponseGeneric {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$ProxyResponseGenericToJson(this);
+    return _$$ProxyResponseGenericImplToJson(
+      this,
+    );
   }
 }
 
 abstract class ProxyResponseGeneric implements ProxyResponse {
   factory ProxyResponseGeneric(
-      {required Map<String, Object> data,
-      String? error,
-      required String code}) = _$ProxyResponseGeneric;
+      {required final Map<String, Object>? data,
+      final String? error,
+      required final String code}) = _$ProxyResponseGenericImpl;
 
   factory ProxyResponseGeneric.fromJson(Map<String, dynamic> json) =
-      _$ProxyResponseGeneric.fromJson;
+      _$ProxyResponseGenericImpl.fromJson;
 
-  Map<String, Object> get data;
+  @override
+  Map<String, Object>? get data;
   @override
   String? get error;
   @override
   String get code;
   @override
   @JsonKey(ignore: true)
-  $ProxyResponseGenericCopyWith<ProxyResponseGeneric> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$ProxyResponseGenericImplCopyWith<_$ProxyResponseGenericImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $GetAccountInformationResponseCopyWith<$Res>
+abstract class _$$GetAccountInformationResponseImplCopyWith<$Res>
     implements $ProxyResponseCopyWith<$Res> {
-  factory $GetAccountInformationResponseCopyWith(
-          GetAccountInformationResponse value,
-          $Res Function(GetAccountInformationResponse) then) =
-      _$GetAccountInformationResponseCopyWithImpl<$Res>;
+  factory _$$GetAccountInformationResponseImplCopyWith(
+          _$GetAccountInformationResponseImpl value,
+          $Res Function(_$GetAccountInformationResponseImpl) then) =
+      __$$GetAccountInformationResponseImplCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({AccountResponse data, String? error, String code});
 
   $AccountResponseCopyWith<$Res> get data;
 }
 
 /// @nodoc
-class _$GetAccountInformationResponseCopyWithImpl<$Res>
-    extends _$ProxyResponseCopyWithImpl<$Res>
-    implements $GetAccountInformationResponseCopyWith<$Res> {
-  _$GetAccountInformationResponseCopyWithImpl(
-      GetAccountInformationResponse _value,
-      $Res Function(GetAccountInformationResponse) _then)
-      : super(_value, (v) => _then(v as GetAccountInformationResponse));
+class __$$GetAccountInformationResponseImplCopyWithImpl<$Res>
+    extends _$ProxyResponseCopyWithImpl<$Res,
+        _$GetAccountInformationResponseImpl>
+    implements _$$GetAccountInformationResponseImplCopyWith<$Res> {
+  __$$GetAccountInformationResponseImplCopyWithImpl(
+      _$GetAccountInformationResponseImpl _value,
+      $Res Function(_$GetAccountInformationResponseImpl) _then)
+      : super(_value, _then);
 
-  @override
-  GetAccountInformationResponse get _value =>
-      super._value as GetAccountInformationResponse;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? data = freezed,
+    Object? data = null,
     Object? error = freezed,
-    Object? code = freezed,
+    Object? code = null,
   }) {
-    return _then(GetAccountInformationResponse(
-      data: data == freezed
+    return _then(_$GetAccountInformationResponseImpl(
+      data: null == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
               as AccountResponse,
-      error: error == freezed
+      error: freezed == error
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
               as String?,
-      code: code == freezed
+      code: null == code
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
               as String,
@@ -573,6 +515,7 @@ class _$GetAccountInformationResponseCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $AccountResponseCopyWith<$Res> get data {
     return $AccountResponseCopyWith<$Res>(_value.data, (value) {
       return _then(_value.copyWith(data: value));
@@ -582,13 +525,15 @@ class _$GetAccountInformationResponseCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$GetAccountInformationResponse implements GetAccountInformationResponse {
-  _$GetAccountInformationResponse(
-      {required this.data, this.error, required this.code, String? $type})
+class _$GetAccountInformationResponseImpl
+    implements GetAccountInformationResponse {
+  _$GetAccountInformationResponseImpl(
+      {required this.data, this.error, required this.code, final String? $type})
       : $type = $type ?? 'getAccountInformation';
 
-  factory _$GetAccountInformationResponse.fromJson(Map<String, dynamic> json) =>
-      _$$GetAccountInformationResponseFromJson(json);
+  factory _$GetAccountInformationResponseImpl.fromJson(
+          Map<String, dynamic> json) =>
+      _$$GetAccountInformationResponseImplFromJson(json);
 
   @override
   final AccountResponse data;
@@ -606,28 +551,31 @@ class _$GetAccountInformationResponse implements GetAccountInformationResponse {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is GetAccountInformationResponse &&
+            other is _$GetAccountInformationResponseImpl &&
             (identical(other.data, data) || other.data == data) &&
             (identical(other.error, error) || other.error == error) &&
             (identical(other.code, code) || other.code == code));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, data, error, code);
 
   @JsonKey(ignore: true)
   @override
-  $GetAccountInformationResponseCopyWith<GetAccountInformationResponse>
-      get copyWith => _$GetAccountInformationResponseCopyWithImpl<
-          GetAccountInformationResponse>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$GetAccountInformationResponseImplCopyWith<
+          _$GetAccountInformationResponseImpl>
+      get copyWith => __$$GetAccountInformationResponseImplCopyWithImpl<
+          _$GetAccountInformationResponseImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(Map<String, Object> data, String? error, String code)
+    TResult Function(Map<String, Object>? data, String? error, String code)
         $default, {
     required TResult Function(AccountResponse data, String? error, String code)
         getAccountInformation,
@@ -654,20 +602,24 @@ class _$GetAccountInformationResponse implements GetAccountInformationResponse {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult Function(Map<String, Object> data, String? error, String code)?
+    TResult? Function(Map<String, Object>? data, String? error, String code)?
         $default, {
-    TResult Function(AccountResponse data, String? error, String code)?
+    TResult? Function(AccountResponse data, String? error, String code)?
         getAccountInformation,
-    TResult Function(NetworkConfigurationData data, String? error, String code)?
+    TResult? Function(
+            NetworkConfigurationData data, String? error, String code)?
         networkConfiguration,
-    TResult Function(SendTransactionData data, String? error, String code)?
+    TResult? Function(SendTransactionData data, String? error, String code)?
         sendTransaction,
-    TResult Function(GetTransactionStatusData data, String? error, String code)?
+    TResult? Function(
+            GetTransactionStatusData data, String? error, String code)?
         getTransactionStatus,
-    TResult Function(GetTransactionInformationsWithSmartContractResultData data,
-            String? error, String code)?
+    TResult? Function(
+            GetTransactionInformationsWithSmartContractResultData data,
+            String? error,
+            String code)?
         informationsWithSmartContractResults,
-    TResult Function(VmValuesResponse data, String? error, String code)?
+    TResult? Function(VmValuesResponse data, String? error, String code)?
         vmValuesQuery,
   }) {
     return getAccountInformation?.call(data, error, code);
@@ -676,7 +628,7 @@ class _$GetAccountInformationResponse implements GetAccountInformationResponse {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(Map<String, Object> data, String? error, String code)?
+    TResult Function(Map<String, Object>? data, String? error, String code)?
         $default, {
     TResult Function(AccountResponse data, String? error, String code)?
         getAccountInformation,
@@ -721,16 +673,16 @@ class _$GetAccountInformationResponse implements GetAccountInformationResponse {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>(
-    TResult Function(ProxyResponseGeneric value)? $default, {
-    TResult Function(GetAccountInformationResponse value)?
+    TResult? Function(ProxyResponseGeneric value)? $default, {
+    TResult? Function(GetAccountInformationResponse value)?
         getAccountInformation,
-    TResult Function(NetworkConfigurationResponse value)? networkConfiguration,
-    TResult Function(SendTransactionResponse value)? sendTransaction,
-    TResult Function(GetTransactionStatusResponse value)? getTransactionStatus,
-    TResult Function(
+    TResult? Function(NetworkConfigurationResponse value)? networkConfiguration,
+    TResult? Function(SendTransactionResponse value)? sendTransaction,
+    TResult? Function(GetTransactionStatusResponse value)? getTransactionStatus,
+    TResult? Function(
             GetTransactionInformationsWithSmartContractResultsResponse value)?
         informationsWithSmartContractResults,
-    TResult Function(VmValuesQuery value)? vmValuesQuery,
+    TResult? Function(VmValuesQuery value)? vmValuesQuery,
   }) {
     return getAccountInformation?.call(this);
   }
@@ -758,19 +710,22 @@ class _$GetAccountInformationResponse implements GetAccountInformationResponse {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$GetAccountInformationResponseToJson(this);
+    return _$$GetAccountInformationResponseImplToJson(
+      this,
+    );
   }
 }
 
 abstract class GetAccountInformationResponse implements ProxyResponse {
   factory GetAccountInformationResponse(
-      {required AccountResponse data,
-      String? error,
-      required String code}) = _$GetAccountInformationResponse;
+      {required final AccountResponse data,
+      final String? error,
+      required final String code}) = _$GetAccountInformationResponseImpl;
 
   factory GetAccountInformationResponse.fromJson(Map<String, dynamic> json) =
-      _$GetAccountInformationResponse.fromJson;
+      _$GetAccountInformationResponseImpl.fromJson;
 
+  @override
   AccountResponse get data;
   @override
   String? get error;
@@ -778,52 +733,52 @@ abstract class GetAccountInformationResponse implements ProxyResponse {
   String get code;
   @override
   @JsonKey(ignore: true)
-  $GetAccountInformationResponseCopyWith<GetAccountInformationResponse>
+  _$$GetAccountInformationResponseImplCopyWith<
+          _$GetAccountInformationResponseImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $NetworkConfigurationResponseCopyWith<$Res>
+abstract class _$$NetworkConfigurationResponseImplCopyWith<$Res>
     implements $ProxyResponseCopyWith<$Res> {
-  factory $NetworkConfigurationResponseCopyWith(
-          NetworkConfigurationResponse value,
-          $Res Function(NetworkConfigurationResponse) then) =
-      _$NetworkConfigurationResponseCopyWithImpl<$Res>;
+  factory _$$NetworkConfigurationResponseImplCopyWith(
+          _$NetworkConfigurationResponseImpl value,
+          $Res Function(_$NetworkConfigurationResponseImpl) then) =
+      __$$NetworkConfigurationResponseImplCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({NetworkConfigurationData data, String? error, String code});
 
   $NetworkConfigurationDataCopyWith<$Res> get data;
 }
 
 /// @nodoc
-class _$NetworkConfigurationResponseCopyWithImpl<$Res>
-    extends _$ProxyResponseCopyWithImpl<$Res>
-    implements $NetworkConfigurationResponseCopyWith<$Res> {
-  _$NetworkConfigurationResponseCopyWithImpl(
-      NetworkConfigurationResponse _value,
-      $Res Function(NetworkConfigurationResponse) _then)
-      : super(_value, (v) => _then(v as NetworkConfigurationResponse));
+class __$$NetworkConfigurationResponseImplCopyWithImpl<$Res>
+    extends _$ProxyResponseCopyWithImpl<$Res,
+        _$NetworkConfigurationResponseImpl>
+    implements _$$NetworkConfigurationResponseImplCopyWith<$Res> {
+  __$$NetworkConfigurationResponseImplCopyWithImpl(
+      _$NetworkConfigurationResponseImpl _value,
+      $Res Function(_$NetworkConfigurationResponseImpl) _then)
+      : super(_value, _then);
 
-  @override
-  NetworkConfigurationResponse get _value =>
-      super._value as NetworkConfigurationResponse;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? data = freezed,
+    Object? data = null,
     Object? error = freezed,
-    Object? code = freezed,
+    Object? code = null,
   }) {
-    return _then(NetworkConfigurationResponse(
-      data: data == freezed
+    return _then(_$NetworkConfigurationResponseImpl(
+      data: null == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
               as NetworkConfigurationData,
-      error: error == freezed
+      error: freezed == error
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
               as String?,
-      code: code == freezed
+      code: null == code
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
               as String,
@@ -831,6 +786,7 @@ class _$NetworkConfigurationResponseCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $NetworkConfigurationDataCopyWith<$Res> get data {
     return $NetworkConfigurationDataCopyWith<$Res>(_value.data, (value) {
       return _then(_value.copyWith(data: value));
@@ -840,13 +796,15 @@ class _$NetworkConfigurationResponseCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$NetworkConfigurationResponse implements NetworkConfigurationResponse {
-  _$NetworkConfigurationResponse(
-      {required this.data, this.error, required this.code, String? $type})
+class _$NetworkConfigurationResponseImpl
+    implements NetworkConfigurationResponse {
+  _$NetworkConfigurationResponseImpl(
+      {required this.data, this.error, required this.code, final String? $type})
       : $type = $type ?? 'networkConfiguration';
 
-  factory _$NetworkConfigurationResponse.fromJson(Map<String, dynamic> json) =>
-      _$$NetworkConfigurationResponseFromJson(json);
+  factory _$NetworkConfigurationResponseImpl.fromJson(
+          Map<String, dynamic> json) =>
+      _$$NetworkConfigurationResponseImplFromJson(json);
 
   @override
   final NetworkConfigurationData data;
@@ -864,28 +822,31 @@ class _$NetworkConfigurationResponse implements NetworkConfigurationResponse {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is NetworkConfigurationResponse &&
+            other is _$NetworkConfigurationResponseImpl &&
             (identical(other.data, data) || other.data == data) &&
             (identical(other.error, error) || other.error == error) &&
             (identical(other.code, code) || other.code == code));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, data, error, code);
 
   @JsonKey(ignore: true)
   @override
-  $NetworkConfigurationResponseCopyWith<NetworkConfigurationResponse>
-      get copyWith => _$NetworkConfigurationResponseCopyWithImpl<
-          NetworkConfigurationResponse>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$NetworkConfigurationResponseImplCopyWith<
+          _$NetworkConfigurationResponseImpl>
+      get copyWith => __$$NetworkConfigurationResponseImplCopyWithImpl<
+          _$NetworkConfigurationResponseImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(Map<String, Object> data, String? error, String code)
+    TResult Function(Map<String, Object>? data, String? error, String code)
         $default, {
     required TResult Function(AccountResponse data, String? error, String code)
         getAccountInformation,
@@ -912,20 +873,24 @@ class _$NetworkConfigurationResponse implements NetworkConfigurationResponse {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult Function(Map<String, Object> data, String? error, String code)?
+    TResult? Function(Map<String, Object>? data, String? error, String code)?
         $default, {
-    TResult Function(AccountResponse data, String? error, String code)?
+    TResult? Function(AccountResponse data, String? error, String code)?
         getAccountInformation,
-    TResult Function(NetworkConfigurationData data, String? error, String code)?
+    TResult? Function(
+            NetworkConfigurationData data, String? error, String code)?
         networkConfiguration,
-    TResult Function(SendTransactionData data, String? error, String code)?
+    TResult? Function(SendTransactionData data, String? error, String code)?
         sendTransaction,
-    TResult Function(GetTransactionStatusData data, String? error, String code)?
+    TResult? Function(
+            GetTransactionStatusData data, String? error, String code)?
         getTransactionStatus,
-    TResult Function(GetTransactionInformationsWithSmartContractResultData data,
-            String? error, String code)?
+    TResult? Function(
+            GetTransactionInformationsWithSmartContractResultData data,
+            String? error,
+            String code)?
         informationsWithSmartContractResults,
-    TResult Function(VmValuesResponse data, String? error, String code)?
+    TResult? Function(VmValuesResponse data, String? error, String code)?
         vmValuesQuery,
   }) {
     return networkConfiguration?.call(data, error, code);
@@ -934,7 +899,7 @@ class _$NetworkConfigurationResponse implements NetworkConfigurationResponse {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(Map<String, Object> data, String? error, String code)?
+    TResult Function(Map<String, Object>? data, String? error, String code)?
         $default, {
     TResult Function(AccountResponse data, String? error, String code)?
         getAccountInformation,
@@ -979,16 +944,16 @@ class _$NetworkConfigurationResponse implements NetworkConfigurationResponse {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>(
-    TResult Function(ProxyResponseGeneric value)? $default, {
-    TResult Function(GetAccountInformationResponse value)?
+    TResult? Function(ProxyResponseGeneric value)? $default, {
+    TResult? Function(GetAccountInformationResponse value)?
         getAccountInformation,
-    TResult Function(NetworkConfigurationResponse value)? networkConfiguration,
-    TResult Function(SendTransactionResponse value)? sendTransaction,
-    TResult Function(GetTransactionStatusResponse value)? getTransactionStatus,
-    TResult Function(
+    TResult? Function(NetworkConfigurationResponse value)? networkConfiguration,
+    TResult? Function(SendTransactionResponse value)? sendTransaction,
+    TResult? Function(GetTransactionStatusResponse value)? getTransactionStatus,
+    TResult? Function(
             GetTransactionInformationsWithSmartContractResultsResponse value)?
         informationsWithSmartContractResults,
-    TResult Function(VmValuesQuery value)? vmValuesQuery,
+    TResult? Function(VmValuesQuery value)? vmValuesQuery,
   }) {
     return networkConfiguration?.call(this);
   }
@@ -1016,19 +981,22 @@ class _$NetworkConfigurationResponse implements NetworkConfigurationResponse {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$NetworkConfigurationResponseToJson(this);
+    return _$$NetworkConfigurationResponseImplToJson(
+      this,
+    );
   }
 }
 
 abstract class NetworkConfigurationResponse implements ProxyResponse {
   factory NetworkConfigurationResponse(
-      {required NetworkConfigurationData data,
-      String? error,
-      required String code}) = _$NetworkConfigurationResponse;
+      {required final NetworkConfigurationData data,
+      final String? error,
+      required final String code}) = _$NetworkConfigurationResponseImpl;
 
   factory NetworkConfigurationResponse.fromJson(Map<String, dynamic> json) =
-      _$NetworkConfigurationResponse.fromJson;
+      _$NetworkConfigurationResponseImpl.fromJson;
 
+  @override
   NetworkConfigurationData get data;
   @override
   String? get error;
@@ -1036,49 +1004,51 @@ abstract class NetworkConfigurationResponse implements ProxyResponse {
   String get code;
   @override
   @JsonKey(ignore: true)
-  $NetworkConfigurationResponseCopyWith<NetworkConfigurationResponse>
+  _$$NetworkConfigurationResponseImplCopyWith<
+          _$NetworkConfigurationResponseImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $SendTransactionResponseCopyWith<$Res>
+abstract class _$$SendTransactionResponseImplCopyWith<$Res>
     implements $ProxyResponseCopyWith<$Res> {
-  factory $SendTransactionResponseCopyWith(SendTransactionResponse value,
-          $Res Function(SendTransactionResponse) then) =
-      _$SendTransactionResponseCopyWithImpl<$Res>;
+  factory _$$SendTransactionResponseImplCopyWith(
+          _$SendTransactionResponseImpl value,
+          $Res Function(_$SendTransactionResponseImpl) then) =
+      __$$SendTransactionResponseImplCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({SendTransactionData data, String? error, String code});
 
   $SendTransactionDataCopyWith<$Res> get data;
 }
 
 /// @nodoc
-class _$SendTransactionResponseCopyWithImpl<$Res>
-    extends _$ProxyResponseCopyWithImpl<$Res>
-    implements $SendTransactionResponseCopyWith<$Res> {
-  _$SendTransactionResponseCopyWithImpl(SendTransactionResponse _value,
-      $Res Function(SendTransactionResponse) _then)
-      : super(_value, (v) => _then(v as SendTransactionResponse));
+class __$$SendTransactionResponseImplCopyWithImpl<$Res>
+    extends _$ProxyResponseCopyWithImpl<$Res, _$SendTransactionResponseImpl>
+    implements _$$SendTransactionResponseImplCopyWith<$Res> {
+  __$$SendTransactionResponseImplCopyWithImpl(
+      _$SendTransactionResponseImpl _value,
+      $Res Function(_$SendTransactionResponseImpl) _then)
+      : super(_value, _then);
 
-  @override
-  SendTransactionResponse get _value => super._value as SendTransactionResponse;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? data = freezed,
+    Object? data = null,
     Object? error = freezed,
-    Object? code = freezed,
+    Object? code = null,
   }) {
-    return _then(SendTransactionResponse(
-      data: data == freezed
+    return _then(_$SendTransactionResponseImpl(
+      data: null == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
               as SendTransactionData,
-      error: error == freezed
+      error: freezed == error
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
               as String?,
-      code: code == freezed
+      code: null == code
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
               as String,
@@ -1086,6 +1056,7 @@ class _$SendTransactionResponseCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $SendTransactionDataCopyWith<$Res> get data {
     return $SendTransactionDataCopyWith<$Res>(_value.data, (value) {
       return _then(_value.copyWith(data: value));
@@ -1095,13 +1066,13 @@ class _$SendTransactionResponseCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$SendTransactionResponse implements SendTransactionResponse {
-  _$SendTransactionResponse(
-      {required this.data, this.error, required this.code, String? $type})
+class _$SendTransactionResponseImpl implements SendTransactionResponse {
+  _$SendTransactionResponseImpl(
+      {required this.data, this.error, required this.code, final String? $type})
       : $type = $type ?? 'sendTransaction';
 
-  factory _$SendTransactionResponse.fromJson(Map<String, dynamic> json) =>
-      _$$SendTransactionResponseFromJson(json);
+  factory _$SendTransactionResponseImpl.fromJson(Map<String, dynamic> json) =>
+      _$$SendTransactionResponseImplFromJson(json);
 
   @override
   final SendTransactionData data;
@@ -1119,28 +1090,30 @@ class _$SendTransactionResponse implements SendTransactionResponse {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is SendTransactionResponse &&
+            other is _$SendTransactionResponseImpl &&
             (identical(other.data, data) || other.data == data) &&
             (identical(other.error, error) || other.error == error) &&
             (identical(other.code, code) || other.code == code));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, data, error, code);
 
   @JsonKey(ignore: true)
   @override
-  $SendTransactionResponseCopyWith<SendTransactionResponse> get copyWith =>
-      _$SendTransactionResponseCopyWithImpl<SendTransactionResponse>(
-          this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$SendTransactionResponseImplCopyWith<_$SendTransactionResponseImpl>
+      get copyWith => __$$SendTransactionResponseImplCopyWithImpl<
+          _$SendTransactionResponseImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(Map<String, Object> data, String? error, String code)
+    TResult Function(Map<String, Object>? data, String? error, String code)
         $default, {
     required TResult Function(AccountResponse data, String? error, String code)
         getAccountInformation,
@@ -1167,20 +1140,24 @@ class _$SendTransactionResponse implements SendTransactionResponse {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult Function(Map<String, Object> data, String? error, String code)?
+    TResult? Function(Map<String, Object>? data, String? error, String code)?
         $default, {
-    TResult Function(AccountResponse data, String? error, String code)?
+    TResult? Function(AccountResponse data, String? error, String code)?
         getAccountInformation,
-    TResult Function(NetworkConfigurationData data, String? error, String code)?
+    TResult? Function(
+            NetworkConfigurationData data, String? error, String code)?
         networkConfiguration,
-    TResult Function(SendTransactionData data, String? error, String code)?
+    TResult? Function(SendTransactionData data, String? error, String code)?
         sendTransaction,
-    TResult Function(GetTransactionStatusData data, String? error, String code)?
+    TResult? Function(
+            GetTransactionStatusData data, String? error, String code)?
         getTransactionStatus,
-    TResult Function(GetTransactionInformationsWithSmartContractResultData data,
-            String? error, String code)?
+    TResult? Function(
+            GetTransactionInformationsWithSmartContractResultData data,
+            String? error,
+            String code)?
         informationsWithSmartContractResults,
-    TResult Function(VmValuesResponse data, String? error, String code)?
+    TResult? Function(VmValuesResponse data, String? error, String code)?
         vmValuesQuery,
   }) {
     return sendTransaction?.call(data, error, code);
@@ -1189,7 +1166,7 @@ class _$SendTransactionResponse implements SendTransactionResponse {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(Map<String, Object> data, String? error, String code)?
+    TResult Function(Map<String, Object>? data, String? error, String code)?
         $default, {
     TResult Function(AccountResponse data, String? error, String code)?
         getAccountInformation,
@@ -1234,16 +1211,16 @@ class _$SendTransactionResponse implements SendTransactionResponse {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>(
-    TResult Function(ProxyResponseGeneric value)? $default, {
-    TResult Function(GetAccountInformationResponse value)?
+    TResult? Function(ProxyResponseGeneric value)? $default, {
+    TResult? Function(GetAccountInformationResponse value)?
         getAccountInformation,
-    TResult Function(NetworkConfigurationResponse value)? networkConfiguration,
-    TResult Function(SendTransactionResponse value)? sendTransaction,
-    TResult Function(GetTransactionStatusResponse value)? getTransactionStatus,
-    TResult Function(
+    TResult? Function(NetworkConfigurationResponse value)? networkConfiguration,
+    TResult? Function(SendTransactionResponse value)? sendTransaction,
+    TResult? Function(GetTransactionStatusResponse value)? getTransactionStatus,
+    TResult? Function(
             GetTransactionInformationsWithSmartContractResultsResponse value)?
         informationsWithSmartContractResults,
-    TResult Function(VmValuesQuery value)? vmValuesQuery,
+    TResult? Function(VmValuesQuery value)? vmValuesQuery,
   }) {
     return sendTransaction?.call(this);
   }
@@ -1271,19 +1248,22 @@ class _$SendTransactionResponse implements SendTransactionResponse {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$SendTransactionResponseToJson(this);
+    return _$$SendTransactionResponseImplToJson(
+      this,
+    );
   }
 }
 
 abstract class SendTransactionResponse implements ProxyResponse {
   factory SendTransactionResponse(
-      {required SendTransactionData data,
-      String? error,
-      required String code}) = _$SendTransactionResponse;
+      {required final SendTransactionData data,
+      final String? error,
+      required final String code}) = _$SendTransactionResponseImpl;
 
   factory SendTransactionResponse.fromJson(Map<String, dynamic> json) =
-      _$SendTransactionResponse.fromJson;
+      _$SendTransactionResponseImpl.fromJson;
 
+  @override
   SendTransactionData get data;
   @override
   String? get error;
@@ -1291,52 +1271,51 @@ abstract class SendTransactionResponse implements ProxyResponse {
   String get code;
   @override
   @JsonKey(ignore: true)
-  $SendTransactionResponseCopyWith<SendTransactionResponse> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$SendTransactionResponseImplCopyWith<_$SendTransactionResponseImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $GetTransactionStatusResponseCopyWith<$Res>
+abstract class _$$GetTransactionStatusResponseImplCopyWith<$Res>
     implements $ProxyResponseCopyWith<$Res> {
-  factory $GetTransactionStatusResponseCopyWith(
-          GetTransactionStatusResponse value,
-          $Res Function(GetTransactionStatusResponse) then) =
-      _$GetTransactionStatusResponseCopyWithImpl<$Res>;
+  factory _$$GetTransactionStatusResponseImplCopyWith(
+          _$GetTransactionStatusResponseImpl value,
+          $Res Function(_$GetTransactionStatusResponseImpl) then) =
+      __$$GetTransactionStatusResponseImplCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({GetTransactionStatusData data, String? error, String code});
 
   $GetTransactionStatusDataCopyWith<$Res> get data;
 }
 
 /// @nodoc
-class _$GetTransactionStatusResponseCopyWithImpl<$Res>
-    extends _$ProxyResponseCopyWithImpl<$Res>
-    implements $GetTransactionStatusResponseCopyWith<$Res> {
-  _$GetTransactionStatusResponseCopyWithImpl(
-      GetTransactionStatusResponse _value,
-      $Res Function(GetTransactionStatusResponse) _then)
-      : super(_value, (v) => _then(v as GetTransactionStatusResponse));
+class __$$GetTransactionStatusResponseImplCopyWithImpl<$Res>
+    extends _$ProxyResponseCopyWithImpl<$Res,
+        _$GetTransactionStatusResponseImpl>
+    implements _$$GetTransactionStatusResponseImplCopyWith<$Res> {
+  __$$GetTransactionStatusResponseImplCopyWithImpl(
+      _$GetTransactionStatusResponseImpl _value,
+      $Res Function(_$GetTransactionStatusResponseImpl) _then)
+      : super(_value, _then);
 
-  @override
-  GetTransactionStatusResponse get _value =>
-      super._value as GetTransactionStatusResponse;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? data = freezed,
+    Object? data = null,
     Object? error = freezed,
-    Object? code = freezed,
+    Object? code = null,
   }) {
-    return _then(GetTransactionStatusResponse(
-      data: data == freezed
+    return _then(_$GetTransactionStatusResponseImpl(
+      data: null == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
               as GetTransactionStatusData,
-      error: error == freezed
+      error: freezed == error
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
               as String?,
-      code: code == freezed
+      code: null == code
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
               as String,
@@ -1344,6 +1323,7 @@ class _$GetTransactionStatusResponseCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $GetTransactionStatusDataCopyWith<$Res> get data {
     return $GetTransactionStatusDataCopyWith<$Res>(_value.data, (value) {
       return _then(_value.copyWith(data: value));
@@ -1353,13 +1333,15 @@ class _$GetTransactionStatusResponseCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$GetTransactionStatusResponse implements GetTransactionStatusResponse {
-  _$GetTransactionStatusResponse(
-      {required this.data, this.error, required this.code, String? $type})
+class _$GetTransactionStatusResponseImpl
+    implements GetTransactionStatusResponse {
+  _$GetTransactionStatusResponseImpl(
+      {required this.data, this.error, required this.code, final String? $type})
       : $type = $type ?? 'getTransactionStatus';
 
-  factory _$GetTransactionStatusResponse.fromJson(Map<String, dynamic> json) =>
-      _$$GetTransactionStatusResponseFromJson(json);
+  factory _$GetTransactionStatusResponseImpl.fromJson(
+          Map<String, dynamic> json) =>
+      _$$GetTransactionStatusResponseImplFromJson(json);
 
   @override
   final GetTransactionStatusData data;
@@ -1377,28 +1359,31 @@ class _$GetTransactionStatusResponse implements GetTransactionStatusResponse {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is GetTransactionStatusResponse &&
+            other is _$GetTransactionStatusResponseImpl &&
             (identical(other.data, data) || other.data == data) &&
             (identical(other.error, error) || other.error == error) &&
             (identical(other.code, code) || other.code == code));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, data, error, code);
 
   @JsonKey(ignore: true)
   @override
-  $GetTransactionStatusResponseCopyWith<GetTransactionStatusResponse>
-      get copyWith => _$GetTransactionStatusResponseCopyWithImpl<
-          GetTransactionStatusResponse>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$GetTransactionStatusResponseImplCopyWith<
+          _$GetTransactionStatusResponseImpl>
+      get copyWith => __$$GetTransactionStatusResponseImplCopyWithImpl<
+          _$GetTransactionStatusResponseImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(Map<String, Object> data, String? error, String code)
+    TResult Function(Map<String, Object>? data, String? error, String code)
         $default, {
     required TResult Function(AccountResponse data, String? error, String code)
         getAccountInformation,
@@ -1425,20 +1410,24 @@ class _$GetTransactionStatusResponse implements GetTransactionStatusResponse {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult Function(Map<String, Object> data, String? error, String code)?
+    TResult? Function(Map<String, Object>? data, String? error, String code)?
         $default, {
-    TResult Function(AccountResponse data, String? error, String code)?
+    TResult? Function(AccountResponse data, String? error, String code)?
         getAccountInformation,
-    TResult Function(NetworkConfigurationData data, String? error, String code)?
+    TResult? Function(
+            NetworkConfigurationData data, String? error, String code)?
         networkConfiguration,
-    TResult Function(SendTransactionData data, String? error, String code)?
+    TResult? Function(SendTransactionData data, String? error, String code)?
         sendTransaction,
-    TResult Function(GetTransactionStatusData data, String? error, String code)?
+    TResult? Function(
+            GetTransactionStatusData data, String? error, String code)?
         getTransactionStatus,
-    TResult Function(GetTransactionInformationsWithSmartContractResultData data,
-            String? error, String code)?
+    TResult? Function(
+            GetTransactionInformationsWithSmartContractResultData data,
+            String? error,
+            String code)?
         informationsWithSmartContractResults,
-    TResult Function(VmValuesResponse data, String? error, String code)?
+    TResult? Function(VmValuesResponse data, String? error, String code)?
         vmValuesQuery,
   }) {
     return getTransactionStatus?.call(data, error, code);
@@ -1447,7 +1436,7 @@ class _$GetTransactionStatusResponse implements GetTransactionStatusResponse {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(Map<String, Object> data, String? error, String code)?
+    TResult Function(Map<String, Object>? data, String? error, String code)?
         $default, {
     TResult Function(AccountResponse data, String? error, String code)?
         getAccountInformation,
@@ -1492,16 +1481,16 @@ class _$GetTransactionStatusResponse implements GetTransactionStatusResponse {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>(
-    TResult Function(ProxyResponseGeneric value)? $default, {
-    TResult Function(GetAccountInformationResponse value)?
+    TResult? Function(ProxyResponseGeneric value)? $default, {
+    TResult? Function(GetAccountInformationResponse value)?
         getAccountInformation,
-    TResult Function(NetworkConfigurationResponse value)? networkConfiguration,
-    TResult Function(SendTransactionResponse value)? sendTransaction,
-    TResult Function(GetTransactionStatusResponse value)? getTransactionStatus,
-    TResult Function(
+    TResult? Function(NetworkConfigurationResponse value)? networkConfiguration,
+    TResult? Function(SendTransactionResponse value)? sendTransaction,
+    TResult? Function(GetTransactionStatusResponse value)? getTransactionStatus,
+    TResult? Function(
             GetTransactionInformationsWithSmartContractResultsResponse value)?
         informationsWithSmartContractResults,
-    TResult Function(VmValuesQuery value)? vmValuesQuery,
+    TResult? Function(VmValuesQuery value)? vmValuesQuery,
   }) {
     return getTransactionStatus?.call(this);
   }
@@ -1529,19 +1518,22 @@ class _$GetTransactionStatusResponse implements GetTransactionStatusResponse {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$GetTransactionStatusResponseToJson(this);
+    return _$$GetTransactionStatusResponseImplToJson(
+      this,
+    );
   }
 }
 
 abstract class GetTransactionStatusResponse implements ProxyResponse {
   factory GetTransactionStatusResponse(
-      {required GetTransactionStatusData data,
-      String? error,
-      required String code}) = _$GetTransactionStatusResponse;
+      {required final GetTransactionStatusData data,
+      final String? error,
+      required final String code}) = _$GetTransactionStatusResponseImpl;
 
   factory GetTransactionStatusResponse.fromJson(Map<String, dynamic> json) =
-      _$GetTransactionStatusResponse.fromJson;
+      _$GetTransactionStatusResponseImpl.fromJson;
 
+  @override
   GetTransactionStatusData get data;
   @override
   String? get error;
@@ -1549,21 +1541,23 @@ abstract class GetTransactionStatusResponse implements ProxyResponse {
   String get code;
   @override
   @JsonKey(ignore: true)
-  $GetTransactionStatusResponseCopyWith<GetTransactionStatusResponse>
+  _$$GetTransactionStatusResponseImplCopyWith<
+          _$GetTransactionStatusResponseImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $GetTransactionInformationsWithSmartContractResultsResponseCopyWith<
+abstract class _$$GetTransactionInformationsWithSmartContractResultsResponseImplCopyWith<
     $Res> implements $ProxyResponseCopyWith<$Res> {
-  factory $GetTransactionInformationsWithSmartContractResultsResponseCopyWith(
-          GetTransactionInformationsWithSmartContractResultsResponse value,
+  factory _$$GetTransactionInformationsWithSmartContractResultsResponseImplCopyWith(
+          _$GetTransactionInformationsWithSmartContractResultsResponseImpl value,
           $Res Function(
-                  GetTransactionInformationsWithSmartContractResultsResponse)
+                  _$GetTransactionInformationsWithSmartContractResultsResponseImpl)
               then) =
-      _$GetTransactionInformationsWithSmartContractResultsResponseCopyWithImpl<
+      __$$GetTransactionInformationsWithSmartContractResultsResponseImplCopyWithImpl<
           $Res>;
   @override
+  @useResult
   $Res call(
       {GetTransactionInformationsWithSmartContractResultData data,
       String? error,
@@ -1573,41 +1567,38 @@ abstract class $GetTransactionInformationsWithSmartContractResultsResponseCopyWi
 }
 
 /// @nodoc
-class _$GetTransactionInformationsWithSmartContractResultsResponseCopyWithImpl<
-        $Res> extends _$ProxyResponseCopyWithImpl<$Res>
+class __$$GetTransactionInformationsWithSmartContractResultsResponseImplCopyWithImpl<
+        $Res>
+    extends _$ProxyResponseCopyWithImpl<$Res,
+        _$GetTransactionInformationsWithSmartContractResultsResponseImpl>
     implements
-        $GetTransactionInformationsWithSmartContractResultsResponseCopyWith<
+        _$$GetTransactionInformationsWithSmartContractResultsResponseImplCopyWith<
             $Res> {
-  _$GetTransactionInformationsWithSmartContractResultsResponseCopyWithImpl(
-      GetTransactionInformationsWithSmartContractResultsResponse _value,
-      $Res Function(GetTransactionInformationsWithSmartContractResultsResponse)
+  __$$GetTransactionInformationsWithSmartContractResultsResponseImplCopyWithImpl(
+      _$GetTransactionInformationsWithSmartContractResultsResponseImpl _value,
+      $Res Function(
+              _$GetTransactionInformationsWithSmartContractResultsResponseImpl)
           _then)
-      : super(
-            _value,
-            (v) => _then(v
-                as GetTransactionInformationsWithSmartContractResultsResponse));
+      : super(_value, _then);
 
-  @override
-  GetTransactionInformationsWithSmartContractResultsResponse get _value =>
-      super._value
-          as GetTransactionInformationsWithSmartContractResultsResponse;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? data = freezed,
+    Object? data = null,
     Object? error = freezed,
-    Object? code = freezed,
+    Object? code = null,
   }) {
-    return _then(GetTransactionInformationsWithSmartContractResultsResponse(
-      data: data == freezed
+    return _then(
+        _$GetTransactionInformationsWithSmartContractResultsResponseImpl(
+      data: null == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
               as GetTransactionInformationsWithSmartContractResultData,
-      error: error == freezed
+      error: freezed == error
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
               as String?,
-      code: code == freezed
+      code: null == code
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
               as String,
@@ -1615,6 +1606,7 @@ class _$GetTransactionInformationsWithSmartContractResultsResponseCopyWithImpl<
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $GetTransactionInformationsWithSmartContractResultDataCopyWith<$Res>
       get data {
     return $GetTransactionInformationsWithSmartContractResultDataCopyWith<$Res>(
@@ -1626,15 +1618,15 @@ class _$GetTransactionInformationsWithSmartContractResultsResponseCopyWithImpl<
 
 /// @nodoc
 @JsonSerializable()
-class _$GetTransactionInformationsWithSmartContractResultsResponse
+class _$GetTransactionInformationsWithSmartContractResultsResponseImpl
     implements GetTransactionInformationsWithSmartContractResultsResponse {
-  _$GetTransactionInformationsWithSmartContractResultsResponse(
-      {required this.data, this.error, required this.code, String? $type})
+  _$GetTransactionInformationsWithSmartContractResultsResponseImpl(
+      {required this.data, this.error, required this.code, final String? $type})
       : $type = $type ?? 'informationsWithSmartContractResults';
 
-  factory _$GetTransactionInformationsWithSmartContractResultsResponse.fromJson(
+  factory _$GetTransactionInformationsWithSmartContractResultsResponseImpl.fromJson(
           Map<String, dynamic> json) =>
-      _$$GetTransactionInformationsWithSmartContractResultsResponseFromJson(
+      _$$GetTransactionInformationsWithSmartContractResultsResponseImplFromJson(
           json);
 
   @override
@@ -1653,32 +1645,34 @@ class _$GetTransactionInformationsWithSmartContractResultsResponse
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other
-                is GetTransactionInformationsWithSmartContractResultsResponse &&
+                is _$GetTransactionInformationsWithSmartContractResultsResponseImpl &&
             (identical(other.data, data) || other.data == data) &&
             (identical(other.error, error) || other.error == error) &&
             (identical(other.code, code) || other.code == code));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, data, error, code);
 
   @JsonKey(ignore: true)
   @override
-  $GetTransactionInformationsWithSmartContractResultsResponseCopyWith<
-          GetTransactionInformationsWithSmartContractResultsResponse>
+  @pragma('vm:prefer-inline')
+  _$$GetTransactionInformationsWithSmartContractResultsResponseImplCopyWith<
+          _$GetTransactionInformationsWithSmartContractResultsResponseImpl>
       get copyWith =>
-          _$GetTransactionInformationsWithSmartContractResultsResponseCopyWithImpl<
-                  GetTransactionInformationsWithSmartContractResultsResponse>(
+          __$$GetTransactionInformationsWithSmartContractResultsResponseImplCopyWithImpl<
+                  _$GetTransactionInformationsWithSmartContractResultsResponseImpl>(
               this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(Map<String, Object> data, String? error, String code)
+    TResult Function(Map<String, Object>? data, String? error, String code)
         $default, {
     required TResult Function(AccountResponse data, String? error, String code)
         getAccountInformation,
@@ -1705,20 +1699,24 @@ class _$GetTransactionInformationsWithSmartContractResultsResponse
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult Function(Map<String, Object> data, String? error, String code)?
+    TResult? Function(Map<String, Object>? data, String? error, String code)?
         $default, {
-    TResult Function(AccountResponse data, String? error, String code)?
+    TResult? Function(AccountResponse data, String? error, String code)?
         getAccountInformation,
-    TResult Function(NetworkConfigurationData data, String? error, String code)?
+    TResult? Function(
+            NetworkConfigurationData data, String? error, String code)?
         networkConfiguration,
-    TResult Function(SendTransactionData data, String? error, String code)?
+    TResult? Function(SendTransactionData data, String? error, String code)?
         sendTransaction,
-    TResult Function(GetTransactionStatusData data, String? error, String code)?
+    TResult? Function(
+            GetTransactionStatusData data, String? error, String code)?
         getTransactionStatus,
-    TResult Function(GetTransactionInformationsWithSmartContractResultData data,
-            String? error, String code)?
+    TResult? Function(
+            GetTransactionInformationsWithSmartContractResultData data,
+            String? error,
+            String code)?
         informationsWithSmartContractResults,
-    TResult Function(VmValuesResponse data, String? error, String code)?
+    TResult? Function(VmValuesResponse data, String? error, String code)?
         vmValuesQuery,
   }) {
     return informationsWithSmartContractResults?.call(data, error, code);
@@ -1727,7 +1725,7 @@ class _$GetTransactionInformationsWithSmartContractResultsResponse
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(Map<String, Object> data, String? error, String code)?
+    TResult Function(Map<String, Object>? data, String? error, String code)?
         $default, {
     TResult Function(AccountResponse data, String? error, String code)?
         getAccountInformation,
@@ -1772,16 +1770,16 @@ class _$GetTransactionInformationsWithSmartContractResultsResponse
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>(
-    TResult Function(ProxyResponseGeneric value)? $default, {
-    TResult Function(GetAccountInformationResponse value)?
+    TResult? Function(ProxyResponseGeneric value)? $default, {
+    TResult? Function(GetAccountInformationResponse value)?
         getAccountInformation,
-    TResult Function(NetworkConfigurationResponse value)? networkConfiguration,
-    TResult Function(SendTransactionResponse value)? sendTransaction,
-    TResult Function(GetTransactionStatusResponse value)? getTransactionStatus,
-    TResult Function(
+    TResult? Function(NetworkConfigurationResponse value)? networkConfiguration,
+    TResult? Function(SendTransactionResponse value)? sendTransaction,
+    TResult? Function(GetTransactionStatusResponse value)? getTransactionStatus,
+    TResult? Function(
             GetTransactionInformationsWithSmartContractResultsResponse value)?
         informationsWithSmartContractResults,
-    TResult Function(VmValuesQuery value)? vmValuesQuery,
+    TResult? Function(VmValuesQuery value)? vmValuesQuery,
   }) {
     return informationsWithSmartContractResults?.call(this);
   }
@@ -1809,23 +1807,26 @@ class _$GetTransactionInformationsWithSmartContractResultsResponse
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$GetTransactionInformationsWithSmartContractResultsResponseToJson(
-        this);
+    return _$$GetTransactionInformationsWithSmartContractResultsResponseImplToJson(
+      this,
+    );
   }
 }
 
 abstract class GetTransactionInformationsWithSmartContractResultsResponse
     implements ProxyResponse {
   factory GetTransactionInformationsWithSmartContractResultsResponse(
-          {required GetTransactionInformationsWithSmartContractResultData data,
-          String? error,
-          required String code}) =
-      _$GetTransactionInformationsWithSmartContractResultsResponse;
+          {required final GetTransactionInformationsWithSmartContractResultData
+              data,
+          final String? error,
+          required final String code}) =
+      _$GetTransactionInformationsWithSmartContractResultsResponseImpl;
 
   factory GetTransactionInformationsWithSmartContractResultsResponse.fromJson(
           Map<String, dynamic> json) =
-      _$GetTransactionInformationsWithSmartContractResultsResponse.fromJson;
+      _$GetTransactionInformationsWithSmartContractResultsResponseImpl.fromJson;
 
+  @override
   GetTransactionInformationsWithSmartContractResultData get data;
   @override
   String? get error;
@@ -1833,50 +1834,49 @@ abstract class GetTransactionInformationsWithSmartContractResultsResponse
   String get code;
   @override
   @JsonKey(ignore: true)
-  $GetTransactionInformationsWithSmartContractResultsResponseCopyWith<
-          GetTransactionInformationsWithSmartContractResultsResponse>
+  _$$GetTransactionInformationsWithSmartContractResultsResponseImplCopyWith<
+          _$GetTransactionInformationsWithSmartContractResultsResponseImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $VmValuesQueryCopyWith<$Res>
+abstract class _$$VmValuesQueryImplCopyWith<$Res>
     implements $ProxyResponseCopyWith<$Res> {
-  factory $VmValuesQueryCopyWith(
-          VmValuesQuery value, $Res Function(VmValuesQuery) then) =
-      _$VmValuesQueryCopyWithImpl<$Res>;
+  factory _$$VmValuesQueryImplCopyWith(
+          _$VmValuesQueryImpl value, $Res Function(_$VmValuesQueryImpl) then) =
+      __$$VmValuesQueryImplCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({VmValuesResponse data, String? error, String code});
 
   $VmValuesResponseCopyWith<$Res> get data;
 }
 
 /// @nodoc
-class _$VmValuesQueryCopyWithImpl<$Res>
-    extends _$ProxyResponseCopyWithImpl<$Res>
-    implements $VmValuesQueryCopyWith<$Res> {
-  _$VmValuesQueryCopyWithImpl(
-      VmValuesQuery _value, $Res Function(VmValuesQuery) _then)
-      : super(_value, (v) => _then(v as VmValuesQuery));
+class __$$VmValuesQueryImplCopyWithImpl<$Res>
+    extends _$ProxyResponseCopyWithImpl<$Res, _$VmValuesQueryImpl>
+    implements _$$VmValuesQueryImplCopyWith<$Res> {
+  __$$VmValuesQueryImplCopyWithImpl(
+      _$VmValuesQueryImpl _value, $Res Function(_$VmValuesQueryImpl) _then)
+      : super(_value, _then);
 
-  @override
-  VmValuesQuery get _value => super._value as VmValuesQuery;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? data = freezed,
+    Object? data = null,
     Object? error = freezed,
-    Object? code = freezed,
+    Object? code = null,
   }) {
-    return _then(VmValuesQuery(
-      data: data == freezed
+    return _then(_$VmValuesQueryImpl(
+      data: null == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
               as VmValuesResponse,
-      error: error == freezed
+      error: freezed == error
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
               as String?,
-      code: code == freezed
+      code: null == code
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
               as String,
@@ -1884,6 +1884,7 @@ class _$VmValuesQueryCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $VmValuesResponseCopyWith<$Res> get data {
     return $VmValuesResponseCopyWith<$Res>(_value.data, (value) {
       return _then(_value.copyWith(data: value));
@@ -1893,13 +1894,13 @@ class _$VmValuesQueryCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$VmValuesQuery implements VmValuesQuery {
-  _$VmValuesQuery(
-      {required this.data, this.error, required this.code, String? $type})
+class _$VmValuesQueryImpl implements VmValuesQuery {
+  _$VmValuesQueryImpl(
+      {required this.data, this.error, required this.code, final String? $type})
       : $type = $type ?? 'vmValuesQuery';
 
-  factory _$VmValuesQuery.fromJson(Map<String, dynamic> json) =>
-      _$$VmValuesQueryFromJson(json);
+  factory _$VmValuesQueryImpl.fromJson(Map<String, dynamic> json) =>
+      _$$VmValuesQueryImplFromJson(json);
 
   @override
   final VmValuesResponse data;
@@ -1917,27 +1918,29 @@ class _$VmValuesQuery implements VmValuesQuery {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is VmValuesQuery &&
+            other is _$VmValuesQueryImpl &&
             (identical(other.data, data) || other.data == data) &&
             (identical(other.error, error) || other.error == error) &&
             (identical(other.code, code) || other.code == code));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, data, error, code);
 
   @JsonKey(ignore: true)
   @override
-  $VmValuesQueryCopyWith<VmValuesQuery> get copyWith =>
-      _$VmValuesQueryCopyWithImpl<VmValuesQuery>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$VmValuesQueryImplCopyWith<_$VmValuesQueryImpl> get copyWith =>
+      __$$VmValuesQueryImplCopyWithImpl<_$VmValuesQueryImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(Map<String, Object> data, String? error, String code)
+    TResult Function(Map<String, Object>? data, String? error, String code)
         $default, {
     required TResult Function(AccountResponse data, String? error, String code)
         getAccountInformation,
@@ -1964,20 +1967,24 @@ class _$VmValuesQuery implements VmValuesQuery {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult Function(Map<String, Object> data, String? error, String code)?
+    TResult? Function(Map<String, Object>? data, String? error, String code)?
         $default, {
-    TResult Function(AccountResponse data, String? error, String code)?
+    TResult? Function(AccountResponse data, String? error, String code)?
         getAccountInformation,
-    TResult Function(NetworkConfigurationData data, String? error, String code)?
+    TResult? Function(
+            NetworkConfigurationData data, String? error, String code)?
         networkConfiguration,
-    TResult Function(SendTransactionData data, String? error, String code)?
+    TResult? Function(SendTransactionData data, String? error, String code)?
         sendTransaction,
-    TResult Function(GetTransactionStatusData data, String? error, String code)?
+    TResult? Function(
+            GetTransactionStatusData data, String? error, String code)?
         getTransactionStatus,
-    TResult Function(GetTransactionInformationsWithSmartContractResultData data,
-            String? error, String code)?
+    TResult? Function(
+            GetTransactionInformationsWithSmartContractResultData data,
+            String? error,
+            String code)?
         informationsWithSmartContractResults,
-    TResult Function(VmValuesResponse data, String? error, String code)?
+    TResult? Function(VmValuesResponse data, String? error, String code)?
         vmValuesQuery,
   }) {
     return vmValuesQuery?.call(data, error, code);
@@ -1986,7 +1993,7 @@ class _$VmValuesQuery implements VmValuesQuery {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(Map<String, Object> data, String? error, String code)?
+    TResult Function(Map<String, Object>? data, String? error, String code)?
         $default, {
     TResult Function(AccountResponse data, String? error, String code)?
         getAccountInformation,
@@ -2031,16 +2038,16 @@ class _$VmValuesQuery implements VmValuesQuery {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>(
-    TResult Function(ProxyResponseGeneric value)? $default, {
-    TResult Function(GetAccountInformationResponse value)?
+    TResult? Function(ProxyResponseGeneric value)? $default, {
+    TResult? Function(GetAccountInformationResponse value)?
         getAccountInformation,
-    TResult Function(NetworkConfigurationResponse value)? networkConfiguration,
-    TResult Function(SendTransactionResponse value)? sendTransaction,
-    TResult Function(GetTransactionStatusResponse value)? getTransactionStatus,
-    TResult Function(
+    TResult? Function(NetworkConfigurationResponse value)? networkConfiguration,
+    TResult? Function(SendTransactionResponse value)? sendTransaction,
+    TResult? Function(GetTransactionStatusResponse value)? getTransactionStatus,
+    TResult? Function(
             GetTransactionInformationsWithSmartContractResultsResponse value)?
         informationsWithSmartContractResults,
-    TResult Function(VmValuesQuery value)? vmValuesQuery,
+    TResult? Function(VmValuesQuery value)? vmValuesQuery,
   }) {
     return vmValuesQuery?.call(this);
   }
@@ -2068,19 +2075,22 @@ class _$VmValuesQuery implements VmValuesQuery {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$VmValuesQueryToJson(this);
+    return _$$VmValuesQueryImplToJson(
+      this,
+    );
   }
 }
 
 abstract class VmValuesQuery implements ProxyResponse {
   factory VmValuesQuery(
-      {required VmValuesResponse data,
-      String? error,
-      required String code}) = _$VmValuesQuery;
+      {required final VmValuesResponse data,
+      final String? error,
+      required final String code}) = _$VmValuesQueryImpl;
 
   factory VmValuesQuery.fromJson(Map<String, dynamic> json) =
-      _$VmValuesQuery.fromJson;
+      _$VmValuesQueryImpl.fromJson;
 
+  @override
   VmValuesResponse get data;
   @override
   String? get error;
@@ -2088,6 +2098,6 @@ abstract class VmValuesQuery implements ProxyResponse {
   String get code;
   @override
   @JsonKey(ignore: true)
-  $VmValuesQueryCopyWith<VmValuesQuery> get copyWith =>
+  _$$VmValuesQueryImplCopyWith<_$VmValuesQueryImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -1,6 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'address.dart';
 
@@ -11,29 +12,11 @@ part of 'address.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 AccountResponse _$AccountResponseFromJson(Map<String, dynamic> json) {
   return _AccountResponse.fromJson(json);
 }
-
-/// @nodoc
-class _$AccountResponseTearOff {
-  const _$AccountResponseTearOff();
-
-  _AccountResponse call({required AccountData account}) {
-    return _AccountResponse(
-      account: account,
-    );
-  }
-
-  AccountResponse fromJson(Map<String, Object?> json) {
-    return AccountResponse.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $AccountResponse = _$AccountResponseTearOff();
 
 /// @nodoc
 mixin _$AccountResponse {
@@ -49,48 +32,53 @@ mixin _$AccountResponse {
 abstract class $AccountResponseCopyWith<$Res> {
   factory $AccountResponseCopyWith(
           AccountResponse value, $Res Function(AccountResponse) then) =
-      _$AccountResponseCopyWithImpl<$Res>;
+      _$AccountResponseCopyWithImpl<$Res, AccountResponse>;
+  @useResult
   $Res call({AccountData account});
 
   $AccountDataCopyWith<$Res> get account;
 }
 
 /// @nodoc
-class _$AccountResponseCopyWithImpl<$Res>
+class _$AccountResponseCopyWithImpl<$Res, $Val extends AccountResponse>
     implements $AccountResponseCopyWith<$Res> {
   _$AccountResponseCopyWithImpl(this._value, this._then);
 
-  final AccountResponse _value;
   // ignore: unused_field
-  final $Res Function(AccountResponse) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? account = freezed,
+    Object? account = null,
   }) {
     return _then(_value.copyWith(
-      account: account == freezed
+      account: null == account
           ? _value.account
           : account // ignore: cast_nullable_to_non_nullable
               as AccountData,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $AccountDataCopyWith<$Res> get account {
     return $AccountDataCopyWith<$Res>(_value.account, (value) {
-      return _then(_value.copyWith(account: value));
+      return _then(_value.copyWith(account: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$AccountResponseCopyWith<$Res>
+abstract class _$$AccountResponseImplCopyWith<$Res>
     implements $AccountResponseCopyWith<$Res> {
-  factory _$AccountResponseCopyWith(
-          _AccountResponse value, $Res Function(_AccountResponse) then) =
-      __$AccountResponseCopyWithImpl<$Res>;
+  factory _$$AccountResponseImplCopyWith(_$AccountResponseImpl value,
+          $Res Function(_$AccountResponseImpl) then) =
+      __$$AccountResponseImplCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({AccountData account});
 
   @override
@@ -98,22 +86,20 @@ abstract class _$AccountResponseCopyWith<$Res>
 }
 
 /// @nodoc
-class __$AccountResponseCopyWithImpl<$Res>
-    extends _$AccountResponseCopyWithImpl<$Res>
-    implements _$AccountResponseCopyWith<$Res> {
-  __$AccountResponseCopyWithImpl(
-      _AccountResponse _value, $Res Function(_AccountResponse) _then)
-      : super(_value, (v) => _then(v as _AccountResponse));
+class __$$AccountResponseImplCopyWithImpl<$Res>
+    extends _$AccountResponseCopyWithImpl<$Res, _$AccountResponseImpl>
+    implements _$$AccountResponseImplCopyWith<$Res> {
+  __$$AccountResponseImplCopyWithImpl(
+      _$AccountResponseImpl _value, $Res Function(_$AccountResponseImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _AccountResponse get _value => super._value as _AccountResponse;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? account = freezed,
+    Object? account = null,
   }) {
-    return _then(_AccountResponse(
-      account: account == freezed
+    return _then(_$AccountResponseImpl(
+      account: null == account
           ? _value.account
           : account // ignore: cast_nullable_to_non_nullable
               as AccountData,
@@ -123,11 +109,11 @@ class __$AccountResponseCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_AccountResponse implements _AccountResponse {
-  _$_AccountResponse({required this.account});
+class _$AccountResponseImpl implements _AccountResponse {
+  _$AccountResponseImpl({required this.account});
 
-  factory _$_AccountResponse.fromJson(Map<String, dynamic> json) =>
-      _$$_AccountResponseFromJson(json);
+  factory _$AccountResponseImpl.fromJson(Map<String, dynamic> json) =>
+      _$$AccountResponseImplFromJson(json);
 
   @override
   final AccountData account;
@@ -138,69 +124,50 @@ class _$_AccountResponse implements _AccountResponse {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _AccountResponse &&
+            other is _$AccountResponseImpl &&
             (identical(other.account, account) || other.account == account));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, account);
 
   @JsonKey(ignore: true)
   @override
-  _$AccountResponseCopyWith<_AccountResponse> get copyWith =>
-      __$AccountResponseCopyWithImpl<_AccountResponse>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$AccountResponseImplCopyWith<_$AccountResponseImpl> get copyWith =>
+      __$$AccountResponseImplCopyWithImpl<_$AccountResponseImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_AccountResponseToJson(this);
+    return _$$AccountResponseImplToJson(
+      this,
+    );
   }
 }
 
 abstract class _AccountResponse implements AccountResponse {
-  factory _AccountResponse({required AccountData account}) = _$_AccountResponse;
+  factory _AccountResponse({required final AccountData account}) =
+      _$AccountResponseImpl;
 
   factory _AccountResponse.fromJson(Map<String, dynamic> json) =
-      _$_AccountResponse.fromJson;
+      _$AccountResponseImpl.fromJson;
 
   @override
   AccountData get account;
   @override
   @JsonKey(ignore: true)
-  _$AccountResponseCopyWith<_AccountResponse> get copyWith =>
+  _$$AccountResponseImplCopyWith<_$AccountResponseImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 AccountData _$AccountDataFromJson(Map<String, dynamic> json) {
   return _AccountData.fromJson(json);
 }
-
-/// @nodoc
-class _$AccountDataTearOff {
-  const _$AccountDataTearOff();
-
-  _AccountData call(
-      {@NullableAddressConverter() Address? address,
-      @NonceConverter() required Nonce nonce,
-      @BalanceConverter() required Balance balance,
-      String username = ''}) {
-    return _AccountData(
-      address: address,
-      nonce: nonce,
-      balance: balance,
-      username: username,
-    );
-  }
-
-  AccountData fromJson(Map<String, Object?> json) {
-    return AccountData.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $AccountData = _$AccountDataTearOff();
 
 /// @nodoc
 mixin _$AccountData {
@@ -222,7 +189,8 @@ mixin _$AccountData {
 abstract class $AccountDataCopyWith<$Res> {
   factory $AccountDataCopyWith(
           AccountData value, $Res Function(AccountData) then) =
-      _$AccountDataCopyWithImpl<$Res>;
+      _$AccountDataCopyWithImpl<$Res, AccountData>;
+  @useResult
   $Res call(
       {@NullableAddressConverter() Address? address,
       @NonceConverter() Nonce nonce,
@@ -231,48 +199,52 @@ abstract class $AccountDataCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$AccountDataCopyWithImpl<$Res> implements $AccountDataCopyWith<$Res> {
+class _$AccountDataCopyWithImpl<$Res, $Val extends AccountData>
+    implements $AccountDataCopyWith<$Res> {
   _$AccountDataCopyWithImpl(this._value, this._then);
 
-  final AccountData _value;
   // ignore: unused_field
-  final $Res Function(AccountData) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? address = freezed,
-    Object? nonce = freezed,
-    Object? balance = freezed,
-    Object? username = freezed,
+    Object? nonce = null,
+    Object? balance = null,
+    Object? username = null,
   }) {
     return _then(_value.copyWith(
-      address: address == freezed
+      address: freezed == address
           ? _value.address
           : address // ignore: cast_nullable_to_non_nullable
               as Address?,
-      nonce: nonce == freezed
+      nonce: null == nonce
           ? _value.nonce
           : nonce // ignore: cast_nullable_to_non_nullable
               as Nonce,
-      balance: balance == freezed
+      balance: null == balance
           ? _value.balance
           : balance // ignore: cast_nullable_to_non_nullable
               as Balance,
-      username: username == freezed
+      username: null == username
           ? _value.username
           : username // ignore: cast_nullable_to_non_nullable
               as String,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$AccountDataCopyWith<$Res>
+abstract class _$$AccountDataImplCopyWith<$Res>
     implements $AccountDataCopyWith<$Res> {
-  factory _$AccountDataCopyWith(
-          _AccountData value, $Res Function(_AccountData) then) =
-      __$AccountDataCopyWithImpl<$Res>;
+  factory _$$AccountDataImplCopyWith(
+          _$AccountDataImpl value, $Res Function(_$AccountDataImpl) then) =
+      __$$AccountDataImplCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {@NullableAddressConverter() Address? address,
       @NonceConverter() Nonce nonce,
@@ -281,36 +253,35 @@ abstract class _$AccountDataCopyWith<$Res>
 }
 
 /// @nodoc
-class __$AccountDataCopyWithImpl<$Res> extends _$AccountDataCopyWithImpl<$Res>
-    implements _$AccountDataCopyWith<$Res> {
-  __$AccountDataCopyWithImpl(
-      _AccountData _value, $Res Function(_AccountData) _then)
-      : super(_value, (v) => _then(v as _AccountData));
+class __$$AccountDataImplCopyWithImpl<$Res>
+    extends _$AccountDataCopyWithImpl<$Res, _$AccountDataImpl>
+    implements _$$AccountDataImplCopyWith<$Res> {
+  __$$AccountDataImplCopyWithImpl(
+      _$AccountDataImpl _value, $Res Function(_$AccountDataImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _AccountData get _value => super._value as _AccountData;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? address = freezed,
-    Object? nonce = freezed,
-    Object? balance = freezed,
-    Object? username = freezed,
+    Object? nonce = null,
+    Object? balance = null,
+    Object? username = null,
   }) {
-    return _then(_AccountData(
-      address: address == freezed
+    return _then(_$AccountDataImpl(
+      address: freezed == address
           ? _value.address
           : address // ignore: cast_nullable_to_non_nullable
               as Address?,
-      nonce: nonce == freezed
+      nonce: null == nonce
           ? _value.nonce
           : nonce // ignore: cast_nullable_to_non_nullable
               as Nonce,
-      balance: balance == freezed
+      balance: null == balance
           ? _value.balance
           : balance // ignore: cast_nullable_to_non_nullable
               as Balance,
-      username: username == freezed
+      username: null == username
           ? _value.username
           : username // ignore: cast_nullable_to_non_nullable
               as String,
@@ -320,15 +291,15 @@ class __$AccountDataCopyWithImpl<$Res> extends _$AccountDataCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_AccountData implements _AccountData {
-  _$_AccountData(
+class _$AccountDataImpl implements _AccountData {
+  _$AccountDataImpl(
       {@NullableAddressConverter() this.address,
       @NonceConverter() required this.nonce,
       @BalanceConverter() required this.balance,
       this.username = ''});
 
-  factory _$_AccountData.fromJson(Map<String, dynamic> json) =>
-      _$$_AccountDataFromJson(json);
+  factory _$AccountDataImpl.fromJson(Map<String, dynamic> json) =>
+      _$$AccountDataImplFromJson(json);
 
   @override
   @NullableAddressConverter()
@@ -339,8 +310,8 @@ class _$_AccountData implements _AccountData {
   @override
   @BalanceConverter()
   final Balance balance;
-  @JsonKey(defaultValue: '')
   @override
+  @JsonKey()
   final String username;
 
   @override
@@ -349,10 +320,10 @@ class _$_AccountData implements _AccountData {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _AccountData &&
+            other is _$AccountDataImpl &&
             (identical(other.address, address) || other.address == address) &&
             (identical(other.nonce, nonce) || other.nonce == nonce) &&
             (identical(other.balance, balance) || other.balance == balance) &&
@@ -360,30 +331,34 @@ class _$_AccountData implements _AccountData {
                 other.username == username));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode =>
       Object.hash(runtimeType, address, nonce, balance, username);
 
   @JsonKey(ignore: true)
   @override
-  _$AccountDataCopyWith<_AccountData> get copyWith =>
-      __$AccountDataCopyWithImpl<_AccountData>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$AccountDataImplCopyWith<_$AccountDataImpl> get copyWith =>
+      __$$AccountDataImplCopyWithImpl<_$AccountDataImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_AccountDataToJson(this);
+    return _$$AccountDataImplToJson(
+      this,
+    );
   }
 }
 
 abstract class _AccountData implements AccountData {
   factory _AccountData(
-      {@NullableAddressConverter() Address? address,
-      @NonceConverter() required Nonce nonce,
-      @BalanceConverter() required Balance balance,
-      String username}) = _$_AccountData;
+      {@NullableAddressConverter() final Address? address,
+      @NonceConverter() required final Nonce nonce,
+      @BalanceConverter() required final Balance balance,
+      final String username}) = _$AccountDataImpl;
 
   factory _AccountData.fromJson(Map<String, dynamic> json) =
-      _$_AccountData.fromJson;
+      _$AccountDataImpl.fromJson;
 
   @override
   @NullableAddressConverter()
@@ -398,6 +373,6 @@ abstract class _AccountData implements AccountData {
   String get username;
   @override
   @JsonKey(ignore: true)
-  _$AccountDataCopyWith<_AccountData> get copyWith =>
+  _$$AccountDataImplCopyWith<_$AccountDataImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

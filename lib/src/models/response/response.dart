@@ -10,7 +10,7 @@ part 'response.g.dart';
 @freezed
 class ProxyResponse with _$ProxyResponse {
   factory ProxyResponse({
-    required Map<String, Object> data,
+    required Map<String, Object>? data,
     String? error,
     required String code,
   }) = ProxyResponseGeneric;

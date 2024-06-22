@@ -9,7 +9,7 @@ part 'transaction.g.dart';
 
 @RestApi(baseUrl: 'https://gateway.multiversx.com')
 abstract class TransactionRepository {
-  factory TransactionRepository(Dio dio, {String baseUrl}) =
+  factory TransactionRepository(Dio dio, {required String baseUrl}) =
       _TransactionRepository;
 
   @POST('/transaction/send')

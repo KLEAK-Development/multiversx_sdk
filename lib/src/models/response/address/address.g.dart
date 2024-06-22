@@ -6,26 +6,28 @@ part of 'address.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_AccountResponse _$$_AccountResponseFromJson(Map<String, dynamic> json) =>
-    _$_AccountResponse(
+_$AccountResponseImpl _$$AccountResponseImplFromJson(
+        Map<String, dynamic> json) =>
+    _$AccountResponseImpl(
       account: AccountData.fromJson(json['account'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$_AccountResponseToJson(_$_AccountResponse instance) =>
+Map<String, dynamic> _$$AccountResponseImplToJson(
+        _$AccountResponseImpl instance) =>
     <String, dynamic>{
       'account': instance.account,
     };
 
-_$_AccountData _$$_AccountDataFromJson(Map<String, dynamic> json) =>
-    _$_AccountData(
+_$AccountDataImpl _$$AccountDataImplFromJson(Map<String, dynamic> json) =>
+    _$AccountDataImpl(
       address:
           const NullableAddressConverter().fromJson(json['address'] as String?),
-      nonce: const NonceConverter().fromJson(json['nonce'] as int),
+      nonce: const NonceConverter().fromJson((json['nonce'] as num).toInt()),
       balance: const BalanceConverter().fromJson(json['balance'] as String),
       username: json['username'] as String? ?? '',
     );
 
-Map<String, dynamic> _$$_AccountDataToJson(_$_AccountData instance) =>
+Map<String, dynamic> _$$AccountDataImplToJson(_$AccountDataImpl instance) =>
     <String, dynamic>{
       'address': const NullableAddressConverter().toJson(instance.address),
       'nonce': const NonceConverter().toJson(instance.nonce),
