@@ -1,3 +1,5 @@
+# ⚠️ This repository is no more maintained please use the [multiversx](https://github.com/KLEAK-Development/multiversx) instead ⚠️
+
 MultiversX SDK for Dart and Flutter
 
 ## What it is 
